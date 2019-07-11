@@ -67,6 +67,7 @@ const Landing = () => (
       <StyledLink
         variation="secondary"
         path="https://pwp.gatech.edu/bmeac/2016/02/18/deliberate-practice-and-why-you-should-do-it/"
+        isExternal
       >
         Learn More
       </StyledLink>
@@ -125,6 +126,7 @@ const Landing = () => (
           <StyledLink
             variation="secondary"
             path="https://en.wikipedia.org/wiki/Ringelmann_effect"
+            isExternal
           >
             Here's why small teams are better
           </StyledLink>
