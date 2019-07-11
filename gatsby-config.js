@@ -4,7 +4,7 @@ const siteConfig = require("./config.js");
 
 // sort: { order: DESC, fields: [frontmatter___date] },
 module.exports = {
-  pathPrefix: '/pages/evcooper/awesome-learning',
+  pathPrefix: '/awesome-learning',
   siteMetadata: {
     url: siteConfig.url,
     title: siteConfig.title,
