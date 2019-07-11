@@ -18,5 +18,5 @@ lessons:
     description: "Engineers familiar with strictly typed languages like (C++/Java) may find the lack of types in JavaScript shocking. But that is only true on the surface, the truth is that JavaScript has several types. Understanding how they interact together, what they _mean_ will help clear up common misconceptions and make JavaScript seem much more predictable."
   - link: "objects"
     title: "Objects"
-    description: "In JavaScript, **almost** everything is an object" is the phrase which will be the topic of conversation. In this session, we will learn what this means and how to put this new found knowledge into practice."
+    description: "'In JavaScript, **almost** everything is an object' is the phrase which will be the topic of conversation. In this session, we will learn what this means and how to put this new found knowledge into practice."
 ---
