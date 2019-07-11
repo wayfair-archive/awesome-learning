@@ -1,0 +1,44 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+.ContentSection {
+  $baseSelector: &;
+  @include padding(2, 0, 2, 0);
+  @include margin(0, 1.3, 0, 1.3);
+  
+  display: grid;
+  grid-gap: $spacing--medium;
+  @include breakpoint-md {
+    grid-template-columns: 1fr 2fr;
+  }
+  &-title {
+    &--alignLeft {
+      text-align: left;
+    }
+  
+    &--alignCenter {
+      text-align: center;
+    }
+  
+    &--textLight h1 {
+      font-weight: 500;
+      color: $color--light;
+    }
+  }
+
+  &-description {
+    font-size: 1.5em;
+  }
+
+  &-content {
+    &--alignLeft {
+      text-align: left;
+    }
+      &--alignCenter {
+      text-align: center;
+    }
+  }
+  &:not(:first-child) {
+    border-bottom: 1px solid $color--border;
+  }
+}

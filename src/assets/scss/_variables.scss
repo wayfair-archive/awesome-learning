@@ -1,0 +1,55 @@
+/**
+ * Variables
+ */
+
+// Colors
+$color--base: #2a2a3a;
+$color--primary: #2b416a;
+$color--secondary: #00a7ba;
+$color--tertiary: #e8f7f9;
+$color--tertiaryDark: #bfe8ee;
+$color--light:#6f6f6f;
+$color--background: #f3f7f8;
+$color--border: #c4c4c4;
+
+$color--alert: #44309D;
+$color--red: #E8341C;
+$color--white: #fff;
+$color--background: #f3f7f8;
+
+// Spacing
+$spacing--small: 8px;
+$spacing--medium: 16px;
+$spacing--large: 24px;
+$spacing--xLarge: 32px;
+
+// Font Sizes
+$font--small: .875rem;
+$font--body: 16px;
+$font--large: 1.25rem;
+$font--logo: 1.5rem;
+$font--xl: 2.24rem;
+
+// Font Weights
+$font-weight--light: 200;
+$font-weight--normal: 400;
+$font-weight--bold: bold;
+
+// Icon Sizes
+$icon-size--small: 24px;
+$icon-size--medium: 40px;
+
+$typographic-leading: round(16 * 1.625);
+
+// Buttons
+$button-height: 35px;
+$button-border-radius: 20px;
+
+// Layout
+$layout-course-single-width: 945px;
+$layout-course-width: $layout-course-single-width - 305px;
+
+$layout-width: 1070px;
+$layout-breakpoint-sm: 685px;
+$layout-breakpoint-md: 960px;
+$layout-breakpoint-lg: 1100px;
