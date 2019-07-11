@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoriesListTemplate renders correctly 1`] = `
+Array [
+  <StaticQuery
+    render={[Function]}
+  />,
+  <div
+    className="Layout"
+  >
+    <div
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "marginLeft": "auto",
+          "marginRight": "auto",
+          "paddingLeft": "15px",
+          "paddingRight": "15px",
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "normal",
+            "display": "flex",
+            "flexGrow": 0,
+            "flexShrink": 0,
+            "flexWrap": "wrap",
+            "justifyContent": "flex-start",
+            "marginLeft": "-15px",
+            "marginRight": "-15px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "boxSizing": "border-box",
+              "flexBasis": 0,
+              "flexGrow": 1,
+              "flexShrink": 0,
+              "left": "auto",
+              "marginLeft": "0%",
+              "maxWidth": "100%",
+              "minHeight": "1px",
+              "paddingLeft": "15px",
+              "paddingRight": "15px",
+              "position": "relative",
+              "right": "auto",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            className="Page"
+          >
+            <div
+              className="Page-inner"
+            >
+              <h1
+                className="Page-title"
+              >
+                Categories
+              </h1>
+              <div
+                className="Page-body"
+              >
+                <ul>
+                  <li>
+                    <Link
+                      to="/category/test-0/"
+                    >
+                      test_0
+                       (
+                      1
+                      )
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/category/test-1/"
+                    >
+                      test_1
+                       (
+                      2
+                      )
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span
+        style={
+          Object {
+            "clear": "both",
+            "display": "table",
+          }
+        }
+      />
+    </div>
+  </div>,
+]
+`;

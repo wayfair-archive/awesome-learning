@@ -1,0 +1,138 @@
+
+html {
+  box-sizing: border-box;
+  touch-action: manipulation;
+  -webkit-text-size-adjust: 100%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+html,
+body {
+  font-family: Raleway, Arial, sans-serif;
+  font-size: $font--body;
+  line-height: 1.5;
+  color: $color--base;
+}
+body {
+  background: $color--white;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: $color--primary;
+  text-decoration: none;
+}
+
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input,
+button,
+textarea,
+select,
+optgroup,
+option {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+fieldset,
+img,
+button,
+input[type='button'],
+input[type='submit'] {
+  border: 0;
+}
+
+button {
+  background: 0;
+  cursor: pointer;
+  &:disabled {
+    cursor: auto; // Don't show pointer on disabled buttons.
+  }
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+// HTML5 element display-role reset for older browsers
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+// IE9 -> IE11 don't set display: block on the main element
+main {
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  border-radius: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+textarea,
+select,
+button,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}

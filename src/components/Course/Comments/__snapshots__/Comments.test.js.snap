@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Comments renders correctly 1`] = `
+<div>
+  <div
+    id="disqus_thread"
+  />
+</div>
+`;

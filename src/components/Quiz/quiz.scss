@@ -1,0 +1,23 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/variables';
+
+.Quiz {
+  $rootSelector: &;
+  display: block;
+  margin: auto;
+  max-width: $layout-width;
+
+  &-submitButton {
+    border: 1px solid $color--border;
+    border-radius: $button-border-radius;
+    color: $color--base;
+    font-size: $font--large;
+    font-weight: $font-weight--bold;
+    height: $button-height;
+    display: inline-block;
+    line-height: $button-height;
+    padding: 0 24px;
+    text-align: center;
+    @include margin-top(1);
+  }
+}

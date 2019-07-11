@@ -1,0 +1,90 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+.Link {
+  text-decoration: none;
+  &--primary {
+    font-size: $font--large;
+    font-weight: 600;
+    @include line-height(1.5);
+    color: $color--base;
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid $color--base;
+    }
+  }
+
+  &--secondary {
+    text-decoration: underline;
+    @include breakpoint-md {
+      font-size: $font--large;
+      @include line-height(1.125);
+      @include margin-bottom(1.125)
+    }
+  }
+
+  &--tertiary {
+    color: $color--secondary;
+    font-size: $font--small;
+    font-weight: 600;
+    text-transform: uppercase;
+    &:hover,
+    &:focus {
+      color: $color--primary;
+    }
+  }
+
+  &--tertiaryAlt {
+    color: $color--primary;
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid $color--primary;
+    }
+  }
+
+  &--tertiaryAltInverse {
+    color: $color--base;
+    &:hover,
+    &:focus {
+      color: $color--primary;
+    }
+  }
+
+  &--pill {
+    display: inline-block;
+    height: $button-height;
+    padding: 0 24px;
+    line-height: $button-height;
+    border: 1px solid $color--border;
+    text-decoration: none;
+    border-radius: $button-border-radius;
+    color: $color--base;
+    &:hover,
+    &:focus {
+      color: $color--primary;
+    }
+  }
+
+  &.is-block {
+    display: block;
+  }
+
+  &.is-active {
+    color: $color--base;
+    border-bottom: 1px solid $color--base;
+  }
+
+  &.is-button {
+    @include margin(1, 0);
+    @include padding(0.5, 1);
+    border: 1px solid #c4c4c4;
+    display: inline-block;
+    font-size: 1.5em;
+    &:active {
+      outline: none;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

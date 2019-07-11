@@ -1,0 +1,30 @@
+@import '../../../assets/scss/variables';
+
+.Menu {
+  position: relative;
+  &-icon {
+    width: 40px;
+    height: 40px;
+    fill:$color--white;
+  }
+  &-list {
+    z-index: 108;
+    position: absolute;
+    transform: translateX(-9999px);
+    transition: opacity 0.25s ease-in, transform 0s 0.25s;
+    top: calc(100% + 5px);
+    right: 0;
+    width: 180px;
+    padding: $spacing--medium;
+    border-radius: 3px;
+    border: 1px solid $color--border;
+    opacity: 0;
+    box-shadow: 0 8px 10px 0 hsla(0, 0%, 44%, 0.2);
+    background-color: $color--white;
+  }
+  &-item {
+    padding: $spacing--small 0;
+  }
+}
+
+
