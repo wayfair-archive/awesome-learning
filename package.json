@@ -1,7 +1,7 @@
 {
   "version": "3.0.0",
-  "name": "gatsby-starter-lumen",
-  "description": "A minimal, lightweight and mobile-first starter for creating blazing-fast static blogs",
+  "name": "awesome-learning",
+  "description": "An open source platform for learning frontend tech",
   "main": "n/a",
   "scripts": {
     "develop": "yarn run clean && gatsby develop",
@@ -16,7 +16,7 @@
     "test-coverage": "jest --coverage --config ./tests/jest-config.js",
     "test-watch": "jest --watch --config ./tests/jest-config.js"
   },
-  "repository": "https://github.csnzoo.com/evcooper/awesome-learning",
+  "repository": "https://github.com/wayfair/awesome-learning",
   "author": "Awesome Learning™ <awesomelearning@wayfair.com>",
   "license": "MIT",
   "keywords": [
