@@ -6,6 +6,7 @@ const Page = ({ title, children }) => {
 
   useEffect(() => {
     pageRef.current.scrollIntoView();
+    window.scrollBy(0, -90);
   });
 
   return (
