@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql, StaticQuery } from "gatsby";
 import PropTypes from "prop-types";
+import './LessonButton.scss';
 
 export const PureLessonButton = ({ path, data }) => {
   const {
@@ -9,7 +10,7 @@ export const PureLessonButton = ({ path, data }) => {
   } = data.site.siteMetadata;
   const fullPath = `https://codesandbox.io/s/github/${repoOwner}/${repoName}/tree/master/${path}?fontsize=14&previewwindow=tests`;
   return (
-    <a href={fullPath} rel="noopener noreferrer" target="_blank">
+    <a className="LessonButton-link" href={fullPath} rel="noopener noreferrer" target="_blank">
       Click here to start your exercises!
     </a>
   );

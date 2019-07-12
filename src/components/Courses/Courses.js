@@ -33,7 +33,7 @@ const Courses = ({ edges, isHorizontal }) =>
           <p className="CourseList-itemDescription">
             {edge.node.frontmatter.description}
           </p>
-          <StyledLink variation={"tertiaryAlt"} path={edge.node.fields.slug}>
+          <StyledLink variation={"pill"} path={edge.node.fields.slug}>
             Go Learn
           </StyledLink>
         </div>
