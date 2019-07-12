@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Lesson from "../components/Lesson";
+import Page from '../components/Page';
 
 const LessonTemplate = ({ data }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = data.site.siteMetadata;
@@ -20,7 +21,9 @@ const LessonTemplate = ({ data }) => {
       title={`${lessonTitle} - ${siteTitle}`}
       description={metaDescription}
     >
-      <Lesson lesson={data.markdownRemark} slug={slug} />
+      <Page>
+        <Lesson lesson={data.markdownRemark} slug={slug} />
+      </Page>
     </Layout>
   );
 };
