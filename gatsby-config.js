@@ -201,7 +201,6 @@ module.exports = {
           camelCase: false
         }
       }
-    },
-    "gatsby-plugin-flow"
+    }
   ]
 };
