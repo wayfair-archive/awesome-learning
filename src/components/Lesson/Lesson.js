@@ -69,8 +69,7 @@ const Lesson = ({ lesson, slug }) => {
           <ul className="Lesson-readingList">
             {readingLinks.map(readingLink => (
               <li className="Lesson-readingListItem" key={readingLink.title}>
-                <StyledLink variation={"tertiary"} path={readingLink.link}
-                >
+                <StyledLink variation={"tertiary"} path={readingLink.link}>
                   {readingLink.title}
                 </StyledLink>
                 <p>- {readingLink.description}</p>
@@ -80,38 +79,35 @@ const Lesson = ({ lesson, slug }) => {
         )}
       </ContentSection>
 
-      <div className="Lesson-section">
-        <h3>Pre-read Quiz</h3>
-        <p>
-          Test your knowledge from the pre-read material{" "}
-          <a href={preReadQuizLink} rel="noopener noreferrer" target="_blank">
-            here
-          </a>
-          !
-        </p>
-      </div>
+      <ContentSection title=" " subTitle="Pre-read Quiz">
+        <Block is="p" mb="16px">
+          This pre-read quiz is designed to challenge your knowledge of the
+          pre-read material. These quizzes are a great way to check your
+          comprehension, and we highly recommend taking them.
+        </Block>
+        <StyledLink variation={"tertiary"} path={preReadQuizLink}>
+          Quiz Link
+        </StyledLink>
+      </ContentSection>
 
-      <div className="Lesson-section">
-        <h3>Exercises</h3>
+      <ContentSection title=" " subTitle="Exercises">
+        <Block is="p" mb="16px">Click this exercise link will bring you directly to an online IDE called codesandbox.io.</Block>
         <LessonButton path={path} />
-      </div>
+      </ContentSection>
 
-      <div className="Lesson-section">
-        <h3>Session Feedback</h3>
-        <p>
+      <ContentSection title=" " subTitle="Session Feedback">
+        <Block is="p" mb="16px">
           We need as much feedback as possible to make this platform more
           effective for you and others like you. Please take a moment to fill
-          out this session survey{" "}
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSeiB_M1YmwwwG9BNhGnd1Nn_BhnzOfHFUDrZGz1PAvm8A1NxA/viewform"
-            rel="noopener noreferrer"
-            target="_blank"
+          out this session survey.
+        </Block>
+        <StyledLink
+            path="https://docs.google.com/forms/d/e/1FAIpQLSeiB_M1YmwwwG9BNhGnd1Nn_BhnzOfHFUDrZGz1PAvm8A1NxA/viewform"
+            variation={"tertiary"}
           >
-            here
-          </a>
-          .
-        </p>
-      </div>
+            Survey Link
+          </StyledLink>
+      </ContentSection>
     </div>
   );
 };
