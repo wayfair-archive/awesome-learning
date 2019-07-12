@@ -6,20 +6,7 @@
   margin: 0 auto;
 
   &-homeButton {
-    @include margin-top(1);
-  }
-
-  &-title {
-    font-size: $font--large;
-    max-width: $layout-course-width;
-    font-weight: 600;
-    @include line-height(1.65);
-    @include margin-top(1);
-    @include margin-bottom(0.5)
-  }
-
-  &-section {
-    @include margin-bottom(1);
+    @include margin(1, 1.3, 0, 1.3);
   }
 
   &-readingList {
