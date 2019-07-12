@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
@@ -6,12 +5,7 @@ import Courses from '../components/Courses';
 import Page from '../components/Page';
 import Pagination from '../components/Pagination';
 
-type Props = {
-  +data: Object,
-  +pageContext: Object,
-};
-
-const CourseListTemplate = ({ data, pageContext }: Props) => {
+const CourseListTemplate = ({ data, pageContext }) => {
   const {
     title: siteTitle,
     subtitle: siteSubtitle
