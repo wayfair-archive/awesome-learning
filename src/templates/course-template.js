@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Course from '../components/Course';
+import Page from '../components/Page';
 
 const CourseTemplate = ({ data }) => {
   const {
@@ -18,7 +19,9 @@ const CourseTemplate = ({ data }) => {
 
   return (
     <Layout title={`${courseTitle} - ${siteTitle}`} description={metaDescription}>
-      <Course course={data.markdownRemark} />
+      <Page>
+        <Course course={data.markdownRemark} />
+      </Page>
     </Layout>
   );
 };

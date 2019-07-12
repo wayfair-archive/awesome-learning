@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Quiz from "../components/Quiz";
+import Page from '../components/Page';
 
 const QuizTemplate = ({ data }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = data.site.siteMetadata;
@@ -17,24 +18,26 @@ const QuizTemplate = ({ data }) => {
   const metaDescription = courseDescription !== null ? courseDescription : siteSubtitle;
 
   const { markdownRemark: { frontmatter: { preReadQuiz } } } = data;
-console.log('PREREADQUIZ', preReadQuiz);
-  if (preReadQuiz === null) {
-    return (
-      <Layout
-        title={`${quizTitle} - ${siteTitle}`}
-        description={metaDescription}
-      >
-        <h1>A quiz for this lesson is not ready yet!</h1>
-      </Layout>
-    );
-  }
 
   return (
     <Layout
       title={`${quizTitle} - ${siteTitle}`}
       description={metaDescription}
     >
-      <Quiz quiz={preReadQuiz} slug={slug} title={title} />
+      <Page>
+        {
+          preReadQuiz === null ? (
+            <h1>A quiz for this lesson is not ready yet!</h1>
+          ) : (
+            <Layout
+              title={`${quizTitle} - ${siteTitle}`}
+              description={metaDescription}
+            >
+              <Quiz quiz={preReadQuiz} slug={slug} title={title} />
+            </Layout>
+          )
+        }
+      </Page>
     </Layout>
   );
 };
