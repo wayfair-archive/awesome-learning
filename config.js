@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = {
-  url: 'https://github.csnzoo.com/pages/evcooper/awesome-learning/',
-  repoName: 'awesome-learning-exercises',
+  url: 'https://wayfair.github.io/awesome-learning/',
+  repoName: 'awesome-learning',
   repoOwner: 'wayfair',
   title: 'Awesome Learning',
   subtitle: 'Learning frontend, together',
