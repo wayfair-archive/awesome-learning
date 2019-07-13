@@ -1,7 +1,7 @@
 {
   "version": "3.0.0",
   "name": "awesome-learning",
-  "description": "An open source platform for learning frontend tech",
+  "description": "An open source platform for learning front-end tech",
   "main": "n/a",
   "scripts": {
     "develop": "yarn run clean && gatsby develop",
