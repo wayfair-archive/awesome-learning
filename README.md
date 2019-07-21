@@ -57,7 +57,7 @@ Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is
 ```
 
 ## Credits
-Credit to the original of this fork - the Gastby Lumen Starter.
+Credit to the original author of this fork - the Gastby Lumen Starter.
 https://github.com/alxshelepenok/gatsby-starter-lumen
 
 ## License
