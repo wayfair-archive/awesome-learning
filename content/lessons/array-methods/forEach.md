@@ -1,5 +1,5 @@
 ---
-title: forEach
+title: forEach()
 template: lesson
 draft: false
 slug: /courses/Array-Methods/forEach

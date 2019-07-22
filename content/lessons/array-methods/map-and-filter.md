@@ -1,5 +1,5 @@
 ---
-title:
+title: map() and filter()
 template: lesson
 draft: false
 slug: /courses/Array-Methods/map-and-filter

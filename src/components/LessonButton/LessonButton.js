@@ -5,10 +5,9 @@ import './LessonButton.scss';
 
 export const PureLessonButton = ({ path, data }) => {
   const {
-    repoName,
     repoOwner
   } = data.site.siteMetadata;
-  const fullPath = `https://codesandbox.io/s/github/${repoOwner}/${repoName}/tree/master/${path}?fontsize=14&previewwindow=tests`;
+  const fullPath = `https://codesandbox.io/s/github/${repoOwner}/awesome-learning-exercises/tree/master/${path}?fontsize=14&previewwindow=tests`;
   return (
     <a className="LessonButton-link" href={fullPath} rel="noopener noreferrer" target="_blank">
       Click here to start your exercises!
