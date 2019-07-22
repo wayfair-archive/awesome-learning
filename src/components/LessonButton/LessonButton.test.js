@@ -20,7 +20,7 @@ describe("LessonButton", () => {
       <PureLessonButton {...props} />
     );
     expect(wrapper.find("a").props().href).toBe(
-      "https://codesandbox.io/s/github/wayfair/awesome-learning/tree/master/data-types/objects?fontsize=14&previewwindow=tests"
+      "https://codesandbox.io/s/github/wayfair/awesome-learning-exercises/tree/master/data-types/objects?fontsize=14&previewwindow=tests"
     );
   });
 });

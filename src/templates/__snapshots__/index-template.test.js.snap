@@ -218,13 +218,13 @@ Array [
           <p>
             Deliberate practice involves more than just repetition; it requires activities that are designed to improve performance, challenge the learner, and provide feedback.
           </p>
-          <Link
-            activeClassName=""
+          <a
             className="Link Link--secondary"
-            to="https://pwp.gatech.edu/bmeac/2016/02/18/deliberate-practice-and-why-you-should-do-it/"
+            href="https://pwp.gatech.edu/bmeac/2016/02/18/deliberate-practice-and-why-you-should-do-it/"
+            target="_blank"
           >
             Learn More
-          </Link>
+          </a>
         </div>
       </div>
       <div
@@ -336,13 +336,13 @@ Array [
               >
                 We recommend groups of no more than five or six people. Try to build groups with relatively similar abilities across members to keep things interesting for each member.
               </p>
-              <Link
-                activeClassName=""
+              <a
                 className="Link Link--secondary"
-                to="https://en.wikipedia.org/wiki/Ringelmann_effect"
+                href="https://en.wikipedia.org/wiki/Ringelmann_effect"
+                target="_blank"
               >
                 Here's why small teams are better
-              </Link>
+              </a>
             </li>
             <li
               className="Landing-listItem"

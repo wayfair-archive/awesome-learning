@@ -1,5 +1,5 @@
 ---
-title: Reduce
+title: reduce()
 template: lesson
 draft: false
 slug: /courses/Array-Methods/reduce
