@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import Courses from "../components/Courses";
 import Page from "../components/Page";
 import Pagination from "../components/Pagination";
-import { PAGE_CONTEXT_PROP_TYPE, TITLE_PROP_TYPE } from '../constants/propTypes';
+import { PAGE_CONTEXT_PROP_TYPE, SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 
 const CategoryTemplate = ({ data, pageContext }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = data.site.siteMetadata;
@@ -49,7 +49,7 @@ CategoryTemplate.propTypes = {
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array.isRequired
     }),
-    site: TITLE_PROP_TYPE
+    site: SITE_METADATA_PROP_TYPE
   }).isRequired,
   pageContext: PAGE_CONTEXT_PROP_TYPE.isRequired
 };

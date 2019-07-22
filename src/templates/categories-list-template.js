@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby";
 import kebabCase from "lodash/kebabCase";
 import { Container, Row, Col } from "react-grid-system";
 import PropTypes from "prop-types";
-import { TITLE_PROP_TYPE } from '../constants/propTypes';
+import { SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 import Layout from "../components/Layout";
 import Page from "../components/Page";
 
@@ -40,7 +40,7 @@ CategoriesListTemplate.propTypes = {
     allMarkdownRemark: PropTypes.shape({
       group: PropTypes.array.isRequired
     }).isRequired,
-    site: TITLE_PROP_TYPE
+    site: SITE_METADATA_PROP_TYPE
   }).isRequired
 };
 

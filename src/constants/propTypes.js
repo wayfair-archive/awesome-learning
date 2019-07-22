@@ -1,15 +1,15 @@
 import PropTypes from "prop-types";
 
 export const PAGE_CONTEXT_PROP_TYPE = PropTypes.shape({
-  category: PropTypes.string,
-  currentPage: PropTypes.number,
-  prevPagePath: PropTypes.string,
-  nextPagePath: PropTypes.string,
-  hasPrevPage: PropTypes.bool,
-  hasNextPage: PropTypes.bool
+  category: PropTypes.string.isRequired,
+  currentPage: PropTypes.number.isRequired,
+  prevPagePath: PropTypes.string.isRequired,
+  nextPagePath: PropTypes.string.isRequired,
+  hasPrevPage: PropTypes.bool.isRequired,
+  hasNextPage: PropTypes.bool.isRequired,
 });
 
-export const TITLE_PROP_TYPE = PropTypes.shape({
+export const SITE_METADATA_PROP_TYPE = PropTypes.shape({
   site: PropTypes.shape({
     siteMetadata: PropTypes.shape({
       subtitle: PropTypes.string.isRequired,
