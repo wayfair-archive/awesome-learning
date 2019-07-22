@@ -1,5 +1,5 @@
 ---
-title: Sort (bonus lesson)
+title: sort (bonus lesson)
 template: lesson
 draft: false
 slug: /courses/Array-Methods/sort
