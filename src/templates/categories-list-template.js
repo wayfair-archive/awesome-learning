@@ -2,6 +2,8 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import kebabCase from "lodash/kebabCase";
 import { Container, Row, Col } from "react-grid-system";
+import PropTypes from "prop-types";
+import { TITLE_PROP_TYPE } from '../constants/propTypes';
 import Layout from "../components/Layout";
 import Page from "../components/Page";
 
@@ -31,6 +33,15 @@ const CategoriesListTemplate = ({ data }) => {
       </Container>
     </Layout>
   );
+};
+
+CategoriesListTemplate.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      group: PropTypes.array.isRequired
+    }).isRequired,
+    site: TITLE_PROP_TYPE
+  }).isRequired
 };
 
 export const query = graphql`

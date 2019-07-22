@@ -1,4 +1,15 @@
+import PropTypes from 'prop-types';
+
+const getContactHrefPropTypes = {
+  name: PropTypes.string.isRequired,
+  contact: PropTypes.string.isRequired
+};
+
 const getContactHref = (name, contact) => {
+  // Manually check the propTypes passed to this function
+  const propsObject = { name, contact };
+  PropTypes.checkPropTypes(getContactHrefPropTypes, propsObject, 'prop', 'getContactHref');
+
   let href;
 
   switch (name) {
