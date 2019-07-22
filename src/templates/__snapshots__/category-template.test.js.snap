@@ -86,7 +86,7 @@ Array [
                   </p>
                   <Link
                     activeClassName=""
-                    className="Link Link--tertiaryAlt"
+                    className="Link Link--pill"
                     to="/test_0"
                   >
                     Go Learn
@@ -120,7 +120,7 @@ Array [
                   </p>
                   <Link
                     activeClassName=""
-                    className="Link Link--tertiaryAlt"
+                    className="Link Link--pill"
                     to="/test_1"
                   >
                     Go Learn
