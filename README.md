@@ -23,6 +23,7 @@ Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is
 └── content
     ├── pages
     └── courses
+    └── lessons
 └── static
     ├── admin
     └── media
