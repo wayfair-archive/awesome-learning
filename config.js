@@ -9,7 +9,7 @@ module.exports = {
   copyright: '© Awesome Learning™ All rights reserved.',
   coursesPerPage: 5,
   disqusShortname: '',
-  googleAnalyticsId: '',
+  googleAnalyticsId: 'UA-2081664-21',
   menu: [
     {
       label: 'Courses',
