@@ -1,22 +1,21 @@
 import React from "react";
 import { graphql, StaticQuery } from "gatsby";
 import PropTypes from "prop-types";
-import ReactGA from "react-ga";
+import { OutboundLink } from 'gatsby-plugin-gtag'
 import "./LessonButton.scss";
 
 export const PureLessonButton = ({ path, data }) => {
   const { repoOwner } = data.site.siteMetadata;
   const fullPath = `https://codesandbox.io/s/github/${repoOwner}/awesome-learning-exercises/tree/master/${path}?fontsize=14&previewwindow=tests`;
   return (
-    <ReactGA.OutboundLink
+    <OutboundLink
       className="LessonButton-link"
-      to={fullPath}
-      eventLabel={`exercise click: ${path}`}
+      href={fullPath}
       rel="noopener noreferrer"
       target="_blank"
     >
       Click here to start your exercises!
-    </ReactGA.OutboundLink>
+    </OutboundLink>
   );
 };
 
