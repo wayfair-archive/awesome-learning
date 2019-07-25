@@ -2,17 +2,14 @@ import React from "react";
 import { graphql, StaticQuery } from "gatsby";
 import PropTypes from "prop-types";
 import { OutboundLink } from "gatsby-plugin-gtag";
+import analyticsEventHandler from "../../utils/analyticsEventHandler";
 import "./LessonButton.scss";
 
-const analyiticsEventHandler = (eventCategory = "outbound", eventLabel) => {
-  if (window.gtag) {
-    window.gtag("event", "click", {
-      event_category: eventCategory,
-      event_label: eventLabel
-    });
-  }
+const handleEventClick = path => {
+  analyticsEventHandler("exercise click", path);
 };
-export const PureLessonButton = ({ path, data }) => {
+
+export const PureLessonButton = ({ path, data, onClick }) => {
   const { repoOwner } = data.site.siteMetadata;
   const fullPath = `https://codesandbox.io/s/github/${repoOwner}/awesome-learning-exercises/tree/master/${path}?fontsize=14&previewwindow=tests`;
   return (
@@ -21,6 +18,7 @@ export const PureLessonButton = ({ path, data }) => {
       href={fullPath}
       rel="noopener noreferrer"
       target="_blank"
+      onClick={() => onClick(path)}
     >
       Click here to start your exercises!
     </OutboundLink>
@@ -39,14 +37,22 @@ const LessonButton = props => (
         }
       }
     `}
-    render={data => <PureLessonButton data={data} {...props} />}
+    render={data => (
+      <PureLessonButton data={data} {...props} onClick={handleEventClick} />
+    )}
   />
 );
 
 PureLessonButton.propTypes = {
   path: PropTypes.string.isRequired,
   repoName: PropTypes.string,
-  repoOwner: PropTypes.string
+  repoOwner: PropTypes.string.isRequired,
+  onClick: PropTypes.func
 };
 
+PureLessonButton.defaultProps = {
+  repoName: "awesome-learning",
+  repoOwner: 'wayfair',
+  onClick() {}
+};
 export default LessonButton;
