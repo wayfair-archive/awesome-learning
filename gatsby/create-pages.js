@@ -79,11 +79,11 @@ const createPages = async ({ graphql, actions }) => {
         context: { slug: edge.node.fields.slug }
       });
       // Create quiz pages for every lesson
-      // createPage({
-      //   path: `${edge.node.fields.slug}/quiz`,
-      //   component: path.resolve("./src/templates/quiz-template.js"),
-      //   context: { slug: edge.node.fields.slug }
-      // });
+      createPage({
+        path: `${edge.node.fields.slug}/quiz`,
+        component: path.resolve("./src/templates/quiz-template.js"),
+        context: { slug: edge.node.fields.slug }
+      });
     }
   });
 

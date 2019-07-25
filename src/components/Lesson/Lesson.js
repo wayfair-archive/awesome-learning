@@ -3,7 +3,7 @@ import StyledLink from "../Link";
 import Block from "../Block";
 import LessonButton from "../LessonButton";
 import ContentSection from "../ContentSection";
-import "./Lesson.scss";
+import "./lesson.scss";
 
 const Lesson = ({ lesson, slug }) => {
   const {
@@ -13,6 +13,7 @@ const Lesson = ({ lesson, slug }) => {
     videoLinks,
     readingLinks,
     preReadQuizLink,
+    preReadQuiz,
     course
   } = lesson.frontmatter;
   const path = slug.toLowerCase().split("/courses/")[1];
@@ -53,7 +54,8 @@ const Lesson = ({ lesson, slug }) => {
               allow="autoplay; encrypted-media"
               allowFullScreen
             />
-          ))}
+          ))
+        }
       </ContentSection>
 
       <ContentSection title=" " subTitle="Pre-read Materials">
@@ -85,13 +87,19 @@ const Lesson = ({ lesson, slug }) => {
           pre-read material. These quizzes are a great way to check your
           comprehension, and we highly recommend taking them.
         </Block>
-        <StyledLink isExternal variation={"tertiary"} path={preReadQuizLink}>
+        <StyledLink
+          path={preReadQuiz !== null ? `${slug}/quiz` : preReadQuizLink}
+          isExternal={preReadQuiz === null}
+          variation={"tertiary"}
+        >
           Quiz Link
         </StyledLink>
       </ContentSection>
 
       <ContentSection title=" " subTitle="Exercises">
-        <Block is="p" mb="16px">Click this exercise link will bring you directly to an online IDE called codesandbox.io.</Block>
+        <Block is="p" mb="16px">
+          Click this exercise link will bring you directly to an online IDE called codesandbox.io.
+        </Block>
         <LessonButton path={path} />
       </ContentSection>
 
@@ -106,7 +114,7 @@ const Lesson = ({ lesson, slug }) => {
           path="https://docs.google.com/forms/d/e/1FAIpQLSeiB_M1YmwwwG9BNhGnd1Nn_BhnzOfHFUDrZGz1PAvm8A1NxA/viewform"
           variation={"tertiary"}
         >
-            Survey Link
+          Survey Link
         </StyledLink>
       </ContentSection>
     </div>
