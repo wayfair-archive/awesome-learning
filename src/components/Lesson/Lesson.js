@@ -42,8 +42,8 @@ const Lesson = ({ lesson, slug }) => {
           Check out this content before your session begins to get an idea of
           what you will be working on.
         </Block>
-        {videoLinks &&
-          videoLinks.map(link => (
+        {videoLinks
+          && videoLinks.map(link => (
             <iframe
               key={link}
               width="560"
@@ -69,7 +69,7 @@ const Lesson = ({ lesson, slug }) => {
           <ul className="Lesson-readingList">
             {readingLinks.map(readingLink => (
               <li className="Lesson-readingListItem" key={readingLink.title}>
-                <StyledLink variation={"tertiary"} path={readingLink.link}>
+                <StyledLink isExternal variation={"tertiary"} path={readingLink.link}>
                   {readingLink.title}
                 </StyledLink>
                 <p>- {readingLink.description}</p>
@@ -85,7 +85,7 @@ const Lesson = ({ lesson, slug }) => {
           pre-read material. These quizzes are a great way to check your
           comprehension, and we highly recommend taking them.
         </Block>
-        <StyledLink variation={"tertiary"} path={preReadQuizLink}>
+        <StyledLink isExternal variation={"tertiary"} path={preReadQuizLink}>
           Quiz Link
         </StyledLink>
       </ContentSection>
@@ -102,11 +102,12 @@ const Lesson = ({ lesson, slug }) => {
           out this session survey.
         </Block>
         <StyledLink
-            path="https://docs.google.com/forms/d/e/1FAIpQLSeiB_M1YmwwwG9BNhGnd1Nn_BhnzOfHFUDrZGz1PAvm8A1NxA/viewform"
-            variation={"tertiary"}
-          >
+          isExternal
+          path="https://docs.google.com/forms/d/e/1FAIpQLSeiB_M1YmwwwG9BNhGnd1Nn_BhnzOfHFUDrZGz1PAvm8A1NxA/viewform"
+          variation={"tertiary"}
+        >
             Survey Link
-          </StyledLink>
+        </StyledLink>
       </ContentSection>
     </div>
   );
