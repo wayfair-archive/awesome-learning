@@ -1,10 +1,12 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { Row, Col } from "react-grid-system";
+import PropTypes from "prop-types";
 import Layout from "../components/Layout";
 import Courses from "../components/Courses";
 import Page from "../components/Page";
 import Pagination from "../components/Pagination";
+import { PAGE_CONTEXT_PROP_TYPE, SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 
 const CategoryTemplate = ({ data, pageContext }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = data.site.siteMetadata;
@@ -19,10 +21,9 @@ const CategoryTemplate = ({ data, pageContext }) => {
   } = pageContext;
 
   const { edges } = data.allMarkdownRemark;
-  const pageTitle =
-    currentPage > 0
-      ? `${category} - Page ${currentPage} - ${siteTitle}`
-      : `${category} - ${siteTitle}`;
+  const pageTitle = currentPage > 0
+    ? `${category} - Page ${currentPage} - ${siteTitle}`
+    : `${category} - ${siteTitle}`;
 
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
@@ -41,6 +42,16 @@ const CategoryTemplate = ({ data, pageContext }) => {
       </Row>
     </Layout>
   );
+};
+
+CategoryTemplate.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.array.isRequired
+    }),
+    site: SITE_METADATA_PROP_TYPE
+  }).isRequired,
+  pageContext: PAGE_CONTEXT_PROP_TYPE.isRequired
 };
 
 export const query = graphql`
