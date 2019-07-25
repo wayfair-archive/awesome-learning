@@ -1,7 +1,15 @@
-// @flow
+import PropTypes from 'prop-types';
 import { ICONS } from '../constants';
 
-const getIcon = (name: string) => {
+const getIconPropTypes = {
+  name: PropTypes.string.isRequired
+};
+
+const getIcon = (name) => {
+  // Manually check the propTypes passed to this function
+  const propsObject = { name };
+  PropTypes.checkPropTypes(getIconPropTypes, propsObject, 'prop', 'getIcon');
+
   let icon;
 
   switch (name) {
