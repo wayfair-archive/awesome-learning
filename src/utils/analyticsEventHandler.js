@@ -1,4 +1,4 @@
-const analyticsEventHandler = (eventCategory = "outbound", eventLabel) => {
+const analyticsEventHandler = (eventCategory = "exercise click", eventLabel) => {
   if (window.gtag) {
     window.gtag("event", "click", {
       event_category: eventCategory,
