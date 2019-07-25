@@ -5,8 +5,12 @@ import { OutboundLink } from "gatsby-plugin-gtag";
 import analyticsEventHandler from "../../utils/analyticsEventHandler";
 import "./LessonButton.scss";
 
-const handleEventClick = path => {
-  analyticsEventHandler("exercise click", path);
+const handleEventClick = (path) => {
+  try {
+    analyticsEventHandler("exercise click", path);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const PureLessonButton = ({ path, data, onClick }) => {
@@ -52,7 +56,7 @@ PureLessonButton.propTypes = {
 
 PureLessonButton.defaultProps = {
   repoName: "awesome-learning",
-  repoOwner: 'wayfair',
+  repoOwner: "wayfair",
   onClick() {}
 };
 export default LessonButton;
