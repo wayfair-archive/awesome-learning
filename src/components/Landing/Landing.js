@@ -1,14 +1,14 @@
-import React from "react";
-import StyledLink from "../Link";
-import Block from "../Block";
-import ContentSection from "../ContentSection";
-import TrackCard from "./trackCard";
-import DataIcon from "./dataIcon";
-import ArrayIcon from "./arrayIcon";
-import AsyncIcon from "./asyncIcon";
-import TestingIcon from "./testingIcon";
+import React from 'react';
+import StyledLink from '../Link';
+import Block from '../Block';
+import ContentSection from '../ContentSection';
+import TrackCard from './trackCard';
+import DataIcon from './dataIcon';
+import ArrayIcon from './arrayIcon';
+import AsyncIcon from './asyncIcon';
+import TestingIcon from './testingIcon';
 
-import "./Landing.scss";
+import './Landing.scss';
 
 const Landing = () => (
   <div className="Landing">
@@ -46,7 +46,7 @@ const Landing = () => (
     </div>
     <div className="Landing-callOut">
       <p>
-        Awesome Learning is Frontend focused learning platform built around{" "}
+        Awesome Learning is Frontend focused learning platform built around{' '}
         <b>deliberate practice</b>.
       </p>
       <p>
@@ -79,15 +79,15 @@ const Landing = () => (
       isLight
     >
       <Block is="p" mb="16px">
-        Each course and lesson are specifically designed to incrementally
-        challenge the learner while providing immediate feedback in the form of
-        tests, quizzes, provided solutions, and guiding comments.
+        Each course and lesson are designed to incrementally challenge the
+        learner while providing immediate feedback in the form of quizzes,
+        provided solutions, and guiding comments.
       </Block>
 
       <Block is="p" mb="16px">
         <b>Each course</b> is comprised of multiple lessons that each build on
-        the things learned in the previous lesson, always challenging the
-        learning to reach for new understanding.
+        learnings from the previous lesson, always challenging the learner to
+        reach for new understanding.
       </Block>
 
       <p>
@@ -104,13 +104,13 @@ const Landing = () => (
       <Block is="p" mb="16px">
         We believe one of the major separators between "junior" and "senior"
         developers is technical communication. That's why we strongly suggest
-        you run these sessions with a small group, either in person or over a
-        chat client.{" "}
+        running these sessions with a small group, either in person or over a
+        chat client.
       </Block>
       <p>
-        Over the hundreds of sessions we've run, we've seen the folks that
-        tackle these courses as a group learn faster, become stronger technical
-        communicators, all while building key technical skills.
+        Over the hundreds of sessions we've run, those who tackle these courses
+        as a group learn faster and become stronger technical communicators, all
+        while building key technical skills.
       </p>
     </ContentSection>
 
@@ -119,22 +119,23 @@ const Landing = () => (
         <li className="Landing-listItem">
           <h3>Gather a Team</h3>
           <p className="Landing-listItemText">
-            We recommend groups of no more than five or six people. Try to build
-            groups with relatively similar abilities across members to keep
-            things interesting for each member.
+            We recommend groups of no more than{' '}
+            <StyledLink
+              variation="secondary"
+              path="https://en.wikipedia.org/wiki/Ringelmann_effect"
+              isExternal
+            >
+              five or six people
+            </StyledLink>. Try to build groups with relatively similar abilities
+            across members to keep everyone interested and engaged.
           </p>
-          <StyledLink
-            variation="secondary"
-            path="https://en.wikipedia.org/wiki/Ringelmann_effect"
-            isExternal
-          >
-            Here's why small teams are better
-          </StyledLink>
         </li>
         <li className="Landing-listItem">
           <h3>Pick a Course</h3>
           <p className="Landing-listItemText">
-            Pick one of our pre-built courses like array methods, testing, etc.
+            Start with one of our pre-built courses like array methods, testing,
+            etc. Later you can use the same learning method with other materials
+            and contribute your own course!
           </p>
         </li>
         <li className="Landing-listItem">
@@ -148,9 +149,9 @@ const Landing = () => (
         <li className="Landing-listItem">
           <h3>Pick a Place</h3>
           <p className="Landing-listItemText">
-            Ideally, each of you has a laptop in a quiet conference room.
-            Otherwise, find the best way to get your group together at the
-            scheduled time whether in person or remotely.
+            Ideally, each of you has a laptop in a quiet space. Otherwise, find
+            the best way to get your group together at the scheduled time
+            whether in person or remotely.
           </p>
         </li>
       </ol>
@@ -163,7 +164,7 @@ const Landing = () => (
     >
       <Block is="p" mb="16px">
         This material is currently used by full time software engineers within
-        Wayfair. We believe beginners, experts, and everyone in-between can
+        Wayfair. We believe beginners, experts, and everyone in between can
         learn something here.
       </Block>
       <p>
