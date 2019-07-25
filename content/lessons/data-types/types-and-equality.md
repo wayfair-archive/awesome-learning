@@ -45,4 +45,52 @@ readingLinks:
   - link: "https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch4.md#implicit-coercion"
     description: One section from an excellent chapter in You Don't Know JS. This section describes the mechanisms behind implicit coercion. 
     title: Implicit coercion by YDKJS
+preReadQuiz:
+  description: Take this quiz to test your understanding of JavaScript Types and Equality!
+  questions: 
+    - choices:
+      - value: typeof
+      - value: gettype
+      - value: is
+      - value: instanceof
+      correctChoices: 
+      - 0
+      description: What operator should you use to find the type of a value in JavaScript
+      explanation: The 'typeof' operator is used to determine the type of a variable. 'gettype' and 'is' are not valid operators, and 'instanceof' tests whether a provided object has the same prototype constructor as a provided argument. 
+      type: radio
+    - choices:
+      - value: '7'
+      - value: '4'
+      - value: '6'
+      - value: '5'
+      - value: '3'
+      correctChoices: 
+      - 2
+      description: How many built-in types are defined by JavaScript?
+      explanation: The seven types are 'number', 'boolean', 'string', 'function', 'object', 'Symbol', and 'undefined'.
+      type: radio
+    - choices:
+      - value: string
+      - value: 'null'
+      - value: undefined
+      - value: closure
+      - value: object
+      - value: function
+      - value: Error
+      correctChoices: 
+      - 0
+      - 1
+      - 2
+      - 4
+      description: Select all valid built-in types from the list below. (This isn't the full list.)
+      explanation: The seven types are 'number', 'boolean', 'string', 'function', 'object', 'Symbol', and 'undefined'.
+      type: checkbox
+    - choices:
+      - value: 'True'
+      - value: 'False'
+      correctChoices: 
+      - 0
+      description: True or false? In JavaScript, _variables_ do not have types, only _values_ have types.
+      explanation: The seven types are 'number', 'boolean', 'string', 'function', 'object', 'Symbol', and 'undefined'.
+      type: radio   
 ---

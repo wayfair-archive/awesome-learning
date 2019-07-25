@@ -7,6 +7,10 @@
   margin: auto;
   max-width: $layout-width;
 
+  &-homeButton {
+    @include margin(1, 1.3, 0, 1.3);
+  }
+
   &-submitButton {
     border: 1px solid $color--border;
     border-radius: $button-border-radius;
