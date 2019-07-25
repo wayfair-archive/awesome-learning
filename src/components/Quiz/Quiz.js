@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "gatsby";
 import { formatQuestionId, getChoiceIndex, getQuestionIndex } from './quizUtilities';
+import ContentSection from "../ContentSection";
 import Question from "./Question";
 import questionValidator from './Question/questionValidator';
+import StyledLink from '../Link';
 import "./quiz.scss";
 
 const Quiz = ({ quiz, slug, title }) => {
@@ -58,6 +59,8 @@ const Quiz = ({ quiz, slug, title }) => {
 
   // Handles the submission of the quiz
   const handleQuizSubmit = () => {
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
     // Validate every question and update the state of the quiz
     const validatedQuestions = questions.map(questionValidator);
     updateQuizState({
@@ -68,37 +71,38 @@ const Quiz = ({ quiz, slug, title }) => {
 
   return (
     <div className="Quiz">
-      <Link className="Quiz-homeButton" to={slug}>
-        Back to lesson
-      </Link>
-      <h2 className="Quiz-title">{title} - Pre-Read Quiz</h2>
-      <div className="Quiz-body">
-        {quiz.description}
+      <div className="Quiz-homeButton">
+        <StyledLink variation={"tertiary"} path={slug}>
+          Back to lesson
+        </StyledLink>
       </div>
-      {/* Iterate over all questions in this Quiz */}
-      {
-        questions.map((question, questionIndex) => {
-          const questionId = formatQuestionId(questionIndex);
-          const questionTitle = `Q${questionIndex + 1}: ${question.description}`;
-          return (
-            <Question
-              handleInputChange={handleInputChange}
-              key={questionId}
-              question={question}
-              questionId={questionId}
-              questionIndex={questionIndex}
-              shouldShowCorrectChoice={shouldShowCorrectChoice}
-              title={questionTitle}
-            />
-          );
-        })
-      }
-      <button
-        className="Quiz-submitButton"
-        onClick={handleQuizSubmit}
-      >
-        Submit Quiz
-      </button>
+      <ContentSection subTitle={'Pre-Read Quiz'} title={title}>
+        {quiz.description && <p>{quiz.description}</p>}
+        {/* Iterate over all questions in this Quiz */}
+        {
+          questions.map((question, questionIndex) => {
+            const questionId = formatQuestionId(questionIndex);
+            const questionTitle = `Q${questionIndex + 1}: ${question.description}`;
+            return (
+              <Question
+                handleInputChange={handleInputChange}
+                key={questionId}
+                question={question}
+                questionId={questionId}
+                questionIndex={questionIndex}
+                shouldShowCorrectChoice={shouldShowCorrectChoice}
+                title={questionTitle}
+              />
+            );
+          })
+        }
+        <button
+          className="Quiz-submitButton"
+          onClick={handleQuizSubmit}
+        >
+          Submit Quiz
+        </button>
+      </ContentSection>
     </div>
   );
 };

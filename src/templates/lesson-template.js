@@ -58,6 +58,14 @@ export const query = graphql`
           description
           title
         }
+        preReadQuiz {
+          description
+          questions {
+            choices {
+              value
+            }
+          }
+        }
       }
     }
   }

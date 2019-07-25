@@ -2,7 +2,7 @@
 @import '../../../assets/scss/variables';
 
 .Question {
-  margin-top: $spacing--medium;
+  margin-top: $spacing--large;
 
   &-choiceInput {
     margin: 0.4rem;
@@ -11,6 +11,9 @@
     &--isBold {
       font-weight: bold;
     }
+  }
+  &-explanation {
+    margin-bottom: $spacing--medium;
   }
   &-legend {
     background-color: $color--primary;
