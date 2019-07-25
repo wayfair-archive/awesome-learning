@@ -86,7 +86,7 @@ const Landing = () => (
 
       <Block is="p" mb="16px">
         <b>Each course</b> is comprised of multiple lessons that each build on
-        learnings from the previous lesson, always challenging the learning to
+        learnings from the previous lesson, always challenging the learner to
         reach for new understanding.
       </Block>
 
