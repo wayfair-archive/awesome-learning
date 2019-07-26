@@ -4,7 +4,7 @@ import HowTo from "../components/HowTo";
 
 const HowToTemplate = () => {
   return (
-    <Layout title="How To Get Started" description={""} isFullBleed >
+    <Layout title="How To Get Started" description={""} isFullBleed>
       <HowTo />
     </Layout>
   );
