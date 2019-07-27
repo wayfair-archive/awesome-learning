@@ -10,7 +10,10 @@ export const PureHeader = ({ data }) => {
   return (
     <header className="Header">
       <Link to="/" className="Header-logo">
-        <Icon icon={getIcon('logo')} cssClasses="Header-icon Header-icon--logo" />
+        <Icon
+          icon={getIcon("logo")}
+          cssClasses="Header-icon Header-icon--logo"
+        />
         <h1 className="Header-title">{title}</h1>
       </Link>
       <nav className="Header-nav">
@@ -19,8 +22,22 @@ export const PureHeader = ({ data }) => {
         </div>
         <ul className="Header-list">
           {menu.map(item => (
-            <li key={item.label} className="Header-menu"><Link className="Header-link" to={item.path}>{item.label}</Link></li>
+            <li key={item.label} className="Header-menu">
+              <Link className="Header-link" to={item.path}>
+                {item.label}
+              </Link>
+            </li>
           ))}
+          <li className="Header-menu">
+            <a
+              href="https://github.com/wayfair/awesome-learning"
+              className="Header-link"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Icon icon={getIcon("github")} />
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -30,7 +47,7 @@ export const PureHeader = ({ data }) => {
 export const Header = props => (
   <StaticQuery
     query={graphql`
-      query HeaderQuery  {
+      query HeaderQuery {
         site {
           siteMetadata {
             title
