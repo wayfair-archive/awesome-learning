@@ -38,7 +38,7 @@
       text-align: center;
     }
   }
-  &:not(:first-child) {
+  &:not(:last-of-type) {
     border-bottom: 1px solid $color--border;
   }
 }

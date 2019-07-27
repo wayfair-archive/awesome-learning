@@ -17,7 +17,7 @@ module.exports = {
     },
     {
       label: 'How-To',
-      path: '/pages/howTo'
+      path: '/howTo'
     }
   ]
 };
