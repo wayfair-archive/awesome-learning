@@ -6,7 +6,7 @@
  */
 import React from "react";
 import { mount } from "enzyme";
-import Block, { __DATA_ENZYME_IDS } from "./block";
+import Block, { __DATA_ENZYME_IDS } from "./Block";
 
 describe("Block element", () => {
   it("Renders a div if no element type is passed", () => {
