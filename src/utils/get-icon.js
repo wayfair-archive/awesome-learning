@@ -40,6 +40,18 @@ const getIcon = (name) => {
     case 'functions':
       icon = ICONS.FUNCTIONS;
       break;
+    case 'array':
+      icon = ICONS.ARRAY;
+      break;
+    case 'async':
+      icon = ICONS.ASYNC;
+      break;
+    case 'data':
+      icon = ICONS.DATA;
+      break;
+    case 'testing':
+      icon = ICONS.TESTING;
+      break;
     default:
       icon = {};
       break;

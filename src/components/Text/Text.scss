@@ -1,0 +1,11 @@
+@import '../../assets/scss/variables';
+
+.Text {
+  color: $color--base;
+  &--large {
+    font-size: $font--large;
+  }
+  &--xl {
+    font-size: $font--xl;
+  }
+}
