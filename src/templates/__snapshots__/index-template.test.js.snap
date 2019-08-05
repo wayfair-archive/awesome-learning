@@ -17,166 +17,194 @@ Array [
         <div
           className="Landing-titleWrapper"
         >
-          <h1>
-            Learn JavaScript and Front-End Fundamentals.
-          </h1>
-          <h2>
+          <div
+            data-enzyme-id="Block-RenderedElement"
+            style={
+              Object {
+                "marginBottom": "16px",
+                "marginLeft": "0px",
+                "marginRight": "0px",
+                "marginTop": "0px",
+              }
+            }
+          >
+            <h2
+              className="SectionTitle"
+            >
+               
+              Learn JavaScript and Front-End Fundamentals.
+               
+            </h2>
+          </div>
+          <p
+            className="Text Text--xl"
+          >
             At your own pace.
-          </h2>
+          </p>
         </div>
         <div
           className="Landing-courseWrapper"
         >
           <Link
-            className="TrackCard-card"
+            className="TrackCard"
             to="/courses/Array-Methods/"
           >
-            <svg
-              style={
-                Object {
-                  "maxHeight": "30px",
-                  "maxWidth": "35px",
-                }
-              }
-              viewBox="0 0 36 50"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className="TrackCard-iconWrap"
             >
-              <g
-                fill="#00a7ba"
-                fill-rule="nonzero"
+              <svg
+                className="Icon TrackCard-icon"
+                viewBox="0 0 24 24"
               >
                 <path
-                  d="M8 5c2 0 3-1 3-2 0-2-1-3-3-3H3C1 0 0 1 0 3v43c0 2 1 3 3 3h5c2 0 3-1 3-3 0-1-1-2-3-2H6V5h2zM20 44c-2 0-3 1-3 2 0 2 1 3 3 3h5c2 0 3-1 3-3V3c0-2-1-3-3-3h-5c-2 0-3 1-3 3 0 1 1 2 3 2h3v39h-3z"
+                  d="M0 24h7.67v-2H1.83V2h5.92V0H0M24 0h-7.67v2h5.8v20h-5.92v2H24"
                 />
-              </g>
-            </svg>
-            <h3
-              className="TrackCard-title"
+              </svg>
+            </div>
+            <div
+              data-enzyme-id="Block-RenderedElement"
+              style={
+                Object {
+                  "marginBottom": "8px",
+                  "marginLeft": "0px",
+                  "marginRight": "0px",
+                  "marginTop": "0px",
+                }
+              }
             >
-              Array Methods
-            </h3>
+              <h3
+                className="SectionTitle SectionTitle--uppercase"
+              >
+                 
+                Array Methods
+                 
+              </h3>
+            </div>
             <p
-              className="TrackCard-text"
+              className="Text"
             >
               Learn functional array methods like filter, map, and reduce!
             </p>
           </Link>
           <Link
-            className="TrackCard-card"
+            className="TrackCard"
             to="/courses/Data-Types/"
           >
-            <svg
-              style={
-                Object {
-                  "maxWidth": "35px",
-                }
-              }
-              viewBox="0 0 32 25"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className="TrackCard-iconWrap"
             >
-              <g
-                style={
-                  Object {
-                    "fill": "none",
-                    "fillRule": "nonzero",
-                    "stroke": "#00a7ba",
-                    "strokeWidth": "2",
-                  }
-                }
+              <svg
+                className="Icon TrackCard-icon"
+                viewBox="0 0 24 24"
               >
                 <path
-                  d="M6.62 1h15.94a1 1 0 0 1 .94 1.35l-3.36 9a1 1 0 0 1-.94.65H2.55a1 1 0 0 1-.91-1.41l4.07-9A1 1 0 0 1 6.6 1zM13.62 13h15.94a1 1 0 0 1 .94 1.35l-3.36 9a1 1 0 0 1-.94.65H9.55a1 1 0 0 1-.91-1.41l4.07-9a1 1 0 0 1 .9-.59z"
+                  d="M22.62 11.76H19.7l1.07-3.57a2.41 2.41 0 0 0 .08-.6 1.57 1.57 0 0 0-1.37-1.71h-2.14l1.07-3.57a2.35 2.35 0 0 0 .08-.6A1.57 1.57 0 0 0 17.12 0H4.55a1.43 1.43 0 0 0-1.23 1L.12 9.83a2.06 2.06 0 0 0-.12.7 1.93 1.93 0 0 0 .4 1.21 1.23 1.23 0 0 0 1 .5h2.34l-1.26 3.47a2 2 0 0 0-.12.69 2 2 0 0 0 .4 1.22 1.26 1.26 0 0 0 1 .5h3.12l-1.25 3.46a2.1 2.1 0 0 0-.12.7 1.91 1.91 0 0 0 .4 1.21 1.23 1.23 0 0 0 1 .51H20a1.44 1.44 0 0 0 1.29-1.11l2.64-8.82a2 2 0 0 0 .09-.61 1.57 1.57 0 0 0-1.4-1.7zm-21.24-1a.18.18 0 0 1-.14-.08.25.25 0 0 1-.06-.17.36.36 0 0 1 0-.1l3.22-8.8a.2.2 0 0 1 .18-.14h12.54c.11 0 .19.11.18.33l-1.22 4.08H6.91a1.41 1.41 0 0 0-1.23 1l-1.41 3.9zm2.36 5.87a.16.16 0 0 1-.14-.07.27.27 0 0 1-.06-.17.3.3 0 0 1 0-.1L5 12.24l1.76-4.75a.2.2 0 0 1 .18-.14h12.54c.11 0 .19.11.18.33l-1.22 4.08L17 16.49a.2.2 0 0 1-.19.16H3.74zm16.42 5.72a.19.19 0 0 1-.18.16H6.88a.17.17 0 0 1-.14-.07.32.32 0 0 1 0-.18.28.28 0 0 1 0-.09l1.48-4.07h8.65a1.31 1.31 0 0 0 1.09-.66 2 2 0 0 0 .2-.45l1.14-3.79h3.36c.11 0 .2.11.19.33z"
                 />
-                <path
-                  d="M9.62 7h15.94a1 1 0 0 1 .94 1.35l-3.36 9a1 1 0 0 1-.94.65H5.55a1 1 0 0 1-.91-1.41l4.07-9A1 1 0 0 1 9.6 7z"
-                  fill="#F2F2F2"
-                />
-              </g>
-            </svg>
-            <h3
-              className="TrackCard-title"
+              </svg>
+            </div>
+            <div
+              data-enzyme-id="Block-RenderedElement"
+              style={
+                Object {
+                  "marginBottom": "8px",
+                  "marginLeft": "0px",
+                  "marginRight": "0px",
+                  "marginTop": "0px",
+                }
+              }
             >
-              Data Types
-            </h3>
+              <h3
+                className="SectionTitle SectionTitle--uppercase"
+              >
+                 
+                Data Types
+                 
+              </h3>
+            </div>
             <p
-              className="TrackCard-text"
+              className="Text"
             >
               Deep dive into types, equality, coercion, immutability and more.
             </p>
           </Link>
           <Link
-            className="TrackCard-card"
+            className="TrackCard"
             to="/courses/Promises/"
           >
-            <svg
-              style={
-                Object {
-                  "maxWidth": "35px",
-                }
-              }
-              viewBox="0 0 28 28"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className="TrackCard-iconWrap"
             >
-              <g
-                style={
-                  Object {
-                    "fill": "#00a7ba",
-                  }
-                }
+              <svg
+                className="Icon TrackCard-icon"
+                viewBox="0 0 24 24"
               >
                 <path
-                  d="M17.1,2.5C12,1,6.2,3,3.3,7.1A1,1,0,0,0,5,8.2c2.4-3.4,7.3-5,11.6-3.8A10.1,10.1,0,0,1,24,13.7l-3-2.2a1,1,0,1,0-1.2,1.6l4.5,3.3,0.6,0.2h0.4a1,1,0,0,0,.6-0.8A12.1,12.1,0,0,0,17.1,2.5Z"
+                  d="M15.1.49A12.88 12.88 0 0 0 1.31 5.08 1.006 1.006 0 0 0 3 6.17a10.94 10.94 0 0 1 11.6-3.78 10.06 10.06 0 0 1 7.4 9.26l-3-2.19a1 1 0 0 0-1.4.2 1 1 0 0 0 .2 1.39l4.5 3.29.6.2h.4a1 1 0 0 0 .6-.8A12.07 12.07 0 0 0 15.1.49zM21 17.72a11 11 0 0 1-11.6 3.79A10.06 10.06 0 0 1 2 12.25l3 2.19a1 1 0 1 0 1.2-1.6L1.71 9.56a1 1 0 0 0-1.4.19 1 1 0 0 0-.2.5A12.06 12.06 0 0 0 8.8 23.5a13.39 13.39 0 0 0 3.5.5 12.63 12.63 0 0 0 10.29-5.08 1 1 0 0 0-.2-1.39 1 1 0 0 0-1.39.19z"
                 />
-                <path
-                  d="M23,19.8c-2.4,3.4-7.3,5-11.6,3.8A10.1,10.1,0,0,1,4,14.3l3,2.2a1,1,0,0,0,1.2-1.6L3.7,11.6a1,1,0,0,0-1.6.7,12.1,12.1,0,0,0,8.7,13.3,13,13,0,0,0,3.5.5,12.6,12.6,0,0,0,10.3-5.1A1,1,0,0,0,23,19.8Z"
-                />
-              </g>
-            </svg>
-            <h3
-              className="TrackCard-title"
+              </svg>
+            </div>
+            <div
+              data-enzyme-id="Block-RenderedElement"
+              style={
+                Object {
+                  "marginBottom": "8px",
+                  "marginLeft": "0px",
+                  "marginRight": "0px",
+                  "marginTop": "0px",
+                }
+              }
             >
-              Promises
-            </h3>
+              <h3
+                className="SectionTitle SectionTitle--uppercase"
+              >
+                 
+                Promises
+                 
+              </h3>
+            </div>
             <p
-              className="TrackCard-text"
+              className="Text"
             >
               Learn the Promise API inside and out.
             </p>
           </Link>
           <Link
-            className="TrackCard-card"
+            className="TrackCard"
             to="/courses/Testing/"
           >
-            <svg
-              style={
-                Object {
-                  "maxWidth": "35px",
-                }
-              }
-              viewBox="-1 -1 32.39 32.239"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className="TrackCard-iconWrap"
             >
-              <g
-                style={
-                  Object {
-                    "fill": "none",
-                    "stroke": "#00a7ba",
-                    "strokeWidth": "2",
-                  }
-                }
+              <svg
+                className="Icon TrackCard-icon"
+                viewBox="0 0 24 24"
               >
                 <path
-                  d="M20.194,3.46c-4.613-4.613-12.121-4.613-16.734,0c-4.612,4.614-4.612,12.121,0,16.735 c4.108,4.107,10.506,4.547,15.116,1.34c0.097,0.459,0.319,0.897,0.676,1.254l6.718,6.718c0.979,0.977,2.561,0.977,3.535,0 c0.978-0.978,0.978-2.56,0-3.535l-6.718-6.72c-0.355-0.354-0.794-0.577-1.253-0.674C24.743,13.967,24.303,7.57,20.194,3.46z M18.073,18.074c-3.444,3.444-9.049,3.444-12.492,0c-3.442-3.444-3.442-9.048,0-12.492c3.443-3.443,9.048-3.443,12.492,0 C21.517,9.026,21.517,14.63,18.073,18.074z"
+                  d="M16 2.75a9.39 9.39 0 1 0-1.29 14.34 2.05 2.05 0 0 0 .54 1l5.33 5.33a2 2 0 0 0 2.81-2.81l-5.33-5.33a2.05 2.05 0 0 0-1-.54A9.39 9.39 0 0 0 16 2.75zm-1.66 11.59a7 7 0 1 1 0-9.91 7 7 0 0 1 0 9.91z"
                 />
-              </g>
-            </svg>
-            <h3
-              className="TrackCard-title"
+              </svg>
+            </div>
+            <div
+              data-enzyme-id="Block-RenderedElement"
+              style={
+                Object {
+                  "marginBottom": "8px",
+                  "marginLeft": "0px",
+                  "marginRight": "0px",
+                  "marginTop": "0px",
+                }
+              }
             >
-              Testing
-            </h3>
+              <h3
+                className="SectionTitle SectionTitle--uppercase"
+              >
+                 
+                Testing
+                 
+              </h3>
+            </div>
             <p
-              className="TrackCard-text"
+              className="Text"
             >
               Learn frontend testing with Jest and Enzyme.
             </p>
@@ -251,7 +279,7 @@ Array [
               }
             }
           >
-            Each course and lesson are specifically designed to incrementally challenge the learner while providing immediate feedback in the form of tests, quizzes, provided solutions, and guiding comments.
+            Each course and lesson are designed to incrementally challenge the learner while providing immediate feedback in the form of quizzes, provided solutions, and guiding comments.
           </p>
           <p
             data-enzyme-id="Block-RenderedElement"
@@ -267,7 +295,7 @@ Array [
             <b>
               Each course
             </b>
-             is comprised of multiple lessons that each build on the things learned in the previous lesson, always challenging the learning to reach for new understanding.
+             is comprised of multiple lessons that each build on learnings from the previous lesson, always challenging the learner to reach for new understanding.
           </p>
           <p>
             <b>
@@ -301,11 +329,10 @@ Array [
               }
             }
           >
-            We believe one of the major separators between "junior" and "senior" developers is technical communication. That's why we strongly suggest you run these sessions with a small group, either in person or over a chat client.
-             
+            We believe one of the major separators between "junior" and "senior" developers is technical communication. That's why we strongly suggest running these sessions with a small group, either in person or over a chat client.
           </p>
           <p>
-            Over the hundreds of sessions we've run, we've seen the folks that tackle these courses as a group learn faster, become stronger technical communicators, all while building key technical skills.
+            Over the hundreds of sessions we've run, those who tackle these courses as a group learn faster and become stronger technical communicators, all while building key technical skills.
           </p>
         </div>
       </div>
@@ -334,15 +361,17 @@ Array [
               <p
                 className="Landing-listItemText"
               >
-                We recommend groups of no more than five or six people. Try to build groups with relatively similar abilities across members to keep things interesting for each member.
+                We recommend groups of no more than
+                 
+                <a
+                  className="Link Link--secondary"
+                  href="https://en.wikipedia.org/wiki/Ringelmann_effect"
+                  target="_blank"
+                >
+                  five or six people
+                </a>
+                . Try to build groups with relatively similar abilities across members to keep everyone interested and engaged.
               </p>
-              <a
-                className="Link Link--secondary"
-                href="https://en.wikipedia.org/wiki/Ringelmann_effect"
-                target="_blank"
-              >
-                Here's why small teams are better
-              </a>
             </li>
             <li
               className="Landing-listItem"
@@ -353,7 +382,7 @@ Array [
               <p
                 className="Landing-listItemText"
               >
-                Pick one of our pre-built courses like array methods, testing, etc.
+                Start with one of our pre-built courses like array methods, testing, etc. Later you can use the same learning method with other materials and contribute your own course!
               </p>
             </li>
             <li
@@ -377,7 +406,7 @@ Array [
               <p
                 className="Landing-listItemText"
               >
-                Ideally, each of you has a laptop in a quiet conference room. Otherwise, find the best way to get your group together at the scheduled time whether in person or remotely.
+                Ideally, each of you has a laptop in a quiet space. Otherwise, find the best way to get your group together at the scheduled time whether in person or remotely.
               </p>
             </li>
           </ol>
@@ -407,7 +436,7 @@ Array [
               }
             }
           >
-            This material is currently used by full time software engineers within Wayfair. We believe beginners, experts, and everyone in-between can learn something here.
+            This material is currently used by full time software engineers within Wayfair. We believe beginners, experts, and everyone in between can learn something here.
           </p>
           <p>
             In general, we find that a group of folks motivated to learn and improve both their soft skills and Frontend knowledge will do well here. If there are explicit pre-requisites for a course, they will be clearly stated.

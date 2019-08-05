@@ -2,39 +2,35 @@
 @import '../../assets/scss/mixins';
 
 .TrackCard {
-  &-title {
-    font-size: 1em;
-    margin: $spacing--small;
-    text-transform: uppercase;
-    @include breakpoint-md {
-      font-size: 1.2em;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: $color--white;
+  padding: $spacing--small;
+  border: 1px solid transparent;
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: $color--secondary;
   }
-
-  &-text { 
-    font-size: .9em;
-    @include breakpoint-md {
-      font-size: 1em;
-    }
+  @include breakpoint-md {
+    padding: $spacing--medium;
   }
-
-  &-card {
+  &-iconWrap {
+    background-color: $color--background;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-    background-color: #fff;
-    text-decoration: none;
-    padding: $spacing--small;
-    height: 100%;
-    border: 1px solid transparent;
-    &:hover,
-    &:focus,
-    &:active {
-      border-color: #00a7ba;
-    }
-    @include breakpoint-md {
-      padding: $spacing--medium;
-    }
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+  &-icon {
+    width: 24px;
+    height: 24px;
+    fill: $color--secondary;
   }
 }
+
