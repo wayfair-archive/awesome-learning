@@ -3,42 +3,41 @@ import StyledLink from '../Link';
 import Block from '../Block';
 import ContentSection from '../ContentSection';
 import TrackCard from './trackCard';
-import DataIcon from './dataIcon';
-import ArrayIcon from './arrayIcon';
-import AsyncIcon from './asyncIcon';
-import TestingIcon from './testingIcon';
-
+import SectionTitle from "../SectionTitle";
+import Text from "../Text";
+import { getIcon } from "../../utils";
 import './Landing.scss';
+
 
 const Landing = () => (
   <div className="Landing">
     <div className="Landing-heroWrapper">
       <div className="Landing-titleWrapper">
-        <h1>Learn JavaScript and Front-End Fundamentals.</h1>
-        <h2>At your own pace.</h2>
+        <SectionTitle  mb="16px" >Learn JavaScript and Front-End Fundamentals.</SectionTitle>
+        <Text fontSize="xl" >At your own pace.</Text>
       </div>
       <div className="Landing-courseWrapper">
         <TrackCard
           title="Array Methods"
-          icon={<ArrayIcon />}
+          icon={getIcon("array")}
           subTitle="Learn functional array methods like filter, map, and reduce!"
           path="/courses/Array-Methods/"
         />
         <TrackCard
           title="Data Types"
-          icon={<DataIcon />}
+          icon={getIcon("data")}
           subTitle="Deep dive into types, equality, coercion, immutability and more."
           path="/courses/Data-Types/"
         />
         <TrackCard
           title="Promises"
-          icon={<AsyncIcon />}
+          icon={getIcon("async")}
           subTitle="Learn the Promise API inside and out."
           path="/courses/Promises/"
         />
         <TrackCard
           title="Testing"
-          icon={<TestingIcon />}
+          icon={getIcon("testing")}
           subTitle="Learn frontend testing with Jest and Enzyme."
           path="/courses/Testing/"
         />

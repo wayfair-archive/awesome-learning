@@ -16,7 +16,7 @@ module.exports = {
       path: '/courses'
     },
     {
-      label: 'How-To',
+      label: 'How to Use',
       path: '/howTo'
     }
   ]

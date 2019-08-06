@@ -1,0 +1,12 @@
+@import '../assets/scss/variables';
+
+.SectionTitle {
+  font-size: $font--large;
+  font-weight: normal;
+  &--normal {
+    font-weight: normal;
+  }
+  &--uppercase {
+    text-transform: uppercase;
+  }
+}
