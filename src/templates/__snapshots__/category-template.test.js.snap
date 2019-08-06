@@ -37,7 +37,13 @@ Array [
             "paddingRight": "15px",
             "position": "relative",
             "right": "auto",
-            "width": "100%",
+            "width": Object {
+              "lg": null,
+              "md": 12,
+              "sm": null,
+              "xl": null,
+              "xs": null,
+            },
           }
         }
       >
