@@ -18,10 +18,15 @@ const Question = ({
     })}>
       {title}
     </legend>
+    {question.codeSnippet && (
+      <pre className="Question-codeSnippet">
+        {question.codeSnippet}
+      </pre>
+    )}
     {/* If instructed, show the explanation to this question */}
-    {shouldShowCorrectChoice && (
+    {shouldShowCorrectChoice && question.explanation && (
       <div className="Question-explanation">
-        {question.explanation}
+        <b>Explanation: </b>{question.explanation}
       </div>
     )}
     {/* Iterate over all choices this question has, and display them */}
