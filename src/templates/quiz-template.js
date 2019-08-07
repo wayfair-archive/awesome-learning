@@ -58,6 +58,7 @@ export const query = graphql`
         preReadQuiz {
           description
           questions {
+            codeSnippet
             correctChoices
             description
             explanation

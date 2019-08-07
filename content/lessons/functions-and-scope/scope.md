@@ -20,4 +20,22 @@ readingLinks:
   - link: https://hackernoon.com/understanding-javascript-scope-1d4a74adcdf5
     description: Scope is a powerful concept in JS - let's deepen our understanding.
     title: Understanding JavaScript Scope
----     
+preReadQuiz:
+  questions:
+    - description: Which statement best describes what a "scope" is in JavaScript? 
+      choices:
+      - value: The environment in which values, variables and expressions are "visible" and can be referenced.
+      - value: The value of "this" during function execution or the object to which the function belongs.
+      - value: The environment in which values and expressions can be defined.
+      correctChoices:
+      - 0
+      type: radio
+    - description: When is function scope determined in JavaScript?
+      choices:
+      - value: Dynamically, when functions are called or executed.
+      - value: Statically, when function declarations are parsed or evaluated.
+      - value: At runtime, when variables are assigned or referenced.
+      correctChoices:
+      - 1
+      type: radio
+---
