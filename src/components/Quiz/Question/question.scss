@@ -2,8 +2,9 @@
 @import '../../../assets/scss/variables';
 
 .Question {
-  margin-top: $spacing--large;
-
+  &:not(:first-child) {
+    margin-top: $spacing--large;
+  }
   &-choiceInput {
     margin: 0.4rem;
   }
@@ -12,8 +13,11 @@
       font-weight: bold;
     }
   }
-  &-explanation {
+  &-codeSnippet, &-explanation {
     margin-bottom: $spacing--medium;
+  }
+  &-explanation {
+    font-style: italic;
   }
   &-legend {
     background-color: $color--primary;
