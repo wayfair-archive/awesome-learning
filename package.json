@@ -6,7 +6,7 @@
   "scripts": {
     "develop": "yarn run clean && gatsby develop",
     "build": "yarn run clean && gatsby build --prefix-paths",
-    "deploy": "gatsby build --prefix-paths && gh-pages -b gh-pages -d public",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "clean": "rimraf .cache public",
     "lint:js": "eslint --cache --ext .js,.jsx --ignore-pattern public .",
     "lint:scss": "stylelint \"src/**/*.scss\"",

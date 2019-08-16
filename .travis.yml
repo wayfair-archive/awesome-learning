@@ -7,15 +7,15 @@ cache:
 before_script:
   - "npm i -g gatsby"
   - "npm i"
-jobs: 
-  include:
-    - stage: test
-      script: "npm run test"
-    - stage: deploy
-      github-token: GITHUB_TOKEN
-      skip_cleanup: true
-      script: if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then npm run deploy; fi
-stages: 
-  - test
-  - name: deploy
-    if: branch = master
+script:
+  - "npm run test"  
+deploy:
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  local_dir: public
+  on:
+    branch: master
+  provider: pages
+  skip_cleanup: true
+after_success:
+  - "npm run deploy"
