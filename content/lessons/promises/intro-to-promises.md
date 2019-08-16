@@ -30,45 +30,47 @@ readingLinks:
 preReadQuiz:
   description: Take this quiz to test your understanding of JavaScript Promises (Advanced)!
   questions: 
-    - description: What, if anything, is wrong with the below code snippet?
-      codeSnippet: |
-        function anAsyncCall() {
-          var promise = doSomethingAsync();
-          promise.then(function() {
-            somethingComplicated();
-          });
-          return promise;
-        }
+    - description: What are the possible states of a promise?
       choices:
-      - value: It will throw a syntax error
-      - value: Any error raised in the somethingComplicated() method will not get caught.
-      - value: Nothing, it's perfectly fine
+      - value: resolved
+      - value: error
+      - value: finally
+      - value: done
+      - value: pending
+      - value: rejected
+      - value: waiting
       correctChoices: 
-      - 2
+      - 0
+      - 4
+      - 5
       explanation: If 'somethingComplicated()' throws an error, there is no 'catch' statement on its containing promise that will 'catch' the error.
-      type: radio
-    - description: True or false? Promise.all is rejected if any of the elements are rejected.
+      type: checkbox
+    - description: Once a promise is settled, its results can change.
       choices:
       - value: 'true'
       - value: 'false'
       correctChoices: 
-      - 0
+      - 1
       explanation: If any promise provided to Promise.all rejects, the promise it returns will also be rejected.
       type: radio
-    - description: What gets logged to the console in the Promise.race function?
-      codeSnippet: |
-        var p1 = new Promise(function (resolve, reject) {
-          setTimeout(resolve, 500, 'one');
-        }); 
-        var p2 = new Promise(function (resolve, reject) {
-          setTimeout(resolve, 100, 'two');
-        }); 
-        Promise.race([p1, p2]).then(function (value) {
-          console.log(value);
-        });
+    - description: What does '.then()' return?
       choices:
-      - value: 'one'
-      - value: 'two'
+      - value: A function
+      - value: A boolean
+      - value: A new promise
+      correctChoices: 
+      - 2
+      explanation: As 'p2' resolves first with a value of 'two', that is what Promise.race will resolve with.
+      type: radio
+    - description: In the below code example, which variable represents a valid declaration of a Promise?
+      codeSnippet: |
+        const promise1 = Promise(function () => {});
+        const promise2 = new Promise(() => {});
+        const promise3 = new Promise();
+      choices:
+      - value: promise1
+      - value: promise2
+      - value: promise3
       correctChoices: 
       - 1
       explanation: As 'p2' resolves first with a value of 'two', that is what Promise.race will resolve with.
