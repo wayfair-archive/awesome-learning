@@ -14,6 +14,7 @@ describe('CourseTemplate', () => {
       markdownRemark: {
         html: '<p>test</p>',
         fields: {
+          slug: '/test1',
           tagSlugs: [
             '/test_0',
             '/test_1'

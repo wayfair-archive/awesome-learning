@@ -26,6 +26,7 @@ Array [
               <Link
                 activeClassName=""
                 className="Link Link--tertiary"
+                to="/test1"
               >
                 Back to lesson
               </Link>
