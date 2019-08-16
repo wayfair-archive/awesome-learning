@@ -28,7 +28,7 @@ readingLinks:
     description: "This is deep dive of the Promise API"
     title: " PonyFoo: Promises in Depth"
 preReadQuiz:
-  description: Take this quiz to test your understanding of JavaScript Promises (Advanced)!
+  description: Take this quiz to test your understanding of JavaScript Promises!
   questions: 
     - description: What are the possible states of a promise?
       choices:
@@ -43,7 +43,7 @@ preReadQuiz:
       - 0
       - 4
       - 5
-      explanation: If 'somethingComplicated()' throws an error, there is no 'catch' statement on its containing promise that will 'catch' the error.
+      explanation: The only valid states of a promise are for it to be pending (in flight), resolved (succeeded without error), or rejected (an error occurred.)
       type: checkbox
     - description: Once a promise is settled, its results can change.
       choices:
@@ -51,7 +51,7 @@ preReadQuiz:
       - value: 'false'
       correctChoices: 
       - 1
-      explanation: If any promise provided to Promise.all rejects, the promise it returns will also be rejected.
+      explanation: Once a promise resolves or rejects, it cannot change its status (to pending, resolved, or rejected.)
       type: radio
     - description: What does '.then()' return?
       choices:
@@ -60,7 +60,7 @@ preReadQuiz:
       - value: A new promise
       correctChoices: 
       - 2
-      explanation: As 'p2' resolves first with a value of 'two', that is what Promise.race will resolve with.
+      explanation: .then() will return a Promise, allowing multiple Promises to be chained onto each other.
       type: radio
     - description: In the below code example, which variable represents a valid declaration of a Promise?
       codeSnippet: |
@@ -73,6 +73,6 @@ preReadQuiz:
       - value: promise3
       correctChoices: 
       - 1
-      explanation: As 'p2' resolves first with a value of 'two', that is what Promise.race will resolve with.
+      explanation: promise1 is missing a 'new' keyword, and promise3 is missing a function within the contents of the Promise to actually execute.
       type: radio
 ---
