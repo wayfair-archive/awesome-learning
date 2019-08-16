@@ -10,12 +10,9 @@ before_script:
 script:
   - "npm run test"  
 deploy:
-  github_token: $GITHUB_TOKEN
-  keep_history: true
-  local_dir: public
+  provider: script
+  script: npm run deploy
+  skip_cleanup: true
   on:
     branch: master
-  provider: pages
-  skip_cleanup: true
-after_success:
-  - "npm run deploy"
+
