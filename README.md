@@ -1,4 +1,9 @@
 # Awesome Learning
+[![Build Status](https://travis-ci.org/wayfair/awesome-learning.svg?branch=master)](https://travis-ci.org/wayfair/awesome-learning)
+
+Learn JavaScript and Front-End Fundamentals at your own pace.
+
+[https://wayfair.github.io/awesome-learning/](https://wayfair.github.io/awesome-learning/)
 
 ## Quick Start
 
