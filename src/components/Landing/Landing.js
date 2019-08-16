@@ -59,7 +59,7 @@ const Landing = () => (
       isLight
     >
       <p>
-        Deliberate practice involves more than just repetition; it requires
+        Deliberate practice involves more than repetition; it requires
         activities that are designed to improve performance, challenge the
         learner, and provide feedback.
       </p>
