@@ -18,4 +18,4 @@ jobs:
 stages: 
   - test
   - name: deploy
-    if: if: (branch = master) AND (NOT (type IN (push, pull_request)))
+    if: (branch = master) AND (NOT (type IN (push, pull_request)))
