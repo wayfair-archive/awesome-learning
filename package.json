@@ -4,13 +4,13 @@
   "description": "An open source platform for learning front-end tech",
   "main": "n/a",
   "scripts": {
-    "develop": "yarn run clean && gatsby develop",
-    "build": "yarn run clean && gatsby build --prefix-paths",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "develop": "npm run clean && gatsby develop",
+    "build": "npm run clean && gatsby build --prefix-paths",
+    "deploy": "npm run build && gh-pages -d public",
     "clean": "rimraf .cache public",
     "lint:js": "eslint --cache --ext .js,.jsx --ignore-pattern public .",
     "lint:scss": "stylelint \"src/**/*.scss\"",
-    "lint": "concurrently \"yarn run lint:js\" \"yarn run lint:scss\"",
+    "lint": "concurrently \"npm run lint:js\" \"npm run lint:scss\"",
     "test": "jest --config ./tests/jest-config.js",
     "test-coverage": "jest --coverage --config ./tests/jest-config.js",
     "test-watch": "jest --watch --config ./tests/jest-config.js"
