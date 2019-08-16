@@ -14,8 +14,8 @@ jobs:
     - stage: deploy
       github-token: GITHUB_TOKEN
       skip_cleanup: true
-      script: "npm run deploy"
+      script: if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then npm run deploy
 stages: 
   - test
   - name: deploy
-    if: (branch = master) AND (NOT (type IN (push, pull_request)))
+    if: branch = master
