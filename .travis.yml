@@ -7,7 +7,15 @@ cache:
 before_script:
   - "npm i -g gatsby"
   - "npm i"
-script:
-  - "npm run test"
-after_success:
-  - "npm run deploy"
+jobs: 
+  include:
+    - stage: test
+      script: "npm run test"
+    - stage: deploy
+      github-token: $GITHUB_TOKEN
+      skip_cleanup: true
+      script: "npm run deploy"
+stages: 
+  - test
+  - name: deploy
+    if: if: (branch = master) AND (NOT (type IN (push, pull_request)))
