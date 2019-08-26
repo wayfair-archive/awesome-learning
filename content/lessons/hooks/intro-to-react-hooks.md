@@ -25,29 +25,26 @@ readingLinks:
   - link: https://reactjs.org/docs/hooks-faq.html
     title: Hooks FAQ - Reactjs.org
     description: An FAQ from the official React website. A detailed read that covers everything from adoption strategy to performance.
+  - link: https://reactjs.org/docs/hooks-rules.html#explanation
+    title: Rules of Hooks - Reactjs.org
+    description: A list of practices and patterns that you should keep in mind as you begin to write code using React Hooks.
   - link: https://sebhastian.com/react-hooks-introduction
     title: Nathan Sebhastian - React Hooks are live. Here is your introduction.
     description: A code-focused and interactive introduction to Hooks. This introduces our first hook, useState, which allows us to maintain the state of a variable(s) within a component, similar to how "setState" in a Class Component works.
 preReadQuiz:
   description: Take this quiz to test your understanding of React Hooks!
   questions: 
-    - description: What, if anything, is wrong with the below code snippet?
-      codeSnippet: |
-        function anAsyncCall() {
-          var promise = doSomethingAsync();
-          promise.then(function() {
-            somethingComplicated();
-          });
-          return promise;
-        }
+    - description: Which of the following scenarios describe a correct usage of the useState Hook? Check all that apply.
       choices:
-      - value: It will throw a syntax error
-      - value: Any error raised in the somethingComplicated() method will not get caught.
-      - value: Nothing, it's perfectly fine
+      - value: Calling useState from within a Class Component
+      - value: Calling useState from within a Function Component
+      - value: Calling useState from within an if/else statement
+      - value: Calling useContext from within useState
+      - value: Calling useState from within a forEach statement on an array whose length can change
       correctChoices: 
-      - 2
-      explanation: If 'somethingComplicated()' throws an error, there is no 'catch' statement on its containing promise that will 'catch' the error.
-      type: radio
+      - 1
+      explanation: One of the core rules of React Hooks is that they should be called the same number of times between renders of a component. If a hook needs to not apply its logic if some condition is true or false, that logic should live within the hook itself (and not above it.) Class Components are not compatible with Hooks, and will cause a runtime error.
+      type: checkbox
     - description: Which of the following snippets of code represent a valid implementation of useState that allows the button to function?
       codeSnippet: |
         import React, {useState} from 'react';
