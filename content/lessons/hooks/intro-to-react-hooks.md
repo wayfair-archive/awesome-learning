@@ -18,19 +18,20 @@ timeToCompletion: ~1 hour
 videoLinks: 
   - https://www.youtube.com/embed/eX_L39UvZes
   - https://www.youtube.com/embed/N1msPjQX36I
+  - https://www.youtube.com/embed/K4xfCIRuf54
 readingLinks: 
   - link: https://reactjs.org/docs/hooks-intro.html
     title: Reactjs.org - Introducing Hooks
     description: An introduction to React Hooks, written by the engineers behind the features. Why did they introduce hooks? What problems do they solve? Read exactly what the engineers behind React have to say!
-  - link: https://reactjs.org/docs/hooks-faq.html
-    title: Hooks FAQ - Reactjs.org
-    description: An FAQ from the official React website. A detailed read that covers everything from adoption strategy to performance.
   - link: https://reactjs.org/docs/hooks-rules.html#explanation
     title: Rules of Hooks - Reactjs.org
     description: A list of practices and patterns that you should keep in mind as you begin to write code using React Hooks.
   - link: https://sebhastian.com/react-hooks-introduction
     title: Nathan Sebhastian - React Hooks are live. Here is your introduction.
     description: A code-focused and interactive introduction to Hooks. This introduces our first hook, useState, which allows us to maintain the state of a variable(s) within a component, similar to how "setState" in a Class Component works.
+  - link: https://overreacted.io/a-complete-guide-to-useeffect
+    title: Dan Abramov - A complete guide to useEffect
+    description: Dan Abramov does a deep dive into useEffect, focusing on the newest principles, gotchas, and big ideas from hooks and from useEffect.
 preReadQuiz:
   description: Take this quiz to test your understanding of React Hooks!
   questions: 
@@ -99,5 +100,15 @@ preReadQuiz:
       correctChoices: 
       - 1
       explanation: React Hooks are best implemented in new code, or to move away from unsafe/unstable patterns. Class Components are still 100% valid, and the time invested in refactoring old code is better spent in writing new code with Hooks.
+      type: radio
+    - description: When you return a function from within a useEffect call, when does this function get executed?
+      choices:
+      - value: When the component mounts
+      - value: When the component unmounts
+      - value: When the component's children are mounted
+      - value: When the component throws an error
+      correctChoices: 
+      - 1
+      explanation: The function returned by useEffect is executed only when the component unmounts.
       type: radio
 ---
