@@ -17,21 +17,20 @@ description: |
 timeToCompletion: ~1 hour
 videoLinks: 
   - https://www.youtube.com/embed/eX_L39UvZes
-  - https://www.youtube.com/embed/N1msPjQX36I
   - https://www.youtube.com/embed/K4xfCIRuf54
 readingLinks: 
   - link: https://reactjs.org/docs/hooks-intro.html
     title: Reactjs.org - Introducing Hooks
     description: An introduction to React Hooks, written by the engineers behind the features. Why did they introduce hooks? What problems do they solve? Read exactly what the engineers behind React have to say!
-  - link: https://reactjs.org/docs/hooks-rules.html#explanation
-    title: Rules of Hooks - Reactjs.org
-    description: A list of practices and patterns that you should keep in mind as you begin to write code using React Hooks.
   - link: https://sebhastian.com/react-hooks-introduction
     title: Nathan Sebhastian - React Hooks are live. Here is your introduction.
     description: A code-focused and interactive introduction to Hooks. This introduces our first hook, useState, which allows us to maintain the state of a variable(s) within a component, similar to how "setState" in a Class Component works.
   - link: https://overreacted.io/a-complete-guide-to-useeffect
     title: Dan Abramov - A complete guide to useEffect
     description: Dan Abramov does a deep dive into useEffect, focusing on the newest principles, gotchas, and big ideas from hooks and from useEffect.
+  - link: https://reactjs.org/docs/hooks-rules.html#explanation
+    title: Rules of Hooks - Reactjs.org
+    description: A list of practices and patterns that you should keep in mind as you begin to write code using React Hooks.
 preReadQuiz:
   description: Take this quiz to test your understanding of React Hooks!
   questions: 
