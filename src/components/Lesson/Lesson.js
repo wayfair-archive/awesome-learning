@@ -14,7 +14,8 @@ const Lesson = ({ lesson, slug }) => {
     readingLinks,
     preReadQuizLink,
     preReadQuiz,
-    course
+    course,
+    defaultTab
   } = lesson.frontmatter;
   // Split the description into different paragraphs based on new lines
   const descriptionParagraphs = description.split(/\r?\n\n/);
@@ -105,7 +106,7 @@ const Lesson = ({ lesson, slug }) => {
         <Block is="p" mb="16px">
           Click this exercise link will bring you directly to an online IDE called codesandbox.io.
         </Block>
-        <LessonButton path={path} />
+        <LessonButton defaultTab={defaultTab} path={path} />
       </ContentSection>
 
       <ContentSection title=" " subTitle="Session Feedback">

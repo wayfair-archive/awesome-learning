@@ -4,6 +4,7 @@ template: lesson
 draft: false
 slug: /courses/Testing/intro-to-unit-testing
 course: Testing
+defaultTab: tests
 tags:
   - Jest
 description: "Why do we need automated tests? Here's one good reason: You're going to test your changes anyway, why not automate it? In other words: you're going to
