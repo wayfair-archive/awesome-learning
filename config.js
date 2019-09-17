@@ -7,7 +7,7 @@ module.exports = {
   title: 'Awesome Learning',
   subtitle: 'Learning frontend, together',
   copyright: '© Awesome Learning™ All rights reserved.',
-  coursesPerPage: 5,
+  coursesPerPage: 7,
   disqusShortname: '',
   googleAnalyticsId: 'UA-2081664-21',
   menu: [
