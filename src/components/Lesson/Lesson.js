@@ -16,6 +16,8 @@ const Lesson = ({ lesson, slug }) => {
     preReadQuiz,
     course
   } = lesson.frontmatter;
+  // Split the description into different paragraphs based on new lines
+  const descriptionParagraphs = description.split(/\r?\n\n/);
   const path = slug.toLowerCase().split("/courses/")[1];
   return (
     <div className="Lesson">
@@ -32,9 +34,12 @@ const Lesson = ({ lesson, slug }) => {
             <span className="Lesson-time">{timeToCompletion} ⌛</span>
           </p>
         )}
-        <p>{description}</p>
+        {descriptionParagraphs.map((paragraph, key) => (
+          <Block is="p" key={key} mb="16px">
+            {paragraph}
+          </Block>
+        ))}
       </ContentSection>
-
       <ContentSection
         title=" "
         subTitle="Pre-Session Learning Materials (required)"
