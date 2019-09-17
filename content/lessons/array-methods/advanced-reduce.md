@@ -4,6 +4,7 @@ template: lesson
 draft: false
 slug: /courses/Array-Methods/advanced-reduce
 course: Array-Methods
+defaultTab: tests
 tags:
   - Refactoring
 description: By now you've seen the power of `reduce`. This session will take it one step further and test your abilities to handle complex data manipulation. By the end of this session, you will feel confident working with `reduce`, and might even start seeing where you can use it in place of our other array methods.
