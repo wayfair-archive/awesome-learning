@@ -53,6 +53,7 @@ export const query = graphql`
         timeToCompletion
         videoLinks
         preReadQuizLink
+        defaultTab
         readingLinks {
           link
           description

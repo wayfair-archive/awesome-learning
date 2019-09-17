@@ -4,6 +4,7 @@ template: lesson
 draft: false
 slug: /courses/React-Hooks/intro-to-react-hooks
 course: React-Hooks
+defaultTab: browser
 tags:
   - React
 description: |

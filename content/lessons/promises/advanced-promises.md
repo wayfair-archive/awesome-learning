@@ -4,6 +4,7 @@ template: lesson
 draft: false
 slug: /courses/Promises/advanced-promises
 course: Promises
+defaultTab: tests
 tags:
   - Async JS
   - Promises

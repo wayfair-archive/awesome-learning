@@ -4,6 +4,7 @@ template: lesson
 draft: false
 slug: /courses/Data-Types/types-and-equality
 course: Data-Types
+defaultTab: tests
 tags:
   - Types
   - Coercion
