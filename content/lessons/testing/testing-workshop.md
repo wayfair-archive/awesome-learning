@@ -10,5 +10,5 @@ description: "If you've made to this section, you likely already have a good gra
 timeToCompletion: ~2-4 hours
 secondaryExerciseUrl: 'https://codesandbox.io/s/github/Cooperbuilt/frontend-testing-workshop'
 videoLinks: 
-  - https://www.youtube.com/embed/4kNfeI37xu4?start=317
+  - https://www.youtube.com/embed/Vv0Lmr3K8wQ
 --- 
