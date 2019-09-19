@@ -4,6 +4,7 @@ template: lesson
 draft: false
 slug: /courses/Functions-and-Scope/context-and-arrows
 course: Functions-and-Scope
+defaultTab: tests
 tags:
   - A Tag
 description: "

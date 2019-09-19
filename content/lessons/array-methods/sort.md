@@ -4,6 +4,7 @@ template: lesson
 draft: false
 slug: /courses/Array-Methods/sort
 course: Array-Methods
+defaultTab: tests
 tags:
   - Array Methods
   - Functional Programming

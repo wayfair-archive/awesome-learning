@@ -4,6 +4,7 @@ template: lesson
 draft: false
 slug: /courses/Functions-and-Scope/closures
 course: Functions-and-Scope
+defaultTab: tests
 tags:
   - Closure
 description: "Closures are a powerful tool in _any_ language. In this session let's spend the

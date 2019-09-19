@@ -24,9 +24,9 @@ export const PrimitiveLessonButton = ({ path, onClick = handleEventClick, childr
   </a>
 );
 
-const PureLessonButton = ({path, data}) => {
+const PureLessonButton = ({path, data, defaultTab}) => {
   const {repoOwner} = data.site.siteMetadata;
-  const fullPath = `https://codesandbox.io/s/github/${repoOwner}/awesome-learning-exercises/tree/master/${path}?fontsize=14&previewwindow=tests`;
+  const fullPath = `https://codesandbox.io/s/github/${repoOwner}/awesome-learning-exercises/tree/master/${path}?fontsize=14&previewwindow=${defaultTab}`;
   return (
     <PrimitiveLessonButton path={fullPath} >
       Click here to start your exercises!
