@@ -22,13 +22,13 @@ export const PrimitiveLessonButton = ({
     className="LessonButton-link"
     rel="noopener noreferrer"
     target="_blank"
-    onclick={() => onClick(path)}
+    onClick={() => onClick(path)}
   >
     {children}
   </a>
 );
 
-const PureLessonButton = ({path, data, defaultTab}) => {
+export const PureLessonButton = ({path, data, defaultTab}) => {
   const {repoOwner} = data.site.siteMetadata;
   const fullPath = `https://codesandbox.io/s/github/${repoOwner}/awesome-learning-exercises/tree/master/${path}?fontsize=14&previewwindow=${defaultTab}`;
   return (
