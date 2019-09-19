@@ -58,6 +58,7 @@ export const query = graphql`
           description
           title
         }
+        secondaryExerciseUrl
         preReadQuiz {
           description
           questions {
