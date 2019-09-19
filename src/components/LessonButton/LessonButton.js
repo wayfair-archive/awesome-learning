@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import analyticsEventHandler from '../../utils/analyticsEventHandler';
 import './LessonButton.scss';
 
-const handleEventClick = (path) => {
+const handleEventClick = path => {
   try {
     analyticsEventHandler('exercise click', path);
   } catch (error) {
@@ -12,7 +12,11 @@ const handleEventClick = (path) => {
   }
 };
 
-export const PrimitiveLessonButton = ({ path, onClick = handleEventClick, children }) => (
+export const PrimitiveLessonButton = ({
+  path,
+  onClick = handleEventClick,
+  children
+}) => (
   <a
     href={path}
     className="LessonButton-link"
@@ -28,7 +32,7 @@ const PureLessonButton = ({path, data, defaultTab}) => {
   const {repoOwner} = data.site.siteMetadata;
   const fullPath = `https://codesandbox.io/s/github/${repoOwner}/awesome-learning-exercises/tree/master/${path}?fontsize=14&previewwindow=${defaultTab}`;
   return (
-    <PrimitiveLessonButton path={fullPath} >
+    <PrimitiveLessonButton path={fullPath}>
       Click here to start your exercises!
     </PrimitiveLessonButton>
   );
