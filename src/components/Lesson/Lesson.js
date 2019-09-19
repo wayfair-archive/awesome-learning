@@ -15,8 +15,11 @@ const Lesson = ({lesson, slug}) => {
     preReadQuizLink,
     preReadQuiz,
     course,
+    defaultTab,
     secondaryExerciseUrl
   } = lesson.frontmatter;
+  // Split the description into different paragraphs based on new lines
+  const descriptionParagraphs = description.split(/\r?\n\n/);
   const path = slug.toLowerCase().split('/courses/')[1];
   return (
     <div className="Lesson">
@@ -33,9 +36,12 @@ const Lesson = ({lesson, slug}) => {
             <span className="Lesson-time">{timeToCompletion} ⌛</span>
           </p>
         )}
-        <p>{description}</p>
+        {descriptionParagraphs.map((paragraph, key) => (
+          <Block is="p" key={key} mb="16px">
+            {paragraph}
+          </Block>
+        ))}
       </ContentSection>
-
       <ContentSection
         title=" "
         subTitle="Pre-Session Learning Materials (required)"
@@ -105,7 +111,9 @@ const Lesson = ({lesson, slug}) => {
 
       {secondaryExerciseUrl ? (
         <ContentSection title=" " subTitle="Exercises">
-          <PrimitiveLessonButton path={secondaryExerciseUrl}>Start the Workshop</PrimitiveLessonButton>
+          <PrimitiveLessonButton path={secondaryExerciseUrl}>
+            Start the Workshop
+          </PrimitiveLessonButton>
         </ContentSection>
       ) : (
         <ContentSection title=" " subTitle="Exercises">
@@ -113,7 +121,7 @@ const Lesson = ({lesson, slug}) => {
             Clicking this exercise button will bring you directly to an online
             IDE called codesandbox.io.
           </Block>
-          <LessonButton path={path} />
+          <LessonButton defaultTab={defaultTab} path={path} />
         </ContentSection>
       )}
 

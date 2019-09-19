@@ -4,6 +4,7 @@ template: lesson
 draft: false
 slug: /courses/Functions-and-Scope/scope
 course: Functions-and-Scope
+defaultTab: tests
 tags:
   - Scope
   - JS Fundamentals

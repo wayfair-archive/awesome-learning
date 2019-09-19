@@ -4,6 +4,7 @@ template: lesson
 draft: false
 slug: /courses/Array-Methods/reduce
 course: Array-Methods
+defaultTab: tests
 tags:
   - Refactoring
 description: reduce is arguably the most versatile of Javascript's array prototype methods. `reduce` gives you the power to create a new data structure by iterating over an array and applying a callback of your creation. By the end of this session, you will understand the basics of `reduce`, and feel confident using it to simplify your data.

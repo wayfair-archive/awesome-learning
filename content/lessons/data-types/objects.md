@@ -4,6 +4,7 @@ template: lesson
 draft: false
 slug: /courses/Data-Types/objects
 course: Data-Types
+defaultTab: tests
 tags:
   - Pass by Reference
   - Pass by caller

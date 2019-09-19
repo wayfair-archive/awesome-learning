@@ -4,6 +4,7 @@ template: lesson
 draft: false
 slug: /courses/Testing/component-testing
 course: Testing
+defaultTab: tests
 tags:
   - Jest
   - Enzyme
