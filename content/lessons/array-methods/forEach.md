@@ -13,9 +13,9 @@ videoLinks:
  - https://www.youtube.com/embed/159EAISAxwg?rel=0&amp;showinfo=0
 preReadQuizLink: https://docs.google.com/forms/d/e/1FAIpQLSc-H0McASacovyOZcvSqa-Zp1C9rGivm4cGIQM6yYNqeROwGw/viewform
 readingLinks: 
-  - link: The MDN docs on forEach
+  - link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
     description: MDN is our go-to resource for learning the API of forEach
-    title: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+    title: The MDN docs on forEach
   - link: https://gist.github.com/ljharb/58faf1cfcb4e6808f74aae4ef7944cff
     description: Clear, vanilla implementations of forEach and other new array methods to help you understand what's happening when you use them.
     title: Clear descriptions of JS array methods.
