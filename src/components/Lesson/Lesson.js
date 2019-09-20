@@ -109,21 +109,15 @@ const Lesson = ({lesson, slug}) => {
         </ContentSection>
       )}
 
-      {secondaryExerciseUrl ? (
-        <ContentSection title=" " subTitle="Exercises">
+      <ContentSection title=" " subTitle="Exercises">
+        {secondaryExerciseUrl ? (
           <PrimitiveLessonButton path={secondaryExerciseUrl}>
             Start the Workshop
           </PrimitiveLessonButton>
-        </ContentSection>
-      ) : (
-        <ContentSection title=" " subTitle="Exercises">
-          <Block is="p" mb="16px">
-            Clicking this exercise button will bring you directly to an online
-            IDE called codesandbox.io.
-          </Block>
+        ) : (
           <LessonButton defaultTab={defaultTab} path={path} />
-        </ContentSection>
-      )}
+        )}
+      </ContentSection>
 
       <ContentSection title=" " subTitle="Session Feedback">
         <Block is="p" mb="16px">
