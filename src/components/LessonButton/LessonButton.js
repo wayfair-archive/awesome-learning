@@ -13,9 +13,11 @@ const handleEventClick = (path) => {
   }
 };
 
-export const PureLessonButton = ({ path, data, onClick }) => {
+export const PureLessonButton = ({
+  defaultTab, path, data, onClick
+}) => {
   const { repoOwner } = data.site.siteMetadata;
-  const fullPath = `https://codesandbox.io/s/github/${repoOwner}/awesome-learning-exercises/tree/master/${path}?fontsize=14&previewwindow=tests`;
+  const fullPath = `https://codesandbox.io/s/github/${repoOwner}/awesome-learning-exercises/tree/master/${path}?fontsize=14&previewwindow=${defaultTab}`;
   return (
     <OutboundLink
       className="LessonButton-link"
