@@ -36,7 +36,6 @@ exports[`Course renders correctly 1`] = `
       className="CourseCard"
     >
       <h3
-        data-enzyme-id="Block-RenderedElement"
         style={
           Object {
             "marginBottom": "16px",
@@ -49,7 +48,6 @@ exports[`Course renders correctly 1`] = `
         this is the title
       </h3>
       <p
-        data-enzyme-id="Block-RenderedElement"
         style={
           Object {
             "marginBottom": "16px",
