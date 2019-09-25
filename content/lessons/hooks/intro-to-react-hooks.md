@@ -46,7 +46,7 @@ preReadQuiz:
       - 1
       - 3
       explanation: One of the core rules of React Hooks is that they should be called the same number of times between renders of a component. If a hook needs to not apply its logic if some condition is true or false, that logic should live within the hook itself (and not above it.) Class Components are not compatible with Hooks, and will cause a runtime error.
-      type: radio
+      type: checkbox
     - description: Which of the following snippets of code represent a valid implementation of useState that allows the button to function?
       codeSnippet: |
         import React, {useState} from 'react';
