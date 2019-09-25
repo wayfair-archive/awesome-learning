@@ -1,4 +1,4 @@
-name: Awesome Learning CI (For Pull Requests)
+name: Awesome Learning CI
 
 on:
   pull_request:
@@ -15,7 +15,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Set up Node.js
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
