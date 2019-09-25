@@ -1,15 +1,20 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import {render} from '@testing-library/react';
 import Content from './Content';
 
 describe('Content', () => {
   it('renders correctly', () => {
     const props = {
-      title: 'test',
-      body: '<p>test</p>'
+      title: 'test title',
+      body: '<p>test body</p>'
     };
 
-    const tree = renderer.create(<Content {...props} />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const {queryByText} = render(<Content {...props} />);
+    expect(queryByText('test title')).toBeTruthy();
+    expect(queryByText('test body')).toMatchInlineSnapshot(`
+      <p>
+        test body
+      </p>
+    `);
   });
 });
