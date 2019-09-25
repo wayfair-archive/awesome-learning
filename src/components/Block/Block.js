@@ -1,11 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 export const __DATA_ENZYME_IDS = {
-  RENDERED_ELEMENT: 'Block-RenderedElement'
+  RENDERED_ELEMENT: "Block-RenderedElement"
 };
 
-const Block = ({is, children, mt, mb, ml, mr}) => {
+const Block = ({
+  is,
+  children,
+  mt,
+  mb,
+  ml,
+  mr
+}) => {
   const RenderedElement = is;
   return (
     <RenderedElement
@@ -27,11 +34,11 @@ Block.propTypes = {
 };
 
 Block.defaultProps = {
-  is: 'div',
-  mb: '0px',
-  mr: '0px',
-  mt: '0px',
-  ml: '0px'
+  is: "div",
+  mb: "0px",
+  mr: "0px",
+  mt: "0px",
+  ml: "0px"
 };
 
 export default Block;
