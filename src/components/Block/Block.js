@@ -1,10 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const __DATA_ENZYME_IDS = {
-  RENDERED_ELEMENT: "Block-RenderedElement"
-};
-
 const Block = ({
   is,
   children,
@@ -22,7 +18,6 @@ const Block = ({
         marginBottom: `${mb}`,
         marginLeft: `${ml}`
       }}
-      data-enzyme-id={__DATA_ENZYME_IDS.RENDERED_ELEMENT}
     >
       {children}
     </RenderedElement>

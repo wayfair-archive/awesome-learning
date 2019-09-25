@@ -1,26 +1,25 @@
-import React from "react";
-import { mount } from "enzyme";
-import { OutboundLink } from "gatsby-plugin-gtag";
-import { PureLessonButton } from "./LessonButton";
+import React from 'react';
+import {render} from '@testing-library/react';
+import {PureLessonButton} from './LessonButton';
 
-describe("LessonButton", () => {
+describe('LessonButton', () => {
   const props = {
-    path: "data-types/objects",
+    path: 'data-types/objects',
     data: {
       site: {
         siteMetadata: {
-          repoName: "awesome-learning",
-          repoOwner: "wayfair"
+          repoName: 'awesome-learning',
+          repoOwner: 'wayfair'
         }
       }
     },
     defaultTab: 'tests'
   };
 
-  it("creates a link with the right codesandbox url", () => {
-    const wrapper = mount(<PureLessonButton {...props} />);
-    expect(wrapper.find("a").props().href).toBe(
-      "https://codesandbox.io/s/github/wayfair/awesome-learning-exercises/tree/master/data-types/objects?fontsize=14&previewwindow=tests"
+  it('creates a link with the right codesandbox url', () => {
+    const {getByText} = render(<PureLessonButton {...props} />);
+    expect(getByText(/click here/i).href).toBe(
+      'https://codesandbox.io/s/github/wayfair/awesome-learning-exercises/tree/master/data-types/objects?fontsize=14&previewwindow=tests'
     );
   });
 });
