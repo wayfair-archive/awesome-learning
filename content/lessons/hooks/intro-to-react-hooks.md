@@ -108,10 +108,10 @@ preReadQuiz:
       - value: When the component's children are mounted
       - value: When the component unmounts
       - value: When the component throws an error
-      - value: When the component re-renders
+      - value: When a value in useEffect's dependency array changes
       correctChoices: 
       - 2
       - 4
-      explanation: The function returned by useEffect is executed when the component unmounts, and when it is re-rendered.
+      explanation: The function returned by useEffect is executed when the component unmounts, and when it is re-rendered due to a change in dependencies.
       type: checkbox
 ---
