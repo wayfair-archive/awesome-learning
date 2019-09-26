@@ -22,7 +22,7 @@ readingLinks:
   - link: https://codeburst.io/learn-understand-javascripts-map-function-ffc059264783
     description: A deep dive on the map function in JS.
     title: Map deep-dive
-  - link: https://www.discovermeteor.com/blog/understanding-javascript-map/
+  - link: http://www.discovermeteor.com/blog/understanding-javascript-map/
     description: map and forEach may look similar, but they serve very different purposes. Learn more here. 
     title: Map Vs. forEach
 ---
