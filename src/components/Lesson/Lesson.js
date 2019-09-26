@@ -1,11 +1,11 @@
 import React from 'react';
 import StyledLink from '../Link';
 import Block from '../Block';
-import LessonButton, {PrimitiveLessonButton} from '../LessonButton';
+import LessonButton, { PrimitiveLessonButton } from '../LessonButton';
 import ContentSection from '../ContentSection';
 import './lesson.scss';
 
-const Lesson = ({lesson, slug}) => {
+const Lesson = ({ lesson, slug }) => {
   const {
     title,
     description,
@@ -50,17 +50,17 @@ const Lesson = ({lesson, slug}) => {
           Check out this content before your session begins to get an idea of
           what you will be working on.
         </Block>
-        {videoLinks &&
-          videoLinks.map(link => (
-            <iframe
-              key={link}
-              width="560"
-              height="315"
-              src={link}
-              frameBorder="0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-            />
+        {videoLinks
+          && videoLinks.map(link => (
+          <iframe
+            key={link}
+            width="560"
+            height="315"
+            src={link}
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+          />
           ))}
       </ContentSection>
 
@@ -89,10 +89,9 @@ const Lesson = ({lesson, slug}) => {
               </li>
             ))}
           </ul>
-          )}
         </ContentSection>
       )}
-      {preReadQuizLink && (
+      {(preReadQuiz || preReadQuizLink) && (
         <ContentSection title=" " subTitle="Pre-read Quiz">
           <Block is="p" mb="16px">
             This pre-read quiz is designed to challenge your knowledge of the
