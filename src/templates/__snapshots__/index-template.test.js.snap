@@ -18,7 +18,6 @@ Array [
           className="Landing-titleWrapper"
         >
           <div
-            data-enzyme-id="Block-RenderedElement"
             style={
               Object {
                 "marginBottom": "16px",
@@ -62,7 +61,6 @@ Array [
               </svg>
             </div>
             <div
-              data-enzyme-id="Block-RenderedElement"
               style={
                 Object {
                   "marginBottom": "8px",
@@ -103,7 +101,6 @@ Array [
               </svg>
             </div>
             <div
-              data-enzyme-id="Block-RenderedElement"
               style={
                 Object {
                   "marginBottom": "8px",
@@ -144,7 +141,6 @@ Array [
               </svg>
             </div>
             <div
-              data-enzyme-id="Block-RenderedElement"
               style={
                 Object {
                   "marginBottom": "8px",
@@ -185,7 +181,6 @@ Array [
               </svg>
             </div>
             <div
-              data-enzyme-id="Block-RenderedElement"
               style={
                 Object {
                   "marginBottom": "8px",
@@ -269,7 +264,6 @@ Array [
           className="ContentSection-content Landing-description ContentSection-content--alignLeft"
         >
           <p
-            data-enzyme-id="Block-RenderedElement"
             style={
               Object {
                 "marginBottom": "16px",
@@ -282,7 +276,6 @@ Array [
             Each course and lesson are designed to incrementally challenge the learner while providing immediate feedback in the form of quizzes, provided solutions, and guiding comments.
           </p>
           <p
-            data-enzyme-id="Block-RenderedElement"
             style={
               Object {
                 "marginBottom": "16px",
@@ -319,7 +312,6 @@ Array [
           className="ContentSection-content Landing-description ContentSection-content--alignLeft"
         >
           <p
-            data-enzyme-id="Block-RenderedElement"
             style={
               Object {
                 "marginBottom": "16px",
@@ -426,7 +418,6 @@ Array [
           className="ContentSection-content Landing-description ContentSection-content--alignLeft"
         >
           <p
-            data-enzyme-id="Block-RenderedElement"
             style={
               Object {
                 "marginBottom": "16px",
@@ -457,7 +448,6 @@ Array [
           className="ContentSection-content  ContentSection-content--alignLeft"
         >
           <div
-            data-enzyme-id="Block-RenderedElement"
             style={
               Object {
                 "marginBottom": "16px",

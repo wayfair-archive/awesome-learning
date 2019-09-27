@@ -8,25 +8,24 @@ describe('Section Title', () => {
       .create(<SectionTitle>Section Title</SectionTitle>)
       .toJSON();
     expect(tree).toMatchInlineSnapshot(`
-<div
-  data-enzyme-id="Block-RenderedElement"
-  style={
-    Object {
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "marginRight": "0px",
-      "marginTop": "0px",
-    }
-  }
->
-  <h2
-    className="SectionTitle"
-  >
-     
-    Section Title
-     
-  </h2>
-</div>
-`);
+      <div
+        style={
+          Object {
+            "marginBottom": "0px",
+            "marginLeft": "0px",
+            "marginRight": "0px",
+            "marginTop": "0px",
+          }
+        }
+      >
+        <h2
+          className="SectionTitle"
+        >
+           
+          Section Title
+           
+        </h2>
+      </div>
+    `);
   });
 });

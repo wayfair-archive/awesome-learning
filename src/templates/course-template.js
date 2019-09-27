@@ -30,7 +30,6 @@ export const query = graphql`
   query CourseBySlug($slug: String!) {
     site {
       siteMetadata {
-        disqusShortname
         subtitle
         title
         url

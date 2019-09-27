@@ -1,0 +1,37 @@
+name: Awesome Learning CI (Deploy)
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install dependencies, run unit tests
+      run: |
+        npm install
+        npm test
+      env:
+        CI: true
+    - name: Builds platform
+      run: |
+        npm run build
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@master	
+      env:
+          ACCESS_TOKEN: ${{ secrets.GH_PAT }}
+          BASE_BRANCH: master
+          BRANCH: gh-pages
+          FOLDER: public

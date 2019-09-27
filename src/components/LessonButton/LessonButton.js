@@ -1,33 +1,40 @@
-import React from "react";
-import { graphql, StaticQuery } from "gatsby";
-import PropTypes from "prop-types";
-import { OutboundLink } from "gatsby-plugin-gtag";
-import analyticsEventHandler from "../../utils/analyticsEventHandler";
-import "./LessonButton.scss";
+import React from 'react';
+import {graphql, StaticQuery} from 'gatsby';
+import PropTypes from 'prop-types';
+import analyticsEventHandler from '../../utils/analyticsEventHandler';
+import './LessonButton.scss';
 
-const handleEventClick = (path) => {
+const handleEventClick = path => {
   try {
-    analyticsEventHandler("exercise click", path);
+    analyticsEventHandler('exercise click', path);
   } catch (error) {
     console.log(error);
   }
 };
 
-export const PureLessonButton = ({
-  defaultTab, path, data, onClick
-}) => {
-  const { repoOwner } = data.site.siteMetadata;
+export const PrimitiveLessonButton = ({
+  path,
+  onClick = handleEventClick,
+  children
+}) => (
+  <a
+    href={path}
+    className="LessonButton-link"
+    rel="noopener noreferrer"
+    target="_blank"
+    onClick={() => onClick(path)}
+  >
+    {children}
+  </a>
+);
+
+export const PureLessonButton = ({path, data, defaultTab}) => {
+  const {repoOwner} = data.site.siteMetadata;
   const fullPath = `https://codesandbox.io/s/github/${repoOwner}/awesome-learning-exercises/tree/master/${path}?fontsize=14&previewwindow=${defaultTab}`;
   return (
-    <OutboundLink
-      className="LessonButton-link"
-      href={fullPath}
-      rel="noopener noreferrer"
-      target="_blank"
-      onClick={() => onClick(path)}
-    >
+    <PrimitiveLessonButton path={fullPath}>
       Click here to start your exercises!
-    </OutboundLink>
+    </PrimitiveLessonButton>
   );
 };
 
@@ -57,8 +64,8 @@ PureLessonButton.propTypes = {
 };
 
 PureLessonButton.defaultProps = {
-  repoName: "awesome-learning",
-  repoOwner: "wayfair",
+  repoName: 'awesome-learning',
+  repoOwner: 'wayfair',
   onClick() {}
 };
 export default LessonButton;

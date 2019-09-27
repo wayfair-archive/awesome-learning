@@ -15,7 +15,7 @@ description: |
   Hooks enable engineers to share stateful logic between components, reduce the complexity and amount of code written to make components work, and reduce dependencies on confusing paradigms within JavaScript (such as 'this' and classes.)
 
   This lesson will introduce several hooks that will enhance your React engineering experience, and get you rolling with how to write your own!
-timeToCompletion: ~1 hour
+timeToCompletion: ~1.5 - 2 hours
 videoLinks: 
   - https://www.youtube.com/embed/eX_L39UvZes
   - https://www.youtube.com/embed/K4xfCIRuf54
@@ -44,6 +44,7 @@ preReadQuiz:
       - value: Calling useState from within a forEach statement on an array whose length can change
       correctChoices: 
       - 1
+      - 3
       explanation: One of the core rules of React Hooks is that they should be called the same number of times between renders of a component. If a hook needs to not apply its logic if some condition is true or false, that logic should live within the hook itself (and not above it.) Class Components are not compatible with Hooks, and will cause a runtime error.
       type: checkbox
     - description: Which of the following snippets of code represent a valid implementation of useState that allows the button to function?
@@ -93,22 +94,24 @@ preReadQuiz:
       explanation: |
         Snippet 1 will result in a JavaScript syntax error. Snippet 2, while not incorrect, does not provide an initial value to 'useState', which will produce an initial value of 'count' as 'undefined'. When trying to increment the value in 'handleButtonClick', incrementing 'count' by one will return 'NaN'. Snippet 3 is missing an array destructuring statement, and Snippet 5 attempts to import the functionality of useState as if it could be imported, when instead it must be array-destructured. 
       type: radio
-    - description: True or False - React Hooks give you permission to refactor all of your Class Components to be Hooked Components.
+    - description: True or False - You can update state (with a function returned from useState) within a useEffect hook.
       choices:
       - value: 'True'
       - value: 'False'
       correctChoices: 
       - 1
-      explanation: React Hooks are best implemented in new code, or to move away from unsafe/unstable patterns. Class Components are still 100% valid, and the time invested in refactoring old code is better spent in writing new code with Hooks.
+      explanation: You can do this, but remember to specify values in the second argument to useEffect. The hook will then only run when any value in the second argument changes. If you don't, you will enter into an infinite loop (as changing the state triggers a re-render, which calls the useEffect hook.)
       type: radio
     - description: When you return a function from within a useEffect call, when does this function get executed?
       choices:
       - value: When the component mounts
-      - value: When the component unmounts
       - value: When the component's children are mounted
+      - value: When the component unmounts
       - value: When the component throws an error
+      - value: When a value in useEffect's dependency array changes
       correctChoices: 
-      - 1
-      explanation: The function returned by useEffect is executed only when the component unmounts.
-      type: radio
+      - 2
+      - 4
+      explanation: The function returned by useEffect is executed when the component unmounts, and when it is re-rendered due to a change in dependencies.
+      type: checkbox
 ---

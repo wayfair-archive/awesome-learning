@@ -19,4 +19,7 @@ lessons:
     title: Component Testing
     description: "This session will show you the basics of testing User Interfaces. You will start with Jest only, learning
     the difference between React Components and Elements. From there, you will add in Enzyme to test component instances and their many variations. By the end of this session you will be able to write a Jest/Enzyme test for a React component."
+  - link: "testing-workshop/"
+    title: Advanced Testing Workshop
+    description: "This is a bit different than a normal Awesome Learning lesson - this is an open-ended testing workshop built to mimic some 'real world' testing scenarios that come up in production apps. If you want to polish your skills, this workshop provides hours of at-your-own-pace testing practice."
 ---

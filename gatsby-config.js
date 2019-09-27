@@ -2,7 +2,6 @@
 
 const siteConfig = require("./config.js");
 
-// sort: { order: DESC, fields: [frontmatter___date] },
 module.exports = {
   pathPrefix: '/awesome-learning',
   siteMetadata: {
@@ -12,7 +11,6 @@ module.exports = {
     copyright: siteConfig.copyright,
     repoName: siteConfig.repoName,
     repoOwner: siteConfig.repoOwner,
-    disqusShortname: siteConfig.disqusShortname,
     menu: siteConfig.menu,
     author: siteConfig.author
   },
@@ -39,73 +37,6 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-plugin-feed",
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                site_url: url
-                title
-                description: subtitle
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMarkdownRemark } }) =>
-              allMarkdownRemark.edges.map(edge =>
-                Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.frontmatter.description,
-                  // date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.site_url + edge.node.fields.slug,
-                  guid: site.siteMetadata.site_url + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }]
-                })),
-            query: `
-              {
-                allMarkdownRemark(
-                  limit: 1000,
-                  filter: { frontmatter: { template: { eq: "course" }, draft: { ne: true } } }
-                ) {
-                  edges {
-                    node {
-                      html
-                      fields {
-                        slug
-                      }
-                      frontmatter {
-                        title
-                        template
-                        draft
-                        description
-                        timeToCompletion
-                        videoLinks
-                        preReadQuizLink
-                        course
-                        lessons {
-                          description
-                          link
-                          title
-                        }
-                        readingLinks {
-                          link
-                          description
-                          title
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-            output: "/rss.xml"
-          }
-        ]
-      }
-    },
-    {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
@@ -124,21 +55,12 @@ module.exports = {
             options: { wrapperStyle: "margin-bottom: 1.0725rem" }
           },
           "gatsby-remark-autolink-headers",
-          "gatsby-remark-prismjs",
           "gatsby-remark-copy-linked-files",
-          "gatsby-remark-smartypants"
         ]
       }
     },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
-    "gatsby-plugin-netlify",
-    {
-      resolve: "gatsby-plugin-netlify-cms",
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`
-      }
-    },
     {
       resolve: "gatsby-plugin-google-gtag",
       options: {
@@ -148,37 +70,6 @@ module.exports = {
         }
       }
     },
-    // {
-    //   resolve: 'gatsby-plugin-sitemap',
-    //   options: {
-    //     query: `
-    //       {
-    //         site {
-    //           siteMetadata {
-    //             url
-    //           }
-    //         }
-    //         allSitePage(
-    //           filter: {
-    //             path: { regex: "/^(?!/404/|/404.html|/dev-404-page/)/" }
-    //           }
-    //         ) {
-    //           edges {
-    //             node {
-    //               path
-    //             }
-    //           }
-    //         }
-    //       }
-    //     `,
-    //     output: '/sitemap.xml',
-    //     serialize: ({ site, allSitePage }) => allSitePage.edges.map((edge) => ({
-    //       url: site.siteMetadata.url + edge.node.path,
-    //       changefreq: 'daily',
-    //       priority: 0.7
-    //     }))
-    //   }
-    // },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
