@@ -23,6 +23,7 @@ jobs:
       run: |
         npm install
         npm test
+        npm run build
       env:
         CI: true
     - name: Deploy to GitHub Pages
@@ -30,3 +31,4 @@ jobs:
       with:
           repo-token: ${{ secrets.GH_PAT }}
           commit-message: "Deployed Awesome Learning to GitHub"
+          site-directory: public
