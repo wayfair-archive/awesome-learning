@@ -1,4 +1,4 @@
-name: Awesome Learning CI
+name: Awesome Learning CI (Pull Requests)
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
     - master
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     strategy:
@@ -19,19 +19,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Install dependencies, run unit tests
+    - name: Install dependencies and run unit tests
       run: |
         npm install
         npm test
       env:
         CI: true
-    - name: Builds platform
-      run: |
-        npm run build
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@master	
-      env:
-          ACCESS_TOKEN: ${{ secrets.GH_PAT }}
-          BASE_BRANCH: master
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: public          
