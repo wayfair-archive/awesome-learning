@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x]
+        node-version: [10.x]
 
     steps:
     - uses: actions/checkout@v1
@@ -29,8 +29,9 @@ jobs:
       run: |
         npm run build
     - name: Deploy to GitHub Pages
-      uses: enriikke/gatsby-gh-pages-action@v2
-      with:
-          access-token: ${{ secrets.GH_PAT }}
-          deploy-branch: gh-pages
-          gatsby-args: --prefix-paths
+      uses: JamesIves/github-pages-deploy-action@master	
+      env:
+          ACCESS_TOKEN: ${{ secrets.GH_PAT }}
+          BASE_BRANCH: master
+          BRANCH: gh-pages
+          FOLDER: public
