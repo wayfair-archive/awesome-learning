@@ -29,8 +29,8 @@ jobs:
       run: |
         npm run build
     - name: Deploy to GitHub Pages
-      uses: enriikke/gatsby-gh-pages-action@v2
+      uses: alex-page/blazing-fast-gh-pages-deploy@v1.0.1	
       with:
-          access-token: ${{ secrets.GH_PAT }}
-          deploy-branch: gh-pages
-          gatsby-args: --prefix-paths
+          repo-token: ${{ secrets.GH_PAT }}
+          commit-message: "Deployed Awesome Learning to GitHub"	
+          site-directory: public
