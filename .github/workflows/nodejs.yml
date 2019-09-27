@@ -29,8 +29,9 @@ jobs:
       run: |
         npm run build
     - name: Deploy to GitHub Pages
-      uses: alex-page/blazing-fast-gh-pages-deploy@v1.0.1	
-      with:
-          repo-token: ${{ secrets.GH_PAT }}
-          commit-message: "Deployed Awesome Learning to GitHub"	
-          site-directory: public
+      uses: JamesIves/github-pages-deploy-action@master	
+      env:
+          ACCESS_TOKEN: ${{ secrets.GH_PAT }}
+          BASE_BRANCH: master
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: public          
