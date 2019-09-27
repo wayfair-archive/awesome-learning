@@ -1,7 +1,7 @@
 # Awesome Learning
 [![Build Status](https://travis-ci.org/wayfair/awesome-learning.svg?branch=master)](https://travis-ci.org/wayfair/awesome-learning)
 
-Awesome Learning is a Frontend focused learning platform created by current and former members of Wayfair Engineering.
+Awesome Learning is a Front-end focused learning platform created by current and former members of Wayfair Engineering.
 
 [Check out the site](https://wayfair.github.io/awesome-learning/)
 
@@ -10,13 +10,13 @@ Awesome Learning is a Frontend focused learning platform created by current and 
 #### Working With Our Repo
 1. Fork the Awesome Learning Repo
 2. Clone your fork to your local directory
-3. Change into the local directory
+3. Navigate into the local directory
 4. Install dependencies
 ```sh
 npm install
 ```
 
-#### Starting the Repo
+#### Starting Awesome Learning
 
 Navigate into your new site’s directory and start it up.
 ```sh
@@ -37,19 +37,19 @@ npm run test-watch
 ```
 
 ## Project Structure
-Awesome Learning is powered by two repositories, this one and our [exercises repo](https://wayfair.github.io/awesome-learning-exercises/).
+Awesome Learning is powered by two repositories, this one and our [exercises repo](https://github.com/wayfair/awesome-learning-exercises).
 
 #### This Repo
 This is a Gatsby.js powered static site. We use GraphQL as our data layer (see [Gatsby GraphQL](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)), React for our components, co-located SCSS for our styling, and Jest/React Testing Library for our automated tests.
 
 #### The Exercises Repo
-The exercises repo holds the courses and lessons that power the exercise portions of each lesson. You do not need to pull down the exercises repo in order to contribute to Awesome Learning. The exercises repo acts as a target for a codesandbox API which pulls down the files and creates an exercise codesandbox on the fly. For more information on how that works, check out [importing from git](https://codesandbox.io/docs/importing#import-from-github) and the exercises repo readme.
+The exercises repo holds the courses and lessons that power the exercise portions of each lesson. You do not need to pull down the exercises repo in order to contribute to Awesome Learning. The exercises repo acts as a target for a CodeSandbox.io API which pulls down the files and creates an exercise CodeSandbox on the fly. For more information on how that works, check out [importing from git](https://codesandbox.io/docs/importing#import-from-github) and the exercises repo readme.
 
-If you are interested in fixing exercise content, and/or contributing content, please checkout the [exercises repo](https://wayfair.github.io/awesome-learning-exercises/) and we help you out from there.
+If you are interested in fixing exercise content, and/or contributing content, please checkout the [exercises repo](https://github.com/wayfair/awesome-learning-exercises) and we help you out from there.
 
 
 # What is Awesome Learning?
- This platform features a series of courses designed to help you thoroughly learn technical topics. Some of our courses include Frontend Testing, Javascript Data Types, and Javascript Array Methods. Each course contains multiple lessons designed to teach one aspect of the course topic. A lesson has pre-read materials, learning materials, pre-read quizzes, and hands-on exercises.
+ This platform features a series of courses designed to help you thoroughly learn technical topics. Some of our courses include Frontend Testing, JavaScript Data Types, and JavaScript Array Methods. Each course contains multiple lessons designed to teach one aspect of the course topic. A lesson has pre-read materials, learning materials, pre-read quizzes, and hands-on exercises.
 
 ## How Does it Work?
 Small groups of like-minded engineers gather together in a room or virtually,typically once a week, and run through Awesome Learning lessons. Learning materials and pre-read quizzes are done before starting the lesson so everyone is on the same page and held accountable. 
