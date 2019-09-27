@@ -6,12 +6,12 @@ on:
     - master
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [10.x]
+        node-version: [8.x]
 
     steps:
     - uses: actions/checkout@v1
@@ -19,9 +19,18 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Install dependencies and run unit tests
+    - name: Install dependencies, run unit tests
       run: |
         npm install
         npm test
       env:
         CI: true
+    - name: Builds platform
+      run: |
+        npm run build
+    - name: Deploy to GitHub Pages
+      uses: enriikke/gatsby-gh-pages-action@v2
+      with:
+          access-token: ${{ secrets.GH_PAT }}
+          deploy-branch: gh-pages
+          gatsby-args: --prefix-paths
