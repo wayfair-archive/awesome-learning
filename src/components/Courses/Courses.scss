@@ -1,16 +1,13 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
-
 .CourseList {
   $rootSelector: &;
   &-item {
     @include margin-bottom(1.25);
     &:last-child {
-      @include margin-bottom(.5);
+      @include margin-bottom(0.5);
     }
   }
 
-  &-card { 
+  &-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,12 +20,12 @@
   }
 
   &-itemTitle {
-    @include margin-bottom(.5);
+    @include margin-bottom(0.5);
   }
 
   &-itemDescription {
     @include line-height(1);
-    @include margin-bottom(.75);
+    @include margin-bottom(0.75);
   }
 
   &--isHorizontal {
