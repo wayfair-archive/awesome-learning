@@ -90,7 +90,8 @@ module.exports = {
       options: {
         cssLoaderOptions: {
           camelCase: false
-        }
+        },
+        data: `@import "${__dirname}/src/assets/scss/styles";`,
       }
     }
   ]
