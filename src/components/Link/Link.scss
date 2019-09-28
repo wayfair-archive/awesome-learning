@@ -1,6 +1,3 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
-
 .Link {
   text-decoration: none;
   &--primary {
@@ -19,7 +16,7 @@
     @include breakpoint-md {
       font-size: $font--large;
       @include line-height(1.125);
-      @include margin-bottom(1.125)
+      @include margin-bottom(1.125);
     }
   }
 
