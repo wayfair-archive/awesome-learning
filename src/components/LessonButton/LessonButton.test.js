@@ -19,7 +19,7 @@ describe('LessonButton', () => {
   it('creates a link with the right codesandbox url', () => {
     const { getByText } = render(<PureLessonButton {...props} />);
     expect(getByText(/click here/i).href).toBe(
-      'https://codesandbox.io/s/github/wayfair/awesome-learning/tree/master/exercises/data-types/objects?fontsize=14&previewwindow=tests'
+      'https://codesandbox.io/s/github/wayfair/awesome-learning/tree/master/content/exercises/data-types/objects?fontsize=14&previewwindow=tests'
     );
   });
 });
