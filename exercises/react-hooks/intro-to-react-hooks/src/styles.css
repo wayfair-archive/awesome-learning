@@ -1,0 +1,79 @@
+:root {
+  --vertical-padding: 12px 0;
+}
+
+.App {
+  display: block;
+  font-family: sans-serif;
+  font-size: 1.1em;
+  margin-left: 5%;
+  width: 60vw;
+}
+
+.App-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.App-navLink {
+  padding: 0 5px;
+}
+
+.App-navLink--isActive {
+  font-weight: bold;
+}
+
+.Form-buttonGroup button {
+  display: block;
+  margin: 10px 0;
+}
+
+.Form-checkbox {
+  padding: 10px 0;
+}
+
+.Form-checkbox label {
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+.Form-checkbox input {
+  margin: auto;
+}
+
+.Form-fieldInput {
+  font-size: 1.1em;
+  padding: 16px;
+  width: 70%;
+}
+
+.Form-fieldLabel {
+  display: block;
+  font-weight: bold;
+  padding: var(--vertical-padding);
+}
+
+.Form-fieldWrapper {
+  padding: var(--vertical-padding);
+}
+
+.Form-submitButton,
+.Form-buttonGroup button {
+  font-size: 1.3em;
+  padding: 8px;
+}
+
+.inlineCode {
+  display: inline;
+  padding: 0 4px;
+}
+
+.Divider {
+  margin: 20px 0;
+}
+
+h1,
+h2 {
+  text-align: center;
+}

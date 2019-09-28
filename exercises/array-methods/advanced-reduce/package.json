@@ -1,0 +1,15 @@
+{
+  "name": "array-methods-advanced-reduce-all-exercises",
+  "version": "1.0.0",
+  "description": "Advanced reduce exercises",
+  "main": "/src/__tests__/1_advanced_reduce_exercises.test.js",
+  "scripts": {},
+  "dependencies": {
+    "jest": "23.6.0"
+  },
+  "devDependencies": {
+    "@types/jest": "23.3.13",
+    "jest": "23.6.0"
+  },
+  "keywords": []
+}

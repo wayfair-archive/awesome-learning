@@ -1,10 +1,10 @@
 import React from 'react';
-import {graphql, StaticQuery} from 'gatsby';
+import { graphql, StaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import analyticsEventHandler from '../../utils/analyticsEventHandler';
 import './LessonButton.scss';
 
-const handleEventClick = path => {
+const handleEventClick = (path) => {
   try {
     analyticsEventHandler('exercise click', path);
   } catch (error) {
@@ -28,9 +28,9 @@ export const PrimitiveLessonButton = ({
   </a>
 );
 
-export const PureLessonButton = ({path, data, defaultTab}) => {
-  const {repoOwner} = data.site.siteMetadata;
-  const fullPath = `https://codesandbox.io/s/github/${repoOwner}/awesome-learning-exercises/tree/master/${path}?fontsize=14&previewwindow=${defaultTab}`;
+export const PureLessonButton = ({ path, data, defaultTab }) => {
+  const { repoOwner } = data.site.siteMetadata;
+  const fullPath = `https://codesandbox.io/s/github/${repoOwner}/awesome-learning/tree/master/exercises/${path}?fontsize=14&previewwindow=${defaultTab}`;
   return (
     <PrimitiveLessonButton path={fullPath}>
       Click here to start your exercises!
@@ -38,7 +38,7 @@ export const PureLessonButton = ({path, data, defaultTab}) => {
   );
 };
 
-const LessonButton = props => (
+const LessonButton = (props) => (
   <StaticQuery
     query={graphql`
       query LessonButtonQuery {
@@ -50,7 +50,7 @@ const LessonButton = props => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <PureLessonButton data={data} {...props} onClick={handleEventClick} />
     )}
   />

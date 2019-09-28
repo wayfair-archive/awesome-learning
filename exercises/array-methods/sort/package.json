@@ -1,0 +1,15 @@
+{
+  "name": "array-methods-sort-all-exercises",
+  "version": "1.0.0",
+  "description": "Group and pair exercises.",
+  "main": "index.html",
+  "scripts": {},
+  "dependencies": {
+    "jest": "23.6.0"
+  },
+  "devDependencies": {
+    "@types/jest": "23.3.13",
+    "jest": "23.6.0"
+  },
+  "keywords": []
+}
