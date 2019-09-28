@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
   url: 'https://wayfair.github.io/awesome-learning/',
   repoName: 'awesome-learning',

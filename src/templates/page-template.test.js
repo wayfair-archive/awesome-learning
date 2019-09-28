@@ -23,11 +23,9 @@ describe('PageTemplate', () => {
 
   it('renders correctly', () => {
     const tree = renderer.create(<PageTemplate {...props} />, {
-      createNodeMock: (element) => {
-        return {
-          scrollIntoView() {}
-        }
-      }
+      createNodeMock: () => ({
+        scrollIntoView() {}
+      })
     }).toJSON();
     expect(tree).toMatchSnapshot();
   });

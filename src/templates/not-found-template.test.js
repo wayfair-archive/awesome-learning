@@ -16,11 +16,9 @@ describe('NotFoundTemplate', () => {
 
   it('renders correctly', () => {
     const tree = renderer.create(<NotFoundTemplate {...props} />, {
-      createNodeMock: (element) => {
-        return {
-          scrollIntoView() {}
-        }
-      }
+      createNodeMock: () => ({
+        scrollIntoView() {}
+      })
     }).toJSON();
     expect(tree).toMatchSnapshot();
   });

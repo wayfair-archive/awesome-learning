@@ -66,11 +66,9 @@ describe('CategoryTemplate', () => {
 
   it('renders correctly', () => {
     const tree = renderer.create(<CategoryTemplate {...props} />, {
-      createNodeMock: (element) => {
-        return {
-          scrollIntoView() {}
-        }
-      }
+      createNodeMock: () => ({
+        scrollIntoView() {}
+      })
     }).toJSON();
     expect(tree).toMatchSnapshot();
   });
