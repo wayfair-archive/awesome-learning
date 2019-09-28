@@ -1,6 +1,3 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
-
 .Lesson {
   padding: 0 15px;
   margin: 0 auto;
@@ -32,13 +29,13 @@
           font-size: $font--large;
           margin-top: 0;
           @include margin-bottom(1);
-          @include line-height(1.5)
+          @include line-height(1.5);
         }
       }
     }
 
     & a {
-      text-decoration: underline
+      text-decoration: underline;
     }
 
     & img {
@@ -50,4 +47,3 @@
     font-weight: $font-weight--bold;
   }
 }
-
