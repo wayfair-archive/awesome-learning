@@ -4,21 +4,19 @@ import StyledLink from "../Link";
 import Block from "../Block";
 import "./CourseCard.scss";
 
-const CourseCard = ({ title, description, link }) => {
-  return (
-    <li className="CourseCard">
-      <Block is="h3" mb="16px">
-        {title}
-      </Block>
-      <Block is="p" mb="16px">
-        {description}
-      </Block>
-      <StyledLink variation="pill" path={link}>
+const CourseCard = ({ title, description, link }) => (
+  <li className="CourseCard">
+    <Block is="h3" mb="16px">
+      {title}
+    </Block>
+    <Block is="p" mb="16px">
+      {description}
+    </Block>
+    <StyledLink variation="pill" path={link}>
         Learn {title}
-      </StyledLink>
-    </li>
-  );
-};
+    </StyledLink>
+  </li>
+);
 
 CourseCard.propTypes = {
   title: PropTypes.string.isRequired,

@@ -52,15 +52,15 @@ const Lesson = ({ lesson, slug }) => {
         </Block>
         {videoLinks
           && videoLinks.map(link => (
-          <iframe
-            key={link}
-            width="560"
-            height="315"
-            src={link}
-            frameBorder="0"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-          />
+            <iframe
+              key={link}
+              width="560"
+              height="315"
+              src={link}
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+            />
           ))}
       </ContentSection>
 

@@ -1,5 +1,3 @@
-'use strict';
-
 const babelOptions = {
   presets: ['@babel/react', '@babel/env'],
   plugins: [

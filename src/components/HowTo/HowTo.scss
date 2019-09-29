@@ -1,5 +1,5 @@
-@import "../../assets/scss/variables";
-@import "../../assets/scss/mixins";
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
 
 .HowTo {
   padding: 0 15px;
@@ -10,7 +10,7 @@
     margin-bottom: $spacing--medium;
     margin-left: 16px;
     &::before {
-      content: counter(listItemCount) " -";
+      content: counter(listItemCount) ' -';
       color: $color--border;
       font-size: 1.5em;
       margin-right: 8px;

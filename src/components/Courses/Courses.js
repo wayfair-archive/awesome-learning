@@ -38,7 +38,7 @@ const Courses = ({ edges, isHorizontal }) =>
           </StyledLink>
         </div>
       ))}
-  </div>
+    </div>
   ));
 
 export default Courses;
