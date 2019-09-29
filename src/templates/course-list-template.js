@@ -49,7 +49,10 @@ export const query = graphql`
         limit: $coursesLimit,
         skip: $coursesOffset,
         filter: { frontmatter: { template: { eq: "course" }, draft: { ne: true } } },
-      ){
+        sort: {
+          fields: [frontmatter___title]
+          order: [ASC]
+        }){
       edges {
         node {
           fields {
