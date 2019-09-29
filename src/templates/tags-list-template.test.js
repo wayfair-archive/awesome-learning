@@ -28,11 +28,9 @@ describe('TagsListTemplate', () => {
 
   it('renders correctly', () => {
     const tree = renderer.create(<TagsListTemplate {...props} />, {
-      createNodeMock: (element) => {
-        return {
-          scrollIntoView() {}
-        }
-      }
+      createNodeMock: () => ({
+        scrollIntoView() {}
+      })
     }).toJSON();
     expect(tree).toMatchSnapshot();
   });

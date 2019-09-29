@@ -28,11 +28,9 @@ describe('CategoriesListTemplate', () => {
 
   it('renders correctly', () => {
     const tree = renderer.create(<CategoriesListTemplate {...props} />, {
-      createNodeMock: (element) => {
-        return {
-          scrollIntoView() {}
-        }
-      }
+      createNodeMock: () => ({
+        scrollIntoView() {}
+      })
     }).toJSON();
     expect(tree).toMatchSnapshot();
   });

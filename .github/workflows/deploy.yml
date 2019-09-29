@@ -19,13 +19,16 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Install dependencies, run unit tests
+    - name: Install dependencies
       run: |
         npm install
+    - name: Run JavaScript and SCSS linting
+      run: |
+        npm run lint
+    - name: Run unit tests
+      run: |
         npm test
-      env:
-        CI: true
-    - name: Builds platform
+    - name: Build platform
       run: |
         npm run build
     - name: Deploy to GitHub Pages

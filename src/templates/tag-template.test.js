@@ -1,7 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import TagTemplate from './tag-template';
-import Layout from '../components/Layout';
 
 describe('TagTemplate', () => {
   const props = {
@@ -67,11 +66,9 @@ describe('TagTemplate', () => {
 
   it('renders correctly', () => {
     const tree = renderer.create(<TagTemplate {...props} />, {
-      createNodeMock: (element) => {
-        return {
-          scrollIntoView() {}
-        }
-      }
+      createNodeMock: () => ({
+        scrollIntoView() {}
+      })
     }).toJSON();
     expect(tree).toMatchSnapshot();
   });
