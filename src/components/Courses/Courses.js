@@ -5,7 +5,7 @@ import "./Courses.scss";
 const Courses = ({ edges, isHorizontal }) =>
   (isHorizontal ? (
     <div className="CourseList--isHorizontal">
-      { edges.map(edge => (
+      {edges.map(edge => (
         <div className="CourseList-card" key={edge.node.fields.slug}>
           <div className="CourseList-itemTitle">
             <StyledLink variation={"primary"} path={edge.node.fields.slug}>
@@ -20,7 +20,7 @@ const Courses = ({ edges, isHorizontal }) =>
     </div>
   ) : (
     <div className="CourseList">
-      { edges.map(edge => (
+      {edges.map(edge => (
         <div className="CourseList-item" key={edge.node.fields.slug}>
           <StyledLink variation={"tertiary"} path={edge.node.fields.categorySlug}>
             {edge.node.frontmatter.category}
