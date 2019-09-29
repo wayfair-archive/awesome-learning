@@ -45,7 +45,13 @@ exports[`Course renders correctly 1`] = `
           }
         }
       >
-        this is the title
+        <Link
+          activeClassName=""
+          className="Link"
+          to="undefinedlink"
+        >
+          this is the title
+        </Link>
       </h3>
       <p
         style={

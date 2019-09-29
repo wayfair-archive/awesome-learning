@@ -8,7 +8,9 @@ const CourseCard = ({ title, description, link }) => {
   return (
     <li className="CourseCard">
       <Block is="h3" mb="16px">
-        {title}
+        <StyledLink path={link}>
+          {title}
+        </StyledLink>
       </Block>
       <Block is="p" mb="16px">
         {description}
