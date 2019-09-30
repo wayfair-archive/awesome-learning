@@ -51,8 +51,8 @@ const Lesson = ({ lesson, slug }) => {
           Check out this content before your session begins to get an idea of
           what you will be working on.
         </Block>
-        {videoLinks &&
-          videoLinks.map(link => (
+        {videoLinks 
+          && videoLinks.map(link => (
             <iframe
               key={link}
               width="560"
