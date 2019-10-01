@@ -54,7 +54,7 @@ const Lesson = ({ lesson, slug }) => {
           && videoLinks.map(link => (
           <iframe
             key={link}
-            width="560"
+            width="100%"
             height="315"
             src={link}
             frameBorder="0"

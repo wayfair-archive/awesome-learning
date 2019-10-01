@@ -56,7 +56,7 @@ const HowTo = () => (
         environment.
       </Block>
       <iframe
-        width="560"
+        width="100%"
         height="315"
         src="https://www.youtube.com/embed/e8_wPD6O3gA"
         frameborder="0"
