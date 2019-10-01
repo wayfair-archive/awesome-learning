@@ -16,6 +16,9 @@
     font-size: $font--logo;
     font-weight: $font-weight--normal;
     text-transform: uppercase;
+    @media (max-width: 749px) {
+      font-size: $font--logo--mobile;
+    }
   }
   &-logo,
   &-menu,
