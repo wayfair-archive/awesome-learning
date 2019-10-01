@@ -5,6 +5,7 @@ import Block from "../Block";
 import "./CourseCard.scss";
 
 const CourseCard = ({ title, description, link }) => {
+  const amountOfWords = title.split(' ');
   return (
     <li className="CourseCard">
       <Block is="h3" mb="16px">
@@ -14,7 +15,10 @@ const CourseCard = ({ title, description, link }) => {
         {description}
       </Block>
       <StyledLink variation="pill" path={link}>
-        Learn {title}
+        {amountOfWords.length > 2
+          ? <p style={{ fontSize: 13 }}>Learn {title}</p>
+          : <p>Learn {title}</p>
+        }
       </StyledLink>
     </li>
   );
