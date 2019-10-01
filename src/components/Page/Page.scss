@@ -1,5 +1,4 @@
 .Page {
-  @include margin-bottom(2);
 
   &-inner {
     padding: 25px 0;
@@ -26,6 +25,6 @@
 
   &-body {
     @include line-height(1);
-    @include margin(0, 0, 1);
+    @include margin(0, 0, 0);
   }
 }
