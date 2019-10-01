@@ -49,7 +49,8 @@
 
   &--pill {
     display: inline-block;
-    height: $button-height;
+    min-height: $button-height;
+    text-align: center;
     padding: 0 24px;
     line-height: $button-height;
     border: 1px solid $color--border;
