@@ -7,7 +7,7 @@
   margin: 0 auto;
 
   &-title {
-    font-size: $font--large;
+    font-size: $font--1500;
     max-width: $layout-course-width;
     margin: auto;
     font-weight: 600;
@@ -29,7 +29,7 @@
 
         & p {
           max-width: $layout-course-width;
-          font-size: $font--large;
+          font-size: $font--1500;
           margin-top: 0;
           @include margin-bottom(1);
           @include line-height(1.5)
@@ -62,19 +62,19 @@
     padding: 0;
 
     &-title {
-      font-size: $font--xl;
+      font-size: $font--3500;
       @include line-height(2.25);
       @include margin-top(2.25);
       @include margin-bottom(1.5)
     }
 
     &-body {
-      font-size: $font--large;
+      font-size: $font--1500;
       @include line-height(1.125);
       @include margin-bottom(1.125);
 
       & p {
-        font-size: $font--large;
+        font-size: $font--1500;
         @include line-height(1.125);
         @include margin-bottom(1.125)
       }

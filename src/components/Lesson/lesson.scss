@@ -26,7 +26,7 @@
         @include padding(1, 0);
 
         & p {
-          font-size: $font--large;
+          font-size: $font--1500;
           margin-top: 0;
           @include margin-bottom(1);
           @include line-height(1.5);
