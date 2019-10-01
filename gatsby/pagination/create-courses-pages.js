@@ -23,7 +23,7 @@ module.exports = async (graphql, actions) => {
         currentPage: i,
         coursesLimit: coursesPerPage,
         coursesOffset: i * coursesPerPage,
-        prevPagePath: i <= 1 ? '/' : `/courses/page/${i - 1}`,
+        prevPagePath: i <= 1 ? '/courses' : `/courses/page/${i - 1}`,
         nextPagePath: `/courses/page/${i + 1}`,
         hasPrevPage: i !== 0,
         hasNextPage: i !== numPages - 1
