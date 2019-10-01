@@ -93,7 +93,6 @@
     "jest-cli": "24.9.0",
     "prettier": "1.18.2",
     "react-grid-system": "^4.4.11",
-    "react-test-renderer": "16.9.0",
     "rimraf": "3.0.0",
     "stylelint": "11.0.0",
     "stylelint-config-recommended-scss": "4.0.0",
