@@ -4,16 +4,22 @@ import StyledLink from "../Link";
 import Block from "../Block";
 import "./CourseCard.scss";
 
+export const DATA_ENZYME_IDS = {
+  TITLE: "CourseCard-Title",
+  LINK: "CourseCard-Link",
+  DESCRIPTION: "CourseCard-Description"
+};
+
 const CourseCard = ({ title, description, link }) => (
   <li className="CourseCard">
-    <Block is="h3" mb="16px">
+    <Block is="h3" mb="16px" data-enzyme-id={DATA_ENZYME_IDS.TITLE}>
       {title}
     </Block>
-    <Block is="p" mb="16px">
+    <Block is="p" mb="16px" data-enzyme-id={DATA_ENZYME_IDS.DESCRIPTION}>
       {description}
     </Block>
-    <StyledLink variation="pill" path={link}>
-        Learn {title}
+    <StyledLink variation="pill" data-enzyme-id={DATA_ENZYME_IDS.LINK} path={link}>
+      Learn {title}
     </StyledLink>
   </li>
 );

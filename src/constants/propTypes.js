@@ -10,10 +10,8 @@ export const PAGE_CONTEXT_PROP_TYPE = PropTypes.shape({
 });
 
 export const SITE_METADATA_PROP_TYPE = PropTypes.shape({
-  site: PropTypes.shape({
-    siteMetadata: PropTypes.shape({
-      subtitle: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired
-    }).isRequired
-  }).isRequired,
+  siteMetadata: PropTypes.shape({
+    subtitle: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
+  }).isRequired
 });
