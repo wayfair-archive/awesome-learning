@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import Courses from "../components/Courses";
 import Page from "../components/Page";
 import Pagination from "../components/Pagination";
-import { PAGE_CONTEXT_PROP_TYPE, SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
+import { SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 
 const TagTemplate = ({ data, pageContext }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = data.site.siteMetadata;
@@ -51,9 +51,8 @@ TagTemplate.propTypes = {
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array.isRequired
     }),
-    site: SITE_METADATA_PROP_TYPE
-  }).isRequired,
-  pageContext: PAGE_CONTEXT_PROP_TYPE.isRequired
+    site: SITE_METADATA_PROP_TYPE.isRequired
+  }).isRequired
 };
 
 export const query = graphql`
@@ -83,7 +82,6 @@ export const query = graphql`
           }
           frontmatter {
             title
-
             category
             description
           }
