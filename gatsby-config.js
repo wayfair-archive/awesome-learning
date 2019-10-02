@@ -1,5 +1,3 @@
-"use strict";
-
 const siteConfig = require("./config.js");
 
 module.exports = {
@@ -77,7 +75,7 @@ module.exports = {
         short_name: siteConfig.title,
         start_url: "/",
         background_color: "#FFF",
-        theme_color: "#F7A046",
+        theme_color: "#455A81",
         display: "standalone",
         icon: "static/photo.jpg"
       }
@@ -90,7 +88,8 @@ module.exports = {
       options: {
         cssLoaderOptions: {
           camelCase: false
-        }
+        },
+        data: `@import "${__dirname}/src/assets/scss/styles";`,
       }
     }
   ]

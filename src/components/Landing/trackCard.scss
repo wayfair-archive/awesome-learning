@@ -1,6 +1,3 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
-
 .TrackCard {
   display: flex;
   flex-direction: column;
@@ -33,4 +30,3 @@
     fill: $color--secondary;
   }
 }
-

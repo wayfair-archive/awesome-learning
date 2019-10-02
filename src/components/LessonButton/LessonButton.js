@@ -8,7 +8,7 @@ const handleEventClick = path => {
   try {
     analyticsEventHandler('exercise click', path);
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
 

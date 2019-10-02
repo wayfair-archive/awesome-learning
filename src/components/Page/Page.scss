@@ -1,19 +1,15 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
-
 .Page {
-  @include margin-bottom(2);
 
   &-inner {
     padding: 25px 0;
     @include breakpoint-sm {
       padding: 30px 0;
     }
-    
+
     @include breakpoint-md {
       padding: 40px 0;
     }
-    
+
     @include breakpoint-lg {
       padding: 40px 35px;
     }
@@ -29,7 +25,6 @@
 
   &-body {
     @include line-height(1);
-    @include margin(0, 0, 1);
+    @include margin(0, 0, 0);
   }
-
 }

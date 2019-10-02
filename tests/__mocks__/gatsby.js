@@ -1,5 +1,3 @@
-'use strict';
-
 const gatsby = jest.requireActual('gatsby');
 
 module.exports = {
