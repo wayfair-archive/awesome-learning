@@ -21,11 +21,12 @@ const Lesson = ({ lesson, slug }) => {
   // Split the description into different paragraphs based on new lines
   const descriptionParagraphs = description.split(/\r?\n\n/);
   const path = slug.toLowerCase().split('/courses/')[1];
+  const courseName = course.split('-').join(' ');
   return (
     <div className="Lesson">
       <div className="Lesson-homeButton">
         <StyledLink variation={'tertiary'} path={`/courses/${course}/`}>
-          Back to {course}
+          Back to {courseName}
         </StyledLink>
       </div>
 
@@ -50,7 +51,7 @@ const Lesson = ({ lesson, slug }) => {
           Check out this content before your session begins to get an idea of
           what you will be working on.
         </Block>
-        {videoLinks
+        {videoLinks 
           && videoLinks.map(link => (
             <iframe
               key={link}
