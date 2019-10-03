@@ -13,7 +13,9 @@ export const DATA_ENZYME_IDS = {
 const CourseCard = ({ title, description, link }) => (
   <li className="CourseCard">
     <Block is="h3" mb="16px" data-enzyme-id={DATA_ENZYME_IDS.TITLE}>
-      {title}
+      <StyledLink path={link}>
+        {title}
+      </StyledLink>
     </Block>
     <Block is="p" mb="16px" data-enzyme-id={DATA_ENZYME_IDS.DESCRIPTION}>
       {description}
