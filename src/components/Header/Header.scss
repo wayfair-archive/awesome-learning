@@ -8,14 +8,17 @@
   justify-content: space-between;
   align-items: center;
   height: 90px;
-  border-top: 10px solid $color--secondary;
   padding: 0 $spacing--xLarge;
   background-color: $color--primary;
   &-title {
     color: $color--white;
-    font-size: $font--logo;
+    font-size: $font--logo-mobile;
     font-weight: $font-weight--normal;
     text-transform: uppercase;
+
+    @include breakpoint-sm {
+      font-size: $font--logo;
+    }
   }
   &-logo,
   &-menu,

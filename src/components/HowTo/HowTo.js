@@ -56,12 +56,12 @@ const HowTo = () => (
         environment.
       </Block>
       <iframe
-        width="560"
+        width="100%"
         height="315"
         src="https://www.youtube.com/embed/e8_wPD6O3gA"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen
       ></iframe>
       <Block is="p" mt="16px" mb="16px">
         <b>Rough lesson guide</b>

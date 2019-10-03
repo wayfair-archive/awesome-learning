@@ -4,23 +4,27 @@ import StyledLink from "../Link";
 import Block from "../Block";
 import "./CourseCard.scss";
 
-const CourseCard = ({ title, description, link }) => {
-  return (
-    <li className="CourseCard">
-      <Block is="h3" mb="16px">
-        <StyledLink path={link}>
-          {title}
-        </StyledLink>
-      </Block>
-      <Block is="p" mb="16px">
-        {description}
-      </Block>
-      <StyledLink variation="pill" path={link}>
-        Learn {title}
-      </StyledLink>
-    </li>
-  );
+export const DATA_ENZYME_IDS = {
+  TITLE: "CourseCard-Title",
+  LINK: "CourseCard-Link",
+  DESCRIPTION: "CourseCard-Description"
 };
+
+const CourseCard = ({ title, description, link }) => (
+  <li className="CourseCard">
+    <Block is="h3" mb="16px" data-enzyme-id={DATA_ENZYME_IDS.TITLE}>
+      <StyledLink path={link}>
+        {title}
+      </StyledLink>
+    </Block>
+    <Block is="p" mb="16px" data-enzyme-id={DATA_ENZYME_IDS.DESCRIPTION}>
+      {description}
+    </Block>
+    <StyledLink variation="pill" data-enzyme-id={DATA_ENZYME_IDS.LINK} path={link}>
+      Learn {title}
+    </StyledLink>
+  </li>
+);
 
 CourseCard.propTypes = {
   title: PropTypes.string.isRequired,
