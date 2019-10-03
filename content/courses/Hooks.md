@@ -13,5 +13,5 @@ description: React Hooks introduce new ways to use React's APIs and features, wh
 lessons: 
   - link: "intro-to-react-hooks"
     title: Intro to React Hooks
-    description: The first question you see after browing through your news and hearing conversations from your fellow engineers...What are Hooks? What can you do with Hooks? How do they compare to writing React with classes? These questions, and more, will be covered in this lesson.
+    description: The first question you see after browsing through your news and hearing conversations from your fellow engineers is what are Hooks? What can you do with Hooks? How do they compare to writing React with classes? These questions, and more, will be covered in this lesson.
 ---
