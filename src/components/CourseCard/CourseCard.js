@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import StyledLink from "../Link";
-import Block from "../Block";
+import StyledLink from "../../patternLibrary/Link";
+import Block from "../../patternLibrary/Block";
 import "./CourseCard.scss";
 
 export const DATA_ENZYME_IDS = {
