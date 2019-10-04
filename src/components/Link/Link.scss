@@ -1,7 +1,7 @@
 .Link {
   text-decoration: none;
   &--primary {
-    font-size: $font--large;
+    font-size: $font--1500;
     font-weight: 600;
     @include line-height(1.5);
     color: $color--base;
@@ -14,7 +14,7 @@
   &--secondary {
     text-decoration: underline;
     @include breakpoint-md {
-      font-size: $font--large;
+      font-size: $font--1500;
       @include line-height(1.125);
       @include margin-bottom(1.125);
     }
@@ -22,7 +22,7 @@
 
   &--tertiary {
     color: $color--secondary;
-    font-size: $font--small;
+    font-size: $font--500;
     font-weight: 600;
     text-transform: uppercase;
     &:hover,
