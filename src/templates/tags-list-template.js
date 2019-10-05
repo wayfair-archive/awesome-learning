@@ -1,13 +1,14 @@
-import React from "react";
-import { Link, graphql } from "gatsby";
-import kebabCase from "lodash/kebabCase";
-import { Container, Row, Col } from "react-grid-system";
-import Layout from "../components/Layout";
-import Page from "../components/Page";
+import React from 'react';
+import PropTypes from 'prop-types';
+import {Link, graphql} from 'gatsby';
+import kebabCase from 'lodash/kebabCase';
+import {Container, Row, Col} from 'react-grid-system';
+import Layout from '../components/Layout';
+import Page from '../components/Page';
 
-const TagsListTemplate = ({ data }) => {
-  const { title, subtitle } = data.site.siteMetadata;
-  const { group } = data.allMarkdownRemark;
+const TagsListTemplate = ({data}) => {
+  const {title, subtitle} = data.site.siteMetadata;
+  const {group} = data.allMarkdownRemark;
 
   return (
     <Layout title={`Tags - ${title}`} description={subtitle}>
@@ -41,9 +42,7 @@ export const query = graphql`
       }
     }
     allMarkdownRemark(
-      filter: {
-        frontmatter: { template: { eq: "course" }, draft: { ne: true } }
-      }
+      filter: {frontmatter: {template: {eq: "course"}, draft: {ne: true}}}
     ) {
       group(field: frontmatter___tags) {
         fieldValue
@@ -52,5 +51,9 @@ export const query = graphql`
     }
   }
 `;
+
+TagsListTemplate.propTypes = {
+  data: PropTypes.string
+};
 
 export default TagsListTemplate;

@@ -12,7 +12,8 @@
     "lint:scss": "stylelint 'src/**/*.scss'",
     "test": "jest --config ./tests/jest-config.js",
     "test-coverage": "jest --coverage --config ./tests/jest-config.js",
-    "test-watch": "jest --watch --config ./tests/jest-config.js"
+    "test-watch": "jest --watch --config ./tests/jest-config.js",
+    "eslint-report": "./node_modules/.bin/eslint ./src -f json -o eslintresults.json"
   },
   "repository": "https://github.com/wayfair/awesome-learning",
   "author": "Awesome Learning™ <awesomelearning@wayfair.com>",
@@ -34,6 +35,7 @@
     "node": "^8 || ^10"
   },
   "dependencies": {
+    "@stanfaas/proptypes": "^1.3.0",
     "classnames": "^2.2.6",
     "codecov": "^3.6.1",
     "gatsby": "^2.15.28",

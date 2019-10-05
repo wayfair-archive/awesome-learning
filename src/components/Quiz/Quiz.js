@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from 'prop-types';
 import { formatQuestionId, getChoiceIndex, getQuestionIndex } from './quizUtilities';
 import ContentSection from "../ContentSection";
 import Question from "./Question";
@@ -107,4 +108,9 @@ const Quiz = ({ quiz, slug, title }) => {
   );
 };
 
+Quiz.propTypes = {
+  quiz: PropTypes.string,
+  slug: PropTypes.string,
+  title: PropTypes.string,
+}
 export default Quiz;

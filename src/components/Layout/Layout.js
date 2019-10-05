@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import Helmet from "react-helmet";
 import cx from "classnames";
 import Header from "../Header";
@@ -30,4 +31,10 @@ Layout.defaultProps = {
   isFullBleed: false
 };
 
+Layout.propTypes = {
+  children: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  isFullBleed: PropTypes.string,
+}
 export default Layout;

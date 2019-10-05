@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { Link } from "gatsby";
 import { PAGINATION } from "../../constants";
 import "./Pagination.scss";
@@ -27,4 +28,10 @@ const Pagination = ({
   </div>
 );
 
+Pagination.propTypes = {
+  prevPagePath: PropTypes.string,
+  nextPagePath: PropTypes.string,
+  hasNextPage: PropTypes.string,
+  hasPrevPage: PropTypes.string,
+}
 export default Pagination;

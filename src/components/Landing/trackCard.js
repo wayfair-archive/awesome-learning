@@ -19,6 +19,7 @@ const TrackCard = props => (
 );
 
 TrackCard.propTypes = {
+  icon: PropTypes.string,
   title: PropTypes.string.isRequired,
   subTitle: PropTypes.string.isRequired,
   path: PropTypes.string

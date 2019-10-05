@@ -44,6 +44,8 @@ const StyledLink = ({
 };
 
 StyledLink.propTypes = {
+  children: PropTypes.string,
+  isBlock: PropTypes.string,
   variation: PropTypes.oneOf(LINK_VARIATIONS),
   path: PropTypes.string.isRequired,
   isButton: PropTypes.bool,

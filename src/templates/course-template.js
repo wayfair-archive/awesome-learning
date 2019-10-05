@@ -1,24 +1,26 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import {graphql} from 'gatsby';
 import Layout from '../components/Layout';
 import Course from '../components/Course';
 import Page from '../components/Page';
 
-const CourseTemplate = ({ data }) => {
-  const {
-    title: siteTitle,
-    subtitle: siteSubtitle
-  } = data.site.siteMetadata;
+const CourseTemplate = ({data}) => {
+  const {title: siteTitle, subtitle: siteSubtitle} = data.site.siteMetadata;
 
   const {
     title: courseTitle,
     description: courseDescription
   } = data.markdownRemark.frontmatter;
 
-  const metaDescription = courseDescription !== null ? courseDescription : siteSubtitle;
+  const metaDescription =
+    courseDescription !== null ? courseDescription : siteSubtitle;
 
   return (
-    <Layout title={`${courseTitle} - ${siteTitle}`} description={metaDescription}>
+    <Layout
+      title={`${courseTitle} - ${siteTitle}`}
+      description={metaDescription}
+    >
       <Page>
         <Course course={data.markdownRemark} />
       </Page>
@@ -35,7 +37,7 @@ export const query = graphql`
         url
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    markdownRemark(fields: {slug: {eq: $slug}}) {
       id
       html
       fields {
@@ -55,5 +57,9 @@ export const query = graphql`
     }
   }
 `;
+
+CourseTemplate.propTypes = {
+  data: PropTypes.string
+};
 
 export default CourseTemplate;

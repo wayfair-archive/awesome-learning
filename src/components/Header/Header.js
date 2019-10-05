@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { Link, graphql, StaticQuery } from "gatsby";
 import Menu from "./Menu";
 import Icon from "../Icon";
@@ -63,4 +64,7 @@ export const Header = props => (
   />
 );
 
+Header.propTypes = {
+  data: PropTypes.string,
+}
 export default Header;

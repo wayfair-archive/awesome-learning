@@ -25,6 +25,11 @@ const Block = ({
 };
 
 Block.propTypes = {
+  children: PropTypes.string,
+  mt: PropTypes.string,
+  mb: PropTypes.string,
+  ml: PropTypes.string,
+  mr: PropTypes.string,
   is: PropTypes.string
 };
 

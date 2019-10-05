@@ -1,16 +1,13 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import {graphql} from 'gatsby';
 import Layout from '../components/Layout';
 import Landing from '../components/Landing';
 
+const IndexTemplate = ({data}) => {
+  const {title: siteTitle, subtitle: siteSubtitle} = data.site.siteMetadata;
 
-const IndexTemplate = ({ data }) => {
-  const {
-    title: siteTitle,
-    subtitle: siteSubtitle
-  } = data.site.siteMetadata;
-
-  const { edges } = data.allMarkdownRemark;
+  const {edges} = data.allMarkdownRemark;
 
   return (
     <Layout title={siteTitle} description={siteSubtitle} isFullBleed>
@@ -28,10 +25,10 @@ export const query = graphql`
       }
     }
     allMarkdownRemark(
-        limit: $coursesLimit,
-        skip: $coursesOffset,
-        filter: { frontmatter: { template: { eq: "course" }, draft: { ne: true } } },
-      ){
+      limit: $coursesLimit
+      skip: $coursesOffset
+      filter: {frontmatter: {template: {eq: "course"}, draft: {ne: true}}}
+    ) {
       edges {
         node {
           fields {
@@ -48,5 +45,9 @@ export const query = graphql`
     }
   }
 `;
+
+IndexTemplate.propTypes = {
+  data: PropTypes.string
+};
 
 export default IndexTemplate;

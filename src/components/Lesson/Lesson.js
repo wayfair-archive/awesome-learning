@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import StyledLink from '../Link';
 import Block from '../Block';
 import LessonButton, { PrimitiveLessonButton } from '../LessonButton';
@@ -137,4 +138,8 @@ const Lesson = ({ lesson, slug }) => {
   );
 };
 
+Lesson.propTypes = {
+  lesson: PropTypes.string,
+  slug: PropTypes.string,
+}
 export default Lesson;

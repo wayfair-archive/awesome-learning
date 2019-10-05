@@ -1,18 +1,19 @@
-import React from "react";
-import { graphql } from "gatsby";
-import { Container, Row, Col } from "react-grid-system";
-import Layout from "../components/Layout";
-import Page from "../components/Page";
+import React from 'react';
+import PropTypes from 'prop-types';
+import {graphql} from 'gatsby';
+import {Container, Row, Col} from 'react-grid-system';
+import Layout from '../components/Layout';
+import Page from '../components/Page';
 
-const PageTemplate = ({ data }) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = data.site.siteMetadata;
+const PageTemplate = ({data}) => {
+  const {title: siteTitle, subtitle: siteSubtitle} = data.site.siteMetadata;
 
   const {
     title: pageTitle,
     description: pageDescription
   } = data.markdownRemark.frontmatter;
 
-  const { html: pageBody } = data.markdownRemark;
+  const {html: pageBody} = data.markdownRemark;
 
   const metaDescription =
     pageDescription !== null ? pageDescription : siteSubtitle;
@@ -23,7 +24,7 @@ const PageTemplate = ({ data }) => {
         <Row>
           <Col>
             <Page title={pageTitle}>
-              <div dangerouslySetInnerHTML={{ __html: pageBody }} />
+              <div dangerouslySetInnerHTML={{__html: pageBody}} />
             </Page>
           </Col>
         </Row>
@@ -40,7 +41,7 @@ export const query = graphql`
         subtitle
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    markdownRemark(fields: {slug: {eq: $slug}}) {
       id
       html
       frontmatter {
@@ -51,5 +52,9 @@ export const query = graphql`
     }
   }
 `;
+
+PageTemplate.propTypes = {
+  data: PropTypes.string
+};
 
 export default PageTemplate;

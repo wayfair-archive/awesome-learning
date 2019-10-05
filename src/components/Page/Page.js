@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Page.scss';
 
 const Page = ({ title, children }) => (
@@ -12,4 +13,8 @@ const Page = ({ title, children }) => (
   </div>
 );
 
+Page.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.string,
+}
 export default Page;

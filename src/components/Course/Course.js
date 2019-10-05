@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import Tags from "./Tags";
 import StyledLink from "../Link";
 import CourseCard from "../CourseCard";
@@ -43,4 +44,7 @@ const Course = ({ course }) => {
   );
 };
 
+Course.propTypes = {
+  course: PropTypes.string,
+}
 export default Course;

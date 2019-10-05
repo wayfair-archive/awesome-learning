@@ -47,6 +47,7 @@ const TagTemplate = ({ data, pageContext }) => {
 };
 
 TagTemplate.propTypes = {
+  pageContext: PropTypes.string,
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array.isRequired

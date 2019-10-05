@@ -36,6 +36,7 @@ const ContentSection = ({
 };
 
 ContentSection.propTypes = {
+  titleAlignment: PropTypes.string,
   className: PropTypes.string,
   title: PropTypes.string,
   subTitle: PropTypes.string,

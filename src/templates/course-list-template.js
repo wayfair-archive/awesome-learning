@@ -1,15 +1,13 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import {graphql} from 'gatsby';
 import Layout from '../components/Layout';
 import Courses from '../components/Courses';
 import Page from '../components/Page';
 import Pagination from '../components/Pagination';
 
-const CourseListTemplate = ({ data, pageContext }) => {
-  const {
-    title: siteTitle,
-    subtitle: siteSubtitle
-  } = data.site.siteMetadata;
+const CourseListTemplate = ({data, pageContext}) => {
+  const {title: siteTitle, subtitle: siteSubtitle} = data.site.siteMetadata;
 
   const {
     currentPage,
@@ -19,8 +17,11 @@ const CourseListTemplate = ({ data, pageContext }) => {
     nextPagePath
   } = pageContext;
 
-  const { edges } = data.allMarkdownRemark;
-  const pageTitle = currentPage > 0 ? `Courses - Page ${currentPage} - ${siteTitle}` : siteTitle;
+  const {edges} = data.allMarkdownRemark;
+  const pageTitle =
+    currentPage > 0
+      ? `Courses - Page ${currentPage} - ${siteTitle}`
+      : siteTitle;
 
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
@@ -46,13 +47,11 @@ export const query = graphql`
       }
     }
     allMarkdownRemark(
-        limit: $coursesLimit,
-        skip: $coursesOffset,
-        filter: { frontmatter: { template: { eq: "course" }, draft: { ne: true } } },
-        sort: {
-          fields: [frontmatter___title]
-          order: [ASC]
-        }){
+      limit: $coursesLimit
+      skip: $coursesOffset
+      filter: {frontmatter: {template: {eq: "course"}, draft: {ne: true}}}
+      sort: {fields: [frontmatter___title], order: [ASC]}
+    ) {
       edges {
         node {
           fields {
@@ -69,5 +68,10 @@ export const query = graphql`
     }
   }
 `;
+
+CourseListTemplate.propTypes = {
+  data: PropTypes.string,
+  pageContext: PropTypes.string
+};
 
 export default CourseListTemplate;
