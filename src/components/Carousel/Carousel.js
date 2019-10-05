@@ -17,7 +17,7 @@ const Carousel = ({ items, count, cardWidth, cardHeight, spacing }) => {
     <div className="Carousel">
       <div
         tabIndex="0"
-        className={`Carousel-navigator left ${offset === 0 ? 'disabled' : ''}`}
+        className="Carousel-navigator left"
         onClick={navigateLeft}
         onMouseDown={e => e.preventDefault()}
         onKeyDown={e => e.key === 'Enter' && navigateLeft()}>
@@ -42,7 +42,7 @@ const Carousel = ({ items, count, cardWidth, cardHeight, spacing }) => {
       </div>
       <div
         tabIndex="0"
-        className={`Carousel-navigator right ${offset === itemCount - count ? 'disabled' : ''}`}
+        className="Carousel-navigator right"
         onClick={navigateRight}
         onMouseDown={e => e.preventDefault()}
         onKeyDown={e => e.key === 'Enter' && navigateRight()}>
