@@ -57,9 +57,6 @@ const LessonButton = props => (
 );
 
 PureLessonButton.propTypes = {
-  path: PropTypes.string,
-  onClick: PropTypes.string,
-  children: PropTypes.string,
   data: PropTypes.string,
   defaultTab: PropTypes.string,
   path: PropTypes.string.isRequired,
