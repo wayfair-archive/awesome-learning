@@ -1,0 +1,27 @@
+.Carousel {
+  display: flex;
+  align-items: center;
+  .Carousel-listWrapper {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    overflow-x: hidden;
+  }
+  .Carousel-list {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    transition-property: left;
+    transition-duration: 0.3s;
+  }
+
+  .Carousel-navigator {
+    cursor: pointer;
+    &.disabled {
+      color: gray;
+    }
+    &.right {
+      margin-left: 10px;
+    }
+  }
+}

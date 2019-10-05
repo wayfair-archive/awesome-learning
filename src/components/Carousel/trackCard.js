@@ -7,7 +7,7 @@ import Icon from "../Icon";
 import "./trackCard.scss";
 
 const TrackCard = props => (
-  <Link className="TrackCard" to={props.path}>
+  <Link className="TrackCard" to={props.path} style={props.style}>
     <div className="TrackCard-iconWrap">
       <Icon icon={props.icon} cssClasses="TrackCard-icon" />
     </div>
