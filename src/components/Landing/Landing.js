@@ -29,7 +29,7 @@ const COURSE_DATA_MAPPING = {
     subTitle: 'Learn react hooks.',
   },
   'Functions and Scope': {
-    icon: 'fx',
+    icon: 'function',
     subTitle: 'Learn about function and scopes.',
   }
 };

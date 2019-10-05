@@ -43,8 +43,8 @@ const getIcon = (name) => {
     case 'testing':
       icon = ICONS.TESTING;
       break;
-    case 'fx':
-      icon = ICONS.FX;
+    case 'function':
+      icon = ICONS.FUNCTION;
       break;
     case 'hook':
       icon = ICONS.HOOK;
