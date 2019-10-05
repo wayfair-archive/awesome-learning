@@ -1,6 +1,7 @@
 import React from 'react';
 import {render} from '@testing-library/react';
 import {PureLessonButton} from './LessonButton';
+import LastLessonProvider from '../../providers/LastLessonProvider';
 
 describe('LessonButton', () => {
   const props = {
@@ -17,7 +18,11 @@ describe('LessonButton', () => {
   };
 
   it('creates a link with the right codesandbox url', () => {
-    const {getByText} = render(<PureLessonButton {...props} />);
+    const {getByText} = render(
+      <LastLessonProvider>
+        <PureLessonButton {...props} />
+      </LastLessonProvider>
+    );
     expect(getByText(/click here/i).href).toBe(
       'https://codesandbox.io/s/github/wayfair/awesome-learning-exercises/tree/master/data-types/objects?fontsize=14&previewwindow=tests'
     );
