@@ -17,9 +17,7 @@
 
   .Carousel-navigator {
     cursor: pointer;
-    &.disabled {
-      color: gray;
-    }
+    color: $color--secondary;
     &.right {
       margin-left: 10px;
     }

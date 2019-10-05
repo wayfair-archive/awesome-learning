@@ -8,8 +8,11 @@ import './Carousel.scss';
 const Carousel = ({ items, count, cardWidth, cardHeight, spacing }) => {
   const itemCount = items.length;
   const [ offset, setOffset ] = useState(0);
+
   const navigateLeft = () => setOffset(offset - 1 < 0 ? 0 : offset - 1);
   const navigateRight = () => setOffset(offset + count === itemCount ? offset : offset + 1);
+  const navigateToCard = cardIndex => setOffset(cardIndex + count >= itemCount ? itemCount - count : cardIndex);
+
   return (
     <div className="Carousel">
       <div
@@ -23,7 +26,7 @@ const Carousel = ({ items, count, cardWidth, cardHeight, spacing }) => {
       <div className="Carousel-listWrapper" style={{height: cardHeight, width: (cardWidth + spacing) * count }}>
         <div className="Carousel-list" style={{left: offset * -1 * (cardWidth + spacing)}}>
           {
-            items.map(({title, icon, subTitle, path}) => (
+            items.map(({title, icon, subTitle, path}, index) => (
               <TrackCard
                 key={title}
                 title={title}
@@ -31,6 +34,7 @@ const Carousel = ({ items, count, cardWidth, cardHeight, spacing }) => {
                 subTitle={subTitle}
                 path={path}
                 style={{marginLeft: spacing / 2, marginRight: spacing / 2, minWidth: cardWidth}}
+                onFocus={() => navigateToCard(index)}
               />
             ))
           }
