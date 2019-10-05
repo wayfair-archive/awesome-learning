@@ -17,6 +17,8 @@ const Carousel = ({ items, count, cardWidth, cardHeight, spacing }) => {
     <div className="Carousel">
       <div
         tabIndex="0"
+        role="button"
+        alt="Previous Course"
         className="Carousel-navigator left"
         onClick={navigateLeft}
         onMouseDown={e => e.preventDefault()}
@@ -24,24 +26,28 @@ const Carousel = ({ items, count, cardWidth, cardHeight, spacing }) => {
         <Icon icon={getIcon('leftChevron')} />
       </div>
       <div className="Carousel-listWrapper" style={{height: cardHeight, width: (cardWidth + spacing) * count }}>
-        <div className="Carousel-list" style={{left: offset * -1 * (cardWidth + spacing)}}>
+        <div role="list" className="Carousel-list" style={{left: offset * -1 * (cardWidth + spacing)}}>
           {
             items.map(({title, icon, subTitle, path}, index) => (
-              <TrackCard
-                key={title}
-                title={title}
-                icon={getIcon(icon)}
-                subTitle={subTitle}
-                path={path}
-                style={{marginLeft: spacing / 2, marginRight: spacing / 2, minWidth: cardWidth}}
-                onFocus={() => navigateToCard(index)}
-              />
+              <div role="listitem" key={title}>
+                <TrackCard
+                  role="listitem"
+                  title={title}
+                  icon={getIcon(icon)}
+                  subTitle={subTitle}
+                  path={path}
+                  style={{marginLeft: spacing / 2, marginRight: spacing / 2, minWidth: cardWidth}}
+                  onFocus={() => navigateToCard(index)}
+                />
+              </div>
             ))
           }
         </div>
       </div>
       <div
         tabIndex="0"
+        role="button"
+        alt="Next Course"
         className="Carousel-navigator right"
         onClick={navigateRight}
         onMouseDown={e => e.preventDefault()}
