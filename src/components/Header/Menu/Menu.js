@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import Icon from "../../Icon";
 import { getIcon } from "../../../utils";
@@ -16,5 +17,12 @@ const Menu = ({ menu }) => (
     </ul>
   </div>
 );
+
+Menu.PropTypes = {
+  menu: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    path: PropTypes.string
+  }))
+};
 
 export default Menu;

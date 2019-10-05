@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Content.scss';
 
 const Content = ({ body, title }) => (
@@ -7,5 +8,10 @@ const Content = ({ body, title }) => (
     <div className="Content-body" dangerouslySetInnerHTML={{ __html: body }} />
   </div>
 );
+
+Content.PropTypes = {
+  body: PropTypes.string,
+  title: PropTypes.string
+};
 
 export default Content;

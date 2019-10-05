@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import cx from 'classnames';
 import { formatChoiceId } from "../quizUtilities";
 import "./question.scss";
@@ -64,5 +65,14 @@ const Question = ({
     }
   </fieldset>
 );
+
+Question.PropTypes = {
+  handleInputChange: PropTypes.func,
+  question: PropTypes.object,
+  questionId: PropTypes.string,
+  questionIndex: PropTypes.number,
+  shouldShowCorrectChoice: PropTypes.bool,
+  title: PropTypes.string
+};
 
 export default Question;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import StyledLink from '../Link';
 import Block from '../Block';
 import LessonButton, { PrimitiveLessonButton } from '../LessonButton';
@@ -136,5 +137,23 @@ const Lesson = ({ lesson, slug }) => {
     </div>
   );
 };
+
+Lesson.PropTypes = {
+  lesson: PropTypes.shape({
+    frontmatter: PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+      timeToCompletion: PropTypes.node,
+      videoLinks: PropTypes.array,
+      readingLinks: PropTypes.array,
+      preReadQuizLink: PropTypes.string,
+      preReadQuiz: PropTypes.any,
+      course: PropTypes.string,
+      defaultTab: PropTypes.string,
+      secondaryExerciseUrl: PropTypes.string
+    })
+  }),
+  slug: PropTypes.string
+}
 
 export default Lesson;

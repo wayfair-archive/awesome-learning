@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Landing from '../components/Landing';
+import { SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 
 
 const IndexTemplate = ({ data }) => {
@@ -18,6 +20,15 @@ const IndexTemplate = ({ data }) => {
     </Layout>
   );
 };
+
+IndexTemplate.PropTypes = {
+  data: PropTypes.shape({
+    site: SITE_METADATA_PROP_TYPE.isRequired,
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.array
+    })
+  })
+}
 
 export const query = graphql`
   query IndexTemplate($coursesLimit: Int!, $coursesOffset: Int!) {

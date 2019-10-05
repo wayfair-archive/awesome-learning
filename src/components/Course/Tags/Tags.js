@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import StyledLink from "../../Link";
 import './Tags.scss';
 
@@ -15,5 +16,10 @@ const Tags = ({ tags, tagSlugs }) => (
     </ul>
   </div>
 );
+
+Tags.PropTypes = {
+  tags: PropTypes.array,
+  tagSlugs: PropTypes.array
+}
 
 export default Tags;

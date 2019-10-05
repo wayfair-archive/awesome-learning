@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Course from '../components/Course';
 import Page from '../components/Page';
+import { SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 
 const CourseTemplate = ({ data }) => {
   const {
@@ -24,6 +26,18 @@ const CourseTemplate = ({ data }) => {
       </Page>
     </Layout>
   );
+};
+
+CourseTemplate.PropTypes = {
+  data: PropTypes.shape({
+    site: SITE_METADATA_PROP_TYPE.isRequired,
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string,
+        description: PropTypes.string
+      })
+    })
+  })
 };
 
 export const query = graphql`

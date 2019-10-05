@@ -21,7 +21,11 @@ const TrackCard = props => (
 TrackCard.propTypes = {
   title: PropTypes.string.isRequired,
   subTitle: PropTypes.string.isRequired,
-  path: PropTypes.string
+  path: PropTypes.string,
+  icon: PropTypes.shape({
+    path: PropTypes.string,
+    viewBox: PropTypes.string
+  })
 };
 
 TrackCard.defaultProps = {
