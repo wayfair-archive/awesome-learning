@@ -112,7 +112,7 @@ Quiz.PropTypes = {
   quiz: PropTypes.shape({
     questions: PropTypes.array,
     description: PropTypes.node
-  }),
+  }).isRequired,
   slug: PropTypes.string, 
   title: PropTypes.string
 };

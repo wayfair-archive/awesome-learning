@@ -22,7 +22,7 @@ Menu.PropTypes = {
   menu: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     path: PropTypes.string
-  }))
+  })).isRequired
 };
 
 export default Menu;

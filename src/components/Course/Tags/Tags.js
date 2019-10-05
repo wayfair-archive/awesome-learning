@@ -18,8 +18,8 @@ const Tags = ({ tags, tagSlugs }) => (
 );
 
 Tags.PropTypes = {
-  tags: PropTypes.array,
-  tagSlugs: PropTypes.array
+  tags: PropTypes.array.isRequired,
+  tagSlugs: PropTypes.array.isRequired
 }
 
 export default Tags;

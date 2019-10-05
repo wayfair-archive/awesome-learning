@@ -10,8 +10,8 @@ const Content = ({ body, title }) => (
 );
 
 Content.PropTypes = {
-  body: PropTypes.string,
-  title: PropTypes.string
+  body: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired
 };
 
 export default Content;

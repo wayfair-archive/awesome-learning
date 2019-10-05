@@ -152,7 +152,7 @@ Lesson.PropTypes = {
       defaultTab: PropTypes.string,
       secondaryExerciseUrl: PropTypes.string
     })
-  }),
+  }).isRequired,
   slug: PropTypes.string
 }
 

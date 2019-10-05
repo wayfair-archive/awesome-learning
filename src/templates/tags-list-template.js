@@ -40,7 +40,7 @@ TagsListTemplate.PropTypes = {
     allMarkdownRemark: PropTypes.shape({
       group: PropTypes.array
     })
-  })
+  }).isRequired
 }
 
 export const query = graphql`

@@ -27,7 +27,7 @@ const NotFoundTemplate = ({ data }) => {
 NotFoundTemplate.PropTypes = {
   data: PropTypes.shape({
     site: SITE_METADATA_PROP_TYPE.isRequired
-  })
+  }).isRequired
 }
 
 export const query = graphql`

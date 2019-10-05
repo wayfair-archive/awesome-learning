@@ -43,7 +43,7 @@ const Courses = ({ edges, isHorizontal }) =>
   ));
 
 Courses.PropTypes = {
-  edges: PropTypes.arrayOf(PropTypes.object),
+  edges: PropTypes.arrayOf(PropTypes.object).isRequired,
   isHorizontal: PropTypes.bool
 };
 

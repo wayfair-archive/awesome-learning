@@ -68,9 +68,9 @@ const Question = ({
 
 Question.PropTypes = {
   handleInputChange: PropTypes.func,
-  question: PropTypes.object,
-  questionId: PropTypes.string,
-  questionIndex: PropTypes.number,
+  question: PropTypes.object.isRequired,
+  questionId: PropTypes.string.isRequired,
+  questionIndex: PropTypes.number.isRequired,
   shouldShowCorrectChoice: PropTypes.bool,
   title: PropTypes.string
 };

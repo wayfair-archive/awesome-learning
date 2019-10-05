@@ -52,7 +52,7 @@ QuizTemplate.PropTypes = {
         slug: PropTypes.string
       })
     })
-  })
+  }).isRequired
 };
 
 export const query = graphql`

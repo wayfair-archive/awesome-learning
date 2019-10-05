@@ -43,7 +43,7 @@ PageTemplate.PropTypes = {
         description: PropTypes.string
       })
     })
-  })
+  }).isRequired
 }
 
 export const query = graphql`

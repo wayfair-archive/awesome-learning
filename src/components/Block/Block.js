@@ -25,11 +25,12 @@ const Block = ({
 };
 
 Block.propTypes = {
-  is: PropTypes.string,
+  is: PropTypes.string.isRequired,
   mt: PropTypes.string,
   mb: PropTypes.string,
   ml: PropTypes.string,
-  mr: PropTypes.string
+  mr: PropTypes.string,
+  children: PropTypes.node.isRequired
 };
 
 Block.defaultProps = {

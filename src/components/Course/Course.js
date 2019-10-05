@@ -51,7 +51,7 @@ Course.PropTypes = {
       title: PropTypes.string,
       description: PropTypes.node,
       lessons: PropTypes.arrayOf(PropTypes.object)
-    }),
+    }).isRequired,
     fields: PropTypes.shape({
       tagSlugs: PropTypes.array,
       slug: PropTypes.string

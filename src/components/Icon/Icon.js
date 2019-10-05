@@ -10,7 +10,7 @@ const Icon = ({ icon, cssClasses = "" }) => (
 
 Icon.PropTypes = {
   icon: PropTypes.shape({
-    path: PropTypes.string,
+    path: PropTypes.string.isRequired,
     viewBox: PropTypes.string
   })
 };

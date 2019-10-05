@@ -27,7 +27,7 @@ IndexTemplate.PropTypes = {
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array
     })
-  })
+  }).isRequired
 }
 
 export const query = graphql`
