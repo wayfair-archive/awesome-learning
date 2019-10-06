@@ -7,6 +7,7 @@
 import React from 'react';
 import {render} from '@testing-library/react';
 import CourseCard from './CourseCard';
+import LastLessonProvider from '../../providers/LastLessonProvider';
 
 const PROPS = {
   link: '/courses',
@@ -16,7 +17,11 @@ const PROPS = {
 
 describe('Course Card', () => {
   it('Renders a title, link, and description', () => {
-    const {getByText} = render(<CourseCard {...PROPS} />);
+    const {getByText} = render(
+      <LastLessonProvider>
+        <CourseCard {...PROPS} />
+      </LastLessonProvider>
+    );
     expect(getByText(PROPS.description)).toBeTruthy();
     expect(getByText(PROPS.title)).toBeTruthy();
     expect(getByText(`Learn ${PROPS.title}`).getAttribute('to')).toBe(
