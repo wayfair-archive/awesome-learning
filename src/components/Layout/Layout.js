@@ -27,7 +27,7 @@ const Layout = ({ children, title, description, isFullBleed }) => {
   );
 };
 
-Layout.PropTypes = {
+Layout.propTypes = {
   children: PropTypes.node.isRequired,
   title: PropTypes.string,
   description: PropTypes.string,

@@ -28,7 +28,7 @@ const Pagination = ({
   </div>
 );
 
-Pagination.PropTypes = {
+Pagination.propTypes = {
   prevPagePath: PropTypes.string,
   nextPagePath: PropTypes.string,
   hasNextPage: PropTypes.bool,

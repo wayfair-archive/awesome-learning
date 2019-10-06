@@ -28,7 +28,7 @@ const CourseTemplate = ({ data }) => {
   );
 };
 
-CourseTemplate.PropTypes = {
+CourseTemplate.propTypes = {
   data: PropTypes.shape({
     site: SITE_METADATA_PROP_TYPE.isRequired,
     markdownRemark: PropTypes.shape({

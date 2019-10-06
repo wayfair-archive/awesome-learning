@@ -9,7 +9,7 @@ const Content = ({ body, title }) => (
   </div>
 );
 
-Content.PropTypes = {
+Content.propTypes = {
   body: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired
 };

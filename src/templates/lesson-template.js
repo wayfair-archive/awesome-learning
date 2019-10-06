@@ -30,7 +30,7 @@ const LessonTemplate = ({ data }) => {
   );
 };
 
-LessonTemplate.PropTypes = {
+LessonTemplate.propTypes = {
   site: SITE_METADATA_PROP_TYPE.isRequired,
   markdownRemark: PropTypes.shape({
     frontmatter: PropTypes.shape({

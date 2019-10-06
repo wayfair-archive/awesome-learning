@@ -45,7 +45,7 @@ export const PureHeader = ({ data }) => {
   );
 };
 
-PureHeader.PropTypes = {
+PureHeader.propTypes = {
   data: PropTypes.shape({
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({
@@ -56,7 +56,7 @@ PureHeader.PropTypes = {
         }))
       })
     })
-  })
+  }).isRequired
 }
 
 export const Header = props => (

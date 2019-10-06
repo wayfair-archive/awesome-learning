@@ -39,7 +39,7 @@ const QuizTemplate = ({ data }) => {
   );
 };
 
-QuizTemplate.PropTypes = {
+QuizTemplate.propTypes = {
   data: PropTypes.shape({
     site: SITE_METADATA_PROP_TYPE.isRequired,
     markdownRemark: PropTypes.shape({

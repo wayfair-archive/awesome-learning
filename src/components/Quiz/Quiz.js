@@ -108,7 +108,7 @@ const Quiz = ({ quiz, slug, title }) => {
   );
 };
 
-Quiz.PropTypes = {
+Quiz.propTypes = {
   quiz: PropTypes.shape({
     questions: PropTypes.array,
     description: PropTypes.node

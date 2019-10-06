@@ -13,7 +13,7 @@ const Page = ({ title, children }) => (
   </div>
 );
 
-Page.PropTypes = {
+Page.propTypes = {
   title: PropTypes.string,
   children: PropTypes.node.isRequired
 }

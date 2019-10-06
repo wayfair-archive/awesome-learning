@@ -44,7 +44,7 @@ const Course = ({ course }) => {
   );
 };
 
-Course.PropTypes = {
+Course.propTypes = {
   course: PropTypes.shape({
     frontmatter: PropTypes.shape({
       tags: PropTypes.array,

@@ -8,11 +8,11 @@ const Icon = ({ icon, cssClasses = "" }) => (
   </svg>
 );
 
-Icon.PropTypes = {
+Icon.propTypes = {
   icon: PropTypes.shape({
     path: PropTypes.string.isRequired,
     viewBox: PropTypes.string
-  })
+  }).isRequired
 };
 
 export default Icon;

@@ -18,7 +18,7 @@ const Menu = ({ menu }) => (
   </div>
 );
 
-Menu.PropTypes = {
+Menu.propTypes = {
   menu: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     path: PropTypes.string

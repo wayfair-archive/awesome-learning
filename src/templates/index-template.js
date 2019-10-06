@@ -21,7 +21,7 @@ const IndexTemplate = ({ data }) => {
   );
 };
 
-IndexTemplate.PropTypes = {
+IndexTemplate.propTypes = {
   data: PropTypes.shape({
     site: SITE_METADATA_PROP_TYPE.isRequired,
     allMarkdownRemark: PropTypes.shape({

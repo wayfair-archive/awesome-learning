@@ -66,7 +66,7 @@ const Question = ({
   </fieldset>
 );
 
-Question.PropTypes = {
+Question.propTypes = {
   handleInputChange: PropTypes.func,
   question: PropTypes.object.isRequired,
   questionId: PropTypes.string.isRequired,

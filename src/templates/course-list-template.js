@@ -72,13 +72,13 @@ export const query = graphql`
   }
 `;
 
-CourseListTemplate.PropTypes = {
+CourseListTemplate.propTypes = {
   data: PropTypes.shape({
     site: SITE_METADATA_PROP_TYPE.isRequired,
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.arrayOf(PropTypes.object)
     })
-  }),
+  }).isRequired,
   pageContext: PropTypes.shape({
     currentPage: PropTypes.number,
     hasNextPage: PropTypes.bool,

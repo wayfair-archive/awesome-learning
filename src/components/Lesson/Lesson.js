@@ -138,7 +138,7 @@ const Lesson = ({ lesson, slug }) => {
   );
 };
 
-Lesson.PropTypes = {
+Lesson.propTypes = {
   lesson: PropTypes.shape({
     frontmatter: PropTypes.shape({
       title: PropTypes.string,
@@ -153,7 +153,7 @@ Lesson.PropTypes = {
       secondaryExerciseUrl: PropTypes.string
     })
   }).isRequired,
-  slug: PropTypes.string
+  slug: PropTypes.string.isRequired
 }
 
 export default Lesson;

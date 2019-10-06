@@ -42,7 +42,7 @@ const Courses = ({ edges, isHorizontal }) =>
     </div>
   ));
 
-Courses.PropTypes = {
+Courses.propTypes = {
   edges: PropTypes.arrayOf(PropTypes.object).isRequired,
   isHorizontal: PropTypes.bool
 };

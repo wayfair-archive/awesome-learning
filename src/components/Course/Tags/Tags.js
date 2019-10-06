@@ -17,7 +17,7 @@ const Tags = ({ tags, tagSlugs }) => (
   </div>
 );
 
-Tags.PropTypes = {
+Tags.propTypes = {
   tags: PropTypes.array.isRequired,
   tagSlugs: PropTypes.array.isRequired
 }
