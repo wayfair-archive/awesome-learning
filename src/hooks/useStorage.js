@@ -10,13 +10,16 @@ const setStore = (storageType, value, key) =>
 
 const useStorage = (storageType, key, initialValue) => {
   const [state, setState] = useState(() => {
-    try {
-      const item = getStore(storageType, key);
-      return item || initialValue;
-    } catch (error) {
-      console.error(error);
-      return initialValue;
+    if (storageType) {
+      try {
+        const item = getStore(storageType, key);
+        return item || initialValue;
+      } catch (error) {
+        console.error(error);
+        return initialValue;
+      }
     }
+    return null;
   });
 
   const setValue = value => {
