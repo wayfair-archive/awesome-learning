@@ -7,7 +7,7 @@ export const useLastLessonContext = () => useContext(LastLessonContext);
 
 const LastLessonProvider = ({children}) => {
   const [lastLessonVisited, setLastLessonVisited] = useStorage(
-    localStorage,
+    window.localStorage,
     'lastLessonVisited',
     ''
   );
