@@ -43,6 +43,18 @@ const getIcon = (name) => {
     case 'testing':
       icon = ICONS.TESTING;
       break;
+    case 'function':
+      icon = ICONS.FUNCTION;
+      break;
+    case 'hook':
+      icon = ICONS.HOOK;
+      break;
+    case 'leftChevron':
+      icon = ICONS.LEFT_CHEVRON;
+      break;
+    case 'rightChevron':
+      icon = ICONS.RIGHT_CHEVRON;
+      break;
     default:
       icon = {};
       break;
