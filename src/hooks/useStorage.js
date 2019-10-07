@@ -9,8 +9,8 @@ const setStore = (storageType, value, key) =>
   storageType.setItem(key, JSON.stringify(value));
 
 const useStorage = (storageType, key, initialValue) => {
-  if (storageType) {
-    const [state, setState] = useState(() => {
+  const [state, setState] = useState(() => {
+    if (storageType) {
       try {
         const item = getStore(storageType, key);
         return item || initialValue;
@@ -18,22 +18,22 @@ const useStorage = (storageType, key, initialValue) => {
         console.error(error);
         return initialValue;
       }
-    });
-  
-    const setValue = value => {
-      try {
-        const valueToState = value instanceof Function ? value(state) : value;
-  
-        setStore(storageType, value, key);
-        setState(valueToState);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-  
-    return [state, setValue];
-  }
-  return [];
+    }
+    return null;
+  });
+
+  const setValue = value => {
+    try {
+      const valueToState = value instanceof Function ? value(state) : value;
+
+      setStore(storageType, value, key);
+      setState(valueToState);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  return [state, setValue];
 };
 
 export default useStorage;
