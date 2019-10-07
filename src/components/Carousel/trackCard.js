@@ -6,15 +6,15 @@ import Text from "../Text";
 import Icon from "../Icon";
 import "./trackCard.scss";
 
-const TrackCard = props => (
-  <Link className="TrackCard" to={props.path}>
+const TrackCard = ({path, icon, title, subTitle, ...restProps}) => (
+  <Link className="TrackCard" to={path} {...restProps}>
     <div className="TrackCard-iconWrap">
-      <Icon icon={props.icon} cssClasses="TrackCard-icon" />
+      <Icon icon={icon} cssClasses="TrackCard-icon" />
     </div>
     <SectionTitle textTransform headingLevel="h3" mb="8px">
-      {props.title}
+      {title}
     </SectionTitle>
-    <Text>{props.subTitle}</Text>
+    <Text>{subTitle}</Text>
   </Link>
 );
 

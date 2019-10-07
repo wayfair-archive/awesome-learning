@@ -1,15 +1,40 @@
 import React from 'react';
 import StyledLink from '../Link';
 import Block from '../Block';
+import Carousel from '../Carousel';
 import ContentSection from '../ContentSection';
-import TrackCard from './trackCard';
 import SectionTitle from "../SectionTitle";
 import Text from "../Text";
-import { getIcon } from "../../utils";
 import './Landing.scss';
 
+const COURSE_DATA_MAPPING = {
+  'Data Types': {
+    icon: 'data',
+    subTitle: 'Deep dive into types, equality, coercion, immutability and more.',
+  },
+  'Array Methods': {
+    icon: 'array',
+    subTitle: 'Learn functional array methods like filter, map, and reduce!',
+  },
+  'Promises': {
+    icon: 'async',
+    subTitle: 'Learn the Promise API inside and out.',
+  },
+  'Testing': {
+    icon: 'testing',
+    subTitle: 'Learn frontend testing with Jest and Enzyme.',
+  },
+  'React Hooks': {
+    icon: 'hook',
+    subTitle: 'Learn react hooks.',
+  },
+  'Functions and Scope': {
+    icon: 'function',
+    subTitle: 'Learn about function and scopes.',
+  }
+};
 
-const Landing = () => (
+const Landing = ({ courseEdges }) => (
   <div className="Landing">
     <div className="Landing-heroWrapper">
       <div className="Landing-titleWrapper">
@@ -17,30 +42,19 @@ const Landing = () => (
         <Text fontSize="xl" >At your own pace.</Text>
       </div>
       <div className="Landing-courseWrapper">
-        <TrackCard
-          title="Array Methods"
-          icon={getIcon("array")}
-          subTitle="Learn functional array methods like filter, map, and reduce!"
-          path="/courses/Array-Methods/"
-        />
-        <TrackCard
-          title="Data Types"
-          icon={getIcon("data")}
-          subTitle="Deep dive into types, equality, coercion, immutability and more."
-          path="/courses/Data-Types/"
-        />
-        <TrackCard
-          title="Promises"
-          icon={getIcon("async")}
-          subTitle="Learn the Promise API inside and out."
-          path="/courses/Promises/"
-        />
-        <TrackCard
-          title="Testing"
-          icon={getIcon("testing")}
-          subTitle="Learn frontend testing with Jest and Enzyme."
-          path="/courses/Testing/"
-        />
+        <Carousel items={(
+          courseEdges.map(({node}) => {
+            const { id, frontmatter, fields } = node;
+            const {title} = frontmatter;
+            return {
+              id,
+              title,
+              icon: COURSE_DATA_MAPPING[title] ? COURSE_DATA_MAPPING[title].icon : 'array',
+              subTitle: COURSE_DATA_MAPPING[title] ? COURSE_DATA_MAPPING[title].subTitle : title,
+              path: fields.slug,
+            };
+          })
+        )} />
       </div>
     </div>
     <div className="Landing-callOut">
