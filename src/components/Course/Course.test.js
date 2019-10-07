@@ -25,7 +25,7 @@ const props = {
   }
 };
 
-describe.only('Course', () => {
+describe('Course', () => {
   it('renders title', () => {
     const { queryByText } = render(<Course {...props} />);
     expect(queryByText('test title')).toBeTruthy();
