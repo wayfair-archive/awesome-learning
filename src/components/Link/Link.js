@@ -1,17 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {Link} from 'gatsby';
-import cx from 'classnames';
-import {useLastLessonContext} from '../../providers/LastLessonProvider';
-import './Link.scss';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "gatsby";
+import cx from "classnames";
+import "./Link.scss";
 
 const LINK_VARIATIONS = [
-  'primary',
-  'secondary',
-  'tertiary',
-  'tertiaryAlt',
-  'tertiaryAltInverse',
-  'pill'
+  "primary",
+  "secondary",
+  "tertiary",
+  "tertiaryAlt",
+  "tertiaryAltInverse",
+  "pill"
 ];
 
 const StyledLink = ({
@@ -21,33 +20,23 @@ const StyledLink = ({
   isBlock,
   isButton,
   isActive,
-  isExternal,
-  lessonData
+  isExternal
 }) => {
-  const className = cx('Link', {
-    'is-button': isButton,
-    'is-block': isBlock,
+  const className = cx("Link", {
+    "is-button": isButton,
+    "is-block": isBlock,
     [`Link--${variation}`]: variation && !isButton
   });
-  const {setLastLessonVisited} = useLastLessonContext();
-
-  const clickHandler = () => setLastLessonVisited(lessonData);
 
   return isExternal ? (
-    <a
-      className={className}
-      href={path}
-      target="_blank"
-      onClick={lessonData && clickHandler}
-    >
+    <a className={className} href={path} target="_blank">
       {children}
     </a>
   ) : (
     <Link
       className={className}
       to={path}
-      activeClassName={isActive ? 'is-active' : ''}
-      onClick={lessonData && clickHandler}
+      activeClassName={isActive ? "is-active" : ""}
     >
       {children}
     </Link>

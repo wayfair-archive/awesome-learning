@@ -1,14 +1,13 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import cx from 'classnames';
-import Header from '../Header';
+import React from "react";
+import Helmet from "react-helmet";
+import cx from "classnames";
+import Header from "../Header";
 
-import './Layout.scss';
-import LastLessonProvider from '../../providers/LastLessonProvider';
+import "./Layout.scss";
 
-const Layout = ({children, title, description, isFullBleed}) => {
-  const layoutClass = cx('Layout', {
-    'Layout--fullBleed': isFullBleed
+const Layout = ({ children, title, description, isFullBleed }) => {
+  const layoutClass = cx("Layout", {
+    "Layout--fullBleed": isFullBleed
   });
   return (
     <>
@@ -22,9 +21,7 @@ const Layout = ({children, title, description, isFullBleed}) => {
         />
       </Helmet>
       <Header />
-      <div className={layoutClass}>
-        <LastLessonProvider>{children}</LastLessonProvider>
-      </div>
+      <div className={layoutClass}>{children}</div>
     </>
   );
 };

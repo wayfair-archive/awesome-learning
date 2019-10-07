@@ -1,11 +1,11 @@
 import React from 'react';
 import StyledLink from '../Link';
 import Block from '../Block';
-import LessonButton, {PrimitiveLessonButton} from '../LessonButton';
+import LessonButton, { PrimitiveLessonButton } from '../LessonButton';
 import ContentSection from '../ContentSection';
 import './lesson.scss';
 
-const Lesson = ({lesson, slug}) => {
+const Lesson = ({ lesson, slug }) => {
   const {
     title,
     description,
@@ -18,7 +18,6 @@ const Lesson = ({lesson, slug}) => {
     defaultTab,
     secondaryExerciseUrl
   } = lesson.frontmatter;
-
   // Split the description into different paragraphs based on new lines
   const descriptionParagraphs = description.split(/\r?\n\n/);
   const path = slug.toLowerCase().split('/courses/')[1];
@@ -52,8 +51,8 @@ const Lesson = ({lesson, slug}) => {
           Check out this content before your session begins to get an idea of
           what you will be working on.
         </Block>
-        {videoLinks &&
-          videoLinks.map(link => (
+        {videoLinks 
+          && videoLinks.map(link => (
             <iframe
               key={link}
               width="100%"
@@ -104,7 +103,6 @@ const Lesson = ({lesson, slug}) => {
             path={preReadQuiz !== null ? `${slug}/quiz` : preReadQuizLink}
             isExternal={preReadQuiz === null}
             variation={'tertiary'}
-            lessonData={lesson}
           >
             Quiz Link
           </StyledLink>
@@ -113,18 +111,11 @@ const Lesson = ({lesson, slug}) => {
 
       <ContentSection title=" " subTitle="Exercises">
         {secondaryExerciseUrl ? (
-          <PrimitiveLessonButton
-            path={secondaryExerciseUrl}
-            lessonData={lesson}
-          >
+          <PrimitiveLessonButton path={secondaryExerciseUrl}>
             Start the Workshop
           </PrimitiveLessonButton>
         ) : (
-          <LessonButton
-            defaultTab={defaultTab}
-            path={path}
-            lessonData={lesson}
-          />
+          <LessonButton defaultTab={defaultTab} path={path} />
         )}
       </ContentSection>
 
