@@ -28,6 +28,6 @@ jobs:
     - name: Run unit tests
       run: |
         npm test
-    - name: Evaluate build output
+    - name: Test platform build
       run: |
         npm run build
