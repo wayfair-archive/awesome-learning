@@ -30,4 +30,4 @@ jobs:
         npm test
     - name: Evaluate build output
       run: |
-      npm run build
+        npm run build
