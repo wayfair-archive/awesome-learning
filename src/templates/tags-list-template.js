@@ -1,9 +1,9 @@
-import React from "react";
-import { Link, graphql } from "gatsby";
-import kebabCase from "lodash/kebabCase";
-import { Container, Row, Col } from "react-grid-system";
-import Layout from "../components/Layout";
-import Page from "../components/Page";
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import kebabCase from 'lodash/kebabCase';
+import { Container, Row, Col } from 'react-grid-system';
+import Layout from '../components/shared/Layout';
+import Page from '../components/Page';
 
 const TagsListTemplate = ({ data }) => {
   const { title, subtitle } = data.site.siteMetadata;

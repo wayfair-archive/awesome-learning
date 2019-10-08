@@ -1,11 +1,11 @@
-import React from "react";
-import { graphql } from "gatsby";
-import { Row, Col } from "react-grid-system";
-import PropTypes from "prop-types";
-import Layout from "../components/Layout";
-import Courses from "../components/Courses";
-import Page from "../components/Page";
-import Pagination from "../components/Pagination";
+import React from 'react';
+import { graphql } from 'gatsby';
+import { Row, Col } from 'react-grid-system';
+import PropTypes from 'prop-types';
+import Layout from '../components/shared/Layout';
+import Courses from '../components/Courses';
+import Page from '../components/Page';
+import Pagination from '../components/Pagination';
 import { PAGE_CONTEXT_PROP_TYPE, SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 
 const CategoryTemplate = ({ data, pageContext }) => {

@@ -1,8 +1,8 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Layout from "../components/Layout";
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/shared/Layout';
 import Page from '../components/Page';
-import Quiz from "../components/Quiz";
+import Quiz from '../components/Quiz';
 
 const QuizTemplate = ({ data }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = data.site.siteMetadata;

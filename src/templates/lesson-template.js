@@ -1,7 +1,7 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import Lesson from "../components/Lesson";
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/shared/Layout';
+import Lesson from '../components/Lesson';
 import Page from '../components/Page';
 
 const LessonTemplate = ({ data }) => {

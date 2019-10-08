@@ -1,8 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
+import Layout from '../components/shared/Layout';
 import Landing from '../components/Landing';
-
 
 const IndexTemplate = ({ data }) => {
   const {

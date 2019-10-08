@@ -1,8 +1,8 @@
-import React from "react";
-import { graphql } from "gatsby";
-import { Container, Row, Col } from "react-grid-system";
-import Layout from "../components/Layout";
-import Page from "../components/Page";
+import React from 'react';
+import { graphql } from 'gatsby';
+import { Container, Row, Col } from 'react-grid-system';
+import Layout from '../components/shared/Layout';
+import Page from '../components/Page';
 
 const PageTemplate = ({ data }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = data.site.siteMetadata;
