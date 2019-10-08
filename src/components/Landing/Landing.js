@@ -1,5 +1,5 @@
 import React from 'react';
-import StyledLink from '../Link';
+import StyledLink from '../shared/Link';
 import Block from '../shared/Block';
 import ContentSection from '../shared/ContentSection';
 import TrackCard from './trackCard';
@@ -18,25 +18,25 @@ const Landing = () => (
       <div className="Landing-courseWrapper">
         <TrackCard
           title="Array Methods"
-          icon={getIcon("array")}
+          icon={getIcon('array')}
           subTitle="Learn functional array methods like filter, map, and reduce!"
           path="/courses/Array-Methods/"
         />
         <TrackCard
           title="Data Types"
-          icon={getIcon("data")}
+          icon={getIcon('data')}
           subTitle="Deep dive into types, equality, coercion, immutability and more."
           path="/courses/Data-Types/"
         />
         <TrackCard
           title="Promises"
-          icon={getIcon("async")}
+          icon={getIcon('async')}
           subTitle="Learn the Promise API inside and out."
           path="/courses/Promises/"
         />
         <TrackCard
           title="Testing"
-          icon={getIcon("testing")}
+          icon={getIcon('testing')}
           subTitle="Learn frontend testing with Jest and Enzyme."
           path="/courses/Testing/"
         />

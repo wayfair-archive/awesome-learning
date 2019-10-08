@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'gatsby';
 import cx from 'classnames';
-import {useLastLessonContext} from '../../providers/LastLessonProvider';
+import {useLastLessonContext} from '../../../providers/LastLessonProvider';
 import './Link.scss';
 
 const LINK_VARIATIONS = [

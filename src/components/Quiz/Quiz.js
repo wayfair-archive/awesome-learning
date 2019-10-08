@@ -3,7 +3,7 @@ import { formatQuestionId, getChoiceIndex, getQuestionIndex } from './quizUtilit
 import ContentSection from '../shared/ContentSection';
 import Question from './Question';
 import questionValidator from './Question/questionValidator';
-import StyledLink from '../Link';
+import StyledLink from '../shared/Link';
 import './quiz.scss';
 
 const Quiz = ({ quiz, slug, title }) => {

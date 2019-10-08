@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StyledLink from '../Link';
+import StyledLink from '../shared/Link';
 import Block from '../shared/Block';
 import './CourseCard.scss';
 

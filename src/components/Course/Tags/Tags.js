@@ -1,5 +1,5 @@
 import React from 'react';
-import StyledLink from "../../Link";
+import StyledLink from '../../shared/Link';
 import './Tags.scss';
 
 const Tags = ({ tags, tagSlugs }) => (
@@ -7,7 +7,7 @@ const Tags = ({ tags, tagSlugs }) => (
     <ul className="Tags-list">
       {tagSlugs.map((slug, i) => (
         <li className="Tags-listItem" key={`${tags[i]}slug`}>
-          <StyledLink variation={"pill"} path={slug}>
+          <StyledLink variation="pill" path={slug}>
             {tags[i]}
           </StyledLink>
         </li>

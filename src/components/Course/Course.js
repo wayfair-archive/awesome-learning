@@ -1,6 +1,6 @@
 import React from 'react';
 import Tags from './Tags';
-import StyledLink from '../Link';
+import StyledLink from '../shared/Link';
 import CourseCard from '../CourseCard';
 import ContentSection from '../shared/ContentSection';
 import './Course.scss';
