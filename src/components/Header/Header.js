@@ -1,9 +1,9 @@
-import React from "react";
-import { Link, graphql, StaticQuery } from "gatsby";
-import Menu from "./Menu";
-import Icon from "../Icon";
-import { getIcon } from "../../utils";
-import "./Header.scss";
+import React from 'react';
+import { Link, graphql, StaticQuery } from 'gatsby';
+import Menu from './Menu';
+import Icon from '../shared/Icon';
+import { getIcon } from '../../utils';
+import './Header.scss';
 
 export const PureHeader = ({ data }) => {
   const { title, menu } = data.site.siteMetadata;
@@ -11,7 +11,7 @@ export const PureHeader = ({ data }) => {
     <header className="Header">
       <Link to="/" className="Header-logo">
         <Icon
-          icon={getIcon("logo")}
+          icon={getIcon('logo')}
           cssClasses="Header-icon Header-icon--logo"
         />
         <h1 className="Header-title">{title}</h1>
@@ -35,7 +35,7 @@ export const PureHeader = ({ data }) => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <Icon icon={getIcon("github")} />
+              <Icon icon={getIcon('github')} />
             </a>
           </li>
         </ul>
