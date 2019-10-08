@@ -2,7 +2,7 @@ import React from 'react';
 import StyledLink from '../Link';
 import Block from '../shared/Block';
 import LessonButton, {PrimitiveLessonButton} from '../LessonButton';
-import ContentSection from '../ContentSection';
+import ContentSection from '../shared/ContentSection';
 import './lesson.scss';
 
 const Lesson = ({lesson, slug}) => {

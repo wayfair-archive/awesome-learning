@@ -1,6 +1,6 @@
 import React from 'react';
 import Block from '../shared/Block';
-import ContentSection from '../ContentSection';
+import ContentSection from '../shared/ContentSection';
 import './HowTo.scss';
 
 const HowTo = () => (

@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import cx from "classnames";
-import "./ContentSection.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
+import './ContentSection.scss';
 
 const ContentSection = ({
   className,
@@ -12,14 +12,14 @@ const ContentSection = ({
   contentAlignment,
   titleAlignment
 }) => {
-  const headerClasses = cx("ContentSection-title", {
-    "ContentSection-title--alignCenter": titleAlignment === "center",
-    "ContentSection-title--alignLeft": titleAlignment === "left",
-    "ContentSection-title--textLight": isLight
+  const headerClasses = cx('ContentSection-title', {
+    'ContentSection-title--alignCenter': titleAlignment === 'center',
+    'ContentSection-title--alignLeft': titleAlignment === 'left',
+    'ContentSection-title--textLight': isLight
   });
   const contentClasses = cx(`ContentSection-content ${className}`, {
-    "ContentSection-content--alignCenter": contentAlignment === "center",
-    "ContentSection-content--alignLeft": contentAlignment === "left"
+    'ContentSection-content--alignCenter': contentAlignment === 'center',
+    'ContentSection-content--alignLeft': contentAlignment === 'left'
   });
 
   return (
@@ -41,16 +41,16 @@ ContentSection.propTypes = {
   subTitle: PropTypes.string,
   children: PropTypes.node.isRequired,
   isLight: PropTypes.bool,
-  contentAlignment: PropTypes.oneOf(["left", "center"]),
-  textAlignment: PropTypes.oneOf(["left", "center"])
+  contentAlignment: PropTypes.oneOf(['left', 'center']),
+  textAlignment: PropTypes.oneOf(['left', 'center'])
 };
 
 ContentSection.defaultProps = {
-  className: "",
+  className: '',
   title: null,
   subTitle: null,
-  contentAlignment: "left",
-  textAlignment: "left",
+  contentAlignment: 'left',
+  textAlignment: 'left',
   isLight: false
 };
 

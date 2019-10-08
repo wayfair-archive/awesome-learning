@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { formatQuestionId, getChoiceIndex, getQuestionIndex } from './quizUtilities';
-import ContentSection from "../ContentSection";
-import Question from "./Question";
+import ContentSection from '../shared/ContentSection';
+import Question from './Question';
 import questionValidator from './Question/questionValidator';
 import StyledLink from '../Link';
-import "./quiz.scss";
+import './quiz.scss';
 
 const Quiz = ({ quiz, slug, title }) => {
   const initialState = {
@@ -72,7 +72,7 @@ const Quiz = ({ quiz, slug, title }) => {
   return (
     <div className="Quiz">
       <div className="Quiz-homeButton">
-        <StyledLink variation={"tertiary"} path={slug}>
+        <StyledLink variation={'tertiary'} path={slug}>
           Back to lesson
         </StyledLink>
       </div>
