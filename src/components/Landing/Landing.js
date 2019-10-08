@@ -4,7 +4,7 @@ import Block from '../shared/Block';
 import ContentSection from '../shared/ContentSection';
 import TrackCard from './trackCard';
 import SectionTitle from '../SectionTitle';
-import Text from '../Text';
+import Text from '../shared/Text';
 import { getIcon } from '../../utils';
 import './Landing.scss';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import SectionTitle from '../SectionTitle';
-import Text from '../Text';
+import Text from '../shared/Text';
 import Icon from '../shared/Icon';
 import './trackCard.scss';
 
