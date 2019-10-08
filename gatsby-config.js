@@ -23,13 +23,6 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/static/media`,
-        name: "media"
-      }
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         name: "assets",
         path: `${__dirname}/static`
       }
@@ -45,10 +38,6 @@ module.exports = {
             }
           },
           {
-            resolve: "gatsby-remark-images",
-            options: { maxWidth: 960 }
-          },
-          {
             resolve: "gatsby-remark-responsive-iframe",
             options: { wrapperStyle: "margin-bottom: 1.0725rem" }
           },
@@ -57,8 +46,6 @@ module.exports = {
         ]
       }
     },
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
     {
       resolve: "gatsby-plugin-google-gtag",
       options: {
@@ -77,7 +64,7 @@ module.exports = {
         background_color: "#FFF",
         theme_color: "#455A81",
         display: "standalone",
-        icon: "static/photo.jpg"
+        icon: "static/wayfair.svg"
       }
     },
     "gatsby-plugin-offline",
