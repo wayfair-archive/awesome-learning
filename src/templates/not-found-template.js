@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 import { graphql } from 'gatsby';
 import Layout from '../components/shared/Layout';
-import Page from '../components/Page';
+import Page from '../components/shared/Page';
 
 const NotFoundTemplate = ({ data }) => {
   const { title, subtitle } = data.site.siteMetadata;

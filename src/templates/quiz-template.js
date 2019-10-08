@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/shared/Layout';
-import Page from '../components/Page';
+import Page from '../components/shared/Page';
 import Quiz from '../components/Quiz';
 
 const QuizTemplate = ({ data }) => {

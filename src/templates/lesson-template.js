@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/shared/Layout';
 import Lesson from '../components/Lesson';
-import Page from '../components/Page';
+import Page from '../components/shared/Page';
 
 const LessonTemplate = ({ data }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = data.site.siteMetadata;

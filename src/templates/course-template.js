@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/shared/Layout';
 import Course from '../components/Course';
-import Page from '../components/Page';
+import Page from '../components/shared/Page';
 
 const CourseTemplate = ({ data }) => {
   const {

@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'react-grid-system';
 import PropTypes from 'prop-types';
 import { SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 import Layout from '../components/shared/Layout';
-import Page from '../components/Page';
+import Page from '../components/shared/Page';
 
 const CategoriesListTemplate = ({ data }) => {
   const { title, subtitle } = data.site.siteMetadata;
