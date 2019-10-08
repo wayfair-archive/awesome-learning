@@ -1,13 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import StyledLink from "../Link";
-import Block from "../Block";
-import "./CourseCard.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import StyledLink from '../Link';
+import Block from '../shared/Block';
+import './CourseCard.scss';
 
 export const DATA_ENZYME_IDS = {
-  TITLE: "CourseCard-Title",
-  LINK: "CourseCard-Link",
-  DESCRIPTION: "CourseCard-Description"
+  TITLE: 'CourseCard-Title',
+  LINK: 'CourseCard-Link',
+  DESCRIPTION: 'CourseCard-Description'
 };
 
 const CourseCard = ({ title, description, link }) => (

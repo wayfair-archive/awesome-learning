@@ -1,6 +1,6 @@
 import React from 'react';
 import StyledLink from '../Link';
-import Block from '../Block';
+import Block from '../shared/Block';
 import LessonButton, {PrimitiveLessonButton} from '../LessonButton';
 import ContentSection from '../ContentSection';
 import './lesson.scss';

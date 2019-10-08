@@ -1,7 +1,7 @@
-import React from "react";
-import Block from "../Block";
-import ContentSection from "../ContentSection";
-import "./HowTo.scss";
+import React from 'react';
+import Block from '../shared/Block';
+import ContentSection from '../ContentSection';
+import './HowTo.scss';
 
 const HowTo = () => (
   <div className="HowTo">

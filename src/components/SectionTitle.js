@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Block from "./Block";
-import "./SectionTitle.scss";
+import Block from './shared/Block';
+import './SectionTitle.scss';
 
 const SectionTitle = (props) => {
-  const sectionTitleClasses = cx("SectionTitle", {
-    "SectionTitle--body": props.fontSize === "xl",
-    "SectionTitle--uppercase": props.textTransform === true
+  const sectionTitleClasses = cx('SectionTitle', {
+    'SectionTitle--body': props.fontSize === 'xl',
+    'SectionTitle--uppercase': props.textTransform === true
   });
   const Heading = `${props.headingLevel}`;
   return (
@@ -28,7 +28,7 @@ SectionTitle.defaultProps = {
   headingLevel: 'h2',
   fontSize: 'large',
   textTransform: false,
-  mb: "0px"
+  mb: '0px'
 };
 
 export default SectionTitle;

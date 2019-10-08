@@ -1,13 +1,12 @@
 import React from 'react';
 import StyledLink from '../Link';
-import Block from '../Block';
+import Block from '../shared/Block';
 import ContentSection from '../ContentSection';
 import TrackCard from './trackCard';
-import SectionTitle from "../SectionTitle";
-import Text from "../Text";
-import { getIcon } from "../../utils";
+import SectionTitle from '../SectionTitle';
+import Text from '../Text';
+import { getIcon } from '../../utils';
 import './Landing.scss';
-
 
 const Landing = () => (
   <div className="Landing">
