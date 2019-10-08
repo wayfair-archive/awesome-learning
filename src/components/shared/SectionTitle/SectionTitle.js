@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Block from './shared/Block';
+import Block from '../Block';
 import './SectionTitle.scss';
 
 const SectionTitle = (props) => {
@@ -16,6 +16,7 @@ const SectionTitle = (props) => {
     </Block>
   );
 };
+
 SectionTitle.propTypes = {
   children: PropTypes.string.isRequired,
   headingLevel: PropTypes.oneOf(['h2', 'h3', 'h4']),
