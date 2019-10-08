@@ -72,11 +72,11 @@ const Quiz = ({ quiz, slug, title }) => {
   return (
     <div className="Quiz">
       <div className="Quiz-homeButton">
-        <StyledLink variation={'tertiary'} path={slug}>
+        <StyledLink variation="tertiary" path={slug}>
           Back to lesson
         </StyledLink>
       </div>
-      <ContentSection subTitle={'Pre-Read Quiz'} title={title}>
+      <ContentSection subTitle="Pre-Read Quiz" title={title}>
         {quiz.description && <p>{quiz.description}</p>}
         {/* Iterate over all questions in this Quiz */}
         {
