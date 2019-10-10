@@ -29,9 +29,9 @@ const StyledLink = ({
     'is-block': isBlock,
     [`Link--${variation}`]: variation && !isButton
   });
-  const {setLastLessonVisited} = useLastLessonContext();
+  const {setLastLessonVisited} = useLastLessonContext() || {};
 
-  const clickHandler = () => setLastLessonVisited(lessonData);
+  const clickHandler = () => setLastLessonVisited && setLastLessonVisited(lessonData)
 
   return isExternal ? (
     <a
