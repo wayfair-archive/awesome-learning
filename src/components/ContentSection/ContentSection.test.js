@@ -67,7 +67,7 @@ describe('ContentSection', () => {
   });
 
   it('adds classes if respective props are given', () => {
-    var {container} = render(<ContentSection {...props}><section></section></ContentSection>);
+    let {container} = render(<ContentSection {...props}><section></section></ContentSection>);
 
     // isLight & titleAlignment props
     expect(container.firstChild.children[0].tagName).toBe('HEADER');
@@ -88,7 +88,7 @@ describe('ContentSection', () => {
     props.titleAlignment = 'center';
     props.contentAlignment = 'center';
 
-    var {container} = render(<ContentSection {...props}><section></section></ContentSection>);
+    ({container} = render(<ContentSection {...props}><section></section></ContentSection>));
 
     // isLight & titleAlignment props
     expect(container.firstChild.children[0].tagName).toBe('HEADER');
