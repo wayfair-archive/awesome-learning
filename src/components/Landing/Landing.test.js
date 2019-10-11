@@ -28,14 +28,6 @@ function validateElementAttributeValue(nodeList, attributeName, key) {
 }
 
 describe('Landing Component', () => {
-  test('Render Matches Snapshot', () => {
-    const tree = render(
-      <LastLessonProvider>
-        <Landing {...PROPS} />
-      </LastLessonProvider>
-    ).container;
-    expect(tree).toMatchSnapshot();
-  });
 
   test('Renders a Carousel', () => {
     const {container} = render(
