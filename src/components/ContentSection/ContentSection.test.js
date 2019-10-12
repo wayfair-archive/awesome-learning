@@ -1,5 +1,5 @@
 import React from 'react';
-import {render} from '@testing-library/react';
+import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import ContentSection from './ContentSection';
 
@@ -15,7 +15,7 @@ describe('ContentSection', () => {
   }
 
   it('renders basic version with just required children', () => {
-    const {container, getByText} = render(
+    const { container, getByText } = render(
       <ContentSection>
         <section>children</section>
       </ContentSection>
@@ -32,28 +32,28 @@ describe('ContentSection', () => {
   });
 
   it('renders correctly with a given title', () => {
-    const {container, getByText} = render(
+    const { container, getByText } = render(
       <ContentSection title={props.title}>
         <section></section>
       </ContentSection>
     );
-    
+
     expect(container.firstChild.firstChild.tagName).toBe('HEADER');
     expect(container.firstChild.firstChild).toHaveClass('ContentSection-title');
     expect(container.firstChild.firstChild).not.toHaveClass('ContentSection-title--textLight');
     expect(container.firstChild.firstChild.children).toHaveLength(1);
     expect(container.firstChild.firstChild).toContainElement(getByText(props.title));
     expect(getByText(props.title)).toBeTruthy();
-    expect(getByText(props.title).tagName).toBe('H1');
+    expect(getByText(props.title).tagName).toBe('H2');
   });
 
   it('renders correctly with given title and subtitle', () => {
-    const {container, getByText} = render(
+    const { container, getByText } = render(
       <ContentSection title={props.title} subTitle={props.subTitle}>
         <section></section>
       </ContentSection>
     );
-    
+
     expect(container.firstChild.firstChild.tagName).toBe('HEADER');
     expect(container.firstChild.firstChild).toHaveClass('ContentSection-title');
     expect(container.firstChild.firstChild).not.toHaveClass('ContentSection-title--textLight')
@@ -61,13 +61,13 @@ describe('ContentSection', () => {
     expect(container.firstChild.firstChild).toContainElement(getByText(props.title));
     expect(container.firstChild.firstChild).toContainElement(getByText(props.subTitle));
     expect(getByText(props.title)).toBeTruthy();
-    expect(getByText(props.title).tagName).toBe('H1');
+    expect(getByText(props.title).tagName).toBe('H2');
     expect(getByText(props.subTitle)).toBeTruthy();
     expect(getByText(props.subTitle).tagName).toBe('H2');
   });
 
   it('adds classes if respective props are given', () => {
-    let {container} = render(<ContentSection {...props}><section></section></ContentSection>);
+    let { container } = render(<ContentSection {...props}><section></section></ContentSection>);
 
     // isLight & titleAlignment props
     expect(container.firstChild.children[0].tagName).toBe('HEADER');
@@ -88,7 +88,7 @@ describe('ContentSection', () => {
     props.titleAlignment = 'center';
     props.contentAlignment = 'center';
 
-    ({container} = render(<ContentSection {...props}><section></section></ContentSection>));
+    ({ container } = render(<ContentSection {...props}><section></section></ContentSection>));
 
     // isLight & titleAlignment props
     expect(container.firstChild.children[0].tagName).toBe('HEADER');
@@ -106,7 +106,7 @@ describe('ContentSection', () => {
   });
 
   it('adds multiple children correctly', () => {
-    const {container, getAllByText} = render(
+    const { container, getAllByText } = render(
       <ContentSection>
         <section>child</section>
         <section>child</section>
