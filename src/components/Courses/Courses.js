@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import StyledLink from "../Link";
 import "./Courses.scss";
 
@@ -40,5 +41,10 @@ const Courses = ({ edges, isHorizontal }) =>
       ))}
     </div>
   ));
+
+Courses.propTypes = {
+  edges: PropTypes.arrayOf(PropTypes.object).isRequired,
+  isHorizontal: PropTypes.bool
+};
 
 export default Courses;

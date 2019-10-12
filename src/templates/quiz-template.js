@@ -1,8 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Page from '../components/Page';
 import Quiz from "../components/Quiz";
+import { SITE_METADATA_PROP_TYPE } from "../constants/propTypes";
 
 const QuizTemplate = ({ data }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = data.site.siteMetadata;
@@ -35,6 +37,22 @@ const QuizTemplate = ({ data }) => {
       </Page>
     </Layout>
   );
+};
+
+QuizTemplate.propTypes = {
+  data: PropTypes.shape({
+    site: SITE_METADATA_PROP_TYPE.isRequired,
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string,
+        description: PropTypes.string,
+        preReadQuiz: PropTypes.string
+      }),
+      fields: PropTypes.shape({
+        slug: PropTypes.string
+      })
+    })
+  }).isRequired
 };
 
 export const query = graphql`

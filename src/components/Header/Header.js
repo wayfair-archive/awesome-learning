@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
 import Menu from "./Menu";
 import Icon from "../Icon";
@@ -43,6 +44,20 @@ export const PureHeader = ({ data }) => {
     </header>
   );
 };
+
+PureHeader.propTypes = {
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        title: PropTypes.string,
+        menu: PropTypes.arrayOf(PropTypes.shape({
+          label: PropTypes.string,
+          path: PropTypes.string
+        }))
+      })
+    })
+  }).isRequired
+}
 
 export const Header = props => (
   <StaticQuery

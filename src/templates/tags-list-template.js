@@ -1,9 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import kebabCase from "lodash/kebabCase";
 import { Container, Row, Col } from "react-grid-system";
 import Layout from "../components/Layout";
 import Page from "../components/Page";
+import { SITE_METADATA_PROP_TYPE } from "../constants/propTypes";
 
 const TagsListTemplate = ({ data }) => {
   const { title, subtitle } = data.site.siteMetadata;
@@ -31,6 +33,15 @@ const TagsListTemplate = ({ data }) => {
     </Layout>
   );
 };
+
+TagsListTemplate.propTypes = {
+  data: PropTypes.shape({
+    site: SITE_METADATA_PROP_TYPE.isRequired,
+    allMarkdownRemark: PropTypes.shape({
+      group: PropTypes.array
+    })
+  }).isRequired
+}
 
 export const query = graphql`
   query TagsListQuery {

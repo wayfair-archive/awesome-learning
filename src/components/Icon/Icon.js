@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Icon.scss';
 
 const Icon = ({ icon, cssClasses = "" }) => (
@@ -6,5 +7,12 @@ const Icon = ({ icon, cssClasses = "" }) => (
     <path d={icon.path} />
   </svg>
 );
+
+Icon.propTypes = {
+  icon: PropTypes.shape({
+    path: PropTypes.string.isRequired,
+    viewBox: PropTypes.string
+  }).isRequired
+};
 
 export default Icon;
