@@ -1,26 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import Icon from "../Icon";
+import AliceCarousel from 'react-alice-carousel';
 import TrackCard from './trackCard';
 import { getIcon } from "../../utils";
-import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/scss/alice-carousel.scss";
 
-const Carousel = ({ items }) => {
-
-  return (
-    <AliceCarousel responsive={{
-      0: {
-        items: 1
-      },
-      400: {
-        items: 2
-      },
-      720: {
-        items: 3
-      },
-      1024: { items: 4 },
-    }}
+const Carousel = ({ items }) =>
+  (
+    <AliceCarousel
+      responsive={{
+        0: {
+          items: 1
+        },
+        400: {
+          items: 2
+        },
+        720: {
+          items: 3
+        },
+        1024: { items: 4 },
+      }}
       dotsDisabled
       autoPlayInterval={3000}
       autoPlayDirection="ltr"
@@ -30,7 +29,7 @@ const Carousel = ({ items }) => {
       disableAutoPlayOnAction={true}
     >
       {
-        items.map(({ title, icon, subTitle, path }, index) => (
+        items.map(({ title, icon, subTitle, path }) => (
           <TrackCard
             key={title}
             role="listitem"
@@ -43,7 +42,6 @@ const Carousel = ({ items }) => {
       }
     </AliceCarousel >
   );
-};
 
 Carousel.propTypes = {
   items: PropTypes.arrayOf(
@@ -53,11 +51,7 @@ Carousel.propTypes = {
       subTitle: PropTypes.string.isRequired,
       path: PropTypes.string.isRequired,
     })
-  ).isRequired,
-  count: PropTypes.number,
-  cardWidth: PropTypes.number.isRequired,
-  cardHeight: PropTypes.number,
-  spacing: PropTypes.number,
+  ).isRequired
 };
 
 export default Carousel;

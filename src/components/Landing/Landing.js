@@ -3,8 +3,6 @@ import StyledLink from '../Link';
 import Block from '../Block';
 import Carousel from '../Carousel';
 import ContentSection from '../ContentSection';
-import SectionTitle from "../SectionTitle";
-import Text from "../Text";
 import './Landing.scss';
 
 const COURSE_DATA_MAPPING = {
@@ -42,10 +40,10 @@ const Landing = ({ courseEdges }) => (
         <Block mb="16px">
           Awesome Learning is Frontend focused learning platform built around{' '}
           <b>deliberate practice</b>.
-      </Block>
+        </Block>
         <Block >
           Our courses are designed to be perfect for <b>group programming</b>.
-          </Block>
+        </Block>
       </div>
     </div>
     <div className="Landing-callOut">
@@ -69,8 +67,6 @@ const Landing = ({ courseEdges }) => (
           )} />
       </div>
     </div>
-
-
     <ContentSection
       className="Landing-description"
       title="What's Deliberate Practice?"
