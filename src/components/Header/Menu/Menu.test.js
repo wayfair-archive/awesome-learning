@@ -9,7 +9,7 @@ const props = {
 };
 const {container} = render(<Icon {...props} />);
 expect(container.firstChild.tagName).toBe('svg');
-expect(container.firstChild.attributes.getNamedItem('icon').value).toBe('{getIcon("menu")}');
+expect(container.firstChild.attributes.getNamedItem('icon').value).toBe(getIcon(menu));
 expect(container.firstChild.attributes.getNamedItem('cssClasses').value).toBe('Menu-icon');
 
 
