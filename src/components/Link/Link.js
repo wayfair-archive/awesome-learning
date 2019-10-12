@@ -39,11 +39,13 @@ const StyledLink = ({
       href={path}
       target="_blank"
       onClick={lessonData && clickHandler}
+      data-testid={path}
     >
       {children}
     </a>
   ) : (
     <Link
+      data-testid={path}
       className={className}
       to={path}
       activeClassName={isActive ? 'is-active' : ''}

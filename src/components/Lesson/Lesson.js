@@ -24,7 +24,8 @@ const Lesson = ({lesson, slug}) => {
   const path = slug.toLowerCase().split('/courses/')[1];
   const courseName = course.split('-').join(' ');
   return (
-    <div className="Lesson">
+    <div className="Lesson"> 
+      
       <div className="Lesson-homeButton">
         <StyledLink variation={'tertiary'} path={`/courses/${course}/`}>
           Back to {courseName}
@@ -44,6 +45,7 @@ const Lesson = ({lesson, slug}) => {
           </Block>
         ))}
       </ContentSection>
+
       <ContentSection
         title=" "
         subTitle="Pre-Session Learning Materials (required)"
@@ -55,6 +57,7 @@ const Lesson = ({lesson, slug}) => {
         {videoLinks &&
           videoLinks.map(link => (
             <iframe
+              data-testid={link}
               key={link}
               width="100%"
               height="315"
