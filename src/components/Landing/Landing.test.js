@@ -1,5 +1,5 @@
 import React from 'react';
-import {render} from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Landing from './Landing';
 import LastLessonProvider from '../../providers/LastLessonProvider';
 
@@ -8,8 +8,8 @@ const PROPS = {
     {
       node: {
         id: 0,
-        frontmatter: {title: ''},
-        fields: {slug: ''}
+        frontmatter: { title: '' },
+        fields: { slug: '' }
       }
     }
   ]
@@ -30,16 +30,16 @@ function validateElementAttributeValue(nodeList, attributeName, key) {
 describe('Landing Component', () => {
 
   test('Renders a Carousel', () => {
-    const {container} = render(
+    const { container } = render(
       <LastLessonProvider>
         <Landing {...PROPS} />
       </LastLessonProvider>
     );
-    expect(container.querySelectorAll('.Carousel').length).toBe(1);
+    expect(container.querySelectorAll('.alice-carousel').length).toBe(1);
   });
 
   test('Landing-titleWrapper Has Text Content', () => {
-    const {container} = render(
+    const { container } = render(
       <LastLessonProvider>
         <Landing {...PROPS} />
       </LastLessonProvider>
@@ -51,7 +51,7 @@ describe('Landing Component', () => {
   });
 
   test('Landing Callout Has Text Content', () => {
-    const {container} = render(
+    const { container } = render(
       <LastLessonProvider>
         <Landing {...PROPS} />
       </LastLessonProvider>
@@ -62,7 +62,7 @@ describe('Landing Component', () => {
   });
 
   test('Contains a link to /courses and /howtTo', () => {
-    const {container} = render(
+    const { container } = render(
       <LastLessonProvider>
         <Landing {...PROPS} />
       </LastLessonProvider>
