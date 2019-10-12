@@ -38,14 +38,14 @@ const Landing = ({ courseEdges }) => (
   <div className="Landing">
     <div className="Landing-heroWrapper">
       <div className="Landing-titleWrapper">
-        <SectionTitle  mb="16px" >Learn JavaScript and Front-End Fundamentals.</SectionTitle>
+        <SectionTitle mb="16px" >Learn JavaScript and Front-End Fundamentals.</SectionTitle>
         <Text fontSize="xl" >At your own pace.</Text>
       </div>
       <div className="Landing-courseWrapper">
         <Carousel items={(
-          courseEdges.map(({node}) => {
+          courseEdges.map(({ node }) => {
             const { id, frontmatter, fields } = node;
-            const {title} = frontmatter;
+            const { title } = frontmatter;
             return {
               id,
               title,
