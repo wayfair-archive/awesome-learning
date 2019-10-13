@@ -22,7 +22,6 @@ export const PrimitiveLessonButton = ({
   const {setLastLessonVisited} = useLastLessonContext();
   return (
     <a
-      data-testid={path}
       href={path}
       className="LessonButton-link"
       rel="noopener noreferrer"

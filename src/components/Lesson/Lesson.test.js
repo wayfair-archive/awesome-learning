@@ -70,10 +70,12 @@ const lessonWithSecondaryUrlAndQuiz = {
   }
 }
 
-const spy = jest.spyOn(LessonButton, 'default')
+const lessonButtonSpy = jest.spyOn(LessonButton, 'default');
+const primativeLessonButtonSpy = jest.spyOn(LessonButton, 'PrimitiveLessonButton');
 
 afterEach(() => {
-  spy.mockClear();
+  lessonButtonSpy.mockClear();
+  primativeLessonButtonSpy.mockClear();
 });
 
 describe('Lesson', () => {
@@ -119,26 +121,23 @@ describe('Lesson', () => {
     const { getByTestId } = render(<LastLessonProvider><Lesson lesson={lessonWithQuizData} slug={lessonWithQuizData.fields.slug}></Lesson></LastLessonProvider>);
     expect(getByTestId(`${lessonWithQuizData.fields.slug}/quiz`)).toBeTruthy();
   });
+  
+  it('renders a link to external lesson if it exists', () => {
+    render(<LastLessonProvider><Lesson lesson={lessonWithSecondaryUrlAndQuiz} slug={lessonWithSecondaryUrlAndQuiz.fields.slug}></Lesson></LastLessonProvider>);
+    expect(primativeLessonButtonSpy).toBeCalledTimes(1);
+    expect(primativeLessonButtonSpy).toBeCalledWith({ path: lessonWithSecondaryUrlAndQuiz.frontmatter.secondaryExerciseUrl, lessonData: lessonWithSecondaryUrlAndQuiz, children: "Start the Workshop" }, {});
+  });
 
-  // LessonButton uses StaticQuery which will not render in tests as it uses graphql
-  // so here just check LessonButton is called with correct props.
-  // PureLessonButton is tested seperately with data passed in directly
   it('renders a link to internal awesome-learning-exercises at correct path', () => {
     const pathForTestLesson = baseLesson.fields.slug.toLowerCase().split('/courses/')[1];
     render(<LastLessonProvider><Lesson lesson={lessonWithQuizData} slug={lessonWithQuizData.fields.slug}></Lesson></LastLessonProvider >);
-    expect(spy).toBeCalledTimes(1);
-    expect(spy).toBeCalledWith({ defaultTab: 'tests', path: pathForTestLesson, lessonData: lessonWithQuizData }, {});
-  })
-
-  it('renders a link to external lesson if it exists', () => {
-    const { getByTestId } = render(<LastLessonProvider><Lesson lesson={lessonWithSecondaryUrlAndQuiz} slug={lessonWithSecondaryUrlAndQuiz.fields.slug}></Lesson></LastLessonProvider>);
-    expect(getByTestId(lessonWithSecondaryUrlAndQuiz.frontmatter.secondaryExerciseUrl)).toBeTruthy();
-  })
+    expect(lessonButtonSpy).toBeCalledTimes(1);
+    expect(lessonButtonSpy).toBeCalledWith({ defaultTab: 'tests', path: pathForTestLesson, lessonData: lessonWithQuizData }, {});
+  });
 
   it('renders feedback section', () => {
     const { getByText, getByTestId } = render(<LastLessonProvider><Lesson lesson={lessonExternalQuiz} slug={lessonExternalQuiz.fields.slug}></Lesson></LastLessonProvider>);
     expect(getByText(/feedback/)).toBeTruthy();
     expect(getByTestId("https://docs.google.com/forms/d/e/1FAIpQLSeiB_M1YmwwwG9BNhGnd1Nn_BhnzOfHFUDrZGz1PAvm8A1NxA/viewform")).toBeTruthy();
-  })
-
+  });
 });
