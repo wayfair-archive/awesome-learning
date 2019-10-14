@@ -20,7 +20,6 @@ export const PrimitiveLessonButton = ({
   lessonData
 }) => {
   const {setLastLessonVisited} = useLastLessonContext();
-
   return (
     <a
       href={path}
