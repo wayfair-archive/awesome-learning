@@ -42,7 +42,7 @@ ContentSection.propTypes = {
   children: PropTypes.node.isRequired,
   isLight: PropTypes.bool,
   contentAlignment: PropTypes.oneOf(["left", "center"]),
-  textAlignment: PropTypes.oneOf(["left", "center"])
+  titleAlignment: PropTypes.oneOf(["left", "center"])
 };
 
 ContentSection.defaultProps = {
@@ -50,7 +50,7 @@ ContentSection.defaultProps = {
   title: null,
   subTitle: null,
   contentAlignment: "left",
-  textAlignment: "left",
+  titleAlignment: "left",
   isLight: false
 };
 

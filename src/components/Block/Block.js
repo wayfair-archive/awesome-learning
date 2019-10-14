@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-
-
 const Block = ({
   is,
   children,
@@ -27,7 +25,11 @@ const Block = ({
 };
 
 Block.propTypes = {
-  is: PropTypes.string
+  is: PropTypes.string,
+  mb: PropTypes.string,
+  mr: PropTypes.string,
+  mt: PropTypes.string,
+  ml: PropTypes.string
 };
 
 Block.defaultProps = {
