@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StyledLink from '../Link';
-import Block from '../Block';
+import StyledLink from '../shared/Link';
+import Block from '../shared/Block';
 import LessonButton, {PrimitiveLessonButton} from '../LessonButton';
-import ContentSection from '../ContentSection';
+import ContentSection from '../shared/ContentSection';
 import './lesson.scss';
 
 const Lesson = ({lesson, slug}) => {
@@ -28,7 +28,7 @@ const Lesson = ({lesson, slug}) => {
     <div className="Lesson"> 
       
       <div className="Lesson-homeButton">
-        <StyledLink variation={'tertiary'} path={`/courses/${course}/`}>
+        <StyledLink variation="tertiary" path={`/courses/${course}/`}>
           Back to {courseName}
         </StyledLink>
       </div>
@@ -86,7 +86,7 @@ const Lesson = ({lesson, slug}) => {
               <li className="Lesson-readingListItem" key={readingLink.title}>
                 <StyledLink
                   isExternal
-                  variation={'tertiary'}
+                  variation="tertiary"
                   path={readingLink.link}
                 >
                   {readingLink.title}
@@ -107,7 +107,7 @@ const Lesson = ({lesson, slug}) => {
           <StyledLink
             path={preReadQuiz !== null ? `${slug}/quiz` : preReadQuizLink}
             isExternal={preReadQuiz === null}
-            variation={'tertiary'}
+            variation="tertiary"
             lessonData={lesson}
           >
             Quiz Link
@@ -141,7 +141,7 @@ const Lesson = ({lesson, slug}) => {
         <StyledLink
           isExternal
           path="https://docs.google.com/forms/d/e/1FAIpQLSeiB_M1YmwwwG9BNhGnd1Nn_BhnzOfHFUDrZGz1PAvm8A1NxA/viewform"
-          variation={'tertiary'}
+          variation="tertiary"
         >
           Survey Link
         </StyledLink>

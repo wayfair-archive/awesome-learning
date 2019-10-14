@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Tags from "./Tags";
-import StyledLink from "../Link";
-import CourseCard from "../CourseCard";
-import ContentSection from "../ContentSection";
-import "./Course.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Tags from './Tags';
+import StyledLink from '../shared/Link';
+import CourseCard from '../CourseCard';
+import ContentSection from '../shared/ContentSection';
+import './Course.scss';
 
 const Course = ({ course }) => {
   const { tags, title, description, lessons } = course.frontmatter;

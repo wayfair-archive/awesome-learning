@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
-import kebabCase from "lodash/kebabCase";
-import { Container, Row, Col } from "react-grid-system";
-import Layout from "../components/Layout";
-import Page from "../components/Page";
-import { SITE_METADATA_PROP_TYPE } from "../constants/propTypes";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link, graphql } from 'gatsby';
+import kebabCase from 'lodash/kebabCase';
+import { Container, Row, Col } from 'react-grid-system';
+import Layout from '../components/shared/Layout';
+import Page from '../components/shared/Page';
+import { SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 
 const TagsListTemplate = ({ data }) => {
   const { title, subtitle } = data.site.siteMetadata;

@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 import AliceCarousel from 'react-alice-carousel';
 import TrackCard from './trackCard';
-import { getIcon } from "../../utils";
-import "react-alice-carousel/lib/scss/alice-carousel.scss";
+import { getIcon } from '../../utils';
+import 'react-alice-carousel/lib/scss/alice-carousel.scss';
 
 const Carousel = ({ items }) =>
   (

@@ -1,8 +1,8 @@
 import React from 'react';
-import StyledLink from '../Link';
-import Block from '../Block';
+import StyledLink from '../shared/Link';
+import Block from '../shared/Block';
 import Carousel from '../Carousel';
-import ContentSection from '../ContentSection';
+import ContentSection from '../shared/ContentSection';
 import './Landing.scss';
 
 const COURSE_DATA_MAPPING = {

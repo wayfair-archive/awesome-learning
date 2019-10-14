@@ -1,9 +1,9 @@
-import React from "react";
-import Layout from "../components/Layout";
-import HowTo from "../components/HowTo";
+import React from 'react';
+import Layout from '../components/shared/Layout';
+import HowTo from '../components/HowTo';
 
 const HowToTemplate = () => (
-  <Layout title="How To Get Started" description={""} isFullBleed>
+  <Layout title="How To Get Started" description="" isFullBleed>
     <HowTo />
   </Layout>
 );

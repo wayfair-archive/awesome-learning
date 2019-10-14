@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { formatQuestionId, getChoiceIndex, getQuestionIndex } from './quizUtilities';
-import ContentSection from "../ContentSection";
-import Question from "./Question";
+import ContentSection from '../shared/ContentSection';
+import Question from './Question';
 import questionValidator from './Question/questionValidator';
-import StyledLink from '../Link';
-import "./quiz.scss";
+import StyledLink from '../shared/Link';
+import './quiz.scss';
 
 const Quiz = ({ quiz, slug, title }) => {
   const initialState = {
@@ -73,11 +73,11 @@ const Quiz = ({ quiz, slug, title }) => {
   return (
     <div className="Quiz">
       <div className="Quiz-homeButton">
-        <StyledLink variation={"tertiary"} path={slug}>
+        <StyledLink variation="tertiary" path={slug}>
           Back to lesson
         </StyledLink>
       </div>
-      <ContentSection subTitle={'Pre-Read Quiz'} title={title}>
+      <ContentSection subTitle="Pre-Read Quiz" title={title}>
         {quiz.description && <p>{quiz.description}</p>}
         {/* Iterate over all questions in this Quiz */}
         {
