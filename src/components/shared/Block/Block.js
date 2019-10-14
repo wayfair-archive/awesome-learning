@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Block = ({
   is,
@@ -34,11 +34,11 @@ Block.propTypes = {
 };
 
 Block.defaultProps = {
-  is: "div",
-  mb: "0px",
-  mr: "0px",
-  mt: "0px",
-  ml: "0px"
+  is: 'div',
+  mb: '0px',
+  mr: '0px',
+  mt: '0px',
+  ml: '0px'
 };
 
 export default Block;

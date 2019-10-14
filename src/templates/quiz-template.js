@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import Page from '../components/Page';
-import Quiz from "../components/Quiz";
-import { SITE_METADATA_PROP_TYPE } from "../constants/propTypes";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import Layout from '../components/shared/Layout';
+import Page from '../components/shared/Page';
+import Quiz from '../components/Quiz';
+import { SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 
 const QuizTemplate = ({ data }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = data.site.siteMetadata;

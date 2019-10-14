@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "gatsby";
-import SectionTitle from "../SectionTitle";
-import Text from "../Text";
-import Icon from "../Icon";
-import "./trackCard.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
+import SectionTitle from '../shared/SectionTitle';
+import Text from '../shared/Text';
+import Icon from '../shared/Icon';
+import './trackCard.scss';
 
 const TrackCard = ({path, icon, title, subTitle, ...restProps}) => (
   <Link className="TrackCard" to={path} {...restProps}>
@@ -25,7 +25,7 @@ TrackCard.propTypes = {
 };
 
 TrackCard.defaultProps = {
-  path: "/"
+  path: '/'
 };
 
 export default TrackCard;

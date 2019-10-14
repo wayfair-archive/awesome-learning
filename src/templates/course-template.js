@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
+import Layout from '../components/shared/Layout';
 import Course from '../components/Course';
-import Page from '../components/Page';
+import Page from '../components/shared/Page';
 import { SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 
 const CourseTemplate = ({ data }) => {

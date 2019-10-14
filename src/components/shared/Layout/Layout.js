@@ -1,12 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import cx from "classnames";
-import Header from "../Header";
-
-
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import cx from 'classnames';
+import Header from '../../Header';
+import LastLessonProvider from '../../../providers/LastLessonProvider';
 import './Layout.scss';
-import LastLessonProvider from '../../providers/LastLessonProvider';
 
 const Layout = ({children, title, description, isFullBleed}) => {
   const layoutClass = cx('Layout', {
