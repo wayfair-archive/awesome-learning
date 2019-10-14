@@ -1,9 +1,10 @@
-import React from "react";
-import Tags from "./Tags";
-import StyledLink from "../Link";
-import CourseCard from "../CourseCard";
-import ContentSection from "../ContentSection";
-import "./Course.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Tags from './Tags';
+import StyledLink from '../shared/Link';
+import CourseCard from '../CourseCard';
+import ContentSection from '../shared/ContentSection';
+import './Course.scss';
 
 const Course = ({ course }) => {
   const { tags, title, description, lessons } = course.frontmatter;
@@ -42,5 +43,20 @@ const Course = ({ course }) => {
     </div>
   );
 };
+
+Course.propTypes = {
+  course: PropTypes.shape({
+    frontmatter: PropTypes.shape({
+      tags: PropTypes.array,
+      title: PropTypes.string,
+      description: PropTypes.node,
+      lessons: PropTypes.arrayOf(PropTypes.object)
+    }).isRequired,
+    fields: PropTypes.shape({
+      tagSlugs: PropTypes.array,
+      slug: PropTypes.string
+    })
+  })
+}
 
 export default Course;

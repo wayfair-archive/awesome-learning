@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'gatsby';
 import cx from 'classnames';
-import {useLastLessonContext} from '../../providers/LastLessonProvider';
+import {useLastLessonContext} from '../../../providers/LastLessonProvider';
 import './Link.scss';
 
 const LINK_VARIATIONS = [
@@ -29,9 +29,9 @@ const StyledLink = ({
     'is-block': isBlock,
     [`Link--${variation}`]: variation && !isButton
   });
-  const {setLastLessonVisited} = useLastLessonContext();
+  const {setLastLessonVisited} = useLastLessonContext() || {};
 
-  const clickHandler = () => setLastLessonVisited(lessonData);
+  const clickHandler = () => setLastLessonVisited && setLastLessonVisited(lessonData)
 
   return isExternal ? (
     <a
@@ -39,11 +39,13 @@ const StyledLink = ({
       href={path}
       target="_blank"
       onClick={lessonData && clickHandler}
+      data-testid={path}
     >
       {children}
     </a>
   ) : (
     <Link
+      data-testid={path}
       className={className}
       to={path}
       activeClassName={isActive ? 'is-active' : ''}

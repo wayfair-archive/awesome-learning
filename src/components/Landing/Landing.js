@@ -1,10 +1,8 @@
 import React from 'react';
-import StyledLink from '../Link';
-import Block from '../Block';
+import StyledLink from '../shared/Link';
+import Block from '../shared/Block';
 import Carousel from '../Carousel';
-import ContentSection from '../ContentSection';
-import SectionTitle from "../SectionTitle";
-import Text from "../Text";
+import ContentSection from '../shared/ContentSection';
 import './Landing.scss';
 
 const COURSE_DATA_MAPPING = {
@@ -38,35 +36,37 @@ const Landing = ({ courseEdges }) => (
   <div className="Landing">
     <div className="Landing-heroWrapper">
       <div className="Landing-titleWrapper">
-        <SectionTitle  mb="16px" >Learn JavaScript and Front-End Fundamentals.</SectionTitle>
-        <Text fontSize="xl" >At your own pace.</Text>
-      </div>
-      <div className="Landing-courseWrapper">
-        <Carousel items={(
-          courseEdges.map(({node}) => {
-            const { id, frontmatter, fields } = node;
-            const {title} = frontmatter;
-            return {
-              id,
-              title,
-              icon: COURSE_DATA_MAPPING[title] ? COURSE_DATA_MAPPING[title].icon : 'array',
-              subTitle: COURSE_DATA_MAPPING[title] ? COURSE_DATA_MAPPING[title].subTitle : title,
-              path: fields.slug,
-            };
-          })
-        )} />
+        <Block is="h1" mb="32px">Learn JavaScript and Front-End Fundamentals.</Block>
+        <Block mb="16px">
+          Awesome Learning is Frontend focused learning platform built around{' '}
+          <b>deliberate practice</b>.
+        </Block>
+        <Block >
+          Our courses are designed to be perfect for <b>group programming</b>.
+        </Block>
       </div>
     </div>
     <div className="Landing-callOut">
-      <p>
-        Awesome Learning is Frontend focused learning platform built around{' '}
-        <b>deliberate practice</b>.
-      </p>
-      <p>
-        We designed the courses to be perfect for <b>group programming</b>.
-      </p>
+      <div className="Landing-courseWrapper">
+        <Block mb="20px" is="h3">
+          Our Courses:
+        </Block>
+        <Carousel
+          items={(
+            courseEdges.map(({ node }) => {
+              const { id, frontmatter, fields } = node;
+              const { title } = frontmatter;
+              return {
+                id,
+                title,
+                icon: COURSE_DATA_MAPPING[title] ? COURSE_DATA_MAPPING[title].icon : 'array',
+                subTitle: COURSE_DATA_MAPPING[title] ? COURSE_DATA_MAPPING[title].subTitle : title,
+                path: fields.slug,
+              };
+            })
+          )} />
+      </div>
     </div>
-
     <ContentSection
       className="Landing-description"
       title="What's Deliberate Practice?"

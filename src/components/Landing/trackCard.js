@@ -25,7 +25,7 @@ TrackCard.propTypes = {
 };
 
 TrackCard.defaultProps = {
-  path: "/"
+  path: '/'
 };
 
 export default TrackCard;
