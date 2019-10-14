@@ -1,57 +1,72 @@
 import React from 'react';
 import StyledLink from '../shared/Link';
 import Block from '../shared/Block';
+import Carousel from '../Carousel';
 import ContentSection from '../shared/ContentSection';
-import TrackCard from './trackCard';
-import SectionTitle from '../shared/SectionTitle';
-import Text from '../shared/Text';
-import { getIcon } from '../../utils';
 import './Landing.scss';
 
-const Landing = () => (
+const COURSE_DATA_MAPPING = {
+  'Data Types': {
+    icon: 'data',
+    subTitle: 'Deep dive into types, equality, coercion, immutability and more.',
+  },
+  'Array Methods': {
+    icon: 'array',
+    subTitle: 'Learn functional array methods like filter, map, and reduce!',
+  },
+  'Promises': {
+    icon: 'async',
+    subTitle: 'Learn the Promise API inside and out.',
+  },
+  'Testing': {
+    icon: 'testing',
+    subTitle: 'Learn frontend testing with Jest and Enzyme.',
+  },
+  'React Hooks': {
+    icon: 'hook',
+    subTitle: 'Learn react hooks.',
+  },
+  'Functions and Scope': {
+    icon: 'function',
+    subTitle: 'Learn about function and scopes.',
+  }
+};
+
+const Landing = ({ courseEdges }) => (
   <div className="Landing">
     <div className="Landing-heroWrapper">
       <div className="Landing-titleWrapper">
-        <SectionTitle  mb="16px" >Learn JavaScript and Front-End Fundamentals.</SectionTitle>
-        <Text fontSize="xl" >At your own pace.</Text>
-      </div>
-      <div className="Landing-courseWrapper">
-        <TrackCard
-          title="Array Methods"
-          icon={getIcon('array')}
-          subTitle="Learn functional array methods like filter, map, and reduce!"
-          path="/courses/Array-Methods/"
-        />
-        <TrackCard
-          title="Data Types"
-          icon={getIcon('data')}
-          subTitle="Deep dive into types, equality, coercion, immutability and more."
-          path="/courses/Data-Types/"
-        />
-        <TrackCard
-          title="Promises"
-          icon={getIcon('async')}
-          subTitle="Learn the Promise API inside and out."
-          path="/courses/Promises/"
-        />
-        <TrackCard
-          title="Testing"
-          icon={getIcon('testing')}
-          subTitle="Learn frontend testing with Jest and Enzyme."
-          path="/courses/Testing/"
-        />
+        <Block is="h1" mb="32px">Learn JavaScript and Front-End Fundamentals.</Block>
+        <Block mb="16px">
+          Awesome Learning is Frontend focused learning platform built around{' '}
+          <b>deliberate practice</b>.
+        </Block>
+        <Block >
+          Our courses are designed to be perfect for <b>group programming</b>.
+        </Block>
       </div>
     </div>
     <div className="Landing-callOut">
-      <p>
-        Awesome Learning is Frontend focused learning platform built around{' '}
-        <b>deliberate practice</b>.
-      </p>
-      <p>
-        We designed the courses to be perfect for <b>group programming</b>.
-      </p>
+      <div className="Landing-courseWrapper">
+        <Block mb="20px" is="h3">
+          Our Courses:
+        </Block>
+        <Carousel
+          items={(
+            courseEdges.map(({ node }) => {
+              const { id, frontmatter, fields } = node;
+              const { title } = frontmatter;
+              return {
+                id,
+                title,
+                icon: COURSE_DATA_MAPPING[title] ? COURSE_DATA_MAPPING[title].icon : 'array',
+                subTitle: COURSE_DATA_MAPPING[title] ? COURSE_DATA_MAPPING[title].subTitle : title,
+                path: fields.slug,
+              };
+            })
+          )} />
+      </div>
     </div>
-
     <ContentSection
       className="Landing-description"
       title="What's Deliberate Practice?"

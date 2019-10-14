@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/shared/Layout';
 import Lesson from '../components/Lesson';
 import Page from '../components/shared/Page';
+import { SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 
 const LessonTemplate = ({ data }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = data.site.siteMetadata;
@@ -26,6 +28,19 @@ const LessonTemplate = ({ data }) => {
       </Page>
     </Layout>
   );
+};
+
+LessonTemplate.propTypes = {
+  site: SITE_METADATA_PROP_TYPE.isRequired,
+  markdownRemark: PropTypes.shape({
+    frontmatter: PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string
+    }),
+    fields: PropTypes.shape({
+      slug: PropTypes.string
+    })
+  })
 };
 
 export const query = graphql`

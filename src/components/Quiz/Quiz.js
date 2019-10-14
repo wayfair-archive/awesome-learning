@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { formatQuestionId, getChoiceIndex, getQuestionIndex } from './quizUtilities';
 import ContentSection from '../shared/ContentSection';
 import Question from './Question';
@@ -105,6 +106,15 @@ const Quiz = ({ quiz, slug, title }) => {
       </ContentSection>
     </div>
   );
+};
+
+Quiz.propTypes = {
+  quiz: PropTypes.shape({
+    questions: PropTypes.array,
+    description: PropTypes.node
+  }).isRequired,
+  slug: PropTypes.string, 
+  title: PropTypes.string
 };
 
 export default Quiz;

@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'react-grid-system';
 import { graphql } from 'gatsby';
 import Layout from '../components/shared/Layout';
 import Page from '../components/shared/Page';
+import { SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 
 const NotFoundTemplate = ({ data }) => {
   const { title, subtitle } = data.site.siteMetadata;
@@ -21,6 +23,12 @@ const NotFoundTemplate = ({ data }) => {
     </Layout>
   );
 };
+
+NotFoundTemplate.propTypes = {
+  data: PropTypes.shape({
+    site: SITE_METADATA_PROP_TYPE.isRequired
+  }).isRequired
+}
 
 export const query = graphql`
   query NotFoundQuery {

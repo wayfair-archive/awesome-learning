@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x]
+        node-version: [8.x, 10.x]
 
     steps:
     - uses: actions/checkout@v1
@@ -28,3 +28,6 @@ jobs:
     - name: Run unit tests
       run: |
         npm test
+    - name: Confirm that platform build succeeds
+      run: |
+        npm run build

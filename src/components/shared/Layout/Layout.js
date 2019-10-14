@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import cx from 'classnames';
 import Header from '../../Header';
@@ -27,6 +28,13 @@ const Layout = ({children, title, description, isFullBleed}) => {
     </>
   );
 };
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  isFullBleed: PropTypes.bool
+}
 
 Layout.defaultProps = {
   isFullBleed: false

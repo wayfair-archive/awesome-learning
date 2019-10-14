@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/shared/Layout';
 import Courses from '../components/Courses';
 import Page from '../components/shared/Page';
 import Pagination from '../components/Pagination';
+import { SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 
 const CourseListTemplate = ({ data, pageContext }) => {
   const {
@@ -69,5 +71,21 @@ export const query = graphql`
     }
   }
 `;
+
+CourseListTemplate.propTypes = {
+  data: PropTypes.shape({
+    site: SITE_METADATA_PROP_TYPE.isRequired,
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.arrayOf(PropTypes.object)
+    })
+  }).isRequired,
+  pageContext: PropTypes.shape({
+    currentPage: PropTypes.number,
+    hasNextPage: PropTypes.bool,
+    hasPrevPage: PropTypes.bool,
+    prevPagePath: PropTypes.string,
+    nextPagePath: PropTypes.string
+  })
+}
 
 export default CourseListTemplate;

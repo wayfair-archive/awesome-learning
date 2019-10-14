@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import SectionTitle from "../SectionTitle";
 import './ContentSection.scss';
 
 const ContentSection = ({
@@ -26,8 +27,8 @@ const ContentSection = ({
     <div className="ContentSection">
       {title && (
         <header className={headerClasses}>
-          <h1>{title}</h1>
-          {subTitle && <h2>{subTitle}</h2>}
+          <SectionTitle>{title}</SectionTitle>
+          {subTitle && <SectionTitle>{subTitle}</SectionTitle>}
         </header>
       )}
       <div className={contentClasses}>{children}</div>
