@@ -36,6 +36,16 @@ While you are developing, we recommend watching the test suite. Open up another 
 npm run test-watch
 ```
 
+### Running storybook locally
+
+```
+npm # install dependencies
+npm run storybook
+```
+
+Then open `http://localhost:6006` on your browser. For more information visit [React Storybook](https://github.com/storybooks/storybook) repo.
+
+
 ## Project Structure
 Awesome Learning is powered by two repositories, this one and our [exercises repo](https://github.com/wayfair/awesome-learning-exercises).
 
