@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, select } from '@storybook/addon-knobs';
+import { withKnobs, text, select, boolean } from '@storybook/addon-knobs';
 import StyledLink from './Link';
 import LastLessonProvider from '../../../providers/LastLessonProvider';
 import LinkReadme from './README.md';
@@ -39,82 +39,82 @@ stories
         Primary
       </StyledLink>
   )
-  // .add(
-  //   'secondary',
-  //   () =>
-  //     <StyledLink
-  //       variation={select('variation', variationOptions, 'secondary')}
-  //       path={text('path', '/')}
-  //       isExternal
-  //     >
-  //       Secondary
-  //     </StyledLink>
-  // )
-  // .add(
-  //   'tertiary',
-  //   () =>
-  //     <StyledLink
-  //       variation={select('variation', variationOptions, 'tertiary')}
-  //       path={text('path', '/')}
-  //       isExternal
-  //     >
-  //       Tertiary
-  //     </StyledLink>
-  // )
-  // .add(
-  //   'tertiary alt',
-  //   () =>
-  //     <StyledLink
-  //       variation={select('variation', variationOptions, 'tertiaryAlt')}
-  //       path={text('path', '/')}
-  //       isExternal
-  //     >
-  //       Tertiary Alt
-  //     </StyledLink>
-  // )
-  // .add(
-  //   'tertiary alt inverse',
-  //   () =>
-  //     <StyledLink
-  //       variation={select('variation', variationOptions, 'tertiaryAltInverse')}
-  //       path={text('path', '/')}
-  //       isExternal
-  //     >
-  //       Tertiary Alt Inverse
-  //     </StyledLink>
-  // )
-  // .add(
-  //   'pill',
-  //   () =>
-  //     <StyledLink
-  //       variation={select('variation', variationOptions, 'pill')}
-  //       path={text('path', '/')}
-  //       isExternal
-  //     >
-  //       Pill
-  //     </StyledLink>
-  // )
-  // .add(
-  //   'isButton',
-  //   () =>
-  //     <StyledLink
-  //       variation={select('variation', variationOptions, 'primary')}
-  //       isButton={boolean('isButton', true)}
-  //       path={text('path', '/')}
-  //       isExternal
-  //     >
-  //       Is Button
-  //     </StyledLink>
-  // )
-  // .add(
-  //   'isActive',
-  //   () =>
-  //     <StyledLink
-  //       variation={select('variation', variationOptions, 'primary')}
-  //       isActive={boolean('isActive', true)}
-  //       path={text('path', '#')}
-  //       isExternal={false}
-  //     >
-  //       Is Active
-  //     </StyledLink>
-  // ) 
+  .add(
+    'secondary',
+    () =>
+      <StyledLink
+        variation={select('variation', variationOptions, 'secondary')}
+        path={text('path', '/')}
+        isExternal
+      >
+        Secondary
+      </StyledLink>
+  )
+  .add(
+    'tertiary',
+    () =>
+      <StyledLink
+        variation={select('variation', variationOptions, 'tertiary')}
+        path={text('path', '/')}
+        isExternal
+      >
+        Tertiary
+      </StyledLink>
+  )
+  .add(
+    'tertiary alt',
+    () =>
+      <StyledLink
+        variation={select('variation', variationOptions, 'tertiaryAlt')}
+        path={text('path', '/')}
+        isExternal
+      >
+        Tertiary Alt
+      </StyledLink>
+  )
+  .add(
+    'tertiary alt inverse',
+    () =>
+      <StyledLink
+        variation={select('variation', variationOptions, 'tertiaryAltInverse')}
+        path={text('path', '/')}
+        isExternal
+      >
+        Tertiary Alt Inverse
+      </StyledLink>
+  )
+  .add(
+    'pill',
+    () =>
+      <StyledLink
+        variation={select('variation', variationOptions, 'pill')}
+        path={text('path', '/')}
+        isExternal
+      >
+        Pill
+      </StyledLink>
+  )
+  .add(
+    'isButton',
+    () =>
+      <StyledLink
+        variation={select('variation', variationOptions, 'primary')}
+        isButton={boolean('isButton', true)}
+        path={text('path', '/')}
+        isExternal
+      >
+        Is Button
+      </StyledLink>
+  )
+  .add(
+    'isActive',
+    () =>
+      <StyledLink
+        variation={select('variation', variationOptions, 'primary')}
+        isActive={boolean('isActive', true)}
+        path={text('path', '#')}
+        isExternal={false}
+      >
+        Is Active
+      </StyledLink>
+  ) 
