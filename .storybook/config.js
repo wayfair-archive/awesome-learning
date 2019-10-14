@@ -13,6 +13,7 @@ import Icon from '../src/components/shared/Icon';
 import StyledLink from '../src/components/shared/Link';
 import LastLessonProvider from '../src/providers/LastLessonProvider';
 import Page from '../src/components/shared/Page';
+import SectionTitle from '../src/components/shared/SectionTitle';
 import Text from '../src/components/shared/Text';
 
 
@@ -22,7 +23,7 @@ addParameters({
     isFullScreen: false,
     showNav: true,
     showPanel: true,
-    panelPosition: 'right',
+    panelPosition: 'bottom',
     sortStoriesByKind: true,
     hierarchySeparator: /\/|\./,
     hierarchyRootSeparator: /\|/,
@@ -61,6 +62,7 @@ addDecorator(
       StyledLink,
       LastLessonProvider,
       Page,
+      SectionTitle,
       Text
     ]
   })
