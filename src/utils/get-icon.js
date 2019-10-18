@@ -55,6 +55,21 @@ const getIcon = (name) => {
     case 'rightChevron':
       icon = ICONS.RIGHT_CHEVRON;
       break;
+    case 'check':
+      icon = ICONS.CHECK;
+      break;
+    case 'info':
+      icon = ICONS.INFO;
+      break;
+    case 'warning':
+      icon = ICONS.WARNING;
+      break;
+    case 'forbidden':
+      icon = ICONS.FORBIDDEN;
+      break;
+    case 'close':
+      icon = ICONS.CLOSE;
+      break;
     default:
       icon = {};
       break;
