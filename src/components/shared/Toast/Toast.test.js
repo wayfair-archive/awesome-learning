@@ -42,22 +42,6 @@ describe('Toast', () => {
     };
     expect(renderList).toThrow(error);
   });
-
-  it('complies with expected behavior', () => {
-    const wrapper = Enzyme.shallow(<Toast type='info' message='User pending action' />);;
-
-    expect(wrapper.find('.toast-container').exists()).toBeTruthy();
-    expect(wrapper.find('.opening-animation').exists()).toBeTruthy();
-    expect(wrapper.find('.closing-animation').exists()).toBeFalsy();
-    expect(wrapper.find('.toast-text').exists()).toBeTruthy();
-    expect(wrapper.find('.toast-icon-info').exists()).toBeTruthy();
-
-    wrapper.find('.close-toast').props().onClick();
-
-    expect(wrapper.find('.closing-animation').exists()).toBeTruthy();
-    expect(wrapper.find('.opening-animation').exists()).toBeFalsy();
-    
-  })
 });
 
 

@@ -11,7 +11,7 @@ function ToastTypePropError(message) {
 }
 
 // Strongly validates passed type prop to Toast component
-function typeValidation(type){
+function typeValidation(type) {
   const acceptableProps = ['info', 'success', 'warning', 'error'];
   if (acceptableProps.indexOf(type) === -1) {
     const message = `Value '${type}' passed to Toast component in type prop is not valid. Should be 'info', 'success', 'warning' or 'error'`
@@ -23,22 +23,22 @@ function typeValidation(type){
 /* Reusable Toast component
   @prop type: string that can be of value 'info', 'success', 'warning' or 'error'
   @prop message: string used to inform the user of some event
-  Usage example: 
+  Usage example:
                   <Toast type="success" message="Updated member status" />
 */
-export default function Toast(props){
-  const {message, type} = props;
+export default function Toast(props) {
+  const { message, type } = props;
   typeValidation(type)
 
   const [opened, setOpened] = useState(true);
-  const [animationClass, setAnimationClass] = useState('opening-animation')
+  const [animationClass, setAnimationClass] = useState('Toast-openingAnimation')
 
   function closeToast() {
     setTimeout(() => setOpened(false), 500);
-    setAnimationClass('closing-animation')
+    setAnimationClass('Toast-closingAnimation')
   }
 
-  function typeIcon(type){
+  function typeIcon(type) {
     const iconsNames = {
       error: 'forbidden',
       info: 'info',
@@ -51,29 +51,28 @@ export default function Toast(props){
 
   return (
     <>
-    {opened &&
-      <div role="dialog" className={`${animationClass} toast-container toast-${type}`}>
-        <div className="left-corner">
-          <Icon
-            icon={getIcon(typeIcon(type))}
-            className={`toast-icon-${type}`}
-          />
-          <span className={`toast-text toast-text-${type}`}>
-            {type.charAt(0).toUpperCase() + type.slice(1)}: {message}
-          </span>
-        </div>
-        <div className="right-corner">
-          <button className="close-toast" aria-label="Close Dialog" onClick={closeToast}>
-            <Icon icon={getIcon('close')} />
+      {opened &&
+        <div role="dialog" className={`Toast-container ${animationClass} Toast-${type}`}>
+          <div className="Toast-leftCorner">
+            <Icon
+              icon={getIcon(typeIcon(type))}
+            />
+            <p className={`Toast-text Toast-text--${type}`}>
+              {type.charAt(0).toUpperCase() + type.slice(1)}: {message}
+            </p>
+          </div>
+          <button aria-label="Close Dialog" onClick={closeToast}>
+            <Icon cssClasses="Toast-closeButton" icon={getIcon('close')} />
           </button>
         </div>
-      </div>
-    }
+      }
     </>
   );
 }
 
 Toast.propTypes = {
+  /** This is what the component renders, can take a string */
   message: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['info', 'success', 'warning', 'error'])
+  /** This is the warning level of the toast */
+  type: PropTypes.oneOf(['info', 'success', 'warning', 'error']).isRequired
 };
