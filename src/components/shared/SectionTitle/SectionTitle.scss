@@ -6,6 +6,9 @@
   &--normal {
     font-weight: normal;
   }
+  &--body {
+    font-size: $font--3000;
+  }
   &--uppercase {
     text-transform: uppercase;
   }
