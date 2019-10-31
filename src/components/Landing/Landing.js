@@ -1,6 +1,7 @@
 import React from 'react';
 import StyledLink from '../shared/Link';
 import Block from '../shared/Block';
+import SectionTitle from '../shared/SectionTitle';
 import Carousel from '../Carousel';
 import ContentSection from '../shared/ContentSection';
 import './Landing.scss';
@@ -8,40 +9,42 @@ import './Landing.scss';
 const COURSE_DATA_MAPPING = {
   'Data Types': {
     icon: 'data',
-    subTitle: 'Deep dive into types, equality, coercion, immutability and more.',
+    subTitle: 'Deep dive into types, equality, coercion, immutability and more.'
   },
   'Array Methods': {
     icon: 'array',
-    subTitle: 'Learn functional array methods like filter, map, and reduce!',
+    subTitle: 'Learn functional array methods like filter, map, and reduce!'
   },
-  'Promises': {
+  Promises: {
     icon: 'async',
-    subTitle: 'Learn the Promise API inside and out.',
+    subTitle: 'Learn the Promise API inside and out.'
   },
-  'Testing': {
+  Testing: {
     icon: 'testing',
-    subTitle: 'Learn frontend testing with Jest and Enzyme.',
+    subTitle: 'Learn frontend testing with Jest and Enzyme.'
   },
   'React Hooks': {
     icon: 'hook',
-    subTitle: 'Learn react hooks.',
+    subTitle: 'Learn react hooks.'
   },
   'Functions and Scope': {
     icon: 'function',
-    subTitle: 'Learn about function and scopes.',
+    subTitle: 'Learn about function and scopes.'
   }
 };
 
-const Landing = ({ courseEdges }) => (
+const Landing = ({courseEdges}) => (
   <div className="Landing">
     <div className="Landing-heroWrapper">
       <div className="Landing-titleWrapper">
-        <Block is="h1" mb="32px">Learn JavaScript and Front-End Fundamentals.</Block>
+        <SectionTitle is="h2" fontSize="xl" mb="32px">
+          Learn JavaScript and Front-End Fundamentals.
+        </SectionTitle>
         <Block mb="16px">
           Awesome Learning is Frontend focused learning platform built around{' '}
           <b>deliberate practice</b>.
         </Block>
-        <Block >
+        <Block>
           Our courses are designed to be perfect for <b>group programming</b>.
         </Block>
       </div>
@@ -52,19 +55,22 @@ const Landing = ({ courseEdges }) => (
           Our Courses:
         </Block>
         <Carousel
-          items={(
-            courseEdges.map(({ node }) => {
-              const { id, frontmatter, fields } = node;
-              const { title } = frontmatter;
-              return {
-                id,
-                title,
-                icon: COURSE_DATA_MAPPING[title] ? COURSE_DATA_MAPPING[title].icon : 'array',
-                subTitle: COURSE_DATA_MAPPING[title] ? COURSE_DATA_MAPPING[title].subTitle : title,
-                path: fields.slug,
-              };
-            })
-          )} />
+          items={courseEdges.map(({node}) => {
+            const {id, frontmatter, fields} = node;
+            const {title} = frontmatter;
+            return {
+              id,
+              title,
+              icon: COURSE_DATA_MAPPING[title]
+                ? COURSE_DATA_MAPPING[title].icon
+                : 'array',
+              subTitle: COURSE_DATA_MAPPING[title]
+                ? COURSE_DATA_MAPPING[title].subTitle
+                : title,
+              path: fields.slug
+            };
+          })}
+        />
       </div>
     </div>
     <ContentSection
@@ -139,8 +145,9 @@ const Landing = ({ courseEdges }) => (
               isExternal
             >
               five or six people
-            </StyledLink>. Try to build groups with relatively similar abilities
-            across members to keep everyone interested and engaged.
+            </StyledLink>
+            . Try to build groups with relatively similar abilities across
+            members to keep everyone interested and engaged.
           </p>
         </li>
         <li className="Landing-listItem">
