@@ -14,7 +14,7 @@ the difference between React Components and Elements, understand the purpose of 
 Testing Library, and mount React elements in order to make assertions about them."
 timeToCompletion: ~1 - 2.5 hours
 videoLinks:
-  - TODO
+  - https://www.youtube.com/embed/BUXJIg2Wve4?start=339
 preReadQuizLink: TODO
 readingLinks:
   - link: https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html
