@@ -29,4 +29,27 @@ readingLinks:
   - link: https://kentcdodds.com/blog/introducing-the-react-testing-library
     description: The blog post introducing React Testing Library to the world.
     title: Introducing React Testing Library
+preReadQuiz:
+  description: Take this quiz to test your understanding of React Testing Library!
+  questions:
+    - description: Which of these should be used for testing asynchronous behavior?
+      choices:
+      - value: getByText()
+      - value: queryAllByRole()
+      - value: findByDisplayValue()
+      - value: queryByLabelText()
+      - value: findAllByAltText()
+      correctChoices:
+      - 2
+      - 4
+      explanation: When testing async behavior, always use the findBy* queries, which return a promise that resolves to the value of the element or elements you're querying for.
+      type: checkbox
+    - description: If you want to inspect an element in the console, console.log is the best method.
+      choices:
+      - value: 'true'
+      - value: 'false'
+      correctChoices:
+      - 1
+      explanation: React Testing Library provides a debug() method in the object returned by render(), which will print the mounted component's DOM to the console. You can pass individual nodes to debug() to print them individually, e.g. debug(getByText('Submit'))
+      type: radio
 ---
