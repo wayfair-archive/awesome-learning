@@ -44,7 +44,7 @@ preReadQuiz:
       - 4
       explanation: When testing async behavior, always use the findBy* queries, which return a promise that resolves to the value of the element or elements you're querying for.
       type: checkbox
-    - description: If you want to inspect an element in the console, console.log is the best method.
+    - description: "True or false: If you want to inspect an element in the console, console.log is the best method."
       choices:
       - value: 'true'
       - value: 'false'
@@ -72,4 +72,15 @@ preReadQuiz:
       - 5
       explanation: "queryByText accepts either a string or regex. If you pass a string, it needs to be exact, unless you pass {exact: false} as the second argument. If you pass regex, you need to use the `i` flag to ignore case."
       type: checkbox
+    - description: Given the input `<input value="Hello" />` - Which of the following is the correct way to simulate a change event on the input?
+      choices:
+      - value: "queryByDisplayValue('Hello').fireEvent(change, {target: {value: 'Goodbye'}})"
+      - value: "fireEvent.change(queryByDisplayValue('Hello'), {target: {value: 'Goodbye'}})"
+      - value: "queryByText('Hello').fireEvent(change, {target: {value: 'Goodbye'}})"
+      - value: "fireEvent.onChange(queryByDisplayValue('Hello'), {target: {value: 'Goodbye'}})"
+      - value: "fireEvent.change(queryByText('Hello'), {target: {value: 'Goodbye'}})"
+      correctChoices:
+      - value: 1
+      explanation: `fireEvent` has methods for all HTML events, without the 'on' prefix. The methods each take the element you're firing the event on as the first parameter, and a mock event as an optional 2nd parameter. When selecting an input, `queryByText` will not work - use `queryByDisplayValue` or `queryByPlaceholder` instead.
+      type: radio
 ---
