@@ -7,8 +7,8 @@ category: "Automated Testing"
 tags:
   - "Jest"
 description: "Welcome to the Automated Testing course. Over the upcoming weeks you will dive into
-frontend testing using Jest, and eventually Enzyme or React Testing Library. By the end of this track you will know how
-to test user interfaces, as well as user interactions."
+Front-End Testing using Jest, and eventually Enzyme or React Testing Library. By the end of this course, you will know how
+to test React components, simulate interactions with them, and test how they behave in response to these interactions."
 lessons:
   - link: "intro-to-unit-testing/"
     title: Intro to Unit Testing
@@ -21,7 +21,7 @@ lessons:
     the difference between React Components and Elements. From there, you will add in Enzyme to test component instances and their many variations. By the end of this session you will be able to write a Jest/Enzyme test for a React component."
   - link: "component-testing-rtl/"
     title: Component Testing with React Testing Library
-    description: "This session covers component testing with React Testing Library, an alternative to Enzyme with a different philosophy and API. By the end of this session you will be able to write a test for a React component using Jest/React Testing Library."
+    description: "This session covers component testing with React Testing Library, an alternative to Enzyme with a different philosophy and API. By the end of this session you will be able to write a test for a React component using Jest and React Testing Library."
   - link: "testing-workshop/"
     title: Advanced Testing Workshop
     description: "This is a bit different than a normal Awesome Learning lesson - this is an open-ended testing workshop built to mimic some 'real world' testing scenarios that come up in production apps. If you want to polish your skills, this workshop provides hours of at-your-own-pace testing practice."
