@@ -41,7 +41,7 @@ preReadQuiz:
       - value: Any error raised in the somethingComplicated() method will not get caught.
       - value: Nothing, it's perfectly fine
       correctChoices: 
-      - 2
+      - 1
       explanation: If 'somethingComplicated()' throws an error, there is no 'catch' statement on its containing promise that will 'catch' the error.
       type: radio
     - description: True or false? Promise.all is rejected if any of the elements are rejected.
