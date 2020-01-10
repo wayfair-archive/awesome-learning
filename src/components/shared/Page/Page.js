@@ -15,7 +15,11 @@ const Page = ({ title, children }) => (
 
 Page.propTypes = {
   title: PropTypes.string,
-  children: PropTypes.node.isRequired
-}
+  children: PropTypes.node
+};
+
+Page.defaultProps = {
+  children: null
+};
 
 export default Page;

@@ -14,7 +14,8 @@
     "react",
     "jest",
     "jsx-a11y",
-    "import"
+    "import",
+    "gatsby-plugin-eslint"
   ],
   "globals": {
     "graphql": true
