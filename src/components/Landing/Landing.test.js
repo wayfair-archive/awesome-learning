@@ -21,7 +21,7 @@ const PROPS = {
  * @param {string} key
  * @description
  */
-function validateElementAttributeValue(nodeList, attributeName, key) {
+function someElementHasPropValue(nodeList, attributeName, key) {
   return Array.from(nodeList).some(
     node => node.getAttribute(attributeName) === key
   );
@@ -70,7 +70,7 @@ describe('Landing Component', () => {
 
     const links = [...container.querySelectorAll('a')];
 
-    expect(validateElementAttributeValue(links, 'to', '/courses')).toBe(true);
-    expect(validateElementAttributeValue(links, 'to', '/howTo')).toBe(true);
+    expect(someElementHasPropValue(links, 'to', '/courses')).toBe(true);
+    expect(someElementHasPropValue(links, 'to', '/howTo')).toBe(true);
   });
 });
