@@ -10,7 +10,7 @@ import StoryContainer from './StoryContainer';
 import Block from '../src/components/shared/Block';
 import ContentSection from '../src/components/shared/ContentSection';
 import Icon from '../src/components/shared/Icon';
-import StyledLink from '../src/components/shared/Link';
+import StyledLink from '../src/components/shared/StyledLink';
 import LastLessonProvider from '../src/providers/LastLessonProvider';
 import Page from '../src/components/shared/Page';
 import SectionTitle from '../src/components/shared/SectionTitle';

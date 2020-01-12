@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Tags from './Tags';
-import StyledLink from '../shared/Link';
+import StyledLink from '../shared/StyledLink';
 import CourseCard from '../CourseCard';
 import ContentSection from '../shared/ContentSection';
 import './Course.scss';
@@ -57,6 +57,6 @@ Course.propTypes = {
       slug: PropTypes.string
     })
   })
-}
+};
 
 export default Course;
