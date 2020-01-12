@@ -1,10 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import Toast from './Toast';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 describe('Toast', () => {
   it('renders proper info type along with message prop', () => {
@@ -35,7 +31,7 @@ describe('Toast', () => {
     expect(getByText('Error: Internal server error')).toBeTruthy();
   });
 
-  it('not renders unproper kudos type along with message prop', () => {
+  it('does not render improper kudos type along with message prop', () => {
     const error = new Error("Value 'kudos' passed to Toast component in type prop is not valid. Should be 'info', 'success', 'warning' or 'error'");
     const renderList = () => {
       render(<Toast type='kudos' message='Keep rocking bro' />);

@@ -1,5 +1,5 @@
 import React from 'react';
-import StyledLink from '../shared/Link';
+import StyledLink from '../shared/StyledLink';
 import Block from '../shared/Block';
 import SectionTitle from '../shared/SectionTitle';
 import Carousel from '../Carousel';
