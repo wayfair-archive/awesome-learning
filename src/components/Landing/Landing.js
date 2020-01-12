@@ -21,7 +21,8 @@ const COURSE_DATA_MAPPING = {
   },
   Testing: {
     icon: 'testing',
-    subTitle: 'Learn frontend testing with Jest and Enzyme.'
+    subTitle:
+      'Learn frontend testing with Jest, Enzyme, and React Testing Library.'
   },
   'React Hooks': {
     icon: 'hook',
