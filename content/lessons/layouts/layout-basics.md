@@ -1,7 +1,6 @@
 ---
 title: Layout Basics
 template: lesson
-draft: false
 slug: /courses/Layouts/layout-basics
 course: Layouts
 defaultTab: tests
@@ -12,7 +11,7 @@ timeToCompletion: ~1 hour
 videoLinks: 
  - https://www.youtube.com/embed/rIO5326FgPE
  - https://www.youtube.com/embed/jx5jmI0UlXU
-
+ - https://www.youtube.com/embed/VwxGKpvW8Zk
 preReadQuiz:
   description: Take this quiz to test your understanding of CSS layouts!
   questions: 
@@ -47,7 +46,16 @@ preReadQuiz:
       - 3
       explanation: Since the box-sizing was not specified, we can assume it's "content-box" and therefore the padding, border, and width are added together when computing the final size.
       type: radio
-    # Question 3
+      # Question 3
+    - description: True or False - static positioned elements are removed from the normal flow of the page
+      choices:
+      - value: 'True'
+      - value: 'False'
+      correctChoices: 
+      - 2
+      explanation: Static positioned elements are always positioned according to the flow of the page. Absolute, fixed, and sticky positioned elements are removed from the normal flow. 
+      type: radio
+    # Question 4
     - description: In the example below, what would be the total margin (gap) in between the header and the first item in the list? 
       codeSnippet: |
         .title {
@@ -63,13 +71,13 @@ preReadQuiz:
           list-style-type: square;
         }
 
-        // JSX
+        // HTML
         <section>
-          <h2 className="title">Groceries</h2>
-          <ul className="list">
-            <li className="item">Milk</li>
-            <li className="item">Eggs</li>
-            <li className="item">Butter</li>
+          <h2 class="title">Groceries</h2>
+          <ul class="list">
+            <li class="item">Milk</li>
+            <li class="item">Eggs</li>
+            <li class="item">Butter</li>
           </ul>
         </section>
 
@@ -81,17 +89,20 @@ preReadQuiz:
       - 1
       explanation: Margins collapse when they're applied to the first or last child. This rule does not apply if there is a non-zero top padding or border value on that parent. 
       type: radio
-    # Question 4
+    # Question 5
     - description: True or False - Buttons are block level elements
       choices:
       - value: 'True'
       - value: 'False'
       correctChoices: 
       - 1
-      explanation: Doop
+      explanation: Buttons are inline-level elements, like spans
       type: radio
 readingLinks: 
-  - link: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
-    description: MDN is a great resource for learning more about order priority for elements.
-    title: The MDN docs on CSS stacking context
+  - link: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow
+    description: The MDN docs on how inline and block level elemnents behave
+    title: Block and inline layout in normal flow
+  - link: https://developer.mozilla.org/en-US/docs/Web/CSS/background
+    description: MDN is a great resource for learning more about visual display properties like color and background-color
+    title: CSS background properties
 ---

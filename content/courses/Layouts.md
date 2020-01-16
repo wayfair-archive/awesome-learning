@@ -11,10 +11,4 @@ lessons:
   - link: "layout-basics"
     title: "Layout Basics" 
     description: "Everything on a webpage is a rectangle! Discover the box model, positioning, floats, and more."
-  - link: "intro-to-flexbox"
-    title: "Intro to Flexbox"
-    description: "The flexbox CSS layout module makes it easier to design flexible responsive webpages by giving greater control over alignment, direction, order and size. This course covers the basics of flexbox and it's key concepts, an essential skill for frontend developers and designers."
-  # - link: "intro-to-css-grid"
-  #   title: "Intro to CSS Grid"
-  #   description: ""
 ---
