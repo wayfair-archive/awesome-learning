@@ -39,7 +39,6 @@ npm run test-watch
 ### Running storybook locally
 
 ```
-npm # install dependencies
 npm run storybook
 ```
 
