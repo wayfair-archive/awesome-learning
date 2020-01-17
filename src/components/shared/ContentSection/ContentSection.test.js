@@ -12,7 +12,7 @@ describe('ContentSection', () => {
     isLight: true,
     contentAlignment: 'left',
     titleAlignment: 'left',
-  }
+  };
 
   it('renders basic version with just required children', () => {
     const { container, getByText } = render(
@@ -56,7 +56,7 @@ describe('ContentSection', () => {
 
     expect(container.firstChild.firstChild.tagName).toBe('HEADER');
     expect(container.firstChild.firstChild).toHaveClass('ContentSection-title');
-    expect(container.firstChild.firstChild).not.toHaveClass('ContentSection-title--textLight')
+    expect(container.firstChild.firstChild).not.toHaveClass('ContentSection-title--textLight');
     expect(container.firstChild.firstChild.children).toHaveLength(2);
     expect(container.firstChild.firstChild).toContainElement(getByText(props.title));
     expect(container.firstChild.firstChild).toContainElement(getByText(props.subTitle));
@@ -72,7 +72,7 @@ describe('ContentSection', () => {
     // isLight & titleAlignment props
     expect(container.firstChild.children[0].tagName).toBe('HEADER');
     expect(container.firstChild.children[0]).toHaveClass('ContentSection-title');
-    expect(container.firstChild.children[0]).toHaveClass('ContentSection-title--textLight')
+    expect(container.firstChild.children[0]).toHaveClass('ContentSection-title--textLight');
     expect(container.firstChild.children[0]).toHaveClass('ContentSection-title--alignLeft');
     expect(container.firstChild.children[0]).not.toHaveClass('ContentSection-title--alignCenter');
 
@@ -93,7 +93,7 @@ describe('ContentSection', () => {
     // isLight & titleAlignment props
     expect(container.firstChild.children[0].tagName).toBe('HEADER');
     expect(container.firstChild.children[0]).toHaveClass('ContentSection-title');
-    expect(container.firstChild.children[0]).not.toHaveClass('ContentSection-title--textLight')
+    expect(container.firstChild.children[0]).not.toHaveClass('ContentSection-title--textLight');
     expect(container.firstChild.children[0]).not.toHaveClass('ContentSection-title--alignLeft');
     expect(container.firstChild.children[0]).toHaveClass('ContentSection-title--alignCenter');
 

@@ -14,7 +14,7 @@ function ToastTypePropError(message) {
 function typeValidation(type) {
   const acceptableProps = ['info', 'success', 'warning', 'error'];
   if (acceptableProps.indexOf(type) === -1) {
-    const message = `Value '${type}' passed to Toast component in type prop is not valid. Should be 'info', 'success', 'warning' or 'error'`
+    const message = `Value '${type}' passed to Toast component in type prop is not valid. Should be 'info', 'success', 'warning' or 'error'`;
     console.error(message);
     throw new ToastTypePropError(message);
   }
@@ -28,14 +28,14 @@ function typeValidation(type) {
 */
 export default function Toast(props) {
   const { message, type } = props;
-  typeValidation(type)
+  typeValidation(type);
 
   const [opened, setOpened] = useState(true);
-  const [animationClass, setAnimationClass] = useState('Toast-openingAnimation')
+  const [animationClass, setAnimationClass] = useState('Toast-openingAnimation');
 
   function closeToast() {
     setTimeout(() => setOpened(false), 500);
-    setAnimationClass('Toast-closingAnimation')
+    setAnimationClass('Toast-closingAnimation');
   }
 
   function typeIcon(type) {
@@ -44,9 +44,9 @@ export default function Toast(props) {
       info: 'info',
       success: 'check',
       warning: 'warning'
-    }
-    const iconName = iconsNames[type]
-    return iconName
+    };
+    const iconName = iconsNames[type];
+    return iconName;
   }
 
   return (

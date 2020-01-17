@@ -41,7 +41,7 @@ TagsListTemplate.propTypes = {
       group: PropTypes.array
     })
   }).isRequired
-}
+};
 
 export const query = graphql`
   query TagsListQuery {

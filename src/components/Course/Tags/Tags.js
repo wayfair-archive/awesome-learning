@@ -20,6 +20,6 @@ const Tags = ({ tags, tagSlugs }) => (
 Tags.propTypes = {
   tags: PropTypes.array.isRequired,
   tagSlugs: PropTypes.array.isRequired
-}
+};
 
 export default Tags;

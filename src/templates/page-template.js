@@ -44,7 +44,7 @@ PageTemplate.propTypes = {
       })
     })
   }).isRequired
-}
+};
 
 export const query = graphql`
   query PageBySlug($slug: String!) {
