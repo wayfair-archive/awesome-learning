@@ -86,6 +86,6 @@ CourseListTemplate.propTypes = {
     prevPagePath: PropTypes.string,
     nextPagePath: PropTypes.string
   })
-}
+};
 
 export default CourseListTemplate;

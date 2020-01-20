@@ -57,7 +57,7 @@ PureHeader.propTypes = {
       })
     })
   }).isRequired
-}
+};
 
 export const Header = props => (
   <StaticQuery

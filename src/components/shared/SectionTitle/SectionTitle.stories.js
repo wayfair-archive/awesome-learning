@@ -19,7 +19,7 @@ const sizeOptions = {
 const bodyText = `
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   Nulla at volutpat diam ut venenatis tellus in metus vulputate. Sodales neque sodales ut etiam.
-  Diam phasellus vestibulum lorem sed risus ultricies tristique nulla. In cursus turpis massa tincidunt dui ut ornare lectus sit.`
+  Diam phasellus vestibulum lorem sed risus ultricies tristique nulla. In cursus turpis massa tincidunt dui ut ornare lectus sit.`;
 
 const stories = storiesOf('Shared.SectionTitle', module);
 
@@ -41,4 +41,4 @@ stories
       >
         {bodyText}
       </SectionTitle>
-  )
+  );

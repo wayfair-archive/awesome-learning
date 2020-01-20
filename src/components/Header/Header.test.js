@@ -10,11 +10,11 @@ describe('PureHeader', () => {
   it('renders title correctly', () => {
     const { getByText } = render(<PureHeader data={expectedData} />);
     expect(getByText(title));
-  })
+  });
 
   it('renders menu labels correctly', () => {
     const { getAllByText } = render(<PureHeader data={expectedData} />);
     expect(getAllByText('testlabel1')).toHaveLength(2);
     expect(getAllByText('testlabel2')).toHaveLength(2);
-  })
+  });
 });

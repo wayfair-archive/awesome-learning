@@ -27,7 +27,7 @@ IndexTemplate.propTypes = {
       edges: PropTypes.array
     })
   }).isRequired
-}
+};
 
 export const query = graphql`
   query IndexTemplate($coursesLimit: Int!, $coursesOffset: Int!) {

@@ -34,7 +34,7 @@ Layout.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   isFullBleed: PropTypes.bool
-}
+};
 
 Layout.defaultProps = {
   isFullBleed: false

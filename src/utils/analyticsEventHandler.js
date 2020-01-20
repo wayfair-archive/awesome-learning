@@ -5,7 +5,7 @@ const analyticsEventHandler = (eventCategory = "exercise click", eventLabel) => 
       event_label: eventLabel
     });
   } else {
-    throw new Error('there is no gtag here')
+    throw new Error('there is no gtag here');
   }
 };
 
