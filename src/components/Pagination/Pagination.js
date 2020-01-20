@@ -33,6 +33,6 @@ Pagination.propTypes = {
   nextPagePath: PropTypes.string,
   hasNextPage: PropTypes.bool,
   hasPrevPage: PropTypes.bool
-}
+};
 
 export default Pagination;

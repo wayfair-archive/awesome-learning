@@ -166,6 +166,6 @@ Lesson.propTypes = {
     })
   }).isRequired,
   slug: PropTypes.string.isRequired
-}
+};
 
 export default Lesson;
