@@ -17,7 +17,7 @@ const Layout = ({children, title, description, isFullBleed}) => {
         <title>{title}</title>
         <meta name="description" content={description} />
         <link
-          href="https://fonts.googleapis.com/css?family=Pacifico|Raleway:200,400"
+          href="https://fonts.googleapis.com/css?family=Raleway:200,400"
           rel="stylesheet"
         />
       </Helmet>
