@@ -105,4 +105,10 @@ readingLinks:
   - link: https://developer.mozilla.org/en-US/docs/Web/CSS/background
     description: MDN is a great resource for learning more about visual display properties like color and background-color
     title: CSS background properties
+  - link: https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
+    description: MDN docs on the various units CSS properties accept for length
+    title: CSS Unit
+  - link: https://developer.mozilla.org/en-US/docs/Web/CSS/calc
+    description: MDN docs on the calc function for computing values
+    title: CSS calc()
 ---
