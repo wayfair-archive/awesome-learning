@@ -32,9 +32,9 @@ const COURSE_DATA_MAPPING = {
     icon: 'function',
     subTitle: 'Learn about function and scopes.',
   },
-  'Layouts': {
+  'CSS Layouts': {
     icon: 'info',
-    subTitle: 'Learn about CSS layouts like flexbox.',
+    subTitle: 'Learn about CSS fundamentals on layouts.',
   }
 };
 
