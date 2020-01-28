@@ -30,7 +30,11 @@ const COURSE_DATA_MAPPING = {
   },
   'Functions and Scope': {
     icon: 'function',
-    subTitle: 'Learn about function and scopes.'
+    subTitle: 'Learn about function and scopes.',
+  },
+  'CSS Layouts': {
+    icon: 'info',
+    subTitle: 'Learn about CSS fundamentals on layouts.',
   }
 };
 
