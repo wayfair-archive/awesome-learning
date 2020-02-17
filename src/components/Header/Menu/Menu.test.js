@@ -46,7 +46,6 @@ describe('Menu Component', () => {
       <Menu menu={MenuData} />
     );
     const links = [...container.querySelectorAll('link')];
-
     expect(validateElementAttributeValue(links, 'to', '/item2')).toBe(true);
   })
 
