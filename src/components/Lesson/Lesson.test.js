@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import Lesson from './Lesson';
-import LastLessonProvider from '../../providers/LastLessonProvider'
-import * as LessonButton from '../LessonButton/LessonButton'
+import LastLessonProvider from '../../providers/LastLessonProvider';
+import * as LessonButton from '../LessonButton/LessonButton';
 
 const baseLesson = {
   html: "",
@@ -68,7 +68,7 @@ const lessonWithSecondaryUrlAndQuiz = {
     ...lessonWithQuizData.frontmatter,
     secondaryExerciseUrl: "https//secondaryexercise.test.com"
   }
-}
+};
 
 const lessonButtonSpy = jest.spyOn(LessonButton, 'default');
 const primativeLessonButtonSpy = jest.spyOn(LessonButton, 'PrimitiveLessonButton');
@@ -88,7 +88,7 @@ describe('Lesson', () => {
     const { getByText } = render(<LastLessonProvider><Lesson lesson={lessonExternalQuiz} slug={lessonExternalQuiz.fields.slug}></Lesson></LastLessonProvider>);
     expect(getByText("This is a test lesson")).toBeTruthy();
     expect(getByText("second paragraph")).toBeTruthy();
-    expect(() => { getByText("This is a test lesson\n\nsecond paragraph") }).toThrow();
+    expect(() => { getByText("This is a test lesson\n\nsecond paragraph"); }).toThrow();
   });
 
   it('renders the title  and time to completion of the lesson', () => {

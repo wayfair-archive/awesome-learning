@@ -1,15 +1,15 @@
 
-The `Link` component is used either to display an external link or an internal Gatsby Link component.
+The `StyledLink` component is used either to display an external link or an internal Gatsby Link component.
 It uses the `LastLessonProvider` to get info on the last lesson visited which it accesses from local storage.
 It uses that info to go back to the last lesson visited when clicked on.
 
 ## Props
 
-The following props may be passed to configure the Link.
+The following props may be passed to configure the StyledLink.
 
 | name             | type                            | description                                      | default |
 | ---------------- | ------------------------------- | ------------------------------------------------ | ------- |
-| **variation**  | `oneOf(['primary, 'secondary', 'tertiary', 'tertiaryAlt', 'tertiaryAltInverse', 'pill])` | Link styling variation   | `null` |
+| **variation**  | `oneOf(['primary, 'secondary', 'tertiary', 'tertiaryAlt', 'tertiaryAltInverse', 'pill])` | StyledLink styling variation   | `null` |
 | **path**       | `String - required`                                                                      | external or internal url |        |
 | **isButton**   | `Boolean`                                                                                | If true, displays the link as a button | `false` |
 | **isActive**   | `Boolean`                                                                                | If true sets the link as active        | `false`  |

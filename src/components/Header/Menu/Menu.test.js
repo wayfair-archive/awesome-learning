@@ -45,8 +45,8 @@ describe('Menu Component', () => {
     const { container } = render(
       <Menu menu={MenuData} />
     );
-    const links = [...container.querySelectorAll('link')];
+    const links = [...container.querySelectorAll('.Menu-item a')];
     expect(validateElementAttributeValue(links, 'to', '/item2')).toBe(true);
-  })
+  });
 
 });

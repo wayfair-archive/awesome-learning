@@ -1,7 +1,7 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
 import {withKnobs, text, select} from '@storybook/addon-knobs';
-import StyledLink from '../Link';
+import StyledLink from '../StyledLink';
 import ContentSection from '../ContentSection';
 import Page from './Page';
 import LastLessonProvider from '../../../providers/LastLessonProvider';

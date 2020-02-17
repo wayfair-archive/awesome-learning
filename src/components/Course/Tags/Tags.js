@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StyledLink from '../../shared/Link';
+import StyledLink from '../../shared/StyledLink';
 import './Tags.scss';
 
 const Tags = ({ tags, tagSlugs }) => (
@@ -20,6 +20,6 @@ const Tags = ({ tags, tagSlugs }) => (
 Tags.propTypes = {
   tags: PropTypes.array.isRequired,
   tagSlugs: PropTypes.array.isRequired
-}
+};
 
 export default Tags;

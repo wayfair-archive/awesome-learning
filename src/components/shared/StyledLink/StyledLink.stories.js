@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, select, boolean } from '@storybook/addon-knobs';
-import StyledLink from './Link';
+import StyledLink from './StyledLink';
 import LastLessonProvider from '../../../providers/LastLessonProvider';
 import LinkReadme from './README.md';
 
@@ -117,4 +117,4 @@ stories
       >
         Is Active
       </StyledLink>
-  ) 
+  ); 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {Link} from 'gatsby';
 import cx from 'classnames';
 import {useLastLessonContext} from '../../../providers/LastLessonProvider';
-import './Link.scss';
+import './StyledLink.scss';
 
 const LINK_VARIATIONS = [
   'primary',
@@ -31,7 +31,7 @@ const StyledLink = ({
   });
   const {setLastLessonVisited} = useLastLessonContext() || {};
 
-  const clickHandler = () => setLastLessonVisited && setLastLessonVisited(lessonData)
+  const clickHandler = () => setLastLessonVisited && setLastLessonVisited(lessonData);
 
   return isExternal ? (
     <a

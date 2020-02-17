@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StyledLink from '../shared/Link';
+import StyledLink from '../shared/StyledLink';
 import Block from '../shared/Block';
 import LessonButton, {PrimitiveLessonButton} from '../LessonButton';
 import ContentSection from '../shared/ContentSection';
@@ -166,6 +166,6 @@ Lesson.propTypes = {
     })
   }).isRequired,
   slug: PropTypes.string.isRequired
-}
+};
 
 export default Lesson;

@@ -10,7 +10,7 @@ const props = {
 describe('Tags', () => {
   it('renders all tags correcty', () => {
     const { queryByRole, queryAllByRole, queryByText } = render(<Tags {...props} />);
-    const { tags, tagSlugs } = props
+    const { tags, tagSlugs } = props;
     
     expect(queryByRole('list')).toBeTruthy();
     expect(queryAllByRole('listitem')).toHaveLength(tags.length);
@@ -18,7 +18,7 @@ describe('Tags', () => {
     tags.forEach((t, i) => {
       const tagHtml = queryByText(t);
       expect(tagHtml).toBeTruthy();
-      expect(tagHtml.getAttribute('to')).toBe(`${tagSlugs[i]}`)
-    })
+      expect(tagHtml.getAttribute('to')).toBe(`${tagSlugs[i]}`);
+    });
   });
 });
