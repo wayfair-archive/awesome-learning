@@ -66,4 +66,14 @@ export const query = graphql`
   }
 `;
 
+export const siteMetadataFieldsFragment = graphql`
+  fragment siteMetadataFields on Site {
+    siteMetadata {
+      siteSubtitle: subtitle
+      siteUrl: url
+      siteTitle: title
+    }
+  }
+`;
+
 export default PageTemplate;

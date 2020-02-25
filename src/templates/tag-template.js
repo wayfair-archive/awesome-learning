@@ -6,11 +6,8 @@ import Layout from '../components/shared/Layout';
 import Courses from '../components/Courses';
 import Page from '../components/shared/Page';
 import Pagination from '../components/Pagination';
-import { SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 
-const TagTemplate = ({ data, pageContext }) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = data.site.siteMetadata;
-
+const TagTemplate = ({ data, pageContext, path }) => {
   const {
     tag,
     currentPage,
@@ -22,11 +19,11 @@ const TagTemplate = ({ data, pageContext }) => {
 
   const { edges } = data.allMarkdownRemark;
   const pageTitle = currentPage > 0
-    ? `All Courses tagged as "${tag}" - Page ${currentPage} - ${siteTitle}`
-    : `All Courses tagged as "${tag}" - ${siteTitle}`;
+    ? `All Courses tagged as "${tag}" - Page ${currentPage}`
+    : `All Courses tagged as "${tag}"`;
 
   return (
-    <Layout title={pageTitle} description={siteSubtitle}>
+    <Layout title={pageTitle} slug={path}>
       <Container fluid>
         <Row>
           <Col>
@@ -51,18 +48,12 @@ TagTemplate.propTypes = {
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array.isRequired
     }),
-    site: SITE_METADATA_PROP_TYPE.isRequired
-  }).isRequired
+  }).isRequired,
+  path: PropTypes.string.isRequired
 };
 
 export const query = graphql`
   query TagPage($tag: String, $coursesLimit: Int!, $coursesOffset: Int!) {
-    site {
-      siteMetadata {
-        title
-        subtitle
-      }
-    }
     allMarkdownRemark(
       limit: $coursesLimit
       skip: $coursesOffset

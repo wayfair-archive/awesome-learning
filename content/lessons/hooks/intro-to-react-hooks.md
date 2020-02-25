@@ -8,13 +8,7 @@ defaultTab: browser
 tags:
   - React
 description: |
-  The first question you see after browsing through your news and hearing conversations from your fellow engineers is what are Hooks? What can you do with Hooks? How do they compare to writing React with classes?
-  
-  React Hooks were introduced in React 16.8 to "hook" into common React patterns, functionality and architecture, without actually needing to write them with React Components. They "hook" into the React APIs that you already know, and expose them to engineers directly.
-
-  Hooks enable engineers to share stateful logic between components, reduce the complexity and amount of code written to make components work, and reduce dependencies on confusing paradigms within JavaScript (such as 'this' and classes.)
-
-  This lesson will introduce several hooks that will enhance your React engineering experience, and get you rolling with how to write your own!
+  The first question you see after browsing through your news and hearing conversations from your fellow engineers is what are Hooks? What can you do with Hooks? How do they compare to writing React with classes? These questions, and more, will be covered in this lesson.
 timeToCompletion: ~1.5 - 2 hours
 videoLinks: 
   - https://www.youtube.com/embed/eX_L39UvZes

@@ -4,11 +4,8 @@ import { graphql } from 'gatsby';
 import Layout from '../components/shared/Layout';
 import Lesson from '../components/Lesson';
 import Page from '../components/shared/Page';
-import { SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 
 const LessonTemplate = ({ data }) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = data.site.siteMetadata;
-
   const {
     title: lessonTitle,
     description: courseDescription
@@ -16,12 +13,11 @@ const LessonTemplate = ({ data }) => {
 
   const { slug } = data.markdownRemark.fields;
 
-  const metaDescription = courseDescription !== null ? courseDescription : siteSubtitle;
-
   return (
     <Layout
-      title={`${lessonTitle} - ${siteTitle}`}
-      description={metaDescription}
+      description={courseDescription}
+      slug={slug}
+      title={lessonTitle}
     >
       <Page>
         <Lesson lesson={data.markdownRemark} slug={slug} />
@@ -31,7 +27,6 @@ const LessonTemplate = ({ data }) => {
 };
 
 LessonTemplate.propTypes = {
-  site: SITE_METADATA_PROP_TYPE.isRequired,
   markdownRemark: PropTypes.shape({
     frontmatter: PropTypes.shape({
       title: PropTypes.string,
@@ -45,13 +40,6 @@ LessonTemplate.propTypes = {
 
 export const query = graphql`
   query LessonBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        subtitle
-        title
-        url
-      }
-    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html

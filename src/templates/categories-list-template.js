@@ -3,17 +3,14 @@ import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import { Container, Row, Col } from 'react-grid-system';
-import { SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 import Layout from '../components/shared/Layout';
 import Page from '../components/shared/Page';
 
-const CategoriesListTemplate = ({ data }) => {
-  const { title, subtitle } = data.site.siteMetadata;
-
+const CategoriesListTemplate = ({ data, path }) => {
   const { group } = data.allMarkdownRemark;
 
   return (
-    <Layout title={`Categories - ${title}`} description={subtitle}>
+    <Layout title='Categories' slug={path}>
       <Container fluid>
         <Row>
           <Col>
@@ -40,18 +37,12 @@ CategoriesListTemplate.propTypes = {
     allMarkdownRemark: PropTypes.shape({
       group: PropTypes.array.isRequired
     }).isRequired,
-    site: SITE_METADATA_PROP_TYPE
-  }).isRequired
+  }).isRequired,
+  path: PropTypes.string.isRequired
 };
 
 export const query = graphql`
   query CategoriesListQuery {
-    site {
-      siteMetadata {
-        title
-        subtitle
-      }
-    }
     allMarkdownRemark(
       filter: {
         frontmatter: { template: { eq: "course" }, draft: { ne: true } }

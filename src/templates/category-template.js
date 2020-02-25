@@ -8,8 +8,8 @@ import Page from '../components/shared/Page';
 import Pagination from '../components/Pagination';
 import { PAGE_CONTEXT_PROP_TYPE, SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 
-const CategoryTemplate = ({ data, pageContext }) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = data.site.siteMetadata;
+const CategoryTemplate = ({ data, pageContext, path}) => {
+  const { siteTitle } = data.site.siteMetadata;
 
   const {
     category,
@@ -26,7 +26,7 @@ const CategoryTemplate = ({ data, pageContext }) => {
     : `${category} - ${siteTitle}`;
 
   return (
-    <Layout title={pageTitle} description={siteSubtitle}>
+    <Layout title={pageTitle} slug={path}>
       <Row>
         <Col md={12}>
           <Page title={category}>
@@ -51,7 +51,8 @@ CategoryTemplate.propTypes = {
     }),
     site: SITE_METADATA_PROP_TYPE
   }).isRequired,
-  pageContext: PAGE_CONTEXT_PROP_TYPE.isRequired
+  pageContext: PAGE_CONTEXT_PROP_TYPE.isRequired,
+  path: PropTypes.string.isRequired
 };
 
 export const query = graphql`
@@ -61,10 +62,7 @@ export const query = graphql`
     $coursesOffset: Int!
   ) {
     site {
-      siteMetadata {
-        title
-        subtitle
-      }
+      ...siteMetadataFields
     }
     allMarkdownRemark(
       limit: $coursesLimit
