@@ -7,7 +7,7 @@ module.exports = {
   copyright: '© Awesome Learning™ All rights reserved.',
   coursesPerPage: 7,
   googleAnalyticsId: 'UA-2081664-21',
-  twitter: "@wayfair",
+  twitter: "@wayfairtech",
   menu: [
     {
       label: 'Courses',
