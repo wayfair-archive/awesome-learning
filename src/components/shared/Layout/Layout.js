@@ -4,25 +4,36 @@ import Helmet from 'react-helmet';
 import cx from 'classnames';
 import Header from '../../Header';
 import LastLessonProvider from '../../../providers/LastLessonProvider';
+import config from "../../../../config";
 import './Layout.scss';
 
-const Layout = ({children, title, description, isFullBleed}) => {
-  const layoutClass = cx('Layout', {
-    'Layout--fullBleed': isFullBleed
-  });
+const Layout = ({children, title, description, isFullBleed, slug}) => {
+  const formattedTitle = title ? `${title} - ${config.title}` : config.title;
+  const formattedUrl = slug ? `${config.url}${slug}` : config.url;
   return (
     <>
-      <Helmet>
+      <Helmet defer={false}>
         <html lang="en" />
-        <title>{title}</title>
+        <title>{formattedTitle}</title>
         <meta name="description" content={description} />
+        <meta property="og:description" content={description} />
+        <meta property="og:title" content={formattedTitle} />
+        <meta property="og:url" content={formattedUrl} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content={config.twitter} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:site" content={config.twitter} />
+        <meta name="twitter:title" content={formattedTitle} />
         <link
           href="https://fonts.googleapis.com/css?family=Raleway:200,400"
           rel="stylesheet"
         />
+        <link rel="canonical" href={formattedUrl} />
       </Helmet>
       <Header />
-      <div className={layoutClass}>
+      <div className={cx('Layout', {
+        'Layout--fullBleed': isFullBleed
+      })}>
         <LastLessonProvider>{children}</LastLessonProvider>
       </div>
     </>
@@ -31,13 +42,16 @@ const Layout = ({children, title, description, isFullBleed}) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  title: PropTypes.string,
   description: PropTypes.string,
-  isFullBleed: PropTypes.bool
+  isFullBleed: PropTypes.bool,
+  slug: PropTypes.string,
+  title: PropTypes.string,
 };
 
 Layout.defaultProps = {
-  isFullBleed: false
+  description: config.subtitle,
+  isFullBleed: false,
+  title: config.title,
 };
 
 export default Layout;

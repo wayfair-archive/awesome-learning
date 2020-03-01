@@ -12,7 +12,7 @@ tags:
 description: "By the end of this session we will learn about the most useful data type in
 JavaScript, the Object. You will understand how the phrase 'almost
 everything in JavaScript is an object' and how to use this knowledge to your
-advantage. We will closely examine POJOs(Plain Old JavaScript Objects) and
+advantage. We will closely examine POJOs (Plain Old JavaScript Objects) and
 Functions in particular."
 timeToCompletion: ~1 hour
 videoLinks: 
