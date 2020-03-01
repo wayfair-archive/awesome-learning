@@ -5,14 +5,8 @@ import Layout from '../components/shared/Layout';
 import Courses from '../components/Courses';
 import Page from '../components/shared/Page';
 import Pagination from '../components/Pagination';
-import { SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 
-const CourseListTemplate = ({ data, pageContext }) => {
-  const {
-    title: siteTitle,
-    subtitle: siteSubtitle
-  } = data.site.siteMetadata;
-
+const CourseListTemplate = ({ data, pageContext, path }) => {
   const {
     currentPage,
     hasNextPage,
@@ -22,10 +16,10 @@ const CourseListTemplate = ({ data, pageContext }) => {
   } = pageContext;
 
   const { edges } = data.allMarkdownRemark;
-  const pageTitle = currentPage > 0 ? `Courses - Page ${currentPage} - ${siteTitle}` : siteTitle;
+  const pageTitle = currentPage > 0 ? `Courses - Page ${currentPage}` : 'Courses';
 
   return (
-    <Layout title={pageTitle} description={siteSubtitle}>
+    <Layout title={pageTitle} slug={path}>
       <Page>
         <Courses edges={edges} />
         <Pagination
@@ -41,20 +35,14 @@ const CourseListTemplate = ({ data, pageContext }) => {
 
 export const query = graphql`
   query CourseListTemplate($coursesLimit: Int!, $coursesOffset: Int!) {
-    site {
-      siteMetadata {
-        title
-        subtitle
-      }
-    }
     allMarkdownRemark(
-        limit: $coursesLimit,
-        skip: $coursesOffset,
-        filter: { frontmatter: { template: { eq: "course" }, draft: { ne: true } } },
-        sort: {
-          fields: [frontmatter___title]
-          order: [ASC]
-        }){
+      limit: $coursesLimit,
+      skip: $coursesOffset,
+      filter: { frontmatter: { template: { eq: "course" }, draft: { ne: true } } },
+      sort: {
+        fields: [frontmatter___title]
+        order: [ASC]
+    }){
       edges {
         node {
           fields {
@@ -74,7 +62,6 @@ export const query = graphql`
 
 CourseListTemplate.propTypes = {
   data: PropTypes.shape({
-    site: SITE_METADATA_PROP_TYPE.isRequired,
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.arrayOf(PropTypes.object)
     })

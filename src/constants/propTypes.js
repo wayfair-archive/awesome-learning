@@ -11,7 +11,8 @@ export const PAGE_CONTEXT_PROP_TYPE = PropTypes.shape({
 
 export const SITE_METADATA_PROP_TYPE = PropTypes.shape({
   siteMetadata: PropTypes.shape({
-    subtitle: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired
+    siteSubtitle: PropTypes.string.isRequired,
+    siteTitle: PropTypes.string.isRequired,
+    siteUrl: PropTypes.string.isRequired
   }).isRequired
 });

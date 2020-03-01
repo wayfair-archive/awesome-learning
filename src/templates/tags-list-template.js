@@ -5,14 +5,12 @@ import kebabCase from 'lodash/kebabCase';
 import { Container, Row, Col } from 'react-grid-system';
 import Layout from '../components/shared/Layout';
 import Page from '../components/shared/Page';
-import { SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 
-const TagsListTemplate = ({ data }) => {
-  const { title, subtitle } = data.site.siteMetadata;
+const TagsListTemplate = ({ data, path }) => {
   const { group } = data.allMarkdownRemark;
 
   return (
-    <Layout title={`Tags - ${title}`} description={subtitle}>
+    <Layout title={'Tags'} slug={path}>
       <Container fluid>
         <Row>
           <Col>
@@ -36,21 +34,15 @@ const TagsListTemplate = ({ data }) => {
 
 TagsListTemplate.propTypes = {
   data: PropTypes.shape({
-    site: SITE_METADATA_PROP_TYPE.isRequired,
     allMarkdownRemark: PropTypes.shape({
       group: PropTypes.array
     })
-  }).isRequired
+  }).isRequired,
+  path: PropTypes.string.isRequired
 };
 
 export const query = graphql`
   query TagsListQuery {
-    site {
-      siteMetadata {
-        title
-        subtitle
-      }
-    }
     allMarkdownRemark(
       filter: {
         frontmatter: { template: { eq: "course" }, draft: { ne: true } }
