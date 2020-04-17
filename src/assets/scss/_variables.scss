@@ -3,16 +3,20 @@
  */
 
 // Colors
-$color--base: #2a2a3a;
-$color--primary: #2b416a;
-$color--secondary: #00a7ba;
-$color--tertiary: #e8f7f9;
-$color--tertiaryDark: #bfe8ee;
-$color--light:#6f6f6f;
-$color--background: #f3f7f8;
+$primary-color: #2B416A;
+$light-accent: #69ADC9;
+$light-shade: #FAFBFB;
+$dark-accent: #6A6C7A;
+$dark-shade: #1D1820;
+
+$color--base: $dark-shade;
+$color--primary: $primary-color;
+$color--secondary: $light-accent;
+$color--tertiary: $dark-accent;
+$color--light: $light-shade;
+$color--background: $light-shade;
 $color--border: #c4c4c4;
 
-$color--alert: #44309D;
 $color--red: #E8341C;
 $color--white: #fff;
 
