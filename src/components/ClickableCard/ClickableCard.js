@@ -11,6 +11,7 @@ const ClickableCard = ({ children, link=null, handleCardClick=null, iconName=nul
   }
 
   const cardProps = link ? {href: link} : {onClick: handleCardClick};
+
   return (
     <a className="ClickableCard" {...cardProps} >
       {iconName &&
