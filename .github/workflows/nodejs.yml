@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
     - master
+    - frontend_redesign_master
 
 jobs:
   build:
