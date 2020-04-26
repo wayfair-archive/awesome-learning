@@ -8,7 +8,7 @@ const IndexTemplate = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
 
   return (
-    <Layout isFullBleed>
+    <Layout isFullBleed title="Awesome Learning">
       <Landing courseEdges={edges} />
     </Layout>
   );
