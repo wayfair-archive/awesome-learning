@@ -5,11 +5,6 @@ import Icon from '../shared/Icon';
 import './ClickableCard.scss';
 
 const ClickableCard = ({ children, link=null, handleCardClick=null, iconName=null }) => {
-  // Since either a link or onClick function is required, show an error to the developer if neither are passed in.
-  if (!link && !handleCardClick) {
-    console.error('No click action passed to ClickableCard. Please add a valid `link` or `handleCardClick` prop.');
-  }
-
   const cardProps = link ? {href: link} : {onClick: handleCardClick};
 
   return (
@@ -22,9 +17,44 @@ const ClickableCard = ({ children, link=null, handleCardClick=null, iconName=nul
   );
 };
 
+/*
+ * Ensures that either the link or handleCardClick prop is set and validates the link prop if it exists.
+ */
+const linkPropCheck = ({link, handleCardClick}, propName, componentName) => {
+  // This could as easily be located in handleClickPropCheck, either way.
+  if (!link && !handleCardClick) {
+    return new Error(`Please provide either a link or a handleCardClick function to the ${componentName} component.`);
+  }
+  if (link) {
+    PropTypes.checkPropTypes(
+      {link: PropTypes.string},
+      {link},
+      'prop',
+      componentName
+    );
+  }
+  return null;
+};
+
+/*
+ * Validates the handleCardClick prop if it exists.
+ */
+const handleClickPropCheck = ({handleCardClick}, propName, componentName) => {
+  if (handleCardClick) {
+    PropTypes.checkPropTypes(
+      {handleCardClick: PropTypes.func},
+      {handleCardClick},
+      'prop',
+      componentName
+    );
+  }
+  return null;
+};
+
 ClickableCard.propTypes = {
-  link: PropTypes.string,
-  handleCardClick: PropTypes.func,
+  children: PropTypes.node.isRequired,
+  link: linkPropCheck,
+  handleCardClick: handleClickPropCheck,
   iconName: PropTypes.string
 };
 
