@@ -10,6 +10,11 @@
   height: 90px;
   padding: 0 $spacing--xLarge;
   background-color: $color--primary;
+  @include breakpoint-xl {
+    max-width: $layout-breakpoint-xl;
+    margin-left:auto;
+    margin-right:auto;
+  }
   &-title {
     color: $color--white;
     font-size: $font--1000;
