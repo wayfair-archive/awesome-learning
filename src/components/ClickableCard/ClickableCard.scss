@@ -1,0 +1,25 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+.ClickableCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $color--accentDark;
+  width: 250px;
+  height: 150px;
+  color: $color--white;
+  box-shadow: 0 5px 5px $color--border;
+  margin-bottom: $spacing--medium;
+  &-icon {
+    margin-bottom: $spacing--medium;
+    height: $icon-size--medium;
+    width: $icon-size--medium;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $color--accentLight;
+  }
+}

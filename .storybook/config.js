@@ -15,6 +15,7 @@ import LastLessonProvider from '../src/providers/LastLessonProvider';
 import Page from '../src/components/shared/Page';
 import SectionTitle from '../src/components/shared/SectionTitle';
 import Text from '../src/components/shared/Text';
+import ClickableCard from '../src/components/ClickableCard';
 
 
 
@@ -63,7 +64,8 @@ addDecorator(
       LastLessonProvider,
       Page,
       SectionTitle,
-      Text
+      Text,
+      ClickableCard
     ]
   })
 );
