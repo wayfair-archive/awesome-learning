@@ -6,4 +6,9 @@
     padding: 0;
     max-width: 100%;
   }
+  @include breakpoint-xl {
+    max-width: $layout-breakpoint-xl;
+    margin-left:auto;
+    margin-right:auto;
+  }
 }

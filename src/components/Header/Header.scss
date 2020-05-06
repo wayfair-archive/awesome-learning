@@ -12,7 +12,8 @@
   background-color: $color--primary;
   @include breakpoint-xl {
     max-width: $layout-breakpoint-xl;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   &-title {
     color: $color--white;
