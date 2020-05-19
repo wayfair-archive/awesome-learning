@@ -14,4 +14,7 @@ lessons:
   - link: "intro-to-react-hooks"
     title: Intro to React Hooks
     description: The first question you see after browsing through your news and hearing conversations from your fellow engineers is what are Hooks? What can you do with Hooks? How do they compare to writing React with classes? These questions, and more, will be covered in this lesson.
+  - link: "performance-with-hooks"
+    title: Performance with Hooks
+    description: Hooks have a lot of powerful functionality to improve the performance of React applications and components. They can save a lot of headaches in rendering behavior, and come in handy to make code more understandable. In this lesson, we'll focus on how to use React Hooks to identify performance opportunities for your React code.
 ---
