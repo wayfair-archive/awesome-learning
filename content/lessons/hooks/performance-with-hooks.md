@@ -36,7 +36,7 @@ preReadQuiz:
       - 2
       explanation: useCallback returns a memoized version of the function that it is passed. The function would only be regenerated if any value of its dependency array changes.
       type: radio
-    - description: What, if anything, is incorrect abou the following implementation of useMemo? Select all that apply.
+    - description: What, if anything, is incorrect about the following implementation of useMemo? Select all that apply.
       codeSnippet: |
         import React, {useMemo} from 'react';
 
