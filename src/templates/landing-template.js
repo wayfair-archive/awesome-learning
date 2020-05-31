@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/shared/Layout';
 import Landing from '../components/Landing';
 
-const IndexTemplate = ({ data }) => {
+const LandingTemplate = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
 
   return (
@@ -14,7 +14,7 @@ const IndexTemplate = ({ data }) => {
   );
 };
 
-IndexTemplate.propTypes = {
+LandingTemplate.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array
@@ -46,4 +46,4 @@ export const query = graphql`
   }
 `;
 
-export default IndexTemplate;
+export default LandingTemplate;

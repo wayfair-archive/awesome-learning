@@ -12,7 +12,7 @@ const createPages = async ({ graphql, actions }) => {
   // Home page
   createPage({
     path: "/",
-    component: path.resolve("./src/templates/index-template.js"),
+    component: path.resolve("./src/templates/landing-template.js"),
     context: {
       coursesLimit: coursesPerPage,
       coursesOffset: 0
