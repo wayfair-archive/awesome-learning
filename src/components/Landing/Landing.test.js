@@ -61,7 +61,7 @@ describe('Landing Component', () => {
     ).toBeTruthy();
   });
 
-  test('Contains a link to /courses and /howTo', () => {
+  xtest('Contains a link to /courses and /howTo', () => {
     const { container } = render(
       <LastLessonProvider>
         <Landing {...PROPS} />
