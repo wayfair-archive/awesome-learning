@@ -7,6 +7,10 @@ import ContentSection from '../shared/ContentSection';
 import './Landing.scss';
 
 const COURSE_DATA_MAPPING = {
+  'Accessibility': {
+    icon: 'accessibility',
+    subTitle: 'Explore Accessibility fundamentals for the web!'
+  },
   'Data Types': {
     icon: 'data',
     subTitle: 'Deep dive into types, equality, coercion, immutability and more.'
