@@ -70,6 +70,9 @@ const getIcon = (name) => {
     case 'close':
       icon = ICONS.CLOSE;
       break;
+    case 'accessibility':
+      icon = ICONS.ACCESSIBILITY;
+      break;
     default:
       icon = {};
       break;
