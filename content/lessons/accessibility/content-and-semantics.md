@@ -26,6 +26,15 @@ readingLinks:
   - link: https://geon.github.io/programming/2016/03/03/dsxyliea
     title: Geon - Dyslexia
     description: This page emulates what it is like for someone with dyslexia to browse the web.
+  - link: https://www.youtube.com/watch?v=fpbIsN31hLM&
+    title: ChromeOS Screen Reader Setup Tutorial
+    description: For exercise 2, it is recommended that you watch these screen reader tutorial videos in advance. Each screen reader is a little different based on the OS. This tutorial video is specifically for ChromeOS.
+  - link: https://www.youtube.com/watch?v=5R-6WvAihms
+    title: macOS Screen Reader Setup Tutorial
+    description: For exercise 2, it is recommended that you watch these screen reader tutorial videos in advance. Each screen reader is a little different based on the OS. This tutorial video is specifically for macOS.
+  - link: https://www.youtube.com/watch?v=EiQ8NwdsZCY
+    title: Windows Screen Reader Setup Tutorial
+    description: For exercise 2, it is recommended that you watch these screen reader tutorial videos in advance. Each screen reader is a little different based on the OS. This tutorial video is specifically for Windows. 
 preReadQuiz:
   description: Take this quiz to test your understanding of Accessibility - Content and Semantics!
   questions: 
