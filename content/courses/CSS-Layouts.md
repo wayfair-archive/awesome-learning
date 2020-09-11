@@ -12,4 +12,7 @@ lessons:
   - link: "layout-basics"
     title: "Layout Basics" 
     description: "Everything on a webpage is a rectangle! Discover the box model, positioning, floats, and more."
+  - link: "flexbox"
+    title: "Flexbox Layouts"
+    description: "Learn about the Flexbox layout module and media breakpoints to make dynamic responsive pages."
 ---
