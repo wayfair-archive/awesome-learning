@@ -39,10 +39,14 @@ const COURSE_DATA_MAPPING = {
   'CSS Layouts': {
     icon: 'info',
     subTitle: 'Learn about CSS fundamentals on layouts.',
+  },
+  'SOLID Principles': {
+    icon: 'solid',
+    subTitle: 'Learn the SOLID Design Principles and how to apply them.',
   }
 };
 
-const Landing = ({courseEdges}) => (
+const Landing = ({ courseEdges }) => (
   <div className="Landing">
     <div className="Landing-heroWrapper">
       <div className="Landing-titleWrapper">
@@ -64,9 +68,9 @@ const Landing = ({courseEdges}) => (
           Our Courses:
         </Block>
         <Carousel
-          items={courseEdges.map(({node}) => {
-            const {id, frontmatter, fields} = node;
-            const {title} = frontmatter;
+          items={courseEdges.map(({ node }) => {
+            const { id, frontmatter, fields } = node;
+            const { title } = frontmatter;
             return {
               id,
               title,
