@@ -46,7 +46,7 @@ const COURSE_DATA_MAPPING = {
   }
 };
 
-const Landing = ({ courseEdges }) => (
+const Landing = ({courseEdges}) => (
   <div className="Landing">
     <div className="Landing-heroWrapper">
       <div className="Landing-titleWrapper">
@@ -68,9 +68,9 @@ const Landing = ({ courseEdges }) => (
           Our Courses:
         </Block>
         <Carousel
-          items={courseEdges.map(({ node }) => {
-            const { id, frontmatter, fields } = node;
-            const { title } = frontmatter;
+          items={courseEdges.map(({node}) => {
+            const {id, frontmatter, fields} = node;
+            const {title} = frontmatter;
             return {
               id,
               title,
