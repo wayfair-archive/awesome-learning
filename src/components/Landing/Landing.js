@@ -42,7 +42,7 @@ const COURSE_DATA_MAPPING = {
   },
   'SOLID Principles': {
     icon: 'solid',
-    subTitle: 'Learn the SOLID Design Principles and how to apply them.',
+    subTitle: 'Learn the SOLID Architecture Principles and how to apply them.',
   }
 };
 
