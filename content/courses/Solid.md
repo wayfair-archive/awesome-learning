@@ -8,7 +8,7 @@ tags:
 - "Usability"
 - "Maintainability"
 - "OOP"
-description: Familiarize yourself with the SOLID Design Principles and put them into practice. In the first lesson, walk through a conversational multiple-choice "quiz" (great for absolute beginners), and in the second, rewrite principle-violating code in line with the principles.
+description: Familiarize yourself with the SOLID Design Principles and put them into practice. In the first lesson, walk through a conversational multiple-choice "quiz" (great for absolute beginners), and in the second, rewrite principle-violating code in line with the principles. This course assumes you have basic familiarity with Java, though by no means an expert understanding.
 lessons:
 - link: "solid-part-1"
   title: SOLID Principles Part 1
