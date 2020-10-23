@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "gatsby": "^2.18.21",
+    "gatsby": "^2.24",
     "gatsby-plugin-catch-links": "^2.1.24",
     "gatsby-plugin-google-gtag": "^1.1.20",
     "gatsby-plugin-less": "^4.0.6",
