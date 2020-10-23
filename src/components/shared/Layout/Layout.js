@@ -6,6 +6,7 @@ import Header from '../../Header';
 import LastLessonProvider from '../../../providers/LastLessonProvider';
 import config from "../../../../config";
 import './Layout.scss';
+import 'semantic-ui-less/semantic.less';
 
 const Layout = ({children, title, description, isFullBleed, slug}) => {
   const formattedTitle = title ? `${title} - ${config.title}` : config.title;
