@@ -1,11 +1,11 @@
 {
-  "breakpoints": {
-  },
-  "mixins": {
-  },
-  "typography": {
-  },
   "palette": {
+    "primary": {
+      "main": "#2b416a"
+    },
+    "secondary": {
+      "main": "#00a7ba"
+    }
   },
   "themeName": "Awesome Learning"
 }
