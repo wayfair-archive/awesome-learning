@@ -23,6 +23,7 @@
     "node": "^8 || ^10"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
     "classnames": "^2.2.6",
     "gatsby": "^2.18.21",
     "gatsby-plugin-catch-links": "^2.1.24",
@@ -75,6 +76,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.17.0",
     "eslint-watch": "^6.0.1",
+    "gatsby-plugin-material-ui": "^2.1.10",
     "husky": "^4.0.4",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
