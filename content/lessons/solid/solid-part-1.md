@@ -26,6 +26,6 @@ readingLinks:
   - link: https://fi.ort.edu.uy/innovaportal/file/2032/1/design_principles.pdf
     title: “Design Principles and Design Patterns” by Robert C. Martin
     description: This paper originated the SOLID principles.
-timeToCompletion: ~30 minutes
+timeToCompletion: ~1.5 hours, including videos
 secondaryExerciseUrl: 'https://fhuergo.github.io/solid1'
 ---
