@@ -2,7 +2,7 @@
 title: SOLID Principles Part 1
 template: lesson
 draft: false
-slug: /courses/solid-part-1
+slug: /courses/Solid/solid-part-1
 course: SOLID
 tags:
 - Usability
