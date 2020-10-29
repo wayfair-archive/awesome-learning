@@ -19,7 +19,7 @@ videoLinks:
   - https://www.youtube.com/watch?v=xahwVmf8itI
 readingLinks:
   - link: https://mari-azevedo.medium.com/s-o-l-i-d-principles-what-are-they-and-why-projects-should-use-them-50b85e4aa8b6
-    title: SOLID Principles: What are they and why projects should use them
+    title: SOLID Principles- What are they and why projects should use them
     description: 8 minute read
   - link: https://en.wikipedia.org/wiki/SOLID
     title: SOLID on Wikipedia
