@@ -73,6 +73,9 @@ const getIcon = (name) => {
     case 'accessibility':
       icon = ICONS.ACCESSIBILITY;
       break;
+    case 'solid':
+      icon = ICONS.SOLID;
+      break;
     default:
       icon = {};
       break;

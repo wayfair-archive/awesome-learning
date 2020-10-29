@@ -39,6 +39,10 @@ const COURSE_DATA_MAPPING = {
   'CSS Layouts': {
     icon: 'info',
     subTitle: 'Learn about CSS fundamentals on layouts.',
+  },
+  'SOLID Principles': {
+    icon: 'solid',
+    subTitle: 'Learn the SOLID Architecture Principles and how to apply them.',
   }
 };
 
