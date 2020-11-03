@@ -8,8 +8,15 @@
     }
   },
   "breakpoints": {
-    "keys": ["sm", "md", "lg"],
     "values": {"sm": 685, "md": 960,"lg": 1100}
+  },
+  "typography": {
+    "fontFamily": "Raleway, Arial, sans-serif",
+    "h6": {
+      "lineHeight": "1.5em",
+      "fontSize": "1.5rem",
+      "fontWeight": 500
+    }
   },
   "spacing": 4,
   "themeName": "Awesome Learning"
