@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "classnames": "^2.2.6",
     "gatsby": "^2.18.21",
     "gatsby-plugin-catch-links": "^2.1.24",

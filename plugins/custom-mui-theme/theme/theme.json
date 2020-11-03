@@ -7,5 +7,10 @@
       "main": "#00a7ba"
     }
   },
+  "breakpoints": {
+    "keys": ["sm", "md", "lg"],
+    "values": {"sm": 685, "md": 960,"lg": 1100}
+  },
+  "spacing": 4,
   "themeName": "Awesome Learning"
 }
