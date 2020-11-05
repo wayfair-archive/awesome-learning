@@ -16,27 +16,36 @@ import Menu from './Menu';
 const useStyles = makeStyles((theme) => ({
   root: {
     justifyContent: 'space-between',
+    minWidth: '350px',
   },
   icon: {
     paddingRight: theme.spacing(2),
     minWidth: '38px',
   },
+  logo: {
+    fontWeight: 800,
+  },
   content: {
-    [theme.breakpoints.down('xs')]: {
-      paddingLeft: theme.spacing(2),
-      paddingRight: theme.spacing(2),
+    [theme.breakpoints.up('sm')]: {
+      paddingLeft: theme.spacing(1),
+      paddingRight: theme.spacing(1),
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.up('md')]: {
       paddingLeft: "5%",
       paddingRight: "5%",
     },
-    paddingLeft: "10%",
-    paddingRight: "10%",
+    [theme.breakpoints.up('lg')]: {
+      paddingLeft: "10%",
+      paddingRight: "10%",
+    },
   },
   menuButton: {
     marginRight: theme.spacing(2),
   },
   tab: {
+    [theme.breakpoints.up('sm')]: {
+      marginRight: theme.spacing(2),
+    },
     marginRight: theme.spacing(3),
     fontWeight: 800,
   },
@@ -45,18 +54,18 @@ const useStyles = makeStyles((theme) => ({
 export const PureHeader = ({ data }) => {
   const theme = useTheme();
   const classes = useStyles();
-  const hideMenu = useMediaQuery(theme.breakpoints.up('sm'));
+  const hideMenu = useMediaQuery(theme.breakpoints.up('md'));
   const iconData = getIcon('logo');
   const { title, menu } = data.site.siteMetadata;
   return (
     <AppBar position="static" className={classes.content}>
       <Toolbar className={classes.root}>
         <Box display="flex">
-          <Button color="inherit" href="/" className={classes.titleContainer}>
+          <Button color="inherit" href="/">
             <SvgIcon viewBox={iconData.viewbox} className={classes.icon}>
               <path d={iconData.path}/>
             </SvgIcon>
-            <Typography variant="h6" className={classes.logo}>
+            <Typography variant="h2" className={classes.logo}>
               {title}
             </Typography>
           </Button>

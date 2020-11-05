@@ -1,21 +1,30 @@
 {
   "palette": {
     "primary": {
-      "main": "#2b416a"
+      "main": "#2b416a",
+      "light": "fafbfb",
+      "dark": "1d1820"
     },
     "secondary": {
       "main": "#00a7ba"
     }
   },
   "breakpoints": {
-    "values": {"xs": 500, "sm": 685, "md": 960,"lg": 1100}
+    "values": {"xs": 0, "sm": 400, "md": 685,"lg": 960}
   },
   "typography": {
     "fontFamily": "Raleway, Arial, sans-serif",
-    "h6": {
-      "lineHeight": "1.5em",
-      "fontSize": "1.5rem",
-      "fontWeight": 800
+    "h1": {
+      "fontSize": "32px"
+    },
+    "h2": {
+      "fontSize": "24px"
+    },
+    "h3": {
+      "fontSize": "16px"
+    },
+    "body1": {
+      "fontSize": "16px"
     }
   },
   "spacing": 4,
