@@ -7,14 +7,14 @@ describe('PureHeader', () => {
   const title = 'Test Title';
   const expectedData = { site: { siteMetadata: { title, menu } } };
   
-  xit('renders title correctly', () => {
+  it('renders title correctly', () => {
     const { getByText } = render(<PureHeader data={expectedData} />);
-    expect(getByText(title));
+    expect(getByText(title)).toBeTruthy();
   });
 
-  xit('renders menu labels correctly', () => {
-    const { getAllByText } = render(<PureHeader data={expectedData} />);
-    expect(getAllByText('testlabel1')).toHaveLength(2);
-    expect(getAllByText('testlabel2')).toHaveLength(2);
+  it('renders menu labels correctly', () => {
+    const { getByText } = render(<PureHeader data={expectedData} />);
+    expect(getByText('testlabel1')).toBeTruthy();
+    expect(getByText('testlabel2')).toBeTruthy();
   });
 });

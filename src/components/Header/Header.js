@@ -38,12 +38,13 @@ const useStyles = makeStyles((theme) => ({
   },
   tab: {
     marginRight: theme.spacing(3),
+    fontWeight: 800,
   },
 }));
 
 export const PureHeader = ({ data }) => {
-  const classes = useStyles();
   const theme = useTheme();
+  const classes = useStyles();
   const hideMenu = useMediaQuery(theme.breakpoints.up('sm'));
   const iconData = getIcon('logo');
   const { title, menu } = data.site.siteMetadata;
@@ -64,9 +65,8 @@ export const PureHeader = ({ data }) => {
           ? (
             <Box display="flex">
               {menu.map(item =>
-                <div className={classes.tab}>
-                  <Button color="inherit" href={item.path}>{item.label}</Button>
-                </div>)}
+                <Button color="inherit" href={item.path} size="large" className={classes.tab}>{item.label}</Button>
+              )}
               <Button color="inherit"
                 href="https://github.com/wayfair/awesome-learning"
                 rel="noopener noreferrer"
