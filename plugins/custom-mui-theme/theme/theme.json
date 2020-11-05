@@ -8,7 +8,7 @@
     }
   },
   "breakpoints": {
-    "values": {"sm": 685, "md": 960,"lg": 1100}
+    "values": {"xs": 500, "sm": 685, "md": 960,"lg": 1100}
   },
   "typography": {
     "fontFamily": "Raleway, Arial, sans-serif",
