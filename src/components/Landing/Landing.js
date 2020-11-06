@@ -8,46 +8,37 @@ import PeopleIcon from '@material-ui/icons/People';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import CodeIcon from '@material-ui/icons/Code';
+import Carousel from '../Carousel';
 
-// const COURSE_DATA_MAPPING = {
-//   'Accessibility': {
-//     icon: 'accessibility',
-//     subTitle: 'Explore Accessibility fundamentals for the web!'
-//   },
-//   'Data Types': {
-//     icon: 'data',
-//     subTitle: 'Deep dive into types, equality, coercion, immutability and more.'
-//   },
-//   'Array Methods': {
-//     icon: 'array',
-//     subTitle: 'Learn functional array methods like filter, map, and reduce!'
-//   },
-//   Promises: {
-//     icon: 'async',
-//     subTitle: 'Learn the Promise API inside and out.'
-//   },
-//   Testing: {
-//     icon: 'testing',
-//     subTitle:
-//       'Learn frontend testing with Jest, Enzyme, and React Testing Library.'
-//   },
-//   'React Hooks': {
-//     icon: 'hook',
-//     subTitle: 'Learn react hooks.'
-//   },
-//   'Functions and Scope': {
-//     icon: 'function',
-//     subTitle: 'Learn about function and scopes.',
-//   },
-//   'CSS Layouts': {
-//     icon: 'info',
-//     subTitle: 'Learn about CSS fundamentals on layouts.',
-//   },
-//   'SOLID Principles': {
-//     icon: 'solid',
-//     subTitle: 'Learn the SOLID Architecture Principles and how to apply them.',
-//   }
-// };
+const COURSE_DATA_MAPPING = {
+  'Accessibility': {
+    icon: 'accessibility',
+  },
+  'Data Types': {
+    icon: 'data',
+  },
+  'Array Methods': {
+    icon: 'array',
+  },
+  Promises: {
+    icon: 'async',
+  },
+  Testing: {
+    icon: 'testing',
+  },
+  'React Hooks': {
+    icon: 'hook',
+  },
+  'Functions and Scope': {
+    icon: 'function',
+  },
+  'CSS Layouts': {
+    icon: 'info',
+  },
+  'SOLID Principles': {
+    icon: 'solid',
+  }
+};
 
 const footerData = [
   {
@@ -138,7 +129,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Landing = () => {
+const Landing = ({courseEdges}) => {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -151,16 +142,26 @@ const Landing = () => {
         className={classes.heroBackground}
         color="white"
         bgcolor={theme.palette.primary.main}
-      >
-        <Typography variant="h1" color="inherit" className={classes.heroTitle}>Awesome Learning</Typography>
+      > <Typography variant="h1" color="inherit" className={classes.heroTitle}>Awesome Learning</Typography>
+
         <Typography variant="body1" className={classes.heroSubtitle}>Learn front-end tech, together.</Typography>
         <Button variant="contained" color="secondary" className={classes.heroCta}>Get started</Button>
       </Box>
       <Box className={classes.sectionContainer}>
         <Typography variant="h2" color="inherit" className={classes.popularCourseTitle}>Popular Courses</Typography>
-
-        {/* TODO: BUILD OUT CAROUSEL */}
-
+        <Carousel
+          items={courseEdges.map(({node}) => {
+            const {frontmatter, fields} = node;
+            const {title} = frontmatter;
+            return {
+              title,
+              icon: COURSE_DATA_MAPPING[title]
+                ? COURSE_DATA_MAPPING[title].icon
+                : 'array',
+              path: fields.slug
+            };
+          })}
+        />
       </Box>
       <Box className={classes.sectionContainer}>
         <Typography variant="h2" color="inherit" className={classes.sectionTitle}>What is Awesome Learning?</Typography>

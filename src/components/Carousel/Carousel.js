@@ -5,50 +5,45 @@ import TrackCard from './trackCard';
 import { getIcon } from '../../utils';
 import 'react-alice-carousel/lib/scss/alice-carousel.scss';
 
-const Carousel = ({ items }) =>
-  (
+const Carousel = ({ items }) => {
+  return (
     <AliceCarousel
       responsive={{
         0: {
           items: 1
         },
-        400: {
-          items: 2
-        },
-        720: {
+        481: {
           items: 3
-        },
-        1024: { items: 4 },
+        }
       }}
       dotsDisabled
       autoPlayInterval={3000}
       autoPlayDirection="ltr"
-      autoPlay={true}
-      fadeOutAnimation={true}
-      mouseDragEnabled={true}
-      disableAutoPlayOnAction={true}
+      autoPlay
+      fadeOutAnimation
+      mouseDragEnabled
+      disableAutoPlayOnAction
     >
       {
-        items.map(({ title, icon, subTitle, path }) => (
+        items.map(({title, icon, path}) => (
           <TrackCard
             key={title}
             role="listitem"
             title={title}
             icon={getIcon(icon)}
-            subTitle={subTitle}
             path={path}
           />
         ))
       }
-    </AliceCarousel >
+    </AliceCarousel>
   );
+};
 
 Carousel.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       icon: PropTypes.string.isRequired,
-      subTitle: PropTypes.string.isRequired,
       path: PropTypes.string.isRequired,
     })
   ).isRequired

@@ -16,7 +16,7 @@
     "values": {"xs": 320, "sm": 481, "md": 769,"lg": 1025, "xl": 1201}
   },
   "typography": {
-    "fontFamily": "Muli",
+    "fontFamily": "Muli, Arial, sans-serif",
     "h1": {
       "fontSize": "32px"
     },
@@ -27,7 +27,7 @@
       "fontSize": "16px"
     },
     "body1": {
-      "fontFamily": "Varela",
+      "fontFamily": "Varela, Arial, sans-serif",
       "fontSize": "16px"
     }
   },
