@@ -82,5 +82,8 @@ module.exports = {
       },
     },
     `custom-mui-theme`,
+    {
+      resolve: 'gatsby-plugin-eslint'
+    }
   ]
 };
