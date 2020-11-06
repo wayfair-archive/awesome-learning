@@ -2,11 +2,14 @@
   "palette": {
     "primary": {
       "main": "#2b416a",
-      "light": "fafbfb",
-      "dark": "1d1820"
+      "light": "#fafbfb",
+      "dark": "#1d1820"
     },
     "secondary": {
       "main": "#69ADC9"
+    },
+    "info": {
+      "main": "#6a6c7a"
     }
   },
   "breakpoints": {

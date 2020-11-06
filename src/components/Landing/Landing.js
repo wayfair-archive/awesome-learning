@@ -8,7 +8,6 @@ import PeopleIcon from '@material-ui/icons/People';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import CodeIcon from '@material-ui/icons/Code';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 // const COURSE_DATA_MAPPING = {
 //   'Accessibility': {
@@ -159,6 +158,9 @@ const Landing = () => {
       </Box>
       <Box className={classes.sectionContainer}>
         <Typography variant="h2" color="inherit" className={classes.popularCourseTitle}>Popular Courses</Typography>
+
+        {/* TODO: BUILD OUT CAROUSEL */}
+
       </Box>
       <Box className={classes.sectionContainer}>
         <Typography variant="h2" color="inherit" className={classes.sectionTitle}>What is Awesome Learning?</Typography>
@@ -177,7 +179,7 @@ const Landing = () => {
         <Typography variant="h2" color="inherit" className={classes.sectionTitle}>How can I get started?</Typography>
         <Grid container spacing={3} className={classes.getStartedGrid}>
           {footerData.map(item =>
-            <Grid item xs={12} sm={3}>
+            <Grid item xs={12} sm={3} key={item.title}>
               <Box
                 display="flex"
                 alignItems="center"
