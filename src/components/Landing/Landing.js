@@ -8,6 +8,7 @@ import PeopleIcon from '@material-ui/icons/People';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import CodeIcon from '@material-ui/icons/Code';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 // const COURSE_DATA_MAPPING = {
 //   'Accessibility': {
@@ -108,6 +109,12 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 800,
   },
   sectionContainer: {
+    paddingLeft: theme.spacing(7),
+    paddingRight: theme.spacing(7),
+    [theme.breakpoints.up('sm')]: {
+      paddingLeft: '5vw',
+      paddingRight: '5vw',
+    },
     [theme.breakpoints.up('md')]: {
       paddingLeft: '15vw',
       paddingRight: '15vw',
@@ -135,6 +142,7 @@ const useStyles = makeStyles((theme) => ({
 const Landing = () => {
   const classes = useStyles();
   const theme = useTheme();
+
   return (
     <>
       <Box
@@ -167,9 +175,9 @@ const Landing = () => {
         bgcolor={theme.palette.secondary.main}
       >
         <Typography variant="h2" color="inherit" className={classes.sectionTitle}>How can I get started?</Typography>
-        <Grid container className={classes.getStartedGrid}>
+        <Grid container spacing={3} className={classes.getStartedGrid}>
           {footerData.map(item =>
-            <Grid item xs={6} sm={3}>
+            <Grid item xs={12} sm={3}>
               <Box
                 display="flex"
                 alignItems="center"
