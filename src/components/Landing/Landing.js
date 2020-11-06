@@ -9,47 +9,45 @@ import MenuBookIcon from '@material-ui/icons/MenuBook';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import CodeIcon from '@material-ui/icons/Code';
 
-import './Landing.scss';
-
-const COURSE_DATA_MAPPING = {
-  'Accessibility': {
-    icon: 'accessibility',
-    subTitle: 'Explore Accessibility fundamentals for the web!'
-  },
-  'Data Types': {
-    icon: 'data',
-    subTitle: 'Deep dive into types, equality, coercion, immutability and more.'
-  },
-  'Array Methods': {
-    icon: 'array',
-    subTitle: 'Learn functional array methods like filter, map, and reduce!'
-  },
-  Promises: {
-    icon: 'async',
-    subTitle: 'Learn the Promise API inside and out.'
-  },
-  Testing: {
-    icon: 'testing',
-    subTitle:
-      'Learn frontend testing with Jest, Enzyme, and React Testing Library.'
-  },
-  'React Hooks': {
-    icon: 'hook',
-    subTitle: 'Learn react hooks.'
-  },
-  'Functions and Scope': {
-    icon: 'function',
-    subTitle: 'Learn about function and scopes.',
-  },
-  'CSS Layouts': {
-    icon: 'info',
-    subTitle: 'Learn about CSS fundamentals on layouts.',
-  },
-  'SOLID Principles': {
-    icon: 'solid',
-    subTitle: 'Learn the SOLID Architecture Principles and how to apply them.',
-  }
-};
+// const COURSE_DATA_MAPPING = {
+//   'Accessibility': {
+//     icon: 'accessibility',
+//     subTitle: 'Explore Accessibility fundamentals for the web!'
+//   },
+//   'Data Types': {
+//     icon: 'data',
+//     subTitle: 'Deep dive into types, equality, coercion, immutability and more.'
+//   },
+//   'Array Methods': {
+//     icon: 'array',
+//     subTitle: 'Learn functional array methods like filter, map, and reduce!'
+//   },
+//   Promises: {
+//     icon: 'async',
+//     subTitle: 'Learn the Promise API inside and out.'
+//   },
+//   Testing: {
+//     icon: 'testing',
+//     subTitle:
+//       'Learn frontend testing with Jest, Enzyme, and React Testing Library.'
+//   },
+//   'React Hooks': {
+//     icon: 'hook',
+//     subTitle: 'Learn react hooks.'
+//   },
+//   'Functions and Scope': {
+//     icon: 'function',
+//     subTitle: 'Learn about function and scopes.',
+//   },
+//   'CSS Layouts': {
+//     icon: 'info',
+//     subTitle: 'Learn about CSS fundamentals on layouts.',
+//   },
+//   'SOLID Principles': {
+//     icon: 'solid',
+//     subTitle: 'Learn the SOLID Architecture Principles and how to apply them.',
+//   }
+// };
 
 const footerData = [
   {
@@ -134,7 +132,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Landing = ({courseEdges}) => {
+const Landing = () => {
   const classes = useStyles();
   const theme = useTheme();
   return (
