@@ -22,6 +22,7 @@
   "rules": {
     "comma-dangle": 0,
     "import/imports-first": 0,
+    "import/prefer-default-export": 0,
     "global-require": 2,
     "arrow-body-style": [
       2,
@@ -56,6 +57,11 @@
       "SwitchCase": 1
     }],
     "eol-last": 2,
-    "semi": 2
+    "semi": 2,
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error"
   }
 }

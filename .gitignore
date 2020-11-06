@@ -6,5 +6,5 @@ npm-debug.log
 .gatsby-context.js
 .idea
 gatsby-starter-lumen.iml
-yarn.lock
 coverage
+yarn-error.log

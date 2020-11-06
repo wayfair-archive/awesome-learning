@@ -9,7 +9,7 @@ describe('PureHeader', () => {
   
   it('renders title correctly', () => {
     const { getByText } = render(<PureHeader data={expectedData} />);
-    expect(getByText(title));
+    expect(getByText(title)).toBeDefined();
   });
 
   it('renders menu labels correctly', () => {

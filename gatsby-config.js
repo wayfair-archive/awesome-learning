@@ -72,6 +72,18 @@ module.exports = {
         },
         data: `@import "${__dirname}/src/assets/scss/styles";`,
       }
+    },
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
+    `custom-mui-theme`,
+    {
+      resolve: 'gatsby-plugin-eslint'
     }
   ]
 };

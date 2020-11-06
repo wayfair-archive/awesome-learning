@@ -38,12 +38,12 @@ readingLinks:
     of this blog will be helpful in the following sessions as well. Checkout the
     "Related Content" section if you would like to explore further.'
     title: 'JavaScript values: not everything is an object - Dr. Alex, R. Phd'
-  - link: "https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch1.md"
+  - link: "https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch1.md"
     description: "An entire chapter on Types from 'You Don't Know JavaScript' (a book worth
     reading). You can skim through it, but it might be worth reading through it
     once in a while. This is also a great reference."
     title: "Chapter 1: Types, Types & Grammar - YDKJ"
-  - link: "https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch4.md#implicit-coercion"
+  - link: "https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch4.md#implicit-coercion"
     description: One section from an excellent chapter in You Don't Know JS. This section describes the mechanisms behind implicit coercion. 
     title: Implicit coercion by YDKJS
 preReadQuiz:
