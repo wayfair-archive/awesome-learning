@@ -10,7 +10,7 @@
     }
   },
   "breakpoints": {
-    "values": {"xs": 0, "sm": 400, "md": 685,"lg": 960}
+    "values": {"xs": 320, "sm": 481, "md": 769,"lg": 1025, "xl": 1201}
   },
   "typography": {
     "fontFamily": "Raleway, Arial, sans-serif",

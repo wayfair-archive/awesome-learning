@@ -38,23 +38,30 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: "10%",
       paddingRight: "10%",
     },
+    [theme.breakpoints.up('xl')]: {
+      paddingLeft: "15%",
+      paddingRight: "15%",
+    },
   },
   menuButton: {
     marginRight: theme.spacing(2),
   },
   tab: {
-    [theme.breakpoints.up('sm')]: {
+    fontWeight: 800,
+    [theme.breakpoints.up('md')]: {
+      marginRight: theme.spacing(1),
+    },
+    [theme.breakpoints.up('lg')]: {
       marginRight: theme.spacing(2),
     },
-    marginRight: theme.spacing(3),
-    fontWeight: 800,
   },
 }));
 
 export const PureHeader = ({ data }) => {
   const theme = useTheme();
   const classes = useStyles();
-  const hideMenu = useMediaQuery(theme.breakpoints.up('md'));
+  const logoSize = useMediaQuery(theme.breakpoints.up('md')) ? 'h2' : 'h3';
+  const hideMenu = useMediaQuery('(min-width:560px)');
   const iconData = getIcon('logo');
   const { title, menu } = data.site.siteMetadata;
   return (
@@ -65,7 +72,7 @@ export const PureHeader = ({ data }) => {
             <SvgIcon viewBox={iconData.viewbox} className={classes.icon}>
               <path d={iconData.path}/>
             </SvgIcon>
-            <Typography variant="h2" className={classes.logo}>
+            <Typography variant={logoSize} className={classes.logo}>
               {title}
             </Typography>
           </Button>
