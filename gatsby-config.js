@@ -82,5 +82,28 @@ module.exports = {
       },
     },
     `custom-mui-theme`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Muli`,
+          `Varela`
+        ],
+        display: 'swap'
+      }
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Muli`
+          },
+          {
+            family: `Varela`
+          },
+        ],
+      },
+    }
   ]
 };

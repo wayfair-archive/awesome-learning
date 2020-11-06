@@ -81,7 +81,7 @@ export const PureHeader = ({ data }) => {
           ? (
             <Box display="flex">
               {menu.map(item =>
-                <Button color="inherit" href={item.path} size="large" className={classes.tab}>{item.label}</Button>
+                <Button color="inherit" href={item.path} size="large" className={classes.tab} key={item.label}>{item.label}</Button>
               )}
               <Button color="inherit"
                 href="https://github.com/wayfair/awesome-learning"
