@@ -14,7 +14,7 @@ describe('Track Card', () => {
   test('pass for now', () => {
     expect(true).toBeTruthy();
   });
-  
+
   // it('Renders an icon, title, and subtitle that link to path', () => {
   //   const {container, getByText} = render(<TrackCard {...PROPS} />);
   //   const icon = container.querySelector('.TrackCard-icon');
