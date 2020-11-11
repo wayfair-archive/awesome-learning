@@ -9,7 +9,7 @@ tags:
   - Debugging
   - Refactoring
   - Generics
-description: "This is an introduction to TypeScript for developers who are familiar with JavaScript. In the first lesson, take a look at the differences between the two and how typing can decrease the amount of possible inputs to your functions and help you catch bugs before they happen."
+description: "This is an introduction to TypeScript for developers who are familiar with JavaScript. In the first lesson, take a look at the differences between the two and how typing your code can decrease the amount of possible inputs to your functions and help you catch bugs before they happen."
 lessons:
   - link: "typescript-types"
     title: TypeScript Types
