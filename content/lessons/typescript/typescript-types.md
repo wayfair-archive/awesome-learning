@@ -2,7 +2,7 @@
 title: TypeScript Types
 template: lesson
 draft: false
-slug: /courses/TypeScript/typescript-types
+slug: /courses/TypeScript-Basics/typescript-types
 course: TypeScript
 tags:
   - Pass by Reference
