@@ -6,8 +6,6 @@ import Landing from '../components/Landing';
 
 const IndexTemplate = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
-  //  eslint-disable-next-line
-  console.log(edges);
 
   return (
     <Layout isFullBleed>
