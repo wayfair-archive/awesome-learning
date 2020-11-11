@@ -3,7 +3,8 @@ title: TypeScript Types
 template: lesson
 draft: false
 slug: /courses/TypeScript-Basics/typescript-types
-course: TypeScript
+course: TypeScript-Basics
+defaultTab: tests
 tags:
   - Pass by Reference
   - Pass by caller
