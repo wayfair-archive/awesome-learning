@@ -43,6 +43,10 @@ const COURSE_DATA_MAPPING = {
   'SOLID Principles': {
     icon: 'solid',
     subTitle: 'Learn the SOLID Architecture Principles and how to apply them.',
+  },
+  'TypeScript Basics': {
+    icon: 'typescript',
+    subTitle: 'Learn about type-safe programming with TypeScript.',
   }
 };
 
