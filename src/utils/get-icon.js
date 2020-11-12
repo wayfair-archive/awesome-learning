@@ -76,6 +76,9 @@ const getIcon = (name) => {
     case 'solid':
       icon = ICONS.SOLID;
       break;
+    case 'typescript':
+      icon = ICONS.TYPESCRIPT;
+      break;
     default:
       icon = {};
       break;
