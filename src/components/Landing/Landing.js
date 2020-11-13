@@ -10,6 +10,8 @@ import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import CodeIcon from '@material-ui/icons/Code';
 import Carousel from '../Carousel';
 
+const GET_STARTED_LINK = '/courses';
+
 const COURSE_DATA_MAPPING = {
   'Accessibility': {
     icon: 'accessibility',
@@ -111,6 +113,14 @@ const useStyles = makeStyles((theme) => ({
     },
     paddingBottom: theme.spacing(8),
   },
+  /**
+   * Have to manually clip the carousel to remove the prev/next buttons.
+   * Alice-Carousel's disableButtonsControls prop seems to be broken as of v2.0.2
+   */
+  carouselContainer: {
+    clipPath: 'inset(0 0 56px 0)',
+    marginBottom: '-56px',
+  },
   getStartedTitle: {
     fontWeight: 800,
   },
@@ -145,23 +155,27 @@ const Landing = ({courseEdges}) => {
       > <Typography variant="h1" color="inherit" className={classes.heroTitle}>Awesome Learning</Typography>
 
         <Typography variant="body1" className={classes.heroSubtitle}>Learn front-end tech, together.</Typography>
-        <Button variant="contained" color="secondary" className={classes.heroCta}>Get started</Button>
+        <Button variant="contained" color="secondary" className={classes.heroCta} href={GET_STARTED_LINK}>Get started</Button>
       </Box>
       <Box className={classes.sectionContainer}>
         <Typography variant="h2" color="inherit" className={classes.popularCourseTitle}>Popular Courses</Typography>
-        <Carousel
-          items={courseEdges.map(({node}) => {
-            const {frontmatter, fields} = node;
-            const {title} = frontmatter;
-            return {
-              title,
-              icon: COURSE_DATA_MAPPING[title]
-                ? COURSE_DATA_MAPPING[title].icon
-                : 'array',
-              path: fields.slug
-            };
-          })}
-        />
+        <Box
+          className={classes.carouselContainer}
+        >
+          <Carousel
+            items={courseEdges.map(({node}) => {
+              const {frontmatter, fields} = node;
+              const {title} = frontmatter;
+              return {
+                title,
+                icon: COURSE_DATA_MAPPING[title]
+                  ? COURSE_DATA_MAPPING[title].icon
+                  : 'array',
+                path: fields.slug
+              };
+            })}
+          />
+        </Box>
       </Box>
       <Box className={classes.sectionContainer}>
         <Typography variant="h2" color="inherit" className={classes.sectionTitle}>What is Awesome Learning?</Typography>
@@ -199,7 +213,7 @@ const Landing = ({courseEdges}) => {
           flexDirection="column"
           className={classes.getStartedCTA}
         >
-          <Button variant="contained" color="primary">Get started</Button>
+          <Button variant="contained" color="primary" href={GET_STARTED_LINK}>Get started</Button>
         </Box>
       </Box>
     </>

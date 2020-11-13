@@ -7,7 +7,7 @@ import 'react-alice-carousel/lib/scss/alice-carousel.scss';
 
 const Carousel = ({ items }) => {
   return (
-    <AliceCarousel
+      <AliceCarousel
       responsive={{
         0: {
           items: 1
@@ -17,7 +17,7 @@ const Carousel = ({ items }) => {
         }
       }}
       dotsDisabled
-      autoPlayInterval={3000}
+      autoPlayInterval={4000}
       autoPlayDirection="ltr"
       autoPlay
       fadeOutAnimation

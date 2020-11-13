@@ -7,10 +7,15 @@ import {makeStyles, useTheme} from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   content: {
-    padding: theme.spacing(6),
-    marginLeft: theme.spacing(6),
-    marginRight: theme.spacing(6),
-    marginTop: theme.spacing(6),
+    padding: theme.spacing(2),
+    marginTop: theme.spacing(4),
+    minHeight: '160px',
+    height: '100%',
+    [theme.breakpoints.up('md')]: {
+      padding: theme.spacing(4),
+      marginLeft: theme.spacing(6),
+      marginRight: theme.spacing(6),
+    },
   },
   title: {
     marginBotton: theme.spacing(2),
@@ -30,8 +35,9 @@ const TrackCard = ({path, icon, title}) => {
   return (
     <Box
       display="flex"
-      alignItems="center"
       flexDirection="column"
+      alignItems="center"
+      justifyContent="center"
       color="white"
       bgcolor={theme.palette.info.main}
       component="a"
