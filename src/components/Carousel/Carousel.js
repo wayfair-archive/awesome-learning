@@ -5,39 +5,37 @@ import TrackCard from './trackCard';
 import { getIcon } from '../../utils';
 import 'react-alice-carousel/lib/scss/alice-carousel.scss';
 
-const Carousel = ({ items }) => {
-  return (
-      <AliceCarousel
-      responsive={{
-        0: {
-          items: 1
-        },
-        481: {
-          items: 3
-        }
-      }}
-      dotsDisabled
-      autoPlayInterval={4000}
-      autoPlayDirection="ltr"
-      autoPlay
-      fadeOutAnimation
-      mouseDragEnabled
-      disableAutoPlayOnAction
-    >
-      {
-        items.map(({title, icon, path}) => (
-          <TrackCard
-            key={title}
-            role="listitem"
-            title={title}
-            icon={getIcon(icon)}
-            path={path}
-          />
-        ))
+const Carousel = ({ items }) => (
+  <AliceCarousel
+    responsive={{
+      0: {
+        items: 1
+      },
+      481: {
+        items: 3
       }
-    </AliceCarousel>
-  );
-};
+    }}
+    dotsDisabled
+    autoPlayInterval={4000}
+    autoPlayDirection="ltr"
+    autoPlay
+    fadeOutAnimation
+    mouseDragEnabled
+    disableAutoPlayOnAction
+  >
+    {
+      items.map(({title, icon, path}) => (
+        <TrackCard
+          key={title}
+          role="listitem"
+          title={title}
+          icon={getIcon(icon)}
+          path={path}
+        />
+      ))
+    }
+  </AliceCarousel>
+);
 
 Carousel.propTypes = {
   items: PropTypes.arrayOf(
