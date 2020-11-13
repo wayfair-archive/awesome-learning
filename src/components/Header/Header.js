@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, StaticQuery } from 'gatsby';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles, useTheme, withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -57,6 +57,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const HeaderButton = withStyles(() => ({
+  root: {
+    borderRadius: 0,
+    borderBottom: '2px solid transparent',
+    '&:hover': {
+      borderBottom: '2px solid white',
+    },
+  },
+}))(Button);
+
 export const PureHeader = ({ data }) => {
   const theme = useTheme();
   const classes = useStyles();
@@ -81,15 +91,15 @@ export const PureHeader = ({ data }) => {
           ? (
             <Box display="flex">
               {menu.map(item =>
-                <Button color="inherit" href={item.path} size="large" className={classes.tab} key={item.label}>{item.label}</Button>
+                <HeaderButton color="inherit" href={item.path} size="large" className={classes.tab} key={item.label}>{item.label}</HeaderButton>
               )}
-              <Button color="inherit"
+              <HeaderButton color="inherit"
                 href="https://github.com/wayfair/awesome-learning"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <GitHubIcon />
-              </Button>
+              </HeaderButton>
             </Box>
           )
           : (<Menu menu={menu} className={classes.menuButton}/>)}

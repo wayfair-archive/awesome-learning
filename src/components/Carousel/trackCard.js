@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import SvgIcon from '@material-ui/core/SvgIcon';
-import {makeStyles, useTheme} from '@material-ui/core/styles';
+import {makeStyles, withStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   content: {
@@ -31,17 +31,25 @@ const useStyles = makeStyles((theme) => ({
 })
 );
 
+const TrackCardBox = withStyles((theme) => ({
+  root: {
+    backgroundColor: theme.palette.info.main,
+    '&:hover': {
+      transition: 'background-color .25s',
+      backgroundColor: theme.palette.info.dark,
+    },
+  },
+}))(Box);
+
 const TrackCard = ({path, icon, title}) => {
   const classes = useStyles();
-  const theme = useTheme();
   return (
-    <Box
+    <TrackCardBox
       display="flex"
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
       color="white"
-      bgcolor={theme.palette.info.main}
       component="a"
       href={path}
       className={classes.content}
@@ -50,7 +58,7 @@ const TrackCard = ({path, icon, title}) => {
         <path d={icon.path}/>
       </SvgIcon>
       <Typography variant="h3" className={classes.title}>{title}</Typography>
-    </Box>
+    </TrackCardBox>
   );
 };
 
