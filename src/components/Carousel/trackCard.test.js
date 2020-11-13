@@ -11,19 +11,13 @@ const PROPS = {
 };
 
 describe('Track Card', () => {
-  test('pass for now', () => {
-    expect(true).toBeTruthy();
-  });
+  it('Renders an icon, and title that link to path', () => {
+    const {queryByText, container} = render(<TrackCard {...PROPS} />);
+    const icon = container.querySelector('svg');
+    const link = container.querySelector('a');
 
-  // it('Renders an icon, title, and subtitle that link to path', () => {
-  //   const {container, getByText} = render(<TrackCard {...PROPS} />);
-  //   const icon = container.querySelector('.TrackCard-icon');
-  //
-  //   expect(icon).toBeTruthy();
-  //   expect(container.querySelector('.TrackCard').getAttribute('to')).toBe(
-  //     PROPS.path
-  //   );
-  //   expect(getByText(PROPS.title)).toBeTruthy();
-  //   expect(getByText(PROPS.subTitle)).toBeTruthy();
-  // });
+    expect(queryByText(PROPS.title)).toBeTruthy();
+    expect(icon).toBeTruthy();
+    expect(link.getAttribute('href')).toBe(PROPS.path);
+  });
 });

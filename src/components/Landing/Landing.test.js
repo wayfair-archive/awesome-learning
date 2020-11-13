@@ -28,52 +28,52 @@ function someElementHasPropValue(nodeList, attributeName, key) {
 }
 
 describe('Landing Component', () => {
-  test('pass for now', () => {
-    expect(true).toBeTruthy();
-  });
-
-  test('Renders a Carousel', () => {
-    const { container } = render(
+  test('Renders a hero', () => {
+    const { queryByText, container } = render(
       <LastLessonProvider>
         <Landing {...PROPS} />
       </LastLessonProvider>
     );
+    expect(queryByText('Awesome Learning')).toBeTruthy();
+    expect(queryByText('Learn front-end tech, together.')).toBeTruthy();
+
+    const links = [...container.querySelectorAll('a')];
+    expect(someElementHasPropValue(links, 'href', '/courses')).toBe(true);
+  });
+
+  test('Renders a Popular Courses Carousel with Title', () => {
+    const { container, queryByText } = render(
+      <LastLessonProvider>
+        <Landing {...PROPS} />
+      </LastLessonProvider>
+    );
+
+    expect(queryByText('Popular Courses')).toBeTruthy();
     expect(container.querySelectorAll('.alice-carousel').length).toBe(1);
   });
-  //
-  // test('Landing-titleWrapper Has Text Content', () => {
-  //   const { container } = render(
-  //     <LastLessonProvider>
-  //       <Landing {...PROPS} />
-  //     </LastLessonProvider>
-  //   );
-  //
-  //   expect(
-  //     container.querySelector('.Landing-titleWrapper').textContent
-  //   ).toBeTruthy();
-  // });
-  //
-  // test('Landing Callout Has Text Content', () => {
-  //   const { container } = render(
-  //     <LastLessonProvider>
-  //       <Landing {...PROPS} />
-  //     </LastLessonProvider>
-  //   );
-  //   expect(
-  //     container.querySelector('.Landing-callOut').textContent
-  //   ).toBeTruthy();
-  // });
-  //
-  // test('Contains a link to /courses and /howTo', () => {
-  //   const { container } = render(
-  //     <LastLessonProvider>
-  //       <Landing {...PROPS} />
-  //     </LastLessonProvider>
-  //   );
-  //
-  //   const links = [...container.querySelectorAll('a')];
-  //
-  //   expect(someElementHasPropValue(links, 'to', '/courses')).toBe(true);
-  //   expect(someElementHasPropValue(links, 'to', '/howTo')).toBe(true);
-  // });
+
+  test('Renders What is Awesome Learning', () => {
+    const { queryByText } = render(
+      <LastLessonProvider>
+        <Landing {...PROPS} />
+      </LastLessonProvider>
+    );
+
+    expect(queryByText('What is Awesome Learning?')).toBeTruthy();
+    expect(queryByText('Awesome Learning is a front-end-web focused learning', {exact: false})).toBeTruthy();
+  });
+
+  test('Renders How Can I Get Started', () => {
+    const { queryByText } = render(
+      <LastLessonProvider>
+        <Landing {...PROPS} />
+      </LastLessonProvider>
+    );
+
+    expect(queryByText('How can I get started?')).toBeTruthy();
+    expect(queryByText('Make a team')).toBeTruthy();
+    expect(queryByText('Pick a course')).toBeTruthy();
+    expect(queryByText('Find a time')).toBeTruthy();
+    expect(queryByText('Start coding')).toBeTruthy();
+  });
 });
