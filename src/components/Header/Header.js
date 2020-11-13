@@ -16,7 +16,7 @@ import Menu from './Menu';
 const useStyles = makeStyles((theme) => ({
   root: {
     justifyContent: 'space-between',
-    minWidth: '350px',
+    minWidth: '320px',
   },
   icon: {
     paddingRight: theme.spacing(2),

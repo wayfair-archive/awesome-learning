@@ -37,11 +37,12 @@
     "no-debugger": 2,
     "implicit-arrow-linebreak": 0,
     "dot-notation": 0,
-    "no-console": [
-      "error", {
-        "allow": ["error"]
-      }
-    ],
+//    "no-console": [
+//      "error", {
+//        "allow": ["error"]
+//      }
+//    ],
+    "no-console": 0,
     "no-param-reassign": [
       "error",
       {

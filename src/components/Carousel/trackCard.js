@@ -15,18 +15,16 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(4),
       marginLeft: theme.spacing(5),
-      marginRight: theme.spacing(5),
+      // marginRight: theme.spacing(5),
       minHeight: '140px',
     },
   },
   title: {
-    marginBotton: theme.spacing(2),
-    fontWeight: 800,
+    marginTop: theme.spacing(3),
   },
-  icon: {
-    marginBottom: theme.spacing(4),
-    minWidth: '42px',
-    minHeight: '42px',
+  svg: {
+    width: '40px',
+    height: '100%',
   },
 })
 );
@@ -54,8 +52,8 @@ const TrackCard = ({path, icon, title}) => {
       href={path}
       className={classes.content}
     >
-      <SvgIcon viewBox={icon.viewbox} className={classes.icon}>
-        <path d={icon.path}/>
+      <SvgIcon viewBox={icon.viewBox} className={classes.svg}>
+        <path d={icon.path} />
       </SvgIcon>
       <Typography variant="h3" className={classes.title}>{title}</Typography>
     </TrackCardBox>

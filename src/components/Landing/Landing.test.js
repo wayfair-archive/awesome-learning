@@ -32,14 +32,14 @@ describe('Landing Component', () => {
     expect(true).toBeTruthy();
   });
 
-  // test('Renders a Carousel', () => {
-  //   const { container } = render(
-  //     <LastLessonProvider>
-  //       <Landing {...PROPS} />
-  //     </LastLessonProvider>
-  //   );
-  //   expect(container.querySelectorAll('.alice-carousel').length).toBe(1);
-  // });
+  test('Renders a Carousel', () => {
+    const { container } = render(
+      <LastLessonProvider>
+        <Landing {...PROPS} />
+      </LastLessonProvider>
+    );
+    expect(container.querySelectorAll('.alice-carousel').length).toBe(1);
+  });
   //
   // test('Landing-titleWrapper Has Text Content', () => {
   //   const { container } = render(

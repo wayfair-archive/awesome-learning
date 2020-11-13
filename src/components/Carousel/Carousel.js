@@ -23,6 +23,7 @@ const Carousel = ({ items }) => (
     disableButtonsControls
     disableDotsControls
     disableAutoPlayOnAction
+    infinite
   >
     {
       items.map(({title, icon, path}) => (
@@ -37,6 +38,7 @@ const Carousel = ({ items }) => (
     }
   </AliceCarousel>
 );
+
 
 Carousel.propTypes = {
   items: PropTypes.arrayOf(
