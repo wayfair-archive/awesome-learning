@@ -7,14 +7,16 @@ describe('PureHeader', () => {
   const title = 'Test Title';
   const expectedData = { site: { siteMetadata: { title, menu } } };
   
-  it('renders title correctly', () => {
-    const { getByText } = render(<PureHeader data={expectedData} />);
-    expect(getByText(title)).toBeTruthy();
+  it('Renders a page title button that links back to the landing', () => {
+    const { queryByText, container } = render(<PureHeader data={expectedData} />);
+    const link = container.querySelector('a');
+    expect(queryByText(title)).toBeTruthy();
+    expect(link.getAttribute('href')).toBe('/');
   });
 
-  it('renders menu labels correctly', () => {
-    const { getByText } = render(<PureHeader data={expectedData} />);
-    expect(getByText('testlabel1')).toBeTruthy();
-    expect(getByText('testlabel2')).toBeTruthy();
+  it('Renders two menu tabs', () => {
+    const { queryByText } = render(<PureHeader data={expectedData} />);
+    expect(queryByText('testlabel1')).toBeTruthy();
+    expect(queryByText('testlabel2')).toBeTruthy();
   });
 });

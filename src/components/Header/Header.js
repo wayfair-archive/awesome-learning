@@ -19,10 +19,15 @@ const useStyles = makeStyles((theme) => ({
     minWidth: '320px',
   },
   icon: {
-    paddingRight: theme.spacing(2),
-    minWidth: '38px',
+    maxWidth: '20px',
+    height: '20px',
+    [theme.breakpoints.up('md')]: {
+      maxWidth: '28px',
+      height: '28px',
+    },
   },
   logo: {
+    paddingLeft: theme.spacing(3),
     fontWeight: 800,
   },
   content: {
@@ -42,9 +47,6 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: "15%",
       paddingRight: "15%",
     },
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
   },
   tab: {
     fontWeight: 800,
@@ -102,7 +104,7 @@ export const PureHeader = ({ data }) => {
               </HeaderButton>
             </Box>
           )
-          : (<Menu menu={menu} className={classes.menuButton}/>)}
+          : (<Menu menu={menu} className={classes.tab}/>)}
       </Toolbar>
     </AppBar>
   );
