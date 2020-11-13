@@ -94,11 +94,11 @@ const useStyles = makeStyles((theme) => ({
       clipPath: 'polygon(0 0, 100% 0, 100% 42%, 0 100%)',
     },
   },
-  popularCourseTitle: {
-    paddingBottom: theme.spacing(2),
+  sectionTitle: {
+    paddingBottom: theme.spacing(6),
     fontWeight: 800,
   },
-  sectionTitle: {
+  getStartedSectionTitle: {
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(4),
     fontWeight: 800,
@@ -114,17 +114,9 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: '15vw',
       paddingRight: '15vw',
     },
-    paddingBottom: theme.spacing(8),
+    paddingBottom: theme.spacing(13),
   },
-  /**
-   * Have to manually clip the carousel to remove the prev/next buttons and dots.
-   * Alice-Carousel's disableButtonsControls prop seems to be broken as of v2.0.2
-   */
-  carouselContainer: {
-    clipPath: 'inset(0 0 110px 0)',
-    marginBottom: '-110px',
-  },
-  getStartedTitle: {
+  getStartedItemTitle: {
     fontWeight: 800,
   },
   getStartedGrid: {
@@ -161,24 +153,20 @@ const Landing = ({courseEdges}) => {
         <Button variant="contained" color="secondary" className={classes.heroCta} href={GET_STARTED_LINK}>Get started</Button>
       </Box>
       <Box className={classes.sectionContainer}>
-        <Typography variant="h2" color="inherit" className={classes.popularCourseTitle}>Popular Courses</Typography>
-        <Box
-          className={classes.carouselContainer}
-        >
-          <Carousel
-            items={courseEdges.map(({node}) => {
-              const {frontmatter, fields} = node;
-              const {title} = frontmatter;
-              return {
-                title,
-                icon: COURSE_DATA_MAPPING[title]
-                  ? COURSE_DATA_MAPPING[title].icon
-                  : 'array',
-                path: fields.slug
-              };
-            })}
-          />
-        </Box>
+        <Typography variant="h2" color="inherit" className={classes.sectionTitle}>Popular Courses</Typography>
+        <Carousel
+          items={courseEdges.map(({node}) => {
+            const {frontmatter, fields} = node;
+            const {title} = frontmatter;
+            return {
+              title,
+              icon: COURSE_DATA_MAPPING[title]
+                ? COURSE_DATA_MAPPING[title].icon
+                : 'array',
+              path: fields.slug
+            };
+          })}
+        />
       </Box>
       <Box className={classes.sectionContainer}>
         <Typography variant="h2" color="inherit" className={classes.sectionTitle}>What is Awesome Learning?</Typography>
@@ -194,7 +182,7 @@ const Landing = ({courseEdges}) => {
         color="white"
         bgcolor={theme.palette.secondary.main}
       >
-        <Typography variant="h2" color="inherit" className={classes.sectionTitle}>How can I get started?</Typography>
+        <Typography variant="h2" color="inherit" className={classes.getStartedSectionTitle}>How can I get started?</Typography>
         <Grid container spacing={3} className={classes.getStartedGrid}>
           {footerData.map(item =>
             <Grid item xs={12} sm={3} key={item.title}>
@@ -204,7 +192,7 @@ const Landing = ({courseEdges}) => {
                 flexDirection="column"
               >
                 <item.icon className={classes.getStartedIcon}/>
-                <Typography variant="body1" color="inherit" className={classes.getStartedTitle}>{item.title}</Typography>
+                <Typography variant="body1" color="inherit" className={classes.getStartedItemTitle}>{item.title}</Typography>
                 <Typography variant="body1" color="inherit">{item.subtitle}</Typography>
               </Box>
             </Grid>

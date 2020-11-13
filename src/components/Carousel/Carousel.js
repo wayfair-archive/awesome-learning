@@ -15,11 +15,13 @@ const Carousel = ({ items }) => (
         items: 3
       }
     }}
-    autoPlayInterval={4000}
+    autoPlayInterval={3000}
     autoPlayDirection="ltr"
     autoPlay
     fadeOutAnimation
     mouseDragEnabled
+    disableButtonsControls
+    disableDotsControls
     disableAutoPlayOnAction
   >
     {

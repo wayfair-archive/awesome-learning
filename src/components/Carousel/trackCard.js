@@ -8,13 +8,15 @@ import {makeStyles, useTheme} from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   content: {
     padding: theme.spacing(2),
-    marginTop: theme.spacing(4),
     minHeight: '160px',
+    maxWidth: '260px',
+    margin: 'auto',
     height: '100%',
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(4),
-      marginLeft: theme.spacing(6),
-      marginRight: theme.spacing(6),
+      marginLeft: theme.spacing(5),
+      marginRight: theme.spacing(5),
+      minHeight: '140px',
     },
   },
   title: {
