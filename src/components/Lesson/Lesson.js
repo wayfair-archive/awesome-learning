@@ -25,8 +25,7 @@ const Lesson = ({lesson, slug}) => {
   const path = slug.toLowerCase().split('/courses/')[1];
   const courseName = course.split('-').join(' ');
   return (
-    <div className="Lesson"> 
-      
+    <div className="Lesson">
       <div className="Lesson-homeButton">
         <StyledLink variation="tertiary" path={`/courses/${course}/`}>
           Back to {courseName}

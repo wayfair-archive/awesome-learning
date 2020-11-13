@@ -2,7 +2,6 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import Lesson from './Lesson';
 import LastLessonProvider from '../../providers/LastLessonProvider';
-import * as LessonButton from '../LessonButton/LessonButton';
 
 const baseLesson = {
   html: "",
@@ -70,14 +69,6 @@ const lessonWithSecondaryUrlAndQuiz = {
   }
 };
 
-const lessonButtonSpy = jest.spyOn(LessonButton, 'default');
-const primativeLessonButtonSpy = jest.spyOn(LessonButton, 'PrimitiveLessonButton');
-
-afterEach(() => {
-  lessonButtonSpy.mockClear();
-  primativeLessonButtonSpy.mockClear();
-});
-
 describe('Lesson', () => {
   it('renders course name and removes hyphens and replaces with spaces', () => {
     const { getByText } = render(<LastLessonProvider><Lesson lesson={lessonExternalQuiz} slug={lessonExternalQuiz.fields.slug}></Lesson></LastLessonProvider>);
@@ -123,16 +114,19 @@ describe('Lesson', () => {
   });
   
   it('renders a link to external lesson if it exists', () => {
-    render(<LastLessonProvider><Lesson lesson={lessonWithSecondaryUrlAndQuiz} slug={lessonWithSecondaryUrlAndQuiz.fields.slug}></Lesson></LastLessonProvider>);
-    expect(primativeLessonButtonSpy).toBeCalledTimes(1);
-    expect(primativeLessonButtonSpy).toBeCalledWith({ path: lessonWithSecondaryUrlAndQuiz.frontmatter.secondaryExerciseUrl, lessonData: lessonWithSecondaryUrlAndQuiz, children: "Start the Workshop" }, {});
+    const {getByText, getByTestId} = render(<LastLessonProvider><Lesson lesson={lessonWithSecondaryUrlAndQuiz} slug={lessonWithSecondaryUrlAndQuiz.fields.slug}></Lesson></LastLessonProvider>);
+    const element = getByTestId(lessonWithSecondaryUrlAndQuiz.frontmatter.secondaryExerciseUrl);
+    expect(element).toBeTruthy();
+    expect(element.href).toMatch(new RegExp(lessonWithSecondaryUrlAndQuiz.frontmatter.secondaryExerciseUrl, 'g'));
+    expect(getByText("Start the Workshop")).toBeTruthy();
   });
 
-  it('renders a link to internal awesome-learning-exercises at correct path', () => {
+  xit('renders a link to internal awesome-learning-exercises at correct path', () => {
     const pathForTestLesson = baseLesson.fields.slug.toLowerCase().split('/courses/')[1];
-    render(<LastLessonProvider><Lesson lesson={lessonWithQuizData} slug={lessonWithQuizData.fields.slug}></Lesson></LastLessonProvider >);
-    expect(lessonButtonSpy).toBeCalledTimes(1);
-    expect(lessonButtonSpy).toBeCalledWith({ defaultTab: 'tests', path: pathForTestLesson, lessonData: lessonWithQuizData }, {});
+    const {getByTestId} = render(<LastLessonProvider><Lesson lesson={lessonWithQuizData} slug={lessonWithQuizData.fields.slug}></Lesson></LastLessonProvider >);
+    const element = getByTestId(pathForTestLesson);
+    expect(element).toBeTruthy();
+    expect(element.href).toMatch(new RegExp(pathForTestLesson, 'g'));
   });
 
   it('renders feedback section', () => {

@@ -39,6 +39,9 @@ const COURSE_DATA_MAPPING = {
   },
   'SOLID Principles': {
     icon: 'solid',
+  },
+  'TypeScript Basics': {
+    icon: 'typescript',
   }
 };
 
