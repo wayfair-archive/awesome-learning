@@ -83,6 +83,9 @@ module.exports = {
     },
     `custom-mui-theme`,
     {
+      resolve: 'gatsby-plugin-eslint'
+    },
+    {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
