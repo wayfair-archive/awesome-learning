@@ -117,12 +117,12 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(8),
   },
   /**
-   * Have to manually clip the carousel to remove the prev/next buttons.
+   * Have to manually clip the carousel to remove the prev/next buttons and dots.
    * Alice-Carousel's disableButtonsControls prop seems to be broken as of v2.0.2
    */
   carouselContainer: {
-    clipPath: 'inset(0 0 56px 0)',
-    marginBottom: '-56px',
+    clipPath: 'inset(0 0 110px 0)',
+    marginBottom: '-110px',
   },
   getStartedTitle: {
     fontWeight: 800,

@@ -15,7 +15,6 @@ const Carousel = ({ items }) => (
         items: 3
       }
     }}
-    dotsDisabled
     autoPlayInterval={4000}
     autoPlayDirection="ltr"
     autoPlay
