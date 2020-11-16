@@ -11,7 +11,10 @@ const Carousel = ({ items }) => (
       0: {
         items: 1
       },
-      481: {
+      630: {
+        items: 2
+      },
+      900: {
         items: 3
       }
     }}

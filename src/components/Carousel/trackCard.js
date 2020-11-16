@@ -24,6 +24,14 @@ const useStyles = makeStyles((theme) => ({
     width: '40px',
     height: '100%',
   },
+  outerCard: {
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
+    [theme.breakpoints.up('lg')]: {
+      paddingLeft: theme.spacing(4),
+      paddingRight: theme.spacing(4),
+    },
+  }
 })
 );
 
@@ -40,21 +48,23 @@ const TrackCardBox = withStyles((theme) => ({
 const TrackCard = ({path, icon, title}) => {
   const classes = useStyles();
   return (
-    <TrackCardBox
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
-      color="white"
-      component="a"
-      href={path}
-      className={classes.content}
-    >
-      <SvgIcon viewBox={icon.viewBox} className={classes.svg}>
-        <path d={icon.path} />
-      </SvgIcon>
-      <Typography variant="h3" className={classes.title}>{title}</Typography>
-    </TrackCardBox>
+    <Box className={classes.outerCard}>
+      <TrackCardBox
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        color="white"
+        component="a"
+        href={path}
+        className={classes.content}
+      >
+        <SvgIcon viewBox={icon.viewBox} className={classes.svg}>
+          <path d={icon.path} />
+        </SvgIcon>
+        <Typography variant="h3" className={classes.title}>{title}</Typography>
+      </TrackCardBox>
+    </Box>
   );
 };
 
