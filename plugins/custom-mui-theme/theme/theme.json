@@ -1,15 +1,25 @@
 {
+  "background": {
+    "default": "#fafafa"
+  },
   "palette": {
+    "common": {
+      "black": "#000",
+      "white": "#fff"
+    },
     "primary": {
       "main": "#2b416a",
       "light": "#fafbfb",
-      "dark": "#1d1820"
+      "dark": "#1d1820",
+      "contrastText": "#fff"
     },
     "secondary": {
-      "main": "#69ADC9"
+      "main": "#69ADC9",
+      "contrastText": "#fff"
     },
     "info": {
-      "main": "#6a6c7a"
+      "main": "#6a6c7a",
+      "contrastText": "#fff"
     }
   },
   "breakpoints": {
@@ -17,18 +27,34 @@
   },
   "typography": {
     "fontFamily": "Muli, Arial, sans-serif",
+    "fontSize": 14,
+    "fontWeightRegular": 400,
+    "fontWeightBold": 700,
     "h1": {
-      "fontSize": "32px"
+      "fontSize": "32px",
+      "fontWeight": 700
     },
     "h2": {
-      "fontSize": "24px"
+      "fontSize": "24px",
+      "fontWeight": 700
     },
     "h3": {
-      "fontSize": "16px"
+      "fontSize": "16px",
+      "fontWeight": 700
     },
     "body1": {
+      "fontSize": "16px",
+      "fontWeight": 400
+    },
+    "body2": {
       "fontFamily": "Varela, Arial, sans-serif",
-      "fontSize": "16px"
+      "fontSize": "16px",
+      "fontWeight": 400
+    }
+  },
+  "transitions": {
+    "duration": {
+      "short": "0.25s"
     }
   },
   "spacing": 4,

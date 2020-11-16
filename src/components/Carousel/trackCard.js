@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import SvgIcon from '@material-ui/core/SvgIcon';
-import {makeStyles, withStyles} from '@material-ui/core/styles';
+import {makeStyles, useTheme, withStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   content: {
@@ -23,13 +23,12 @@ const useStyles = makeStyles((theme) => ({
   svg: {
     width: '40px',
     height: '100%',
+    color: theme.palette.info.contrastText,
   },
   outerCard: {
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2),
+    padding: theme.spacing(0, 2, 0),
     [theme.breakpoints.up('lg')]: {
-      paddingLeft: theme.spacing(4),
-      paddingRight: theme.spacing(4),
+      padding: theme.spacing(0, 4, 0),
     },
   }
 })
@@ -39,7 +38,7 @@ const TrackCardBox = withStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.info.main,
     '&:hover': {
-      transition: 'background-color .25s',
+      transition: `background-color ${theme.transitions.duration.short}`,
       backgroundColor: theme.palette.info.dark,
     },
   },
@@ -47,6 +46,7 @@ const TrackCardBox = withStyles((theme) => ({
 
 const TrackCard = ({path, icon, title}) => {
   const classes = useStyles();
+  const theme = useTheme();
   return (
     <Box className={classes.outerCard}>
       <TrackCardBox
@@ -54,7 +54,7 @@ const TrackCard = ({path, icon, title}) => {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        color="white"
+        color={theme.palette.info.contrastText}
         component="a"
         href={path}
         className={classes.content}
@@ -62,7 +62,7 @@ const TrackCard = ({path, icon, title}) => {
         <SvgIcon viewBox={icon.viewBox} className={classes.svg}>
           <path d={icon.path} />
         </SvgIcon>
-        <Typography variant="h3" className={classes.title}>{title}</Typography>
+        <Typography variant="body1" className={classes.title}>{title}</Typography>
       </TrackCardBox>
     </Box>
   );

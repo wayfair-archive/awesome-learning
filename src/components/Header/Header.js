@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     paddingLeft: theme.spacing(3),
-    fontWeight: 800,
   },
   content: {
     [theme.breakpoints.up('sm')]: {
@@ -48,23 +47,21 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: "15%",
     },
   },
-  tab: {
-    fontWeight: 800,
+}));
+
+const HeaderButton = withStyles((theme) => ({
+  root: {
+    fontWeight: theme.typography.fontWeightBold,
     [theme.breakpoints.up('md')]: {
       marginRight: theme.spacing(1),
     },
     [theme.breakpoints.up('lg')]: {
       marginRight: theme.spacing(2),
     },
-  },
-}));
-
-const HeaderButton = withStyles(() => ({
-  root: {
     borderRadius: 0,
     borderBottom: '2px solid transparent',
     '&:hover': {
-      borderBottom: '2px solid white',
+      borderBottom: `2px solid ${theme.palette.primary.contrastText}`,
     },
   },
 }))(Button);
@@ -93,7 +90,7 @@ export const PureHeader = ({ data }) => {
           ? (
             <Box display="flex">
               {menu.map(item =>
-                <HeaderButton color="inherit" href={item.path} size="large" className={classes.tab} key={item.label}>{item.label}</HeaderButton>
+                <HeaderButton color="inherit" href={item.path} size="large" key={item.label}>{item.label}</HeaderButton>
               )}
               <HeaderButton color="inherit"
                 href="https://github.com/wayfair/awesome-learning"
@@ -104,7 +101,7 @@ export const PureHeader = ({ data }) => {
               </HeaderButton>
             </Box>
           )
-          : (<Menu menu={menu} className={classes.tab}/>)}
+          : (<Menu menu={menu}/>)}
       </Toolbar>
     </AppBar>
   );
