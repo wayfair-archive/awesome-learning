@@ -66,15 +66,27 @@ const useStyles = makeStyles((theme) => ({
   },
   getStartedItemTitle: {
     fontWeight: 800,
+    [theme.breakpoints.down('xs')]: {
+      fontSize: "20px",
+    },
+  },
+  getStartedItemSubtitle: {
+    [theme.breakpoints.down('xs')]: {
+      fontSize: "20px",
+    },
   },
   getStartedGrid: {
     width: '90%',
     margin: 'auto',
   },
   getStartedIcon: {
-    height: '2.5em',
-    width: '2.5em',
+    height: '84px',
+    width: '84px',
     marginBottom: theme.spacing(2),
+    [theme.breakpoints.up('sm')]: {
+      height: '55px',
+      width: '55px',
+    },
   },
   getStartedCTA: {
     paddingTop: theme.spacing(6),
@@ -144,8 +156,8 @@ const Landing = ({courseEdges}) => {
                   flexDirection="column"
                 >
                   <item.icon className={classes.getStartedIcon}/>
-                  <Typography variant="body1" color="inherit" className={classes.getStartedItemTitle}>{item.title}</Typography>
-                  <Typography variant="body1" color="inherit">{item.subtitle}</Typography>
+                  <Typography variant="body1" color="inherit" align="center" className={classes.getStartedItemTitle}>{item.title}</Typography>
+                  <Typography variant="body1" color="inherit" align="center" className={classes.getStartedItemSubtitle}>{item.subtitle}</Typography>
                 </Box>
               </Grid>
             )}
