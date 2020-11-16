@@ -14,8 +14,6 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(4),
-      marginLeft: theme.spacing(5),
-      // marginRight: theme.spacing(5),
       minHeight: '140px',
     },
   },
