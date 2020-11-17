@@ -14,9 +14,13 @@ import { getIcon } from '../../utils';
 import Menu from './Menu';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    justifyContent: 'space-between',
+  toolbar: {
     minWidth: '320px',
+  },
+  logoButton: {
+    '&:hover': {
+      backgroundColor: 'initial',
+    },
   },
   icon: {
     maxWidth: '20px',
@@ -61,6 +65,7 @@ const HeaderButton = withStyles((theme) => ({
     borderRadius: 0,
     borderBottom: '2px solid transparent',
     '&:hover': {
+      backgroundColor: 'initial',
       borderBottom: `2px solid ${theme.palette.primary.contrastText}`,
     },
   },
@@ -75,9 +80,9 @@ export const PureHeader = ({ data }) => {
   const { title, menu } = data.site.siteMetadata;
   return (
     <AppBar position="static" className={classes.content}>
-      <Toolbar className={classes.root}>
+      <Toolbar className={classes.toolbar}>
         <Box display="flex">
-          <Button color="inherit" href="/">
+          <Button color="inherit" href="/" className={classes.logoButton}>
             <SvgIcon viewBox={iconData.viewbox} className={classes.icon}>
               <path d={iconData.path}/>
             </SvgIcon>

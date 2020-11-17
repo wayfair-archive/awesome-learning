@@ -56,6 +56,11 @@
       "root": {
         "textTransform": "none"
       }
+    },
+    "MuiToolbar": {
+      "root": {
+        "justifyContent": "space-between"
+      }
     }
   },
   "spacing": 4,
