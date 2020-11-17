@@ -69,7 +69,7 @@ const HeaderButton = withStyles((theme) => ({
 export const PureHeader = ({ data }) => {
   const theme = useTheme();
   const classes = useStyles();
-  const logoSize = useMediaQuery(theme.breakpoints.up('md')) ? 'h2' : 'h3';
+  const logoElement = useMediaQuery(theme.breakpoints.up('md')) ? 'h2' : 'h3';
   const hideMenu = useMediaQuery('(min-width:560px)');
   const iconData = getIcon('logo');
   const { title, menu } = data.site.siteMetadata;
@@ -81,7 +81,7 @@ export const PureHeader = ({ data }) => {
             <SvgIcon viewBox={iconData.viewbox} className={classes.icon}>
               <path d={iconData.path}/>
             </SvgIcon>
-            <Typography variant={logoSize} className={classes.logo}>
+            <Typography variant={logoElement} className={classes.logo}>
               {title}
             </Typography>
           </Button>
@@ -121,7 +121,7 @@ PureHeader.propTypes = {
   }).isRequired
 };
 
-export const Header = props => (
+const Header = props => (
   <StaticQuery
     query={graphql`
       query HeaderQuery {

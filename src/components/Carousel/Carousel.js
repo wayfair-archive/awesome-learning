@@ -42,7 +42,6 @@ const Carousel = ({ items }) => (
   </AliceCarousel>
 );
 
-
 Carousel.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({

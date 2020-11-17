@@ -37,8 +37,8 @@ const useStyles = makeStyles((theme) => ({
 const TrackCardBox = withStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.info.main,
+    transition: `background-color ${theme.transitions.duration.short}`,
     '&:hover': {
-      transition: `background-color ${theme.transitions.duration.short}`,
       backgroundColor: theme.palette.info.dark,
     },
   },

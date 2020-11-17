@@ -49,7 +49,7 @@ describe('Landing Component', () => {
     );
 
     expect(queryByText('Popular Courses')).toBeTruthy();
-    expect(container.querySelectorAll('.alice-carousel').length).toBe(1);
+    expect(container.querySelectorAll('.alice-carousel')).toHaveLength(1);
   });
 
   test('Renders What is Awesome Learning', () => {

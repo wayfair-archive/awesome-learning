@@ -10,7 +10,8 @@
     "primary": {
       "main": "#2b416a",
       "light": "#fafbfb",
-      "dark": "#1d1820"
+      "dark": "#1d1820",
+      "contrastText": "#fff"
     },
     "secondary": {
       "main": "#69ADC9",
@@ -39,7 +40,7 @@
       "fontWeight": 700
     },
     "body1": {
-      "fontSize": "16px",
+      "fontSize": "20px",
       "fontWeight": 400
     },
     "body2": {
@@ -54,5 +55,5 @@
     }
   },
   "spacing": 4,
-  "themeName": "Awesome Learning"
+  "themeName": "Awesome Learning Public"
 }

@@ -102,7 +102,7 @@ const Landing = ({courseEdges}) => {
       </Box>
       <Box className={classes.sectionContainer}>
         <Box className={classes.sectionContent}>
-          <Typography variant="h2" color="inherit" className={classes.sectionTitle}>Popular Courses</Typography>
+          <Typography variant="h2" color="primary" className={classes.sectionTitle}>Popular Courses</Typography>
           <Carousel
             items={courseEdges.map(({node}) => {
               const {frontmatter, fields} = node;
@@ -120,8 +120,8 @@ const Landing = ({courseEdges}) => {
       </Box>
       <Box className={classes.sectionContainer}>
         <Box className={classes.sectionContent}>
-          <Typography variant="h2" color="inherit" className={classes.sectionTitle}>What is Awesome Learning?</Typography>
-          <Typography variant="body2" color="inherit">
+          <Typography variant="h2" color="primary" className={classes.sectionTitle}>What is Awesome Learning?</Typography>
+          <Typography variant="body2" color="primary">
             Awesome Learning is a front-end-web focused learning platform created by current and former members of Wayfair
             Engineering. Small groups of like-minded engineers gather together in a room or virtually, typically once a
             week, and run through Awesome Learning lessons. Learning materials and pre-read quizzes are done before
@@ -156,9 +156,9 @@ const Landing = ({courseEdges}) => {
           display="flex"
           alignItems="center"
           flexDirection="column"
-          p={theme.spacing(6, 0, 3)}
+          p={theme.spacing(7, 0, 3)}
         >
-          <Button variant="contained" color="primary" href={GET_STARTED_LINK}>Get started</Button>
+          <Button variant="contained" color="primary" size="large" href={GET_STARTED_LINK}>Get started</Button>
         </Box>
       </Box>
     </>
