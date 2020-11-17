@@ -96,8 +96,8 @@ const Landing = ({courseEdges}) => {
         color={theme.palette.primary.contrastText}
         bgcolor={theme.palette.primary.main}
       >
-        <Typography variant="h1" color="inherit" className={classes.heroTitle}>Awesome Learning</Typography>
-        <Typography variant="body2" className={classes.heroSubtitle}>Learn front-end tech, together.</Typography>
+        <Typography variant="h1" color="inherit" align="center" className={classes.heroTitle}>Awesome Learning</Typography>
+        <Typography variant="body2" align="center" className={classes.heroSubtitle}>Learn front-end tech, together.</Typography>
         <Button variant="contained" color="secondary" className={classes.heroCta} href={GET_STARTED_LINK}>Get started</Button>
       </Box>
       <Box className={classes.sectionContainer}>

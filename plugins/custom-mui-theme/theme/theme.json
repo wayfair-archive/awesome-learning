@@ -1,7 +1,4 @@
 {
-  "background": {
-    "default": "#fafafa"
-  },
   "palette": {
     "common": {
       "black": "#000",
@@ -28,30 +25,37 @@
     "fontFamily": "Muli, Arial, sans-serif",
     "fontWeightBold": 700,
     "h1": {
-      "fontSize": "32px",
+      "fontSize": "2rem",
       "fontWeight": 700
     },
     "h2": {
-      "fontSize": "24px",
+      "fontSize": "1.5rem",
       "fontWeight": 700
     },
     "h3": {
-      "fontSize": "16px",
+      "fontSize": "1rem",
       "fontWeight": 700
     },
     "body1": {
-      "fontSize": "20px",
+      "fontSize": "1.25rem",
       "fontWeight": 400
     },
     "body2": {
       "fontFamily": "Varela, Arial, sans-serif",
-      "fontSize": "16px",
+      "fontSize": "1rem",
       "fontWeight": 400
     }
   },
   "transitions": {
     "duration": {
       "short": "0.25s"
+    }
+  },
+  "overrides": {
+    "MuiButton": {
+      "root": {
+        "textTransform": "none"
+      }
     }
   },
   "spacing": 4,
