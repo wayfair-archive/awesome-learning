@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import Box from '@material-ui/core/Box';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
@@ -80,7 +80,7 @@ const Lesson = ({lesson, slug}) => {
       <Box className={classes.sectionContainer}>
         <Typography variant="h1" className={classes.sectionTitle}>{title}</Typography>
         {timeToCompletion && (
-          <Typography variant="body1" className={classes.timeToCompletion}><Box display="inline" fontWeight="fontWeightBold">Average time to completion ={' '}</Box>{timeToCompletion}</Typography>
+          <Typography variant="body1" className={classes.timeToCompletion}><Box display="inline" fontWeight="fontWeightBold" component="span">Average time to completion ={' '}</Box>{timeToCompletion}</Typography>
         )}
         {descriptionParagraphs.map((paragraph, key) => (
           <Typography variant="body1" key={key} className={classes.paragraphContainer}>{paragraph}</Typography>
@@ -95,7 +95,7 @@ const Lesson = ({lesson, slug}) => {
         </Typography>
         <Grid container>
           {videoLinks && videoLinks.map(link => (
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} key={link}>
               <Box className={classes.videoContainer}>
                 <Box className={classes.responsiveVideoFrameWrapper}>
                   <iframe
@@ -125,7 +125,7 @@ const Lesson = ({lesson, slug}) => {
           matter.
         </Typography>
         {readingLinks.map(readingLink => (
-          <>
+          <Fragment key={readingLink.title}>
             <Typography
               color="secondary"
               variant="h3"
@@ -138,7 +138,7 @@ const Lesson = ({lesson, slug}) => {
               {readingLink.title}
             </Typography>
             <Typography variant="body2" className={classes.paragraphContainer}>&#8226;{' '}{readingLink.description}</Typography>
-          </>
+          </Fragment>
         ))}
       </Box>
 
