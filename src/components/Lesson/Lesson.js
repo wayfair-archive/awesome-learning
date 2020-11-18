@@ -26,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'underline',
     paddingBottom: theme.spacing(5),
   },
+  sectionContainer: {
+    paddingBottom: theme.spacing(8),
+  },
   timeToCompletion: {
     paddingBottom: theme.spacing(5),
   },
@@ -57,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
 })
 );
 
-const Lesson = ({lesson,}) => {
+const Lesson = ({lesson, slug}) => {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -67,8 +70,8 @@ const Lesson = ({lesson,}) => {
     timeToCompletion,
     videoLinks,
     // readingLinks,
-    // preReadQuizLink,
-    // preReadQuiz,
+    preReadQuizLink,
+    preReadQuiz,
     course,
     // defaultTab,
     // secondaryExerciseUrl
@@ -82,58 +85,70 @@ const Lesson = ({lesson,}) => {
   return (
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
       <Button color="secondary" size="large" href={`/courses/${course}/`} className={classes.backToCourseButton}>Back to {courseName}</Button>
-      <Typography variant="h1" className={classes.sectionTitle}>{title}</Typography>
-      {timeToCompletion && (
-        <Typography variation="body1" className={classes.timeToCompletion}><Box display="inline" fontWeight="fontWeightBold">Average time to completion ={' '}</Box>{timeToCompletion}</Typography>
-      )}
-      {descriptionParagraphs.map((paragraph, key) => (
-        <Typography variation="body1" key={key} className={classes.paragraphContainer}>{paragraph}</Typography>
-      ))}
-
-      <Typography variant="h1" className={classes.sectionTitle}>Pre-Session Video Materials (required)</Typography>
-      <Typography variation="body1" className={classes.paragraphContainer}>
-        Check out this content before your session begins to get an idea of
-        what you will be working on.
-      </Typography>
-      <Grid container>
-        {videoLinks && videoLinks.map(link => (
-          <Grid item xs={12} md={6}>
-            <Box className={classes.videoContainer}>
-              <Box className={classes.responsiveVideoFrameWrapper}>
-                <iframe
-                  data-testid={link}
-                  key={link}
-                  src={link}
-                  allow="autoplay; encrypted-media"
-                  allowFullScreen
-                  className={classes.videoFrame}
-                />
-              </Box>
-            </Box>
-          </Grid>
+      <Box className={classes.sectionContainer}>
+        <Typography variant="h1" className={classes.sectionTitle}>{title}</Typography>
+        {timeToCompletion && (
+          <Typography variation="body1" className={classes.timeToCompletion}><Box display="inline" fontWeight="fontWeightBold">Average time to completion ={' '}</Box>{timeToCompletion}</Typography>
+        )}
+        {descriptionParagraphs.map((paragraph, key) => (
+          <Typography variation="body1" key={key} className={classes.paragraphContainer}>{paragraph}</Typography>
         ))}
-      </Grid>
+      </Box>
 
-      <Typography variant="h1" className={classes.sectionTitle}>Pre-Session Reading Materials (optional)</Typography>
-      <Typography variation="body1" className={classes.paragraphContainer}>
-        We've curated these resources to give you greater depth on these
-        subjects. Don't feel like you have to read them all.
-      </Typography>
-      <Typography variation="body1" className={classes.paragraphContainer}>
-        Taking the time to go through all of these resources will definitely
-        put you on the road to expert-level knowledge in this subject
-        matter.
-      </Typography>
+      <Box className={classes.sectionContainer}>
+        <Typography variant="h1" className={classes.sectionTitle}>Pre-Session Video Materials (required)</Typography>
+        <Typography variation="body1" className={classes.paragraphContainer}>
+          Check out this content before your session begins to get an idea of
+          what you will be working on.
+        </Typography>
+        <Grid container>
+          {videoLinks && videoLinks.map(link => (
+            <Grid item xs={12} md={6}>
+              <Box className={classes.videoContainer}>
+                <Box className={classes.responsiveVideoFrameWrapper}>
+                  <iframe
+                    data-testid={link}
+                    key={link}
+                    src={link}
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                    className={classes.videoFrame}
+                  />
+                </Box>
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
 
+      <Box className={classes.sectionContainer}>
+        <Typography variant="h1" className={classes.sectionTitle}>Pre-Session Reading Materials (optional)</Typography>
+        <Typography variation="body1" className={classes.paragraphContainer}>
+          We've curated these resources to give you greater depth on these
+          subjects. Don't feel like you have to read them all.
+        </Typography>
+        <Typography variation="body1" className={classes.paragraphContainer}>
+          Taking the time to go through all of these resources will definitely
+          put you on the road to expert-level knowledge in this subject
+          matter.
+        </Typography>
+      </Box>
 
+      {(preReadQuiz || preReadQuizLink) && (
+        <Box className={classes.sectionContainer}>
+          <Typography variant="h1" className={classes.sectionTitle}>Pre-Session Quiz</Typography>
+          <Typography variation="body1" className={classes.paragraphContainer}>
+            This pre-read quiz is designed to challenge your knowledge of the
+            pre-read material. These quizzes are a great way to check your
+            comprehension, and we highly recommend taking them.
+          </Typography>
+          <Button variant="contained" color="primary" size="large" href={preReadQuiz !== null ? `${slug}/quiz` : preReadQuizLink}>Take the Quiz</Button>
+        </Box>
+      )}
 
-
-
-
-
-      <Typography variant="h1" className={classes.sectionTitle}>Pre-Session Quiz</Typography>
-
-      <Typography variant="h1" className={classes.sectionTitle}>Exercises</Typography>
+      <Box className={classes.sectionContainer}>
+        <Typography variant="h1" className={classes.sectionTitle}>Exercises</Typography>
+      </Box>
 
     </Box>
   );
