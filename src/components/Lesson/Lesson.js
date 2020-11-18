@@ -8,7 +8,7 @@ import Box from '@material-ui/core/Box';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-// import Grid from '@material-ui/core/Grid';
+import Grid from '@material-ui/core/Grid';
 
 // import './lesson.scss';
 
@@ -33,7 +33,8 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(4),
   },
   videoContainer: {
-
+    maxWidth: "100%",
+    margin: theme.spacing(4),
   },
   responsiveVideoFrameWrapper: {
     position: 'relative',
@@ -94,26 +95,41 @@ const Lesson = ({lesson,}) => {
         Check out this content before your session begins to get an idea of
         what you will be working on.
       </Typography>
-
-      {videoLinks && videoLinks.map(link => (
-        <Box className={classes.videoContainer}>
-          <Box className={classes.responsiveVideoFrameWrapper}>
-            <iframe
-              data-testid={link}
-              key={link}
-              src={link}
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              className={classes.videoFrame}
-            />
-          </Box>
-        </Box>
-      ))}
-
-
-
+      <Grid container>
+        {videoLinks && videoLinks.map(link => (
+          <Grid item xs={12} md={6}>
+            <Box className={classes.videoContainer}>
+              <Box className={classes.responsiveVideoFrameWrapper}>
+                <iframe
+                  data-testid={link}
+                  key={link}
+                  src={link}
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  className={classes.videoFrame}
+                />
+              </Box>
+            </Box>
+          </Grid>
+        ))}
+      </Grid>
 
       <Typography variant="h1" className={classes.sectionTitle}>Pre-Session Reading Materials (optional)</Typography>
+      <Typography variation="body1" className={classes.paragraphContainer}>
+        We've curated these resources to give you greater depth on these
+        subjects. Don't feel like you have to read them all.
+      </Typography>
+      <Typography variation="body1" className={classes.paragraphContainer}>
+        Taking the time to go through all of these resources will definitely
+        put you on the road to expert-level knowledge in this subject
+        matter.
+      </Typography>
+
+
+
+
+
+
 
       <Typography variant="h1" className={classes.sectionTitle}>Pre-Session Quiz</Typography>
 
@@ -145,29 +161,6 @@ export default Lesson;
 
 /*
     <div className="Lesson">
-      <ContentSection
-        title=" "
-        subTitle="Pre-Session Learning Materials (required)"
-      >
-        <Block is="p" mb="16px">
-          Check out this content before your session begins to get an idea of
-          what you will be working on.
-        </Block>
-        {videoLinks &&
-          videoLinks.map(link => (
-            <iframe
-              data-testid={link}
-              key={link}
-              width="100%"
-              height="315"
-              src={link}
-              frameBorder="0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-            />
-          ))}
-      </ContentSection>
-
       {readingLinks && (
         <ContentSection title=" " subTitle="Pre-read Materials">
           <Block is="p" mb="16px">
