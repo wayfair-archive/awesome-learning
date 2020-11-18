@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     paddingLeft: theme.spacing(3),
+    textTransform: 'uppercase',
   },
   content: {
     [theme.breakpoints.up('sm')]: {

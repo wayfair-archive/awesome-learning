@@ -1,9 +1,11 @@
 import React from 'react';
 import {graphql, StaticQuery} from 'gatsby';
 import PropTypes from 'prop-types';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import {makeStyles} from '@material-ui/core/styles';
 import {useLastLessonContext} from '../../providers/LastLessonProvider';
 import analyticsEventHandler from '../../utils/analyticsEventHandler';
-import './LessonButton.scss';
 
 const handleEventClick = path => {
   try {
@@ -13,27 +15,38 @@ const handleEventClick = path => {
   }
 };
 
+const useStyles = makeStyles((theme) => ({
+  button: {
+    padding: theme.spacing(3),
+  },
+}));
+
 export const PrimitiveLessonButton = ({
   path,
   onClick = handleEventClick,
   children,
   lessonData
 }) => {
+  const classes = useStyles();
   const {setLastLessonVisited} = useLastLessonContext();
   return (
-    <a
+    <Button
+      color="secondary"
+      variant="contained"
       data-testid={path}
       href={path}
-      className="LessonButton-link"
       rel="noopener noreferrer"
       target="_blank"
       onClick={() => {
         if (lessonData) setLastLessonVisited(lessonData);
         onClick(path);
       }}
+      className={classes.button}
     >
-      {children}
-    </a>
+      <Typography variant="h2" color="inherit">
+        {children}
+      </Typography>
+    </Button>
   );
 };
 
