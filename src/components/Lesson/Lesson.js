@@ -1,51 +1,150 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StyledLink from '../shared/StyledLink';
-import Block from '../shared/Block';
-import LessonButton, {PrimitiveLessonButton} from '../LessonButton';
-import ContentSection from '../shared/ContentSection';
-import './lesson.scss';
+// import StyledLink from '../shared/StyledLink';
+// import Block from '../shared/Block';
+// import LessonButton, {PrimitiveLessonButton} from '../LessonButton';
+// import ContentSection from '../shared/ContentSection';
+import Box from '@material-ui/core/Box';
+import {makeStyles, useTheme} from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+// import Grid from '@material-ui/core/Grid';
 
-const Lesson = ({lesson, slug}) => {
+// import './lesson.scss';
+
+const useStyles = makeStyles((theme) => ({
+  backToCourseButton: {
+    fontWeight: theme.typography.fontWeightBold,
+    padding: theme.spacing(0, 0, 2),
+    borderRadius: 0,
+    '&:hover': {
+      backgroundColor: 'initial',
+      textDecoration: 'underline',
+    },
+  },
+  sectionTitle: {
+    textDecoration: 'underline',
+    paddingBottom: theme.spacing(5),
+  },
+  timeToCompletion: {
+    paddingBottom: theme.spacing(5),
+  },
+  paragraphContainer: {
+    paddingBottom: theme.spacing(4),
+  },
+  videoContainer: {
+
+  },
+  responsiveVideoFrameWrapper: {
+    position: 'relative',
+    overflow: 'hidden',
+    width: '100%',
+    paddingTop: '56.25%', // 16:9 aspect ratio
+  },
+  videoFrame: {
+    border: 'none',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    width: '100%',
+    height: '100%',
+  },
+
+
+})
+);
+
+const Lesson = ({lesson,}) => {
+  const classes = useStyles();
+  const theme = useTheme();
+
   const {
     title,
     description,
     timeToCompletion,
     videoLinks,
-    readingLinks,
-    preReadQuizLink,
-    preReadQuiz,
+    // readingLinks,
+    // preReadQuizLink,
+    // preReadQuiz,
     course,
-    defaultTab,
-    secondaryExerciseUrl
+    // defaultTab,
+    // secondaryExerciseUrl
   } = lesson.frontmatter;
-
-  // Split the description into different paragraphs based on new lines
+  //
+  // // Split the description into different paragraphs based on new lines
   const descriptionParagraphs = description.split(/\r?\n\n/);
-  const path = slug.toLowerCase().split('/courses/')[1];
+  // const path = slug.toLowerCase().split('/courses/')[1];
   const courseName = course.split('-').join(' ');
+
   return (
+    <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
+      <Button color="secondary" size="large" href={`/courses/${course}/`} className={classes.backToCourseButton}>Back to {courseName}</Button>
+      <Typography variant="h1" className={classes.sectionTitle}>{title}</Typography>
+      {timeToCompletion && (
+        <Typography variation="body1" className={classes.timeToCompletion}><Box display="inline" fontWeight="fontWeightBold">Average time to completion ={' '}</Box>{timeToCompletion}</Typography>
+      )}
+      {descriptionParagraphs.map((paragraph, key) => (
+        <Typography variation="body1" key={key} className={classes.paragraphContainer}>{paragraph}</Typography>
+      ))}
+
+      <Typography variant="h1" className={classes.sectionTitle}>Pre-Session Video Materials (required)</Typography>
+      <Typography variation="body1" className={classes.paragraphContainer}>
+        Check out this content before your session begins to get an idea of
+        what you will be working on.
+      </Typography>
+
+      {videoLinks && videoLinks.map(link => (
+        <Box className={classes.videoContainer}>
+          <Box className={classes.responsiveVideoFrameWrapper}>
+            <iframe
+              data-testid={link}
+              key={link}
+              src={link}
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              className={classes.videoFrame}
+            />
+          </Box>
+        </Box>
+      ))}
+
+
+
+
+      <Typography variant="h1" className={classes.sectionTitle}>Pre-Session Reading Materials (optional)</Typography>
+
+      <Typography variant="h1" className={classes.sectionTitle}>Pre-Session Quiz</Typography>
+
+      <Typography variant="h1" className={classes.sectionTitle}>Exercises</Typography>
+
+    </Box>
+  );
+};
+
+Lesson.propTypes = {
+  lesson: PropTypes.shape({
+    frontmatter: PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+      timeToCompletion: PropTypes.node,
+      videoLinks: PropTypes.array,
+      readingLinks: PropTypes.array,
+      preReadQuizLink: PropTypes.string,
+      preReadQuiz: PropTypes.any,
+      course: PropTypes.string,
+      defaultTab: PropTypes.string,
+      secondaryExerciseUrl: PropTypes.string
+    })
+  }).isRequired,
+  slug: PropTypes.string.isRequired
+};
+
+export default Lesson;
+
+/*
     <div className="Lesson">
-      <div className="Lesson-homeButton">
-        <StyledLink variation="tertiary" path={`/courses/${course}/`}>
-          Back to {courseName}
-        </StyledLink>
-      </div>
-
-      <ContentSection title={title}>
-        {timeToCompletion && (
-          <p>
-            ⌛ Average time to completion ={' '}
-            <span className="Lesson-time">{timeToCompletion} ⌛</span>
-          </p>
-        )}
-        {descriptionParagraphs.map((paragraph, key) => (
-          <Block is="p" key={key} mb="16px">
-            {paragraph}
-          </Block>
-        ))}
-      </ContentSection>
-
       <ContentSection
         title=" "
         subTitle="Pre-Session Learning Materials (required)"
@@ -146,25 +245,4 @@ const Lesson = ({lesson, slug}) => {
         </StyledLink>
       </ContentSection>
     </div>
-  );
-};
-
-Lesson.propTypes = {
-  lesson: PropTypes.shape({
-    frontmatter: PropTypes.shape({
-      title: PropTypes.string,
-      description: PropTypes.string,
-      timeToCompletion: PropTypes.node,
-      videoLinks: PropTypes.array,
-      readingLinks: PropTypes.array,
-      preReadQuizLink: PropTypes.string,
-      preReadQuiz: PropTypes.any,
-      course: PropTypes.string,
-      defaultTab: PropTypes.string,
-      secondaryExerciseUrl: PropTypes.string
-    })
-  }).isRequired,
-  slug: PropTypes.string.isRequired
-};
-
-export default Lesson;
+ */

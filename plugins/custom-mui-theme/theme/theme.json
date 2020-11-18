@@ -36,6 +36,10 @@
       "fontSize": "1rem",
       "fontWeight": 700
     },
+    "h4": {
+      "fontSize": ".75rem",
+      "fontWeight": 700
+    },
     "body1": {
       "fontSize": "1.25rem",
       "fontWeight": 400
