@@ -23,6 +23,7 @@
   },
   "typography": {
     "fontFamily": "Muli, Arial, sans-serif",
+    "fontWeightRegular": 400,
     "fontWeightBold": 700,
     "h1": {
       "fontSize": "2rem",
@@ -33,18 +34,22 @@
       "fontWeight": 700
     },
     "h3": {
-      "fontSize": "1rem",
+      "fontSize": "1.25rem",
       "fontWeight": 700
     },
     "h4": {
+      "fontSize": "1rem",
+      "fontWeight": 700
+    },
+    "h5": {
       "fontSize": ".75rem",
       "fontWeight": 700
     },
-    "body1": {
-      "fontSize": "1.25rem",
-      "fontWeight": 400
+    "h6": {
+      "fontSize": ".5rem",
+      "fontWeight": 700
     },
-    "body2": {
+    "body1": {
       "fontFamily": "Varela, Arial, sans-serif",
       "fontSize": "1rem",
       "fontWeight": 400
@@ -59,11 +64,20 @@
     "MuiButton": {
       "root": {
         "textTransform": "none"
+      },
+      "containedPrimary": {
+        "padding": "6px 28px"
+      },
+      "text": {
+        "&:hover": {
+          "backgroundColor": "initial"
+        }
       }
     },
     "MuiToolbar": {
       "root": {
-        "justifyContent": "space-between"
+        "justifyContent": "space-between",
+        "minWidth": "320px"
       }
     }
   },

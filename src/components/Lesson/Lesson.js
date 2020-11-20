@@ -5,41 +5,19 @@ import {makeStyles, useTheme} from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import ResponsiveVideo from '../shared/ResponsiveVideo';
 import LessonButton, {PrimitiveLessonButton} from '../LessonButton';
 
 const useStyles = makeStyles((theme) => ({
   sectionTitle: {
     textDecoration: 'underline',
-    padding: theme.spacing(3, 0, 5),
+    padding: theme.spacing(3, 0, 6),
   },
   sectionContainer: {
     paddingBottom: theme.spacing(8),
   },
-  timeToCompletion: {
-    paddingBottom: theme.spacing(5),
-  },
   paragraphContainer: {
     paddingBottom: theme.spacing(4),
-  },
-  videoContainer: {
-    maxWidth: "100%",
-    margin: theme.spacing(4),
-  },
-  responsiveVideoFrameWrapper: {
-    position: 'relative',
-    overflow: 'hidden',
-    width: '100%',
-    paddingTop: '56.25%', // 16:9 aspect ratio
-  },
-  videoFrame: {
-    border: 'none',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
-    width: '100%',
-    height: '100%',
   },
   linkTitle: {
     textTransform: 'uppercase',
@@ -55,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
 const Lesson = ({lesson, slug}) => {
   const classes = useStyles();
   const theme = useTheme();
-
   const {
     title,
     description,
@@ -80,7 +57,7 @@ const Lesson = ({lesson, slug}) => {
       <Box className={classes.sectionContainer}>
         <Typography variant="h1" className={classes.sectionTitle}>{title}</Typography>
         {timeToCompletion && (
-          <Typography variant="body1" className={classes.timeToCompletion}><Box display="inline" fontWeight="fontWeightBold" component="span">Average time to completion ={' '}</Box>{timeToCompletion}</Typography>
+          <Typography variant="body1" className={classes.paragraphContainer}><Box display="inline" fontWeight="fontWeightBold" component="span">Average time to completion ={' '}</Box>{timeToCompletion}</Typography>
         )}
         {descriptionParagraphs.map((paragraph, key) => (
           <Typography variant="body1" key={key} className={classes.paragraphContainer}>{paragraph}</Typography>
@@ -96,18 +73,7 @@ const Lesson = ({lesson, slug}) => {
         <Grid container>
           {videoLinks && videoLinks.map(link => (
             <Grid item xs={12} md={6} key={link}>
-              <Box className={classes.videoContainer}>
-                <Box className={classes.responsiveVideoFrameWrapper}>
-                  <iframe
-                    data-testid={link}
-                    key={link}
-                    src={link}
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
-                    className={classes.videoFrame}
-                  />
-                </Box>
-              </Box>
+              <ResponsiveVideo link={link}/>
             </Grid>
           ))}
         </Grid>
@@ -128,7 +94,7 @@ const Lesson = ({lesson, slug}) => {
           <Fragment key={readingLink.title}>
             <Typography
               color="secondary"
-              variant="h3"
+              variant="h4"
               component="a"
               href={readingLink.link}
               rel="noopener noreferrer"
@@ -137,7 +103,7 @@ const Lesson = ({lesson, slug}) => {
             >
               {readingLink.title}
             </Typography>
-            <Typography variant="body2" className={classes.paragraphContainer}>&#8226;{' '}{readingLink.description}</Typography>
+            <Typography variant="body1" className={classes.paragraphContainer}>&#8226;{' '}{readingLink.description}</Typography>
           </Fragment>
         ))}
       </Box>
@@ -150,7 +116,7 @@ const Lesson = ({lesson, slug}) => {
             pre-read material. These quizzes are a great way to check your
             comprehension, and we highly recommend taking them.
           </Typography>
-          <Button variant="contained" color="primary" size="large" href={preReadQuiz !== null ? `${slug}/quiz` : preReadQuizLink}>Take the Quiz</Button>
+          <Button variant="contained" color="primary" href={preReadQuiz !== null ? `${slug}/quiz` : preReadQuizLink}>Take the Quiz</Button>
         </Box>
       )}
 

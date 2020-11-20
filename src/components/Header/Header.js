@@ -14,13 +14,8 @@ import { getIcon } from '../../utils';
 import Menu from './Menu';
 
 const useStyles = makeStyles((theme) => ({
-  toolbar: {
-    minWidth: '320px',
-  },
   logoButton: {
-    '&:hover': {
-      backgroundColor: 'initial',
-    },
+    display: 'flex',
   },
   icon: {
     maxWidth: '20px',
@@ -40,23 +35,22 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: theme.spacing(1),
     },
     [theme.breakpoints.up('md')]: {
-      paddingLeft: "5%",
-      paddingRight: "5%",
+      paddingLeft: "5vw",
+      paddingRight: "5vw",
     },
     [theme.breakpoints.up('lg')]: {
-      paddingLeft: "10%",
-      paddingRight: "10%",
+      paddingLeft: "10vw",
+      paddingRight: "10vw",
     },
     [theme.breakpoints.up('xl')]: {
-      paddingLeft: "15%",
-      paddingRight: "15%",
+      paddingLeft: "15vw",
+      paddingRight: "15vw",
     },
   },
 }));
 
 const HeaderButton = withStyles((theme) => ({
   root: {
-    fontWeight: theme.typography.fontWeightBold,
     [theme.breakpoints.up('md')]: {
       marginRight: theme.spacing(1),
     },
@@ -75,23 +69,21 @@ const HeaderButton = withStyles((theme) => ({
 export const PureHeader = ({ data }) => {
   const theme = useTheme();
   const classes = useStyles();
-  const logoElement = useMediaQuery(theme.breakpoints.up('md')) ? 'h2' : 'h3';
+  const logoElement = useMediaQuery(theme.breakpoints.up('md')) ? 'h2' : 'h4';
   const hideMenu = useMediaQuery('(min-width:560px)');
   const iconData = getIcon('logo');
   const { title, menu } = data.site.siteMetadata;
   return (
     <AppBar position="static" className={classes.content}>
-      <Toolbar className={classes.toolbar}>
-        <Box display="flex">
-          <Button color="inherit" href="/" className={classes.logoButton}>
-            <SvgIcon viewBox={iconData.viewbox} className={classes.icon}>
-              <path d={iconData.path}/>
-            </SvgIcon>
-            <Typography variant={logoElement} className={classes.logo}>
-              {title}
-            </Typography>
-          </Button>
-        </Box>
+      <Toolbar>
+        <Button color="inherit" href="/" className={classes.logoButton}>
+          <SvgIcon viewBox={iconData.viewbox} className={classes.icon}>
+            <path d={iconData.path}/>
+          </SvgIcon>
+          <Typography variant={logoElement} className={classes.logo}>
+            {title}
+          </Typography>
+        </Button>
         {hideMenu
           ? (
             <Box display="flex">
@@ -107,7 +99,7 @@ export const PureHeader = ({ data }) => {
               </HeaderButton>
             </Box>
           )
-          : (<Menu menu={menu}/>)}
+          : <Menu menu={menu}/>}
       </Toolbar>
     </AppBar>
   );
