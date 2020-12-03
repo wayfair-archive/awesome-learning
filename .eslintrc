@@ -44,6 +44,12 @@
         "props": false
       }
     ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["@material-ui/*/*/*", "!@material-ui/core/test-utils/*"]
+      }
+    ],
     "no-use-before-define": 2,
     "no-shadow": 0,
     "react/jsx-no-undef": 1,
