@@ -1,21 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StyledLink from '../../shared/StyledLink';
+import {Button, Box} from '@material-ui/core';
+import {useTheme} from '@material-ui/core/styles';
+
 import './Tags.scss';
 
-const Tags = ({ tags, tagSlugs }) => (
-  <div className="Tags">
-    <ul className="Tags-list">
+const Tags = ({ tags, tagSlugs }) => {
+  const theme = useTheme();
+  return (
+    <div className="Tags">
       {tagSlugs.map((slug, i) => (
-        <li className="Tags-listItem" key={`${tags[i]}slug`}>
-          <StyledLink variation="pill" path={slug}>
+        <Box display="inline" m={theme.spacing(2,1)} key={`${tags[i]}slug`}>
+          <Button variant="outlined" color="primary" href={slug}>
             {tags[i]}
-          </StyledLink>
-        </li>
+          </Button>
+        </Box>
       ))}
-    </ul>
-  </div>
-);
+    </div>
+  );
+};
 
 Tags.propTypes = {
   tags: PropTypes.array.isRequired,

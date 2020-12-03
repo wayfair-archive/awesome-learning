@@ -10,7 +10,6 @@ import LessonButton, {PrimitiveLessonButton} from '../LessonButton';
 
 const useStyles = makeStyles((theme) => ({
   sectionTitle: {
-    textDecoration: 'underline',
     padding: theme.spacing(3, 0, 6),
   },
   sectionContainer: {
@@ -57,7 +56,7 @@ const Lesson = ({lesson, slug}) => {
       <Box className={classes.sectionContainer}>
         <Typography variant="h1" className={classes.sectionTitle}>{title}</Typography>
         {timeToCompletion && (
-          <Typography variant="body1" className={classes.paragraphContainer}><Box display="inline" fontWeight="fontWeightBold" component="span">Average time to completion ={' '}</Box>{timeToCompletion}</Typography>
+          <Typography variant="body1" className={classes.paragraphContainer}><b>Average time to completion ={' '}</b>{timeToCompletion}</Typography>
         )}
         {descriptionParagraphs.map((paragraph, key) => (
           <Typography variant="body1" key={key} className={classes.paragraphContainer}>{paragraph}</Typography>

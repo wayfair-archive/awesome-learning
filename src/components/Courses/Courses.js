@@ -44,7 +44,7 @@ const Courses = ({ edges }) => {
         .map(edge => (
           <Box key={edge.node.frontmatter.title} className={classes.courseContainer}>
             <Typography
-              variant="h3"
+              variant="h2"
               component="a"
               display="block"
               color="textPrimary"
@@ -55,7 +55,7 @@ const Courses = ({ edges }) => {
             </Typography>
             <Typography
               color="textSecondary"
-              variant="body1"
+              variant="h4"
               component="a"
               display="block"
               href={edge.node.fields.categorySlug}

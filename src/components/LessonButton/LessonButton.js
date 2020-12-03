@@ -1,8 +1,7 @@
 import React from 'react';
 import {graphql, StaticQuery} from 'gatsby';
 import PropTypes from 'prop-types';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import {Button, Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import {useLastLessonContext} from '../../providers/LastLessonProvider';
 import analyticsEventHandler from '../../utils/analyticsEventHandler';
