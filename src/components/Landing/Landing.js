@@ -1,9 +1,6 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
+import {Typography, Box, Button, Grid} from '@material-ui/core';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
 import Carousel from '../Carousel';
 import {GET_STARTED_LINK, COURSE_DATA_MAPPING, FOOTER_DATA} from './LandingConstants';
 

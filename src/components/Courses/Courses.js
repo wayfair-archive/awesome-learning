@@ -1,10 +1,8 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import Box from '@material-ui/core/Box';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import Pagination from '@material-ui/lab/Pagination';
+import {Box, Typography, Button} from '@material-ui/core';
+import {Pagination} from '@material-ui/lab';
 
 const COURSES_LINK = '/courses';
 
@@ -44,7 +42,7 @@ const Courses = ({ edges }) => {
       {edges
         .slice((page - 1) * itemsPerPage, page * itemsPerPage)
         .map(edge => (
-          <Box key={edge.node.fields.slug} className={classes.courseContainer}>
+          <Box key={edge.node.frontmatter.title} className={classes.courseContainer}>
             <Typography
               variant="h3"
               component="a"

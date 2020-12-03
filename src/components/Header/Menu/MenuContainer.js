@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import IconButton from '@material-ui/core/IconButton';
+import {Menu, MenuItem, IconButton } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import {useTheme} from '@material-ui/core';
+import {useTheme} from '@material-ui/core/styles';
 
 const MenuContainer = ({ menu }) => {
   const theme = useTheme();

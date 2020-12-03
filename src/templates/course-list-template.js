@@ -4,30 +4,15 @@ import { graphql } from 'gatsby';
 import Layout from '../components/shared/Layout';
 import Courses from '../components/Courses';
 import Page from '../components/shared/Page';
-import Pagination from '../components/Pagination';
 
-const CourseListTemplate = ({ data, pageContext, path }) => {
-  const {
-    currentPage,
-    hasNextPage,
-    hasPrevPage,
-    prevPagePath,
-    nextPagePath
-  } = pageContext;
-
+const CourseListTemplate = ({ data, path }) => {
   const { edges } = data.allMarkdownRemark;
-  const pageTitle = currentPage > 0 ? `Courses - Page ${currentPage}` : 'Courses';
+  const pageTitle = 'Courses';
 
   return (
     <Layout title={pageTitle} slug={path}>
       <Page>
         <Courses edges={edges} />
-        <Pagination
-          prevPagePath={prevPagePath}
-          nextPagePath={nextPagePath}
-          hasPrevPage={hasPrevPage}
-          hasNextPage={hasNextPage}
-        />
       </Page>
     </Layout>
   );
@@ -65,14 +50,7 @@ CourseListTemplate.propTypes = {
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.arrayOf(PropTypes.object)
     })
-  }).isRequired,
-  pageContext: PropTypes.shape({
-    currentPage: PropTypes.number,
-    hasNextPage: PropTypes.bool,
-    hasPrevPage: PropTypes.bool,
-    prevPagePath: PropTypes.string,
-    nextPagePath: PropTypes.string
-  })
+  }).isRequired
 };
 
 export default CourseListTemplate;

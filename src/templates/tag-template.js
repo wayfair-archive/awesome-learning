@@ -5,22 +5,11 @@ import { Container, Row, Col } from 'react-grid-system';
 import Layout from '../components/shared/Layout';
 import Courses from '../components/Courses';
 import Page from '../components/shared/Page';
-import Pagination from '../components/Pagination';
 
 const TagTemplate = ({ data, pageContext, path }) => {
-  const {
-    tag,
-    currentPage,
-    prevPagePath,
-    nextPagePath,
-    hasPrevPage,
-    hasNextPage
-  } = pageContext;
-
+  const {tag} = pageContext;
   const { edges } = data.allMarkdownRemark;
-  const pageTitle = currentPage > 0
-    ? `All Courses tagged as "${tag}" - Page ${currentPage}`
-    : `All Courses tagged as "${tag}"`;
+  const pageTitle = `All Courses tagged as "${tag}"`;
 
   return (
     <Layout title={pageTitle} slug={path}>
@@ -29,12 +18,6 @@ const TagTemplate = ({ data, pageContext, path }) => {
           <Col>
             <Page title={tag}>
               <Courses edges={edges} />
-              <Pagination
-                prevPagePath={prevPagePath}
-                nextPagePath={nextPagePath}
-                hasPrevPage={hasPrevPage}
-                hasNextPage={hasNextPage}
-              />
             </Page>
           </Col>
         </Row>

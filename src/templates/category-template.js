@@ -5,25 +5,14 @@ import { Row, Col } from 'react-grid-system';
 import Layout from '../components/shared/Layout';
 import Courses from '../components/Courses';
 import Page from '../components/shared/Page';
-import Pagination from '../components/Pagination';
 import { PAGE_CONTEXT_PROP_TYPE, SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
 
 const CategoryTemplate = ({ data, pageContext, path}) => {
   const { siteTitle } = data.site.siteMetadata;
-
-  const {
-    category,
-    currentPage,
-    prevPagePath,
-    nextPagePath,
-    hasPrevPage,
-    hasNextPage
-  } = pageContext;
+  const {category} = pageContext;
 
   const { edges } = data.allMarkdownRemark;
-  const pageTitle = currentPage > 0
-    ? `${category} - Page ${currentPage} - ${siteTitle}`
-    : `${category} - ${siteTitle}`;
+  const pageTitle = `${category} - ${siteTitle}`;
 
   return (
     <Layout title={pageTitle} slug={path}>
@@ -31,12 +20,6 @@ const CategoryTemplate = ({ data, pageContext, path}) => {
         <Col md={12}>
           <Page title={category}>
             <Courses edges={edges} />
-            <Pagination
-              prevPagePath={prevPagePath}
-              nextPagePath={nextPagePath}
-              hasPrevPage={hasPrevPage}
-              hasNextPage={hasNextPage}
-            />
           </Page>
         </Col>
       </Row>
