@@ -1,50 +1,73 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StyledLink from '../shared/StyledLink';
-import './Courses.scss';
+import Box from '@material-ui/core/Box';
+import {makeStyles, useTheme} from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import Pagination from '@material-ui/lab/Pagination';
 
-const Courses = ({ edges, isHorizontal }) =>
-  (isHorizontal ? (
-    <div className="CourseList--isHorizontal">
+const useStyles = makeStyles((theme) => ({
+  pageTitle: {
+    textDecoration: 'underline',
+    margin: theme.spacing(3, 0, 6),
+  },
+  courseContainer: {
+    margin: theme.spacing(13, 0 , 14),
+  },
+  title: {
+    margin: theme.spacing(2, 0, 5),
+    textDecoration: 'underline',
+    '&:hover': {
+      color: theme.palette.primary.main,
+      textDecoration: 'none',
+    },
+  },
+  goLearnCTA: {
+    width: '140px',
+    marginTop: theme.spacing(4),
+  },
+})
+);
+
+const Courses = ({ edges }) => {
+  const classes = useStyles();
+  const theme = useTheme();
+  return (
+    <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
+      <Typography variant="h1" className={classes.pageTitle}>Courses</Typography>
       {edges.map(edge => (
-        <div className="CourseList-card" key={edge.node.fields.slug}>
-          <div className="CourseList-itemTitle">
-            <StyledLink variation="primary" path={edge.node.fields.slug}>
-              {edge.node.frontmatter.title}
-            </StyledLink>
-          </div>
-          <StyledLink variation="pill" path={edge.node.fields.slug}>
-            Go Learn
-          </StyledLink>
-        </div>
-      ))}
-    </div>
-  ) : (
-    <div className="CourseList">
-      {edges.map(edge => (
-        <div className="CourseList-item" key={edge.node.fields.slug}>
-          <StyledLink variation="tertiary" path={edge.node.fields.categorySlug}>
+        <Box key={edge.node.fields.slug} className={classes.courseContainer}>
+          <Typography
+            variant="h3"
+            component="a"
+            display="block"
+            color="textPrimary"
+            href={edge.node.fields.slug}
+            className={classes.title}
+          >
+            {edge.node.frontmatter.title}
+          </Typography>
+          <Typography
+            color="textSecondary"
+            variant="body1"
+            component="a"
+            display="block"
+            href={edge.node.fields.categorySlug}
+            className={classes.title}
+          >
             {edge.node.frontmatter.category}
-          </StyledLink>
-          <div className="CourseList-itemTitle">
-            <StyledLink variation="primary" path={edge.node.fields.slug}>
-              {edge.node.frontmatter.title}
-            </StyledLink>
-          </div>
-          <p className="CourseList-itemDescription">
-            {edge.node.frontmatter.description}
-          </p>
-          <StyledLink variation="pill" path={edge.node.fields.slug}>
-            Go Learn
-          </StyledLink>
-        </div>
+          </Typography>
+          <Typography variant="body1">{edge.node.frontmatter.description}</Typography>
+          <Button variant="contained" color="secondary" href={edge.node.fields.slug} className={classes.goLearnCTA}>Go Learn</Button>
+        </Box>
       ))}
-    </div>
-  ));
+      <Pagination count={10} variant="outlined" shape="rounded" />
+    </Box>
+  );
+};
 
 Courses.propTypes = {
   edges: PropTypes.arrayOf(PropTypes.object).isRequired,
-  isHorizontal: PropTypes.bool
 };
 
 export default Courses;

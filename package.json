@@ -26,6 +26,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.57",
     "classnames": "^2.2.6",
     "eslint-loader": "^4.0.2",
     "gatsby": "^2.25.3",

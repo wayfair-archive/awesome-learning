@@ -16,6 +16,13 @@
     },
     "info": {
       "main": "#6a6c7a"
+    },
+    "text": {
+      "primary": "#1d1820",
+      "secondary": "#69ADC9"
+    },
+    "background":{
+      "default": "#fafafa"
     }
   },
   "breakpoints": {
@@ -61,6 +68,13 @@
     }
   },
   "overrides": {
+    "MuiCssBaseline": {
+      "@global": {
+        "body": {
+          "color": "#1d1820"
+        }
+      }
+    },
     "MuiButton": {
       "root": {
         "textTransform": "none"
