@@ -68,7 +68,7 @@ const Course = ({ course }) => {
           <Box m={theme.spacing(4, 0)}>
             {tagSlugs.map((slug, i) => (
               <Box display="inline" key={`${tags[i]}slug`} className={classes.tagWrapper}>
-                <Tag variant="outlined" color="primary" key={`${tags[i]}slug`} href={slug}>
+                <Tag variant="outlined" color="secondary" key={`${tags[i]}slug`} href={slug}>
                   {tags[i]}
                 </Tag>
               </Box>
