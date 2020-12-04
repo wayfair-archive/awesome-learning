@@ -8,6 +8,7 @@ const COURSES_LINK = '/courses';
 
 const useStyles = makeStyles((theme) => ({
   title: {
+    width: "fit-content",
     margin: theme.spacing(2, 0, 5),
     textDecoration: 'underline',
     '&:hover': {
@@ -42,11 +43,10 @@ const Courses = ({ edges }) => {
       {edges
         .slice((page - 1) * itemsPerPage, page * itemsPerPage)
         .map(edge => (
-          <Box key={edge.node.frontmatter.title} className={classes.courseContainer}>
+          <Box display="flex" flexDirection="column" key={edge.node.frontmatter.title} className={classes.courseContainer}>
             <Typography
               variant="h2"
               component="a"
-              display="block"
               color="textPrimary"
               href={edge.node.fields.slug}
               className={classes.title}
@@ -57,7 +57,6 @@ const Courses = ({ edges }) => {
               color="textSecondary"
               variant="h4"
               component="a"
-              display="block"
               href={edge.node.fields.categorySlug}
               className={classes.title}
             >
