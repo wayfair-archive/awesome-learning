@@ -5,11 +5,13 @@ import HowTo from './HowTo';
 describe('HowTo Component', () => {
 
   test('Renders all prerequisite elements of HowTo Page', () => {
-    const { container } = render(
+    const { container, queryByText } = render(
       <HowTo/>
     );
-    expect(container.querySelectorAll('.HowTo').length).toBe(1);
-    expect(container.querySelectorAll('.HowTo-description').length).toBe(4);
+    expect(queryByText('Gathering A Group')).toBeTruthy();
+    expect(queryByText('Before Your Lesson')).toBeTruthy();
+    expect(queryByText('During Your Lesson')).toBeTruthy();
     expect(container.querySelectorAll('iframe').length).toBe(1);
+    expect(queryByText('FAQs')).toBeTruthy();
   });
 });
