@@ -24,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
 })
 );
 
-
 const Quiz = ({ quiz, slug, title }) => {
   const classes = useStyles();
   const theme = useTheme();
@@ -102,15 +101,16 @@ const Quiz = ({ quiz, slug, title }) => {
             const questionId = formatQuestionId(questionIndex);
             const questionTitle = `Q${questionIndex + 1}: ${question.description}`;
             return (
-              <Question
-                handleInputChange={handleInputChange}
-                key={questionId}
-                question={question}
-                questionId={questionId}
-                questionIndex={questionIndex}
-                shouldShowCorrectChoice={shouldShowCorrectChoice}
-                title={questionTitle}
-              />
+              <Box my={theme.spacing(1)} key={questionId}>
+                <Question
+                  handleInputChange={handleInputChange}
+                  question={question}
+                  questionId={questionId}
+                  questionIndex={questionIndex}
+                  shouldShowCorrectChoice={shouldShowCorrectChoice}
+                  title={questionTitle}
+                />
+              </Box>
             );
           })
         }
