@@ -108,7 +108,11 @@ const HowTo = () => {
       </Box>
 
       <Box className={classes.contentSection}>
-        <Typography variant="h2" className={classes.sectionTitle}>FAQs</Typography>
+        <Typography variant="h2" className={classes.sectionTitle}>
+          <abbr title="Frequently Asked Questions">
+            FAQs
+          </abbr>
+        </Typography>
         <Typography variant="body1" className={classes.paragraphContainer}>
           <b>Why should I Awesome Learn?</b>
         </Typography>
