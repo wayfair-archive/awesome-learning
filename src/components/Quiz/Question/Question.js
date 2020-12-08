@@ -21,12 +21,20 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     minHeight: '45px',
-    marginBottom: theme.spacing(2),
   },
   title: {
     paddingLeft: theme.spacing(2),
     color: theme.palette.secondary.contrastText,
-  }
+  },
+  explanation: {
+    backgroundColor: theme.palette.info.main,
+    color: theme.palette.info.contrastText,
+    padding: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+  },
+  choices: {
+    marginTop: theme.spacing(2),
+  },
 }));
 
 const Question = ({
@@ -44,17 +52,16 @@ const Question = ({
       <Box className={classes.titleWrapper}>
         <FormLabel component="legend" className={classes.title}>{title}</FormLabel>
       </Box>
+      {shouldShowCorrectChoice && question.explanation && (
+        <Typography variant="body1" className={classes.explanation}>
+          <b>Explanation: </b>{question.explanation}
+        </Typography>
+      )}
       {question.codeSnippet && (
         <pre className="Question-codeSnippet">
           {question.codeSnippet}
         </pre>
       )}
-      {shouldShowCorrectChoice && question.explanation && (
-        <Typography variant="body1">
-          <b>Explanation: </b>{question.explanation}
-        </Typography>
-      )}
-
       {
         question.choices.map((choice, choiceIndex) => {
           const choiceId = formatChoiceId(questionId, choiceIndex);
@@ -80,6 +87,7 @@ const Question = ({
                 </Typography>
               }
               key={choiceId}
+              className={classes.choices}
             />
           );
         })
