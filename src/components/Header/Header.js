@@ -96,6 +96,7 @@ export const PureHeader = ({ data }) => {
                 href="https://github.com/wayfair/awesome-learning"
                 rel="noopener noreferrer"
                 target="_blank"
+                title="Check us out on Github!"
               >
                 <GitHubIcon />
               </HeaderButton>

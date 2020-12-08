@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 })
 );
 
-const ResponsiveVideo = ({link}) => {
+const ResponsiveVideo = ({link, title}) => {
   const classes = useStyles();
   return (
     <Box className={classes.videoContainer}>
@@ -40,6 +40,7 @@ const ResponsiveVideo = ({link}) => {
           data-testid={link}
           key={link}
           src={link}
+          title={title}
           allow="autoplay; encrypted-media"
           allowFullScreen
           className={classes.videoFrame}
@@ -50,7 +51,8 @@ const ResponsiveVideo = ({link}) => {
 };
 
 ResponsiveVideo.propTypes = {
-  link: PropTypes.string
+  link: PropTypes.string,
+  title: PropTypes.string,
 };
 
 export default ResponsiveVideo;

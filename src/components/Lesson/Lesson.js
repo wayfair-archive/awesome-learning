@@ -72,7 +72,7 @@ const Lesson = ({lesson, slug}) => {
         <Grid container>
           {videoLinks && videoLinks.map(link => (
             <Grid item xs={12} md={6} key={link}>
-              <ResponsiveVideo link={link}/>
+              <ResponsiveVideo link={link} title="Pre-Session Video Materials"/>
             </Grid>
           ))}
         </Grid>
