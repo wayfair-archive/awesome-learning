@@ -9,7 +9,6 @@ import {
 } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { formatChoiceId } from "../quizUtilities";
-import "./question.scss";
 
 const useStyles = makeStyles((theme) => ({
   question: {
@@ -17,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   titleWrapper: {
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: 'var(--background-color)',
     display: 'flex',
     alignItems: 'center',
     minHeight: '45px',
@@ -37,6 +36,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const defaultColor = theme => ({
+  '--background-color': theme.palette.secondary.main,
+});
+
+const correctColor = theme => ({
+  '--background-color': theme.palette.success.main,
+});
+
+const incorrectColor = theme => ({
+  '--background-color': theme.palette.error.main,
+});
+
 const Question = ({
   handleInputChange,
   question,
@@ -47,9 +58,13 @@ const Question = ({
 }) => {
   const classes = useStyles();
   const theme = useTheme();
+  let highlightColor = defaultColor(theme);
+  if (shouldShowCorrectChoice) {
+    highlightColor = question.isCorrect ? correctColor(theme) : incorrectColor(theme);
+  }
   return (
     <FormControl component="fieldset" onChange={handleInputChange} className={classes.question}>
-      <Box className={classes.titleWrapper}>
+      <Box className={classes.titleWrapper} style={highlightColor}>
         <FormLabel component="legend" className={classes.title}>{title}</FormLabel>
       </Box>
       {shouldShowCorrectChoice && question.explanation && (
@@ -58,7 +73,7 @@ const Question = ({
         </Typography>
       )}
       {question.codeSnippet && (
-        <pre className="Question-codeSnippet">
+        <pre>
           {question.codeSnippet}
         </pre>
       )}
@@ -106,59 +121,3 @@ Question.propTypes = {
 };
 
 export default Question;
-
-/*
-    <fieldset className="Question" onChange={handleInputChange}>
-      <legend className={cx("Question-legend", {
-        "Question-legend--isCorrect": question.isCorrect === true,
-        "Question-legend--isIncorrect": question.isCorrect === false,
-      })}>
-        {title}
-      </legend>
-      {question.codeSnippet && (
-        <pre className="Question-codeSnippet">
-          {question.codeSnippet}
-        </pre>
-      )}
-      {/* If instructed, show the explanation to this question /}
-      {shouldShowCorrectChoice && question.explanation && (
-        <Typography variant="body1">
-          <b>Explanation: </b>{question.explanation}
-        </Typography>
-      )}
-      {/* Iterate over all choices this question has, and display them /}
-
-      {
-        question.choices.map((choice, choiceIndex) => {
-          const choiceId = formatChoiceId(questionId, choiceIndex);
-          // Bolden the label to this question to highlight it as the right answer
-          const shouldBoldenLabel = (
-            shouldShowCorrectChoice
-            && question.correctChoices.includes(choiceIndex)
-          );
-          return (
-            <div className="Question-choice" key={choiceId}>
-              <input
-                className="Question-choiceInput"
-                data-choice-index={choiceIndex}
-                data-question-index={questionIndex}
-                id={choiceId}
-                key={choiceIndex}
-                name={questionId}
-                type={question.type}
-                value={choice.value}
-              />
-              <label
-                className={cx('Question-choiceLabel', {
-                  'Question-choiceLabel--isBold': shouldBoldenLabel
-                })}
-                htmlFor={choiceId}
-              >
-                {choice.value}
-              </label>
-            </div>
-          );
-        })
-      }
-      </fieldset>
- */
