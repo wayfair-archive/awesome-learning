@@ -12,4 +12,7 @@ lessons:
   - link: "layout-basics"
     title: "Layout Basics" 
     description: "Everything on a webpage is a rectangle! Discover the box model, positioning, floats, and more."
+  - link: "responsive-layouts"
+    title: "Responsive Layouts" 
+    description: "Learn about advanced CSS layout models, media queries, and how they make responsive web design possible."
 ---
