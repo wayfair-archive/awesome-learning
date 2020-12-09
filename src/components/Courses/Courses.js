@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     width: 'fit-content',
-    margin: theme.spacing(2, 0, 5),
+    margin: theme.spacing(1, 0, 2),
     textDecoration: 'underline',
     textTransform: 'none',
     '&:hover': {

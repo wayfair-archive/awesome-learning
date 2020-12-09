@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {graphql} from 'gatsby';
-import {Row, Col} from 'react-grid-system';
 import Layout from '../components/shared/Layout';
 import Courses from '../components/Courses';
 import Page from '../components/shared/Page';
@@ -19,13 +18,9 @@ const CategoryTemplate = ({data, pageContext, path}) => {
 
   return (
     <Layout title={pageTitle} slug={path}>
-      <Row>
-        <Col md={12}>
-          <Page>
-            <Courses edges={edges} title={category} />
-          </Page>
-        </Col>
-      </Row>
+      <Page>
+        <Courses edges={edges} title={category} />
+      </Page>
     </Layout>
   );
 };

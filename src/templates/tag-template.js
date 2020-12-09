@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {graphql} from 'gatsby';
-import {Container, Row, Col} from 'react-grid-system';
 import Layout from '../components/shared/Layout';
 import Courses from '../components/Courses';
 import Page from '../components/shared/Page';
@@ -13,15 +12,9 @@ const TagTemplate = ({data, pageContext, path}) => {
 
   return (
     <Layout title={pageTitle} slug={path}>
-      <Container fluid>
-        <Row>
-          <Col>
-            <Page>
-              <Courses edges={edges} title={tag} />
-            </Page>
-          </Col>
-        </Row>
-      </Container>
+      <Page>
+        <Courses edges={edges} title={tag} />
+      </Page>
     </Layout>
   );
 };
