@@ -11,7 +11,7 @@ describe('HowTo Component', () => {
     expect(queryByText('Gathering A Group')).toBeTruthy();
     expect(queryByText('Before Your Lesson')).toBeTruthy();
     expect(queryByText('During Your Lesson')).toBeTruthy();
-    expect(container.querySelectorAll('iframe').length).toBe(1);
+    expect(container.querySelectorAll('iframe').length).toHaveLength(1);
     expect(queryByText('FAQs')).toBeTruthy();
   });
 });

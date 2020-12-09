@@ -1,5 +1,6 @@
 exports.createPages = require('./gatsby/create-pages');
 exports.onCreateNode = require('./gatsby/on-create-node');
+
 exports.onCreateBabelConfig = ({ actions }) => {
   actions.setBabelPlugin({
     name: "babel-plugin-transform-imports",
@@ -17,5 +18,5 @@ exports.onCreateBabelConfig = ({ actions }) => {
         preventFullImport: true,
       },
     },
-  })
+  });
 };

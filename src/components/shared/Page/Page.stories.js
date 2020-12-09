@@ -1,6 +1,6 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {withKnobs, text, select} from '@storybook/addon-knobs';
+import {withKnobs, text} from '@storybook/addon-knobs';
 import Page from './Page';
 import LastLessonProvider from '../../../providers/LastLessonProvider';
 import PageReadme from './README.md';
