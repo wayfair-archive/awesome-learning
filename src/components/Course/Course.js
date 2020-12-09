@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Typography, Box, Button} from '@material-ui/core';
 import {makeStyles, useTheme, withStyles} from '@material-ui/core/styles';
-import BackToButton from '../shared/BackToButton';
 
 const useStyles = makeStyles((theme) => ({
   sectionTitle: {
@@ -34,7 +33,7 @@ const Course = ({course}) => {
   const {tagSlugs, slug} = course.fields;
   return (
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
-      <BackToButton href="/courses">Back to Courses</BackToButton>
+      <Button href="/courses">Back to Courses</Button>
       <Box className={classes.sectionWrapper}>
         <Typography variant="h2" className={classes.sectionTitle}>
           {title}

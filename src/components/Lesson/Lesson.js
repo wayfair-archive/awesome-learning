@@ -15,14 +15,6 @@ const useStyles = makeStyles((theme) => ({
   paragraphContainer: {
     paddingBottom: theme.spacing(4),
   },
-  linkTitle: {
-    textTransform: 'uppercase',
-    textDecoration: 'underline',
-    '&:hover': {
-      color: theme.palette.secondary.dark,
-      textDecoration: 'none',
-    },
-  },
 }));
 
 const Lesson = ({lesson, slug}) => {
@@ -48,15 +40,7 @@ const Lesson = ({lesson, slug}) => {
 
   return (
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
-      <Typography
-        variant="h4"
-        color="secondary"
-        component="a"
-        href={`/courses/${course}/`}
-        className={classes.linkTitle}
-      >
-        Back to {courseName}
-      </Typography>
+      <Button href={`/courses/${course}/`}>Back to {courseName}</Button>
       <Box className={classes.sectionContainer}>
         <Typography variant="h1" className={classes.sectionTitle}>
           {title}
@@ -113,17 +97,13 @@ const Lesson = ({lesson, slug}) => {
         </Typography>
         {readingLinks.map((readingLink) => (
           <Fragment key={readingLink.title}>
-            <Typography
-              color="secondary"
-              variant="h4"
-              component="a"
+            <Button
               href={readingLink.link}
               rel="noopener noreferrer"
               target="_blank"
-              className={classes.linkTitle}
             >
               {readingLink.title}
-            </Typography>
+            </Button>
             <Typography variant="body1" className={classes.paragraphContainer}>
               &#8226; {readingLink.description}
             </Typography>

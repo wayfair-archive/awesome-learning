@@ -7,25 +7,21 @@ import {Pagination} from '@material-ui/lab';
 const ITEMS_PER_PAGE = 4;
 
 const useStyles = makeStyles((theme) => ({
-  backToCourseCTA: {
-    textTransform: 'uppercase',
-    textDecoration: 'underline',
-    '&:hover': {
-      color: theme.palette.secondary.dark,
-      textDecoration: 'none',
-    },
+  backToContainer: {
+    marginBottom: theme.spacing(4),
   },
   title: {
     width: 'fit-content',
     margin: theme.spacing(2, 0, 5),
     textDecoration: 'underline',
+    textTransform: 'none',
     '&:hover': {
       color: theme.palette.primary.main,
       textDecoration: 'none',
     },
   },
   courseContainer: {
-    margin: theme.spacing(10, 0, 14),
+    margin: theme.spacing(5, 0, 14),
   },
   goLearnCTA: {
     width: '140px',
@@ -47,15 +43,9 @@ const Courses = ({edges, title}) => {
   return (
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
       {title && (
-        <Typography
-          variant="h4"
-          color="textSecondary"
-          component="a"
-          href="/courses"
-          className={classes.backToCourseCTA}
-        >
-          Back to Courses
-        </Typography>
+        <Box className={classes.backToContainer}>
+          <Button href="/courses">Back to Courses</Button>
+        </Box>
       )}
       <Typography variant="h1" color="textPrimary">
         {titleText}
@@ -78,15 +68,12 @@ const Courses = ({edges, title}) => {
             >
               {edge.node.frontmatter.title}
             </Typography>
-            <Typography
-              color="textSecondary"
-              variant="h4"
-              component="a"
+            <Button
               href={edge.node.fields.categorySlug}
               className={classes.title}
             >
               {edge.node.frontmatter.category}
-            </Typography>
+            </Button>
             <Typography variant="body1">
               {edge.node.frontmatter.description}
             </Typography>

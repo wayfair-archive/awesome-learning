@@ -16,9 +16,6 @@ import {getIcon} from '../../utils';
 import Menu from './Menu';
 
 const useStyles = makeStyles((theme) => ({
-  logoButton: {
-    display: 'flex',
-  },
   icon: {
     maxWidth: '20px',
     height: '20px',
@@ -28,8 +25,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   logo: {
-    paddingLeft: theme.spacing(3),
-    textTransform: 'uppercase',
+    paddingLeft: theme.spacing(2),
+    lineHeight: 1,
   },
   content: {
     [theme.breakpoints.up('sm')]: {
@@ -51,6 +48,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const LogoButton = withStyles((theme) => ({
+  root: {
+    display: 'flex',
+    color: theme.palette.primary.contrastText,
+    textDecoration: 'none',
+    '&:hover': {
+      color: theme.palette.primary.contrastText,
+    },
+  },
+}))(Button);
+
 const HeaderButton = withStyles((theme) => ({
   root: {
     [theme.breakpoints.up('md')]: {
@@ -59,9 +67,13 @@ const HeaderButton = withStyles((theme) => ({
     [theme.breakpoints.up('lg')]: {
       marginRight: theme.spacing(2),
     },
+    color: theme.palette.primary.contrastText,
+    lineHeight: 1,
+    textDecoration: 'none',
     borderRadius: 0,
     borderBottom: '2px solid transparent',
     '&:hover': {
+      color: theme.palette.primary.contrastText,
       backgroundColor: 'initial',
       borderBottom: `2px solid ${theme.palette.primary.contrastText}`,
     },
@@ -78,28 +90,22 @@ export const PureHeader = ({data}) => {
   return (
     <AppBar position="static" className={classes.content}>
       <Toolbar>
-        <Button color="inherit" href="/" className={classes.logoButton}>
+        <LogoButton href="/">
           <SvgIcon viewBox={iconData.viewbox} className={classes.icon}>
             <path d={iconData.path} />
           </SvgIcon>
           <Typography variant={logoElement} className={classes.logo}>
             {title}
           </Typography>
-        </Button>
+        </LogoButton>
         {hideMenu ? (
           <Box display="flex">
             {menu.map((item) => (
-              <HeaderButton
-                color="inherit"
-                href={item.path}
-                size="large"
-                key={item.label}
-              >
+              <HeaderButton href={item.path} size="large" key={item.label}>
                 {item.label}
               </HeaderButton>
             ))}
             <HeaderButton
-              color="inherit"
               href="https://github.com/wayfair/awesome-learning"
               rel="noopener noreferrer"
               target="_blank"
