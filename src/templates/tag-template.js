@@ -16,8 +16,8 @@ const TagTemplate = ({data, pageContext, path}) => {
       <Container fluid>
         <Row>
           <Col>
-            <Page title={tag}>
-              <Courses edges={edges} />
+            <Page>
+              <Courses edges={edges} title={tag} />
             </Page>
           </Col>
         </Row>

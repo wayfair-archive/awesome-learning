@@ -21,8 +21,8 @@ const CategoryTemplate = ({data, pageContext, path}) => {
     <Layout title={pageTitle} slug={path}>
       <Row>
         <Col md={12}>
-          <Page title={category}>
-            <Courses edges={edges} />
+          <Page>
+            <Courses edges={edges} title={category} />
           </Page>
         </Col>
       </Row>

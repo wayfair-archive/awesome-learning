@@ -4,9 +4,17 @@ import {makeStyles, useTheme} from '@material-ui/core/styles';
 import {Box, Typography, Button} from '@material-ui/core';
 import {Pagination} from '@material-ui/lab';
 
-const COURSES_LINK = '/courses';
+const ITEMS_PER_PAGE = 4;
 
 const useStyles = makeStyles((theme) => ({
+  backToCourseCTA: {
+    textTransform: 'uppercase',
+    textDecoration: 'underline',
+    '&:hover': {
+      color: theme.palette.secondary.dark,
+      textDecoration: 'none',
+    },
+  },
   title: {
     width: 'fit-content',
     margin: theme.spacing(2, 0, 5),
@@ -25,30 +33,35 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Courses = ({edges}) => {
+const Courses = ({edges, title}) => {
   const classes = useStyles();
   const theme = useTheme();
-  const itemsPerPage = 4;
   const [page, setPage] = useState(1);
-  const noOfPages = Math.ceil(edges.length / itemsPerPage);
+  const noOfPages = Math.ceil(edges.length / ITEMS_PER_PAGE);
   const handleChange = (event, value) => {
     setPage(value);
     window.scrollTo(0, 0);
   };
+  const titleText = title ? `Courses: ${title}` : 'Courses';
 
   return (
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
-      <Typography
-        variant="h1"
-        color="textPrimary"
-        component="a"
-        href={COURSES_LINK}
-        className={classes.title}
-      >
-        Courses
+      {title && (
+        <Typography
+          variant="h4"
+          color="textSecondary"
+          component="a"
+          href="/courses"
+          className={classes.backToCourseCTA}
+        >
+          Back to Courses
+        </Typography>
+      )}
+      <Typography variant="h1" color="textPrimary">
+        {titleText}
       </Typography>
       {edges
-        .slice((page - 1) * itemsPerPage, page * itemsPerPage)
+        .slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE)
         .map((edge) => (
           <Box
             display="flex"
@@ -104,6 +117,11 @@ const Courses = ({edges}) => {
 
 Courses.propTypes = {
   edges: PropTypes.arrayOf(PropTypes.object).isRequired,
+  title: PropTypes.string,
+};
+
+Courses.defaultProps = {
+  title: '',
 };
 
 export default Courses;
