@@ -8,6 +8,7 @@
     "build-storybook": "build-storybook",
     "clean": "rimraf .cache public",
     "develop": "npm run clean && gatsby develop",
+    "format": "yarn run prettier --write .",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --cache --ext .js,.jsx --ignore-pattern '/public/' --ignore-pattern '/exercises/' .",
     "lint:scss": "stylelint 'src/**/*.scss'",

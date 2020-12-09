@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Typography,
   FormControl,
@@ -7,8 +7,8 @@ import {
   FormControlLabel,
   Box,
 } from '@material-ui/core';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { formatChoiceId } from "../quizUtilities";
+import {makeStyles, useTheme} from '@material-ui/core/styles';
+import {formatChoiceId} from '../quizUtilities';
 
 const useStyles = makeStyles((theme) => ({
   question: {
@@ -36,15 +36,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const defaultColor = theme => ({
+const defaultColor = (theme) => ({
   '--background-color': theme.palette.secondary.main,
 });
 
-const correctColor = theme => ({
+const correctColor = (theme) => ({
   '--background-color': theme.palette.success.main,
 });
 
-const incorrectColor = theme => ({
+const incorrectColor = (theme) => ({
   '--background-color': theme.palette.error.main,
 });
 
@@ -54,59 +54,58 @@ const Question = ({
   questionId,
   questionIndex,
   shouldShowCorrectChoice,
-  title
+  title,
 }) => {
   const classes = useStyles();
   const theme = useTheme();
   let highlightColor = defaultColor(theme);
   if (shouldShowCorrectChoice) {
-    highlightColor = question.isCorrect ? correctColor(theme) : incorrectColor(theme);
+    highlightColor = question.isCorrect
+      ? correctColor(theme)
+      : incorrectColor(theme);
   }
   return (
-    <FormControl component="fieldset" onChange={handleInputChange} className={classes.question}>
+    <FormControl
+      component="fieldset"
+      onChange={handleInputChange}
+      className={classes.question}
+    >
       <Box className={classes.titleWrapper} style={highlightColor}>
-        <FormLabel component="legend" className={classes.title}>{title}</FormLabel>
+        <FormLabel component="legend" className={classes.title}>
+          {title}
+        </FormLabel>
       </Box>
       {shouldShowCorrectChoice && question.explanation && (
         <Typography variant="body1" className={classes.explanation}>
-          <b>Explanation: </b>{question.explanation}
+          <b>Explanation: </b>
+          {question.explanation}
         </Typography>
       )}
-      {question.codeSnippet && (
-        <pre>
-          {question.codeSnippet}
-        </pre>
-      )}
-      {
-        question.choices.map((choice, choiceIndex) => {
-          const choiceId = formatChoiceId(questionId, choiceIndex);
-          return (
-            <FormControlLabel
-              value={choice.value}
-              control={
-                <Box px={theme.spacing(1)}>
-                  <input
-                    data-choice-index={choiceIndex}
-                    data-question-index={questionIndex}
-                    id={choiceId}
-                    key={choiceIndex}
-                    name={questionId}
-                    type={question.type}
-                    value={choice.value}
-                  />
-                </Box>
-              }
-              label={
-                <Typography variant="body1">
-                  {choice.value}
-                </Typography>
-              }
-              key={choiceId}
-              className={classes.choices}
-            />
-          );
-        })
-      }
+      {question.codeSnippet && <pre>{question.codeSnippet}</pre>}
+      {question.choices.map((choice, choiceIndex) => {
+        const choiceId = formatChoiceId(questionId, choiceIndex);
+        return (
+          <FormControlLabel
+            value={choice.value}
+            control={
+              <Box px={theme.spacing(1)}>
+                <input
+                  data-choice-index={choiceIndex}
+                  data-question-index={questionIndex}
+                  id={choiceId}
+                  key={choiceIndex}
+                  name={questionId}
+                  type={question.type}
+                  value={choice.value}
+                />
+              </Box>
+            }
+            label={<Typography variant="body1">{choice.value}</Typography>}
+            key={choiceId}
+            className={classes.choices}
+          />
+        );
+      })}
     </FormControl>
   );
 };
@@ -117,7 +116,7 @@ Question.propTypes = {
   questionId: PropTypes.string.isRequired,
   questionIndex: PropTypes.number.isRequired,
   shouldShowCorrectChoice: PropTypes.bool,
-  title: PropTypes.string
+  title: PropTypes.string,
 };
 
 export default Question;

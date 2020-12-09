@@ -14,16 +14,12 @@ const stories = storiesOf('Shared.Page', module);
 
 stories
   .addDecorator(withKnobs)
-  .addDecorator(story => (
-    <LastLessonProvider>
-      {story()}
-    </LastLessonProvider>
-  ))
+  .addDecorator((story) => <LastLessonProvider>{story()}</LastLessonProvider>)
   .addParameters({
     readme: {
       // Show readme at the addons panel
-      sidebar: PageReadme
-    }
+      sidebar: PageReadme,
+    },
   })
   .add('basic', () => (
     <Page title={text('title', 'Page Title')}>{pageText}</Page>

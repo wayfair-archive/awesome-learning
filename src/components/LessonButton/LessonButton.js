@@ -6,7 +6,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import {useLastLessonContext} from '../../providers/LastLessonProvider';
 import analyticsEventHandler from '../../utils/analyticsEventHandler';
 
-const handleEventClick = path => {
+const handleEventClick = (path) => {
   try {
     analyticsEventHandler('exercise click', path);
   } catch (error) {
@@ -24,7 +24,7 @@ export const PrimitiveLessonButton = ({
   path,
   onClick = handleEventClick,
   children,
-  lessonData
+  lessonData,
 }) => {
   const classes = useStyles();
   const {setLastLessonVisited} = useLastLessonContext();
@@ -63,7 +63,7 @@ export const PureLessonButton = ({path, data, defaultTab, ...props}) => {
   );
 };
 
-const LessonButton = props => (
+const LessonButton = (props) => (
   <StaticQuery
     query={graphql`
       query LessonButtonQuery {
@@ -75,7 +75,7 @@ const LessonButton = props => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <PureLessonButton data={data} {...props} onClick={handleEventClick} />
     )}
   />
@@ -85,13 +85,13 @@ PureLessonButton.propTypes = {
   path: PropTypes.string.isRequired,
   repoName: PropTypes.string,
   repoOwner: PropTypes.string.isRequired,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 PureLessonButton.defaultProps = {
   repoName: 'awesome-learning',
   repoOwner: 'wayfair',
-  onClick() {}
+  onClick() {},
 };
 
 export default LessonButton;

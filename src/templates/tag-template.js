@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-import { Container, Row, Col } from 'react-grid-system';
+import {graphql} from 'gatsby';
+import {Container, Row, Col} from 'react-grid-system';
 import Layout from '../components/shared/Layout';
 import Courses from '../components/Courses';
 import Page from '../components/shared/Page';
 
-const TagTemplate = ({ data, pageContext, path }) => {
+const TagTemplate = ({data, pageContext, path}) => {
   const {tag} = pageContext;
-  const { edges } = data.allMarkdownRemark;
+  const {edges} = data.allMarkdownRemark;
   const pageTitle = `All Courses tagged as "${tag}"`;
 
   return (
@@ -29,10 +29,10 @@ const TagTemplate = ({ data, pageContext, path }) => {
 TagTemplate.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array.isRequired
+      edges: PropTypes.array.isRequired,
     }),
   }).isRequired,
-  path: PropTypes.string.isRequired
+  path: PropTypes.string.isRequired,
 };
 
 export const query = graphql`
@@ -42,9 +42,9 @@ export const query = graphql`
       skip: $coursesOffset
       filter: {
         frontmatter: {
-          tags: { in: [$tag] }
-          template: { eq: "course" }
-          draft: { ne: true }
+          tags: {in: [$tag]}
+          template: {eq: "course"}
+          draft: {ne: true}
         }
       }
     ) {

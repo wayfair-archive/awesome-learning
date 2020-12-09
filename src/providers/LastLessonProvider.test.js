@@ -4,14 +4,14 @@ import LastLessonProvider from './LastLessonProvider';
 import useStorage from '../hooks/useStorage';
 
 jest.mock('../hooks/useStorage', () =>
-  jest.fn().mockImplementation(value => [value, () => {}])
+  jest.fn().mockImplementation((value) => [value, () => {}])
 );
 
 beforeEach(() => {
   useStorage.mockClear();
 });
 
-const provider = props =>
+const provider = (props) =>
   render(<LastLessonProvider {...props}>hello</LastLessonProvider>);
 
 describe('LastLessonProvider', () => {
@@ -26,7 +26,7 @@ describe('LastLessonProvider', () => {
       expect(useStorage.mock.calls[0]).toEqual([
         localStorage,
         'lastLessonVisited',
-        ''
+        '',
       ]);
     });
   });

@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import {graphql} from 'gatsby';
 import Layout from '../components/shared/Layout';
 import Courses from '../components/Courses';
 import Page from '../components/shared/Page';
 
-const CourseListTemplate = ({ data, path }) => {
-  const { edges } = data.allMarkdownRemark;
+const CourseListTemplate = ({data, path}) => {
+  const {edges} = data.allMarkdownRemark;
   const pageTitle = 'Courses';
 
   return (
@@ -21,13 +21,11 @@ const CourseListTemplate = ({ data, path }) => {
 export const query = graphql`
   query CourseListTemplate($coursesLimit: Int!, $coursesOffset: Int!) {
     allMarkdownRemark(
-      limit: $coursesLimit,
-      skip: $coursesOffset,
-      filter: { frontmatter: { template: { eq: "course" }, draft: { ne: true } } },
-      sort: {
-        fields: [frontmatter___title]
-        order: [ASC]
-    }){
+      limit: $coursesLimit
+      skip: $coursesOffset
+      filter: {frontmatter: {template: {eq: "course"}, draft: {ne: true}}}
+      sort: {fields: [frontmatter___title], order: [ASC]}
+    ) {
       edges {
         node {
           fields {
@@ -48,9 +46,9 @@ export const query = graphql`
 CourseListTemplate.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.arrayOf(PropTypes.object)
-    })
-  }).isRequired
+      edges: PropTypes.arrayOf(PropTypes.object),
+    }),
+  }).isRequired,
 };
 
 export default CourseListTemplate;

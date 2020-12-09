@@ -2,7 +2,11 @@ import React from 'react';
 import {Typography, Box, Button, Grid} from '@material-ui/core';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
 import Carousel from '../Carousel';
-import {GET_STARTED_LINK, COURSE_DATA_MAPPING, FOOTER_DATA} from './LandingConstants';
+import {
+  GET_STARTED_LINK,
+  COURSE_DATA_MAPPING,
+  FOOTER_DATA,
+} from './LandingConstants';
 
 const useStyles = makeStyles((theme) => ({
   // Hero Styles
@@ -55,12 +59,12 @@ const useStyles = makeStyles((theme) => ({
   getStartedItemTitle: {
     fontWeight: theme.typography.fontWeightBold,
     [theme.breakpoints.down('xs')]: {
-      fontSize: "1.25rem",
+      fontSize: '1.25rem',
     },
   },
   getStartedItemSubtitle: {
     [theme.breakpoints.down('xs')]: {
-      fontSize: "1.25px",
+      fontSize: '1.25px',
     },
   },
   getStartedGrid: {
@@ -91,13 +95,30 @@ const Landing = ({courseEdges}) => {
         color={theme.palette.primary.contrastText}
         bgcolor={theme.palette.primary.main}
       >
-        <Typography variant="h1" color="inherit" className={classes.heroTitle}>Awesome Learning</Typography>
-        <Typography variant="body1" className={classes.heroSubtitle}>Learn front-end tech, together.</Typography>
-        <Button variant="contained" color="secondary" className={classes.heroCta} href={GET_STARTED_LINK}>Get started</Button>
+        <Typography variant="h1" color="inherit" className={classes.heroTitle}>
+          Awesome Learning
+        </Typography>
+        <Typography variant="body1" className={classes.heroSubtitle}>
+          Learn front-end tech, together.
+        </Typography>
+        <Button
+          variant="contained"
+          color="secondary"
+          className={classes.heroCta}
+          href={GET_STARTED_LINK}
+        >
+          Get started
+        </Button>
       </Box>
       <Box className={classes.sectionContainer}>
         <Box className={classes.sectionContent}>
-          <Typography variant="h2" color="inherit" className={classes.sectionTitle}>Popular Courses</Typography>
+          <Typography
+            variant="h2"
+            color="inherit"
+            className={classes.sectionTitle}
+          >
+            Popular Courses
+          </Typography>
           <Carousel
             items={courseEdges.map(({node}) => {
               const {frontmatter, fields} = node;
@@ -107,7 +128,7 @@ const Landing = ({courseEdges}) => {
                 icon: COURSE_DATA_MAPPING[title]
                   ? COURSE_DATA_MAPPING[title].icon
                   : 'array',
-                path: fields.slug
+                path: fields.slug,
               };
             })}
           />
@@ -115,12 +136,21 @@ const Landing = ({courseEdges}) => {
       </Box>
       <Box className={classes.sectionContainer}>
         <Box className={classes.sectionContent}>
-          <Typography variant="h2" color="inherit" className={classes.sectionTitle}>What is Awesome Learning?</Typography>
+          <Typography
+            variant="h2"
+            color="inherit"
+            className={classes.sectionTitle}
+          >
+            What is Awesome Learning?
+          </Typography>
           <Typography variant="body1" color="inherit">
-            Awesome Learning is a front-end-web focused learning platform created by current and former members of Wayfair
-            Engineering. Small groups of like-minded engineers gather together in a room or virtually, typically once a
-            week, and run through Awesome Learning lessons. Learning materials and pre-read quizzes are done before
-            starting the lesson, so everyone is on the same page and held accountable
+            Awesome Learning is a front-end-web focused learning platform
+            created by current and former members of Wayfair Engineering. Small
+            groups of like-minded engineers gather together in a room or
+            virtually, typically once a week, and run through Awesome Learning
+            lessons. Learning materials and pre-read quizzes are done before
+            starting the lesson, so everyone is on the same page and held
+            accountable
           </Typography>
         </Box>
       </Box>
@@ -130,21 +160,37 @@ const Landing = ({courseEdges}) => {
         bgcolor={theme.palette.secondary.main}
       >
         <Box className={classes.sectionContent}>
-          <Typography variant="h2" color="inherit" className={classes.getStartedSectionTitle}>How can I get started?</Typography>
+          <Typography
+            variant="h2"
+            color="inherit"
+            className={classes.getStartedSectionTitle}
+          >
+            How can I get started?
+          </Typography>
           <Grid container spacing={3} className={classes.getStartedGrid}>
-            {FOOTER_DATA.map(item =>
+            {FOOTER_DATA.map((item) => (
               <Grid item xs={12} sm={3} key={item.title}>
-                <Box
-                  display="flex"
-                  alignItems="center"
-                  flexDirection="column"
-                >
-                  <item.icon className={classes.getStartedIcon}/>
-                  <Typography variant="body1" color="inherit" align="center" className={classes.getStartedItemTitle}>{item.title}</Typography>
-                  <Typography variant="body1" color="inherit" align="center" className={classes.getStartedItemSubtitle}>{item.subtitle}</Typography>
+                <Box display="flex" alignItems="center" flexDirection="column">
+                  <item.icon className={classes.getStartedIcon} />
+                  <Typography
+                    variant="body1"
+                    color="inherit"
+                    align="center"
+                    className={classes.getStartedItemTitle}
+                  >
+                    {item.title}
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    color="inherit"
+                    align="center"
+                    className={classes.getStartedItemSubtitle}
+                  >
+                    {item.subtitle}
+                  </Typography>
                 </Box>
               </Grid>
-            )}
+            ))}
           </Grid>
         </Box>
         <Box
@@ -153,7 +199,9 @@ const Landing = ({courseEdges}) => {
           flexDirection="column"
           p={theme.spacing(6, 0, 3)}
         >
-          <Button variant="contained" color="primary" href={GET_STARTED_LINK}>Get started</Button>
+          <Button variant="contained" color="primary" href={GET_STARTED_LINK}>
+            Get started
+          </Button>
         </Box>
       </Box>
     </>

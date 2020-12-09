@@ -1,0 +1,9 @@
+.cache
+.github
+content
+gatsby
+node_modules
+public
+static
+*.md
+font-preload-cache.json

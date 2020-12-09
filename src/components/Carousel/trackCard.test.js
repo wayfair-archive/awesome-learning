@@ -7,7 +7,7 @@ const PROPS = {
   title: 'Track Card Title',
   icon: getIcon('array'),
   subTitle: 'This is a track card',
-  path: '/trackcard'
+  path: '/trackcard',
 };
 
 describe('Track Card', () => {

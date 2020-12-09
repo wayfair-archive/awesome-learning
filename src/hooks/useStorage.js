@@ -22,7 +22,7 @@ const useStorage = (storageType, key, initialValue) => {
     return null;
   });
 
-  const setValue = value => {
+  const setValue = (value) => {
     try {
       const valueToState = value instanceof Function ? value(state) : value;
 

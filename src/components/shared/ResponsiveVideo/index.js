@@ -1,1 +1,1 @@
-export { default } from './ResponsiveVideo';
+export {default} from './ResponsiveVideo';

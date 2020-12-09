@@ -15,7 +15,7 @@ See usage below
 
 The following props may be passed to configure the Block.
 
-| name           | type                            | description                                      | default |
-| ---------------| ------------------------------- | ------------------------------------------------ | ------- |
-| **icon**       | `oneOf([twitter,github, email, logo, menu, functions, array, async, data, testing, function, hooks, leftChevron, rightChevron])` | The icon to display                         |   |
-| **cssClasses** | `String`                    | List of css classes to provide extra styling | `null`  |
+| name           | type                                                                                                                             | description                                  | default |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- | ------- |
+| **icon**       | `oneOf([twitter,github, email, logo, menu, functions, array, async, data, testing, function, hooks, leftChevron, rightChevron])` | The icon to display                          |         |
+| **cssClasses** | `String`                                                                                                                         | List of css classes to provide extra styling | `null`  |

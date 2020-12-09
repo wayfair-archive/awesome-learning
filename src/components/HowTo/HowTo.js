@@ -17,8 +17,7 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
     width: '80%',
   },
-})
-);
+}));
 
 const HowTo = () => {
   const classes = useStyles();
@@ -27,10 +26,12 @@ const HowTo = () => {
   return (
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
       <Box className={classes.contentSection}>
-        <Typography variant="h2" className={classes.sectionTitle}>Gathering A Group</Typography>
+        <Typography variant="h2" className={classes.sectionTitle}>
+          Gathering A Group
+        </Typography>
         <Typography variant="body1" className={classes.paragraphContainer}>
-          Awesome Learning is best when run in a group setting. Your group can be
-          co-located or remote. Here are some battle-tested ground rules.
+          Awesome Learning is best when run in a group setting. Your group can
+          be co-located or remote. Here are some battle-tested ground rules.
         </Typography>
         <Box m="auto" width="80%">
           <Typography variant="body1" className={classes.paragraphContainer}>
@@ -38,23 +39,25 @@ const HowTo = () => {
             individual participation.
           </Typography>
           <Typography variant="body1" className={classes.paragraphContainer}>
-            2. Strive to find a group of roughly similar skill levels. This isn't an
-            exact science, but mixing highly experienced and in-experienced folks
-            together can sometimes lead to being too bored or too challenged on a
-            subject.
+            2. Strive to find a group of roughly similar skill levels. This
+            isn't an exact science, but mixing highly experienced and
+            in-experienced folks together can sometimes lead to being too bored
+            or too challenged on a subject.
           </Typography>
           <Typography variant="body1" className={classes.paragraphContainer}>
-            3. Set a time commitment early, and get buy-in. Shoot for an hour a week
-            meeting with a consistent time and location.
+            3. Set a time commitment early, and get buy-in. Shoot for an hour a
+            week meeting with a consistent time and location.
           </Typography>
         </Box>
       </Box>
 
       <Box className={classes.contentSection}>
-        <Typography variant="h2" className={classes.sectionTitle}>Before Your Lesson</Typography>
+        <Typography variant="h2" className={classes.sectionTitle}>
+          Before Your Lesson
+        </Typography>
         <Typography variant="body1" className={classes.paragraphContainer}>
           Each lesson includes a video and reading materials. We strongly
-          recommend working through both the videos and the reading materials{" "}
+          recommend working through both the videos and the reading materials{' '}
           <b>before</b> your lesson begins. If you are the lesson leader, please
           send out the link to the lesson to your group at least 24 hours in
           advance of when you will gather for the lesson exercises.
@@ -64,31 +67,37 @@ const HowTo = () => {
             1. <b>Good:</b> Watching the video before the lesson begins.
           </Typography>
           <Typography variant="body1" className={classes.paragraphContainer}>
-            2. <b>Better:</b> Watching the video and reading the pre-read materials
-            before the lesson begins.
+            2. <b>Better:</b> Watching the video and reading the pre-read
+            materials before the lesson begins.
           </Typography>
           <Typography variant="body1" className={classes.paragraphContainer}>
-            3. <b>Best:</b> All of the above and taking the pre-read quiz to test
-            your understanding.
+            3. <b>Best:</b> All of the above and taking the pre-read quiz to
+            test your understanding.
           </Typography>
         </Box>
       </Box>
 
       <Box className={classes.contentSection}>
-        <Typography variant="h2" className={classes.sectionTitle}>During Your Lesson</Typography>
+        <Typography variant="h2" className={classes.sectionTitle}>
+          During Your Lesson
+        </Typography>
         <Typography variant="body1" className={classes.paragraphContainer}>
           Check out this short video for an introduction to our exercise
           environment.
         </Typography>
         <Box m="auto" width={useLargeVideo ? '100%' : '80%'}>
-          <ResponsiveVideo link="https://www.youtube.com/embed/e8_wPD6O3gA" title="Introduction to your exercises"/>
+          <ResponsiveVideo
+            link="https://www.youtube.com/embed/e8_wPD6O3gA"
+            title="Introduction to your exercises"
+          />
         </Box>
         <Box m="auto" width="80%">
           <Typography variant="body1" className={classes.paragraphContainer}>
             <b>Rough lesson guide</b>
           </Typography>
           <Typography variant="body1" className={classes.paragraphContainer}>
-            1. Go over any questions the group has based on the pre-work materials.
+            1. Go over any questions the group has based on the pre-work
+            materials.
           </Typography>
           <Typography variant="body1" className={classes.paragraphContainer}>
             2. Open and fork the exercise sets.
@@ -101,17 +110,15 @@ const HowTo = () => {
             discuss problems and solutions, etc. Above all, communicate!
           </Typography>
           <Typography variant="body1" className={classes.paragraphContainer}>
-            5. Check the provided solutions if you get stuck, and don't be afraid to
-            get derailed with discussions and research.
+            5. Check the provided solutions if you get stuck, and don't be
+            afraid to get derailed with discussions and research.
           </Typography>
         </Box>
       </Box>
 
       <Box className={classes.contentSection}>
         <Typography variant="h2" className={classes.sectionTitle}>
-          <abbr title="Frequently Asked Questions">
-            FAQs
-          </abbr>
+          <abbr title="Frequently Asked Questions">FAQs</abbr>
         </Typography>
         <Typography variant="body1" className={classes.paragraphContainer}>
           <b>Why should I Awesome Learn?</b>
@@ -142,12 +149,12 @@ const HowTo = () => {
           <b>What will this do for my team?</b>
         </Typography>
         <Typography variant="body1" className={classes.paragraphContainer}>
-          Awesome learning is a research-backed learning platform designed to help
-          small teams build lasting, foundational skills. The platform is a series
-          of videos, reading materials, and exercises in one hour intervals
-          divided into subject-matter "courses". Reading quizzes keep learners
-          engaged, surveys keep leaders up to date with how well team members are
-          learning. TDD exercises provide a tight feedback loop.
+          Awesome learning is a research-backed learning platform designed to
+          help small teams build lasting, foundational skills. The platform is a
+          series of videos, reading materials, and exercises in one hour
+          intervals divided into subject-matter "courses". Reading quizzes keep
+          learners engaged, surveys keep leaders up to date with how well team
+          members are learning. TDD exercises provide a tight feedback loop.
         </Typography>
         <Typography variant="body1" className={classes.paragraphContainer}>
           <b>What is a Lesson?</b>
@@ -162,17 +169,18 @@ const HowTo = () => {
         </Typography>
         <Typography variant="body1" className={classes.paragraphContainer}>
           An Awesome Learning course is a collection of lessons grouped under an
-          umbrella theme. The specific goal of each lesson is to help you build a
-          better mental model of the broader topic.
+          umbrella theme. The specific goal of each lesson is to help you build
+          a better mental model of the broader topic.
         </Typography>
         <Typography variant="body1" className={classes.paragraphContainer}>
           <b>How long is the time commitment for a single Course?</b>
         </Typography>
         <Typography variant="body1" className={classes.paragraphContainer}>
-          It varies. Some of our courses contain 2 lessons, others contain 5. The
-          recommended cadence is one lesson or per week. We don't reccommend a
-          slower cadence than once per week. Our experience shows folks lose too
-          much course context when more than a week passes in between lessons.
+          It varies. Some of our courses contain 2 lessons, others contain 5.
+          The recommended cadence is one lesson or per week. We don't reccommend
+          a slower cadence than once per week. Our experience shows folks lose
+          too much course context when more than a week passes in between
+          lessons.
         </Typography>
       </Box>
     </Box>

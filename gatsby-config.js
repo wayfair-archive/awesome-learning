@@ -1,4 +1,4 @@
-const siteConfig = require("./config.js");
+const siteConfig = require('./config.js');
 
 module.exports = {
   pathPrefix: '/awesome-learning',
@@ -10,68 +10,68 @@ module.exports = {
     repoName: siteConfig.repoName,
     repoOwner: siteConfig.repoOwner,
     menu: siteConfig.menu,
-    author: siteConfig.author
+    author: siteConfig.author,
   },
   plugins: [
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content`,
-        name: "pages"
-      }
+        name: 'pages',
+      },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "assets",
-        path: `${__dirname}/static`
-      }
+        name: 'assets',
+        path: `${__dirname}/static`,
+      },
     },
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-responsive-iframe",
-            options: { wrapperStyle: "margin-bottom: 1.0725rem" }
+            resolve: 'gatsby-remark-responsive-iframe',
+            options: {wrapperStyle: 'margin-bottom: 1.0725rem'},
           },
-          "gatsby-remark-autolink-headers",
-          "gatsby-remark-copy-linked-files",
-        ]
-      }
+          'gatsby-remark-autolink-headers',
+          'gatsby-remark-copy-linked-files',
+        ],
+      },
     },
     {
-      resolve: "gatsby-plugin-google-gtag",
+      resolve: 'gatsby-plugin-google-gtag',
       options: {
         trackingIds: [siteConfig.googleAnalyticsId],
         pluginConfig: {
-          head: true
-        }
-      }
+          head: true,
+        },
+      },
     },
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: siteConfig.title,
         short_name: siteConfig.title,
-        start_url: "/",
-        background_color: "#FFF",
-        theme_color: "#455A81",
-        display: "standalone",
-        icon: "static/wayfair.svg"
-      }
+        start_url: '/',
+        background_color: '#FFF',
+        theme_color: '#455A81',
+        display: 'standalone',
+        icon: 'static/wayfair.svg',
+      },
     },
-    "gatsby-plugin-offline",
-    "gatsby-plugin-catch-links",
-    "gatsby-plugin-react-helmet",
+    'gatsby-plugin-offline',
+    'gatsby-plugin-catch-links',
+    'gatsby-plugin-react-helmet',
     {
-      resolve: "gatsby-plugin-sass",
+      resolve: 'gatsby-plugin-sass',
       options: {
         cssLoaderOptions: {
-          camelCase: false
+          camelCase: false,
         },
         data: `@import "${__dirname}/src/assets/scss/styles";`,
-      }
+      },
     },
     {
       resolve: `gatsby-plugin-material-ui`,
@@ -83,18 +83,15 @@ module.exports = {
     },
     `custom-mui-theme`,
     {
-      resolve: 'gatsby-plugin-eslint'
+      resolve: 'gatsby-plugin-eslint',
     },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `Muli`,
-          `Varela`
-        ],
-        display: 'swap'
-      }
+        fonts: [`Muli`, `Varela`],
+        display: 'swap',
+      },
     },
-    `gatsby-plugin-preload-fonts`
-  ]
+    `gatsby-plugin-preload-fonts`,
+  ],
 };

@@ -8,7 +8,7 @@ const COURSES_LINK = '/courses';
 
 const useStyles = makeStyles((theme) => ({
   title: {
-    width: "fit-content",
+    width: 'fit-content',
     margin: theme.spacing(2, 0, 5),
     textDecoration: 'underline',
     '&:hover': {
@@ -17,16 +17,15 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   courseContainer: {
-    margin: theme.spacing(10, 0 , 14),
+    margin: theme.spacing(10, 0, 14),
   },
   goLearnCTA: {
     width: '140px',
     marginTop: theme.spacing(4),
   },
-})
-);
+}));
 
-const Courses = ({ edges }) => {
+const Courses = ({edges}) => {
   const classes = useStyles();
   const theme = useTheme();
   const itemsPerPage = 4;
@@ -34,16 +33,29 @@ const Courses = ({ edges }) => {
   const noOfPages = Math.ceil(edges.length / itemsPerPage);
   const handleChange = (event, value) => {
     setPage(value);
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   };
 
   return (
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
-      <Typography variant="h1" color="textPrimary" component="a" href={COURSES_LINK} className={classes.title}>Courses</Typography>
+      <Typography
+        variant="h1"
+        color="textPrimary"
+        component="a"
+        href={COURSES_LINK}
+        className={classes.title}
+      >
+        Courses
+      </Typography>
       {edges
         .slice((page - 1) * itemsPerPage, page * itemsPerPage)
-        .map(edge => (
-          <Box display="flex" flexDirection="column" key={edge.node.frontmatter.title} className={classes.courseContainer}>
+        .map((edge) => (
+          <Box
+            display="flex"
+            flexDirection="column"
+            key={edge.node.frontmatter.title}
+            className={classes.courseContainer}
+          >
             <Typography
               variant="h2"
               component="a"
@@ -62,8 +74,17 @@ const Courses = ({ edges }) => {
             >
               {edge.node.frontmatter.category}
             </Typography>
-            <Typography variant="body1">{edge.node.frontmatter.description}</Typography>
-            <Button variant="contained" color="secondary" href={edge.node.fields.slug} className={classes.goLearnCTA}>Go Learn</Button>
+            <Typography variant="body1">
+              {edge.node.frontmatter.description}
+            </Typography>
+            <Button
+              variant="contained"
+              color="secondary"
+              href={edge.node.fields.slug}
+              className={classes.goLearnCTA}
+            >
+              Go Learn
+            </Button>
           </Box>
         ))}
       <Box display="flex" justifyContent="center">

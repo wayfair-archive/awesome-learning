@@ -8,7 +8,7 @@ import Icon from './Icon';
 const containerStyle = {
   display: 'flex',
   justifyContent: 'flex-start',
-  flexWrap: 'wrap'
+  flexWrap: 'wrap',
 };
 
 const blockStyle = {
@@ -20,7 +20,7 @@ const blockStyle = {
   height: '130px',
   padding: '30px',
   margin: '10px',
-  border: '1px #000 solid'
+  border: '1px #000 solid',
 };
 
 const stories = storiesOf('Shared.Icon', module);
@@ -29,8 +29,8 @@ stories.addDecorator(withKnobs);
 stories.addParameters({
   readme: {
     // Show readme at the addons panel
-    sidebar: IconReadme
-  }
+    sidebar: IconReadme,
+  },
 });
 
 stories.add(

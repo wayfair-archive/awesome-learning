@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 export default class StoryContainer extends Component {
-
   render() {
-    const { story } = this.props;
+    const {story} = this.props;
 
     return (
       <React.StrictMode>
@@ -13,8 +12,9 @@ export default class StoryContainer extends Component {
           style={{
             padding: '3em 5em',
             display: 'flex',
-            flexDirection: 'column'
-          }}>
+            flexDirection: 'column',
+          }}
+        >
           {story()}
         </div>
       </React.StrictMode>

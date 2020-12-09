@@ -1,10 +1,10 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-grid-system';
+import {Container, Row, Col} from 'react-grid-system';
 import Layout from '../components/shared/Layout';
 import Page from '../components/shared/Page';
 
-const NotFoundTemplate = () =>   (
-  <Layout title='Not Found'>
+const NotFoundTemplate = () => (
+  <Layout title="Not Found">
     <Container fluid>
       <Row>
         <Col>

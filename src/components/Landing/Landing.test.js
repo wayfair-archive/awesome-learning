@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import {render} from '@testing-library/react';
 import Landing from './Landing';
 import LastLessonProvider from '../../providers/LastLessonProvider';
 
@@ -8,11 +8,11 @@ const PROPS = {
     {
       node: {
         id: 0,
-        frontmatter: { title: '' },
-        fields: { slug: '' }
-      }
-    }
-  ]
+        frontmatter: {title: ''},
+        fields: {slug: ''},
+      },
+    },
+  ],
 };
 
 /**
@@ -23,13 +23,13 @@ const PROPS = {
  */
 function someElementHasPropValue(nodeList, attributeName, key) {
   return Array.from(nodeList).some(
-    node => node.getAttribute(attributeName) === key
+    (node) => node.getAttribute(attributeName) === key
   );
 }
 
 describe('Landing Component', () => {
   test('Renders a hero', () => {
-    const { queryByText, container } = render(
+    const {queryByText, container} = render(
       <LastLessonProvider>
         <Landing {...PROPS} />
       </LastLessonProvider>
@@ -42,7 +42,7 @@ describe('Landing Component', () => {
   });
 
   test('Renders a Popular Courses Carousel with Title', () => {
-    const { container, queryByText } = render(
+    const {container, queryByText} = render(
       <LastLessonProvider>
         <Landing {...PROPS} />
       </LastLessonProvider>
@@ -53,18 +53,22 @@ describe('Landing Component', () => {
   });
 
   test('Renders What is Awesome Learning', () => {
-    const { queryByText } = render(
+    const {queryByText} = render(
       <LastLessonProvider>
         <Landing {...PROPS} />
       </LastLessonProvider>
     );
 
     expect(queryByText('What is Awesome Learning?')).toBeTruthy();
-    expect(queryByText('Awesome Learning is a front-end-web focused learning', {exact: false})).toBeTruthy();
+    expect(
+      queryByText('Awesome Learning is a front-end-web focused learning', {
+        exact: false,
+      })
+    ).toBeTruthy();
   });
 
   test('Renders How Can I Get Started', () => {
-    const { queryByText } = render(
+    const {queryByText} = render(
       <LastLessonProvider>
         <Landing {...PROPS} />
       </LastLessonProvider>

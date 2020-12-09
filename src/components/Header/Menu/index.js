@@ -1,1 +1,1 @@
-export { default } from './MenuContainer';
+export {default} from './MenuContainer';

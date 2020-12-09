@@ -9,7 +9,7 @@ import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   videoContainer: {
-    maxWidth: "100%",
+    maxWidth: '100%',
     margin: theme.spacing(4),
   },
   responsiveIFrameWrapper: {
@@ -27,9 +27,8 @@ const useStyles = makeStyles((theme) => ({
     right: 0,
     width: '100%',
     height: '100%',
-  }
-})
-);
+  },
+}));
 
 const ResponsiveVideo = ({link, title}) => {
   const classes = useStyles();

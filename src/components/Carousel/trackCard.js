@@ -28,9 +28,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('lg')]: {
       padding: theme.spacing(0, 4, 0),
     },
-  }
-})
-);
+  },
+}));
 
 const TrackCardBox = withStyles((theme) => ({
   root: {
@@ -60,7 +59,9 @@ const TrackCard = ({path, icon, title}) => {
         <SvgIcon viewBox={icon.viewBox} className={classes.svg}>
           <path d={icon.path} />
         </SvgIcon>
-        <Typography variant="body1" className={classes.title}>{title}</Typography>
+        <Typography variant="body1" className={classes.title}>
+          {title}
+        </Typography>
       </TrackCardBox>
     </Box>
   );
@@ -68,11 +69,11 @@ const TrackCard = ({path, icon, title}) => {
 
 TrackCard.propTypes = {
   title: PropTypes.string.isRequired,
-  path: PropTypes.string
+  path: PropTypes.string,
 };
 
 TrackCard.defaultProps = {
-  path: "/"
+  path: '/',
 };
 
 export default TrackCard;

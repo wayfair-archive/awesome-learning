@@ -1,9 +1,9 @@
-import { configure, addDecorator, addParameters } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
-import { create } from '@storybook/theming';
-import { configureActions } from "@storybook/addon-actions"
-import { addReadme } from 'storybook-readme';
-import React from "react"
+import {configure, addDecorator, addParameters} from '@storybook/react';
+import {withInfo} from '@storybook/addon-info';
+import {create} from '@storybook/theming';
+import {configureActions} from '@storybook/addon-actions';
+import {addReadme} from 'storybook-readme';
+import React from 'react';
 import StoryContainer from './StoryContainer';
 
 // Components to exclude from Storybook PropsTable
@@ -25,9 +25,9 @@ addParameters({
     isToolshown: true,
     theme: create({
       base: 'light',
-      brandTitle: 'Awesome Learning'
-    })
-  }
+      brandTitle: 'Awesome Learning',
+    }),
+  },
 });
 
 configureActions({
@@ -41,28 +41,24 @@ addDecorator(
     styles: {
       header: {
         h1: {
-          fontWeight: 600
+          fontWeight: 600,
         },
       },
     },
     header: false,
     maxPropStringLength: 200,
     maxPropsIntoLine: 1,
-    propTablesExclude: [
-      Icon,
-      LastLessonProvider,
-      Page,
-    ]
+    propTablesExclude: [Icon, LastLessonProvider, Page],
   })
 );
 addDecorator(addReadme);
-addDecorator(story => <StoryContainer story={story} />);
+addDecorator((story) => <StoryContainer story={story} />);
 
 // automatically import all files ending in *.stories.js
-const req = require.context("../src/components", true, /.stories.js$/)
+const req = require.context('../src/components', true, /.stories.js$/);
 
 function loadStories() {
-  req.keys().forEach(filename => req(filename))
+  req.keys().forEach((filename) => req(filename));
 }
 
 // Gatsby's Link overrides:
@@ -70,11 +66,11 @@ function loadStories() {
 global.___loader = {
   enqueue: () => {},
   hovering: () => {},
-}
+};
 // Gatsby internal mocking to prevent unnecessary errors in storybook testing environment
-global.__PATH_PREFIX__ = ""
+global.__PATH_PREFIX__ = '';
 // This is to utilized to override the window.___navigate method Gatsby defines and uses to report what path a Link would be taking us to if it wasn't inside a storybook
-window.___navigate = pathname => {
-  action("NavigateTo:")(pathname)
-}
+window.___navigate = (pathname) => {
+  action('NavigateTo:')(pathname);
+};
 configure(loadStories, module);

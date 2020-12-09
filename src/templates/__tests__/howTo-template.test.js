@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from '@testing-library/react';
-import HowToTemplate from "../howTo-template";
+import HowToTemplate from '../howTo-template';
 
 describe('HowTo template', () => {
   it('matches the snapshot', () => {

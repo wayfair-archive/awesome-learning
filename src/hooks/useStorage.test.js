@@ -2,11 +2,11 @@ import {useState} from 'react';
 import useStorage from './useStorage';
 
 jest.mock('react');
-useState.mockImplementation(func => [func(), useState]);
+useState.mockImplementation((func) => [func(), useState]);
 
 const localStorageMock = {
-  getItem: str => JSON.stringify({[str]: 'value'}),
-  setItem: (str, json) => ({[str]: JSON.parse(json)})
+  getItem: (str) => JSON.stringify({[str]: 'value'}),
+  setItem: (str, json) => ({[str]: JSON.parse(json)}),
 };
 
 describe('.useStorage', () => {

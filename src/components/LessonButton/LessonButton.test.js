@@ -10,11 +10,11 @@ describe('LessonButton', () => {
       site: {
         siteMetadata: {
           repoName: 'awesome-learning',
-          repoOwner: 'wayfair'
-        }
-      }
+          repoOwner: 'wayfair',
+        },
+      },
     },
-    defaultTab: 'tests'
+    defaultTab: 'tests',
   };
 
   it('creates a button with the right copy and codesandbox url', () => {

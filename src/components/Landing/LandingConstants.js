@@ -6,7 +6,7 @@ import CodeIcon from '@material-ui/icons/Code';
 export const GET_STARTED_LINK = '/courses';
 
 export const COURSE_DATA_MAPPING = {
-  'Accessibility': {
+  Accessibility: {
     icon: 'accessibility',
   },
   'Data Types': {
@@ -35,28 +35,28 @@ export const COURSE_DATA_MAPPING = {
   },
   'TypeScript Basics': {
     icon: 'typescript',
-  }
+  },
 };
 
 export const FOOTER_DATA = [
   {
     icon: PeopleIcon,
     title: 'Make a team',
-    subtitle: 'of 5-6 peers'
+    subtitle: 'of 5-6 peers',
   },
   {
     icon: MenuBookIcon,
     title: 'Pick a course',
-    subtitle: 'for your team'
+    subtitle: 'for your team',
   },
   {
     icon: AccessTimeIcon,
     title: 'Find a time',
-    subtitle: 'and place'
+    subtitle: 'and place',
   },
   {
     icon: CodeIcon,
     title: 'Start coding',
-    subtitle: 'and enjoy!'
+    subtitle: 'and enjoy!',
   },
 ];
