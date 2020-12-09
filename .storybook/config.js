@@ -7,16 +7,9 @@ import React from "react"
 import StoryContainer from './StoryContainer';
 
 // Components to exclude from Storybook PropsTable
-import Block from '../src/components/shared/Block';
-import ContentSection from '../src/components/shared/ContentSection';
 import Icon from '../src/components/shared/Icon';
-import StyledLink from '../src/components/shared/StyledLink';
 import LastLessonProvider from '../src/providers/LastLessonProvider';
 import Page from '../src/components/shared/Page';
-import SectionTitle from '../src/components/shared/SectionTitle';
-import Text from '../src/components/shared/Text';
-
-
 
 addParameters({
   options: {
@@ -56,14 +49,9 @@ addDecorator(
     maxPropStringLength: 200,
     maxPropsIntoLine: 1,
     propTablesExclude: [
-      Block,
-      ContentSection,
       Icon,
-      StyledLink,
       LastLessonProvider,
       Page,
-      SectionTitle,
-      Text
     ]
   })
 );
