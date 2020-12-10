@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     paddingLeft: theme.spacing(2),
-    lineHeight: 1,
   },
   content: {
     [theme.breakpoints.up('sm')]: {
@@ -68,7 +67,6 @@ const HeaderButton = withStyles((theme) => ({
       marginRight: theme.spacing(2),
     },
     color: theme.palette.primary.contrastText,
-    lineHeight: 1,
     textDecoration: 'none',
     borderRadius: 0,
     borderBottom: '2px solid transparent',

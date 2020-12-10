@@ -15,6 +15,10 @@ const useStyles = makeStyles((theme) => ({
   paragraphContainer: {
     paddingBottom: theme.spacing(4),
   },
+  surveyButton: {
+    textTransform: 'none',
+    marginBottom: theme.spacing(1),
+  },
 }));
 
 const Lesson = ({lesson, slug}) => {
@@ -63,7 +67,7 @@ const Lesson = ({lesson, slug}) => {
       </Box>
 
       <Box className={classes.sectionContainer}>
-        <Typography variant="h1" className={classes.sectionTitle}>
+        <Typography variant="h2" className={classes.sectionTitle}>
           Pre-Session Video Materials (required)
         </Typography>
         <Typography variant="body1" className={classes.paragraphContainer}>
@@ -84,7 +88,7 @@ const Lesson = ({lesson, slug}) => {
       </Box>
 
       <Box className={classes.sectionContainer}>
-        <Typography variant="h1" className={classes.sectionTitle}>
+        <Typography variant="h2" className={classes.sectionTitle}>
           Pre-Session Reading Materials (optional)
         </Typography>
         <Typography variant="body1" className={classes.paragraphContainer}>
@@ -113,7 +117,7 @@ const Lesson = ({lesson, slug}) => {
 
       {(preReadQuiz || preReadQuizLink) && (
         <Box className={classes.sectionContainer}>
-          <Typography variant="h1" className={classes.sectionTitle}>
+          <Typography variant="h2" className={classes.sectionTitle}>
             Pre-Session Quiz
           </Typography>
           <Typography variant="body1" className={classes.paragraphContainer}>
@@ -132,7 +136,7 @@ const Lesson = ({lesson, slug}) => {
       )}
 
       <Box className={classes.sectionContainer}>
-        <Typography variant="h1" className={classes.sectionTitle}>
+        <Typography variant="h2" className={classes.sectionTitle}>
           Exercises
         </Typography>
         {secondaryExerciseUrl ? (
@@ -149,6 +153,26 @@ const Lesson = ({lesson, slug}) => {
             lessonData={lesson}
           />
         )}
+      </Box>
+
+      <Box className={classes.sectionContainer}>
+        <Typography variant="h2" className={classes.sectionTitle}>
+          Let Us Know How We Did
+        </Typography>
+        <Typography variant="body1" className={classes.paragraphContainer}>
+          We need as much feedback as possible to make this platform more
+          effective for you and others like you. Please take a moment to fill
+          out{' '}
+          <Button
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeiB_M1YmwwwG9BNhGnd1Nn_BhnzOfHFUDrZGz1PAvm8A1NxA/viewform"
+            rel="noopener noreferrer"
+            target="_blank"
+            className={classes.surveyButton}
+          >
+            this session survey
+          </Button>
+          .
+        </Typography>
       </Box>
     </Box>
   );

@@ -42,7 +42,7 @@ export const PrimitiveLessonButton = ({
       }}
       className={classes.button}
     >
-      <Typography variant="h2" color="inherit">
+      <Typography variant="h3" color="inherit">
         {children}
       </Typography>
     </Button>

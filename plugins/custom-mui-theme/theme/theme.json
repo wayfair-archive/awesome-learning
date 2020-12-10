@@ -89,6 +89,7 @@
         "fontSize": "1rem",
         "textTransform": "uppercase",
         "textDecoration": "underline",
+        "lineHeight": 1,
         "color": "#69adc9",
         "disableRipple": true,
         "&:hover": {
