@@ -66,17 +66,17 @@ const Lesson = ({lesson, slug}) => {
         ))}
       </Box>
 
-      <Box className={classes.sectionContainer}>
-        <Typography variant="h2" className={classes.sectionTitle}>
-          Pre-Session Video Materials (required)
-        </Typography>
-        <Typography variant="body1" className={classes.paragraphContainer}>
-          Check out this content before your session begins to get an idea of
-          what you will be working on.
-        </Typography>
-        <Grid container>
-          {videoLinks &&
-            videoLinks.map((link) => (
+      {videoLinks && (
+        <Box className={classes.sectionContainer}>
+          <Typography variant="h2" className={classes.sectionTitle}>
+            Pre-Session Video Materials (required)
+          </Typography>
+          <Typography variant="body1" className={classes.paragraphContainer}>
+            Check out this content before your session begins to get an idea of
+            what you will be working on.
+          </Typography>
+          <Grid container>
+            {videoLinks.map((link) => (
               <Grid item xs={12} md={6} key={link}>
                 <ResponsiveVideo
                   link={link}
@@ -84,36 +84,43 @@ const Lesson = ({lesson, slug}) => {
                 />
               </Grid>
             ))}
-        </Grid>
-      </Box>
+          </Grid>
+        </Box>
+      )}
 
-      <Box className={classes.sectionContainer}>
-        <Typography variant="h2" className={classes.sectionTitle}>
-          Pre-Session Reading Materials (optional)
-        </Typography>
-        <Typography variant="body1" className={classes.paragraphContainer}>
-          We've curated these resources to give you greater depth on these
-          subjects. Don't feel like you have to read them all.
-        </Typography>
-        <Typography variant="body1" className={classes.paragraphContainer}>
-          Taking the time to go through all of these resources will definitely
-          put you on the road to expert-level knowledge in this subject matter.
-        </Typography>
-        {readingLinks.map((readingLink) => (
-          <Fragment key={readingLink.title}>
-            <Button
-              href={readingLink.link}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              {readingLink.title}
-            </Button>
-            <Typography variant="body1" className={classes.paragraphContainer}>
-              &#8226; {readingLink.description}
-            </Typography>
-          </Fragment>
-        ))}
-      </Box>
+      {readingLinks && (
+        <Box className={classes.sectionContainer}>
+          <Typography variant="h2" className={classes.sectionTitle}>
+            Pre-Session Reading Materials (optional)
+          </Typography>
+          <Typography variant="body1" className={classes.paragraphContainer}>
+            We've curated these resources to give you greater depth on these
+            subjects. Don't feel like you have to read them all.
+          </Typography>
+          <Typography variant="body1" className={classes.paragraphContainer}>
+            Taking the time to go through all of these resources will definitely
+            put you on the road to expert-level knowledge in this subject
+            matter.
+          </Typography>
+          {readingLinks.map((readingLink) => (
+            <Fragment key={readingLink.title}>
+              <Button
+                href={readingLink.link}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {readingLink.title}
+              </Button>
+              <Typography
+                variant="body1"
+                className={classes.paragraphContainer}
+              >
+                &#8226; {readingLink.description}
+              </Typography>
+            </Fragment>
+          ))}
+        </Box>
+      )}
 
       {(preReadQuiz || preReadQuizLink) && (
         <Box className={classes.sectionContainer}>
@@ -139,20 +146,22 @@ const Lesson = ({lesson, slug}) => {
         <Typography variant="h2" className={classes.sectionTitle}>
           Exercises
         </Typography>
-        {secondaryExerciseUrl ? (
-          <PrimitiveLessonButton
-            path={secondaryExerciseUrl}
-            lessonData={lesson}
-          >
-            Start the Workshop
-          </PrimitiveLessonButton>
-        ) : (
-          <LessonButton
-            defaultTab={defaultTab}
-            path={path}
-            lessonData={lesson}
-          />
-        )}
+        <Box className={classes.paragraphContainer}>
+          {secondaryExerciseUrl ? (
+            <PrimitiveLessonButton
+              path={secondaryExerciseUrl}
+              lessonData={lesson}
+            >
+              Start the Workshop
+            </PrimitiveLessonButton>
+          ) : (
+            <LessonButton
+              defaultTab={defaultTab}
+              path={path}
+              lessonData={lesson}
+            />
+          )}
+        </Box>
       </Box>
 
       <Box className={classes.sectionContainer}>
