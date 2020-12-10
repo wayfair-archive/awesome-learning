@@ -11,7 +11,7 @@
       "contrastText": "#fff"
     },
     "secondary": {
-      "main": "#69ADC9",
+      "main": "#69adc9",
       "contrastText": "#fff"
     },
     "info": {
@@ -19,7 +19,7 @@
     },
     "text": {
       "primary": "#1d1820",
-      "secondary": "#69ADC9"
+      "secondary": "#69adc9"
     },
     "background": {
       "default": "#fafafa"
@@ -89,7 +89,7 @@
         "fontSize": "1rem",
         "textTransform": "uppercase",
         "textDecoration": "underline",
-        "color": "#69ADC9",
+        "color": "#69adc9",
         "disableRipple": true,
         "&:hover": {
           "color": "#49798c",

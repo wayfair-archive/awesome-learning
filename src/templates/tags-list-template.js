@@ -1,33 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link, graphql} from 'gatsby';
+import {graphql} from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
-import {Container, Row, Col} from 'react-grid-system';
+import {Typography, Box, Button} from '@material-ui/core';
+import {useTheme} from '@material-ui/core/styles';
 import Layout from '../components/shared/Layout';
 import Page from '../components/shared/Page';
 
 const TagsListTemplate = ({data, path}) => {
+  const theme = useTheme();
   const {group} = data.allMarkdownRemark;
 
   return (
     <Layout title={'Tags'} slug={path}>
-      <Container fluid>
-        <Row>
-          <Col>
-            <Page title="Tags">
-              <ul>
-                {group.map((tag) => (
-                  <li key={tag.fieldValue}>
-                    <Link to={`/tag/${kebabCase(tag.fieldValue)}/`}>
-                      {tag.fieldValue} ({tag.totalCount})
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </Page>
-          </Col>
-        </Row>
-      </Container>
+      <Page title="Tags">
+        <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
+          <Typography variant="h1" color="textPrimary">
+            All Tags
+          </Typography>
+          {group.map((tag) => (
+            <Box display="block" pt={2}>
+              <Button
+                key={tag.fieldValue}
+                href={`/tag/${kebabCase(tag.fieldValue)}/`}
+              >
+                {tag.fieldValue} ({tag.totalCount})
+              </Button>
+            </Box>
+          ))}
+        </Box>
+      </Page>
     </Layout>
   );
 };

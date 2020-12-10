@@ -6,7 +6,6 @@ import Landing from '../components/Landing';
 
 const IndexTemplate = ({data}) => {
   const {edges} = data.allMarkdownRemark;
-
   return (
     <Layout isFullBleed>
       <Landing courseEdges={edges} />

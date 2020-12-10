@@ -5,7 +5,7 @@ module.exports = {
   title: 'Awesome Learning',
   subtitle: 'Learning frontend, together.',
   copyright: '© Awesome Learning™ All rights reserved.',
-  coursesPerPage: 10,
+  coursesPerPage: 4,
   googleAnalyticsId: 'UA-2081664-21',
   twitter: '@wayfairtech',
   menu: [

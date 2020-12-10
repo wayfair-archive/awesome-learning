@@ -88,7 +88,7 @@ const Question = ({
           <FormControlLabel
             value={choice.value}
             control={
-              <Box px={theme.spacing(1)}>
+              <Box px={4}>
                 <input
                   data-choice-index={choiceIndex}
                   data-question-index={questionIndex}

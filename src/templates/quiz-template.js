@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {graphql} from 'gatsby';
+import {Typography} from '@material-ui/core';
 import Layout from '../components/shared/Layout';
 import Page from '../components/shared/Page';
 import Quiz from '../components/Quiz';
@@ -24,7 +25,9 @@ const QuizTemplate = ({data}) => {
     <Layout description={courseDescription} title={quizTitle} slug={slug}>
       <Page>
         {preReadQuiz === null ? (
-          <h1>A quiz for this lesson is not ready yet!</h1>
+          <Typography variant="h1" color="textPrimary">
+            A quiz for this lesson is not ready yet!
+          </Typography>
         ) : (
           <Quiz quiz={preReadQuiz} slug={slug} title={title} />
         )}

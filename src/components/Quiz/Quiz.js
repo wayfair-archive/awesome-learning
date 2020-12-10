@@ -118,7 +118,7 @@ const Quiz = ({quiz, slug, title}) => {
             question.description
           }`;
           return (
-            <Box my={theme.spacing(1)} key={questionId}>
+            <Box my={4} key={questionId}>
               <Question
                 handleInputChange={handleInputChange}
                 question={question}

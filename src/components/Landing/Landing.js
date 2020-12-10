@@ -37,15 +37,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(6),
   },
   sectionContainer: {
-    padding: theme.spacing(0, 7, 13),
-    [theme.breakpoints.up('sm')]: {
-      paddingLeft: '5vw',
-      paddingRight: '5vw',
-    },
-    [theme.breakpoints.up('md')]: {
-      paddingLeft: '10vw',
-      paddingRight: '10vw',
-    },
+    padding: theme.spacing(0, 9, 13),
   },
   sectionContent: {
     margin: 'auto',
@@ -197,7 +189,8 @@ const Landing = ({courseEdges}) => {
           display="flex"
           alignItems="center"
           flexDirection="column"
-          p={theme.spacing(6, 0, 3)}
+          pt={6}
+          pb={3}
         >
           <Button variant="contained" color="primary" href={GET_STARTED_LINK}>
             Get started

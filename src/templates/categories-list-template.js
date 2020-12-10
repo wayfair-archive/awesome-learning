@@ -1,33 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link, graphql} from 'gatsby';
+import {graphql} from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
-import {Container, Row, Col} from 'react-grid-system';
+import {Box, Button, Typography} from '@material-ui/core';
+import {useTheme} from '@material-ui/core/styles';
 import Layout from '../components/shared/Layout';
 import Page from '../components/shared/Page';
 
 const CategoriesListTemplate = ({data, path}) => {
+  const theme = useTheme();
   const {group} = data.allMarkdownRemark;
-
   return (
     <Layout title="Categories" slug={path}>
-      <Container fluid>
-        <Row>
-          <Col>
-            <Page title="Categories">
-              <ul>
-                {group.map((category) => (
-                  <li key={category.fieldValue}>
-                    <Link to={`/category/${kebabCase(category.fieldValue)}/`}>
-                      {category.fieldValue} ({category.totalCount})
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </Page>
-          </Col>
-        </Row>
-      </Container>
+      <Page title="Categories">
+        <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
+          <Typography variant="h1" color="textPrimary">
+            All Categories
+          </Typography>
+          {group.map((category) => (
+            <Box display="block" pt={2}>
+              <Button
+                key={category.fieldValue}
+                href={`/category/${kebabCase(category.fieldValue)}/`}
+              >
+                {category.fieldValue} ({category.totalCount})
+              </Button>
+            </Box>
+          ))}
+        </Box>
+      </Page>
     </Layout>
   );
 };
