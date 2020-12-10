@@ -19,9 +19,8 @@ const TagsListTemplate = ({data, path}) => {
             All Tags
           </Typography>
           {group.map((tag) => (
-            <Box display="block" pt={2}>
+            <Box display="block" key={tag.fieldValue} pt={2}>
               <Button
-                key={tag.fieldValue}
                 href={`/tag/${kebabCase(tag.fieldValue)}/`}
               >
                 {tag.fieldValue} ({tag.totalCount})
