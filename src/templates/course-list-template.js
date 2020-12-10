@@ -19,10 +19,8 @@ const CourseListTemplate = ({data, path}) => {
 };
 
 export const query = graphql`
-  query CourseListTemplate($coursesLimit: Int!, $coursesOffset: Int!) {
+  query CourseListTemplate {
     allMarkdownRemark(
-      limit: $coursesLimit
-      skip: $coursesOffset
       filter: {frontmatter: {template: {eq: "course"}, draft: {ne: true}}}
       sort: {fields: [frontmatter___title], order: [ASC]}
     ) {
