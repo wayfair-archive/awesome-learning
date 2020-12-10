@@ -14782,13 +14782,6 @@ react-focus-lock@^2.1.0:
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
 
-react-grid-system@^7.1.1:
-  version "7.1.1"
-  resolved "https://artifactory.service.bo1.csnzoo.com/artifactory/api/npm/npm/react-grid-system/-/react-grid-system-7.1.1.tgz#bab6770e889f7377c9a8ca3898126046af8d309e"
-  integrity sha1-urZ3Doifc3fJqMo4mBJgRq+NMJ4=
-  dependencies:
-    prop-types "^15.7.2"
-
 react-helmet-async@^1.0.2:
   version "1.0.7"
   resolved "https://artifactory.service.bo1.csnzoo.com/artifactory/api/npm/npm/react-helmet-async/-/react-helmet-async-1.0.7.tgz#b988fbc3abdc4b704982bb74b9cb4a08fcf062c1"
