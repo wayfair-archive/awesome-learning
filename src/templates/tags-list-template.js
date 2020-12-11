@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {graphql} from 'gatsby';
+import {graphql, Link} from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import {Typography, Box, Button} from '@material-ui/core';
 import {useTheme} from '@material-ui/core/styles';
@@ -20,7 +20,10 @@ const TagsListTemplate = ({data, path}) => {
           </Typography>
           {group.map((tag) => (
             <Box display="block" key={tag.fieldValue} pt={2}>
-              <Button href={`/tag/${kebabCase(tag.fieldValue)}/`}>
+              <Button
+                component={Link}
+                to={`/tag/${kebabCase(tag.fieldValue)}/`}
+              >
                 {tag.fieldValue} ({tag.totalCount})
               </Button>
             </Box>

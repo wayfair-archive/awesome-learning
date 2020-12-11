@@ -68,13 +68,6 @@
     }
   },
   "overrides": {
-    "MuiCssBaseline": {
-      "@global": {
-        "body": {
-          "color": "#1d1820"
-        }
-      }
-    },
     "MuiButton": {
       "root": {
         "textTransform": "none"

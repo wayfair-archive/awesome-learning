@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {graphql} from 'gatsby';
+import {graphql, Link} from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import {Box, Button, Typography} from '@material-ui/core';
 import {useTheme} from '@material-ui/core/styles';
@@ -19,7 +19,10 @@ const CategoriesListTemplate = ({data, path}) => {
           </Typography>
           {group.map((category) => (
             <Box display="block" pt={2} key={category.fieldValue}>
-              <Button href={`/category/${kebabCase(category.fieldValue)}/`}>
+              <Button
+                component={Link}
+                to={`/category/${kebabCase(category.fieldValue)}/`}
+              >
                 {category.fieldValue} ({category.totalCount})
               </Button>
             </Box>

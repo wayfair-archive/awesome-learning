@@ -88,7 +88,7 @@ const Landing = ({courseEdges}) => {
         color={theme.palette.primary.contrastText}
         bgcolor={theme.palette.primary.main}
       >
-        <Typography variant="h1" color="inherit" className={classes.heroTitle}>
+        <Typography variant="h1" className={classes.heroTitle}>
           Awesome Learning
         </Typography>
         <Typography variant="body1" className={classes.heroSubtitle}>
