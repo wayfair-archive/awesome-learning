@@ -24,7 +24,7 @@ const HowTo = () => {
   const theme = useTheme();
   const useLargeVideo = useMediaQuery(theme.breakpoints.down('xs'));
   return (
-    <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
+    <Box m="auto" mb={5} maxWidth={theme.breakpoints.values.lg}>
       <Box className={classes.contentSection}>
         <Typography variant="h2" className={classes.sectionTitle}>
           Gathering A Group
