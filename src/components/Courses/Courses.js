@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'underline',
     textTransform: 'none',
     '&:hover': {
-      color: theme.palette.primary.main,
       textDecoration: 'none',
     },
   },
@@ -65,7 +64,7 @@ const Courses = ({edges, title}) => {
             <Typography
               variant="h2"
               component={Link}
-              color="textPrimary"
+              color="primary"
               to={edge.node.fields.slug}
               className={classes.title}
             >

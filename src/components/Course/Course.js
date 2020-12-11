@@ -82,7 +82,7 @@ const Course = ({course}) => {
         ))}
       </List>
       {tags.length > 2 && (
-        <Box className={classes.sectionWrapper}>
+        <Box className={classes.sectionWrapper} textAlign="center">
           <Typography variant="h4" className={classes.relatedThemesTitle}>
             Related Themes
           </Typography>

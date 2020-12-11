@@ -86,7 +86,6 @@
         "color": "#69adc9",
         "disableRipple": true,
         "&:hover": {
-          "color": "#49798c",
           "textDecoration": "none",
           "backgroundColor": "initial"
         }
