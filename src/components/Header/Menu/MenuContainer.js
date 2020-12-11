@@ -31,6 +31,15 @@ const MenuContainer = ({menu}) => {
             <Link to={item.path}> {item.label} </Link>
           </MenuItem>
         ))}
+        <MenuItem onClick={handleClose}>
+          <a
+            href="https://github.com/wayfair/awesome-learning"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Github
+          </a>
+        </MenuItem>
       </Menu>
     </>
   );

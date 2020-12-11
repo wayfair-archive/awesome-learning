@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {graphql, StaticQuery} from 'gatsby';
+import {graphql, Link, StaticQuery} from 'gatsby';
 import {makeStyles, useTheme, withStyles} from '@material-ui/core/styles';
 import {
   AppBar,
@@ -88,7 +88,7 @@ export const PureHeader = ({data}) => {
   return (
     <AppBar position="static" className={classes.content}>
       <Toolbar>
-        <LogoButton href="/">
+        <LogoButton component={Link} to="/">
           <SvgIcon viewBox={iconData.viewbox} className={classes.icon}>
             <path d={iconData.path} />
           </SvgIcon>
@@ -99,7 +99,12 @@ export const PureHeader = ({data}) => {
         {hideMenu ? (
           <Box display="flex">
             {menu.map((item) => (
-              <HeaderButton href={item.path} size="large" key={item.label}>
+              <HeaderButton
+                component={Link}
+                to={item.path}
+                size="large"
+                key={item.label}
+              >
                 {item.label}
               </HeaderButton>
             ))}

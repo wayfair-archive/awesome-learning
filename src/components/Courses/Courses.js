@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
 import {Box, Typography, Button} from '@material-ui/core';
 import {Pagination} from '@material-ui/lab';
+import {Link} from 'gatsby';
 
 const ITEMS_PER_PAGE = 4;
 
@@ -44,7 +45,9 @@ const Courses = ({edges, title}) => {
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
       {title && (
         <Box className={classes.backToContainer}>
-          <Button href="/courses">Back to Courses</Button>
+          <Button component={Link} to="/courses">
+            Back to Courses
+          </Button>
         </Box>
       )}
       <Typography variant="h1" color="textPrimary">
@@ -61,15 +64,16 @@ const Courses = ({edges, title}) => {
           >
             <Typography
               variant="h2"
-              component="a"
+              component={Link}
               color="textPrimary"
-              href={edge.node.fields.slug}
+              to={edge.node.fields.slug}
               className={classes.title}
             >
               {edge.node.frontmatter.title}
             </Typography>
             <Button
-              href={edge.node.fields.categorySlug}
+              component={Link}
+              to={edge.node.fields.categorySlug}
               className={classes.title}
             >
               {edge.node.frontmatter.category}
@@ -80,7 +84,8 @@ const Courses = ({edges, title}) => {
             <Button
               variant="contained"
               color="secondary"
-              href={edge.node.fields.slug}
+              component={Link}
+              to={edge.node.fields.slug}
               className={classes.goLearnCTA}
             >
               Go Learn

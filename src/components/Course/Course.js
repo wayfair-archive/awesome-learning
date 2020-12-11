@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Typography, Box, Button} from '@material-ui/core';
 import {makeStyles, useTheme, withStyles} from '@material-ui/core/styles';
+import {Link} from 'gatsby';
 
 const useStyles = makeStyles((theme) => ({
   sectionTitle: {
@@ -34,7 +35,9 @@ const Course = ({course}) => {
   const {tagSlugs, slug} = course.fields;
   return (
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
-      <Button href="/courses">Back to Courses</Button>
+      <Button component={Link} to="/courses">
+        Back to Courses
+      </Button>
       <Box className={classes.sectionWrapper}>
         <Typography variant="h2" className={classes.sectionTitle}>
           {title}
@@ -50,7 +53,8 @@ const Course = ({course}) => {
           <Button
             variant="contained"
             color="primary"
-            href={`${slug}${link}`}
+            component={Link}
+            to={`${slug}${link}`}
             className={classes.courseCardItem}
           >
             Learn {title}
@@ -67,7 +71,8 @@ const Course = ({course}) => {
               variant="outlined"
               color="secondary"
               key={`${tags[i]}slug`}
-              href={slug}
+              component={Link}
+              to={slug}
             >
               {tags[i]}
             </Tag>

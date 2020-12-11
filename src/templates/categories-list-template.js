@@ -19,9 +19,7 @@ const CategoriesListTemplate = ({data, path}) => {
           </Typography>
           {group.map((category) => (
             <Box display="block" pt={2} key={category.fieldValue}>
-              <Button
-                href={`/category/${kebabCase(category.fieldValue)}/`}
-              >
+              <Button href={`/category/${kebabCase(category.fieldValue)}/`}>
                 {category.fieldValue} ({category.totalCount})
               </Button>
             </Box>

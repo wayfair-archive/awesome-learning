@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {Typography, Grid, Button, Box} from '@material-ui/core';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
+import {Link} from 'gatsby';
 import ResponsiveVideo from '../shared/ResponsiveVideo';
 import LessonButton, {PrimitiveLessonButton} from '../LessonButton';
 
@@ -44,7 +45,9 @@ const Lesson = ({lesson, slug}) => {
 
   return (
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
-      <Button href={`/courses/${course}/`}>Back to {courseName}</Button>
+      <Button component={Link} to={`/courses/${course}/`}>
+        Back to {courseName}
+      </Button>
       <Box className={classes.sectionContainer}>
         <Typography variant="h1" className={classes.sectionTitle}>
           {title}
@@ -135,7 +138,8 @@ const Lesson = ({lesson, slug}) => {
           <Button
             variant="contained"
             color="primary"
-            href={preReadQuiz !== null ? `${slug}/quiz` : preReadQuizLink}
+            component={Link}
+            to={preReadQuiz !== null ? `${slug}/quiz` : preReadQuizLink}
           >
             Take the Quiz
           </Button>

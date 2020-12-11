@@ -20,9 +20,7 @@ const TagsListTemplate = ({data, path}) => {
           </Typography>
           {group.map((tag) => (
             <Box display="block" key={tag.fieldValue} pt={2}>
-              <Button
-                href={`/tag/${kebabCase(tag.fieldValue)}/`}
-              >
+              <Button href={`/tag/${kebabCase(tag.fieldValue)}/`}>
                 {tag.fieldValue} ({tag.totalCount})
               </Button>
             </Box>

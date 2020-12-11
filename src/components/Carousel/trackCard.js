@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Typography, Box, SvgIcon} from '@material-ui/core';
 import {makeStyles, useTheme, withStyles} from '@material-ui/core/styles';
+import {Link} from 'gatsby';
 
 const useStyles = makeStyles((theme) => ({
   content: {
@@ -52,8 +53,8 @@ const TrackCard = ({path, icon, title}) => {
         alignItems="center"
         justifyContent="center"
         color={theme.palette.info.contrastText}
-        component="a"
-        href={path}
+        component={Link}
+        to={path}
         className={classes.content}
       >
         <SvgIcon viewBox={icon.viewBox} className={classes.svg}>

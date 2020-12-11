@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Button, Typography, Box} from '@material-ui/core';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
+import {Link} from 'gatsby';
 import {
   formatQuestionId,
   getChoiceIndex,
@@ -96,8 +97,8 @@ const Quiz = ({quiz, slug, title}) => {
       <Typography
         variant="h4"
         color="secondary"
-        component="a"
-        href={slug}
+        component={Link}
+        to={slug}
         className={classes.linkTitle}
       >
         Back to Lesson

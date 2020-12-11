@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'gatsby';
 import {Typography, Box, Button, Grid} from '@material-ui/core';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
 import Carousel from '../Carousel';
@@ -96,8 +97,9 @@ const Landing = ({courseEdges}) => {
         <Button
           variant="contained"
           color="secondary"
+          component={Link}
           className={classes.heroCta}
-          href={GET_STARTED_LINK}
+          to={GET_STARTED_LINK}
         >
           Get started
         </Button>
@@ -192,7 +194,12 @@ const Landing = ({courseEdges}) => {
           pt={6}
           pb={3}
         >
-          <Button variant="contained" color="primary" href={GET_STARTED_LINK}>
+          <Button
+            component={Link}
+            variant="contained"
+            color="primary"
+            to={GET_STARTED_LINK}
+          >
             Get started
           </Button>
         </Box>
