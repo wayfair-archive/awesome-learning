@@ -110,7 +110,11 @@ const Lesson = ({lesson, slug}) => {
             put you on the road to expert-level knowledge in this subject
             matter.
           </Typography>
-          <List component="ul" aria-label="Pre-session reading materials">
+          <List
+            component="ul"
+            disablePadding
+            aria-label="Pre-session reading materials"
+          >
             {readingLinks.map((readingLink) => (
               <ListItem
                 disableGutters
@@ -151,14 +155,16 @@ const Lesson = ({lesson, slug}) => {
             pre-read material. These quizzes are a great way to check your
             comprehension, and we highly recommend taking them.
           </Typography>
-          <Button
-            variant="contained"
-            color="primary"
-            component={Link}
-            to={preReadQuiz !== null ? `${slug}/quiz` : preReadQuizLink}
-          >
-            Take the Quiz
-          </Button>
+          <Box className={classes.paragraphContainer}>
+            <Button
+              variant="contained"
+              color="primary"
+              component={Link}
+              to={preReadQuiz !== null ? `${slug}/quiz` : preReadQuizLink}
+            >
+              Take the Quiz
+            </Button>
+          </Box>
         </Box>
       )}
 

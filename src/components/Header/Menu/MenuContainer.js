@@ -18,7 +18,10 @@ const MenuContainer = ({menu}) => {
         aria-label="Dropdown Menu"
         onClick={handleClick}
       >
-        <MenuIcon style={{fill: theme.palette.common.white}} fontSize="large" />
+        <MenuIcon
+          style={{fill: theme.palette.background.default}}
+          fontSize="large"
+        />
       </IconButton>
       <Menu
         id="simple-menu"

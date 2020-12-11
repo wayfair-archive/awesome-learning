@@ -8,11 +8,11 @@
       "main": "#2b416a",
       "light": "#fafbfb",
       "dark": "#1d1820",
-      "contrastText": "#fff"
+      "contrastText": "#fafbfb"
     },
     "secondary": {
       "main": "#69adc9",
-      "contrastText": "#fff"
+      "contrastText": "#fafbfb"
     },
     "info": {
       "main": "#6a6c7a"
@@ -22,7 +22,7 @@
       "secondary": "#69adc9"
     },
     "background": {
-      "default": "#fafafa"
+      "default": "#fafbfb"
     }
   },
   "breakpoints": {

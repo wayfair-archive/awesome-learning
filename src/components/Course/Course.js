@@ -52,7 +52,7 @@ const Course = ({course}) => {
         </Typography>
         <Typography variant="body1">{description}</Typography>
       </Box>
-      <List component="ol" aria-label="Available courses">
+      <List component="ol" disablePadding aria-label="Available courses">
         {lessons.map(({link, title, description}, value) => (
           <ListItem
             disableGutters
