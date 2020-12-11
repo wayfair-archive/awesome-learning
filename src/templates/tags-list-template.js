@@ -23,6 +23,7 @@ const TagsListTemplate = ({data, path}) => {
               <Button
                 component={Link}
                 to={`/tag/${kebabCase(tag.fieldValue)}/`}
+                role="link"
               >
                 {tag.fieldValue} ({tag.totalCount})
               </Button>

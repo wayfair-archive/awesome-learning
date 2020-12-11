@@ -22,6 +22,7 @@ const CategoriesListTemplate = ({data, path}) => {
               <Button
                 component={Link}
                 to={`/category/${kebabCase(category.fieldValue)}/`}
+                role="link"
               >
                 {category.fieldValue} ({category.totalCount})
               </Button>
