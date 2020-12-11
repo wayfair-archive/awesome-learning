@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   surveyButton: {
     textTransform: 'none',
-    marginBottom: theme.spacing(1),
+    fontFamily: 'Varela, Arial, sans-serif',
   },
 }));
 
