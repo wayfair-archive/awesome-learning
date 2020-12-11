@@ -160,7 +160,10 @@ const Lesson = ({lesson, slug}) => {
               variant="contained"
               color="primary"
               component={Link}
-              to={preReadQuiz !== null ? `${slug}/quiz` : preReadQuizLink}
+              to={preReadQuiz ? `${slug}/quiz` : preReadQuizLink}
+              rel={preReadQuiz ? '' : 'noopener noreferrer'}
+              target={preReadQuiz ? '' : '_blank'}
+              role="link"
             >
               Take the Quiz
             </Button>

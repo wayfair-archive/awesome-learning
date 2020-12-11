@@ -45,17 +45,8 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: theme.breakpoints.values.lg,
   },
 
-  // Get Started Section Styles
-  getStartedSectionTitle: {
-    padding: theme.spacing(8, 0, 4),
-  },
-  getStartedItemTitle: {
-    fontWeight: theme.typography.fontWeightBold,
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '1.25rem',
-    },
-  },
-  getStartedItemSubtitle: {
+  // Get Started Styles
+  getStartedItem: {
     [theme.breakpoints.down('xs')]: {
       fontSize: '1.25rem',
     },
@@ -65,6 +56,7 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
   },
   getStartedIcon: {
+    color: theme.palette.primary.main,
     marginBottom: theme.spacing(2),
     height: '84px',
     width: '84px',
@@ -72,6 +64,12 @@ const useStyles = makeStyles((theme) => ({
       height: '55px',
       width: '55px',
     },
+  },
+
+  // Popular Courses Styles
+  popularCoursesSectionTitle: {
+    textAlign: 'center',
+    padding: theme.spacing(8, 0, 4),
   },
 }));
 
@@ -104,30 +102,7 @@ const Landing = ({courseEdges}) => {
           Get started
         </Button>
       </Box>
-      <Box className={classes.sectionContainer}>
-        <Box className={classes.sectionContent}>
-          <Typography
-            variant="h2"
-            color="inherit"
-            className={classes.sectionTitle}
-          >
-            Popular Courses
-          </Typography>
-          <Carousel
-            items={courseEdges.map(({node}) => {
-              const {frontmatter, fields} = node;
-              const {title} = frontmatter;
-              return {
-                title,
-                icon: COURSE_DATA_MAPPING[title]
-                  ? COURSE_DATA_MAPPING[title].icon
-                  : 'array',
-                path: fields.slug,
-              };
-            })}
-          />
-        </Box>
-      </Box>
+
       <Box className={classes.sectionContainer}>
         <Box className={classes.sectionContent}>
           <Typography
@@ -148,16 +123,13 @@ const Landing = ({courseEdges}) => {
           </Typography>
         </Box>
       </Box>
-      <Box
-        className={classes.sectionContainer}
-        color={theme.palette.primary.contrastText}
-        bgcolor={theme.palette.secondary.main}
-      >
+
+      <Box className={classes.sectionContainer}>
         <Box className={classes.sectionContent}>
           <Typography
             variant="h2"
             color="inherit"
-            className={classes.getStartedSectionTitle}
+            className={classes.sectionTitle}
           >
             How can I get started?
           </Typography>
@@ -168,17 +140,17 @@ const Landing = ({courseEdges}) => {
                   <item.icon className={classes.getStartedIcon} />
                   <Typography
                     variant="body1"
-                    color="inherit"
+                    color="primary"
                     align="center"
-                    className={classes.getStartedItemTitle}
+                    className={classes.getStartedItem}
                   >
-                    {item.title}
+                    <b>{item.title}</b>
                   </Typography>
                   <Typography
                     variant="body1"
-                    color="inherit"
+                    color="primary"
                     align="center"
-                    className={classes.getStartedItemSubtitle}
+                    className={classes.getStartedItem}
                   >
                     {item.subtitle}
                   </Typography>
@@ -187,21 +159,34 @@ const Landing = ({courseEdges}) => {
             ))}
           </Grid>
         </Box>
-        <Box
-          display="flex"
-          alignItems="center"
-          flexDirection="column"
-          pt={6}
-          pb={3}
-        >
-          <Button
-            component={Link}
-            variant="contained"
-            color="primary"
-            to={GET_STARTED_LINK}
+      </Box>
+
+      <Box
+        className={classes.sectionContainer}
+        color={theme.palette.primary.contrastText}
+        bgcolor={theme.palette.secondary.main}
+      >
+        <Box className={classes.sectionContent}>
+          <Typography
+            variant="h2"
+            color="inherit"
+            className={classes.popularCoursesSectionTitle}
           >
-            Get started
-          </Button>
+            Popular Courses
+          </Typography>
+          <Carousel
+            items={courseEdges.map(({node}) => {
+              const {frontmatter, fields} = node;
+              const {title} = frontmatter;
+              return {
+                title,
+                icon: COURSE_DATA_MAPPING[title]
+                  ? COURSE_DATA_MAPPING[title].icon
+                  : 'array',
+                path: fields.slug,
+              };
+            })}
+          />
         </Box>
       </Box>
     </>

@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   svg: {
     width: '40px',
     height: '100%',
-    color: theme.palette.info.contrastText,
+    color: theme.palette.primary.contrastText,
   },
   outerCard: {
     padding: theme.spacing(0, 2, 0),
@@ -34,10 +34,10 @@ const useStyles = makeStyles((theme) => ({
 
 const TrackCardBox = withStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.info.main,
+    backgroundColor: theme.palette.primary.main,
     transition: `background-color ${theme.transitions.duration.short}`,
     '&:hover': {
-      backgroundColor: theme.palette.info.dark,
+      backgroundColor: theme.palette.primary.dark,
     },
   },
 }))(Box);
