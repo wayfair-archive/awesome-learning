@@ -52,7 +52,7 @@ const TrackCard = ({path, icon, title}) => {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        color={theme.palette.info.contrastText}
+        color={theme.palette.primary.contrastText}
         component={Link}
         to={path}
         className={classes.content}
