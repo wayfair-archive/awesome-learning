@@ -71,13 +71,6 @@ const Courses = ({edges, title}) => {
             >
               {edge.node.frontmatter.title}
             </Typography>
-            <Button
-              component={Link}
-              to={edge.node.fields.categorySlug}
-              className={classes.title}
-            >
-              {edge.node.frontmatter.category}
-            </Button>
             <Typography variant="body1">
               {edge.node.frontmatter.description}
             </Typography>

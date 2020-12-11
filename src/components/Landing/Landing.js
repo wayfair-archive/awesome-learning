@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
   },
   getStartedItemSubtitle: {
     [theme.breakpoints.down('xs')]: {
-      fontSize: '1.25px',
+      fontSize: '1.25rem',
     },
   },
   getStartedGrid: {

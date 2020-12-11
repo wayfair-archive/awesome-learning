@@ -1,6 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Typography, Box, Button} from '@material-ui/core';
+import {
+  Typography,
+  Box,
+  Button,
+  List,
+  ListItem,
+  ListItemText,
+} from '@material-ui/core';
 import {makeStyles, useTheme, withStyles} from '@material-ui/core/styles';
 import {Link} from 'gatsby';
 
@@ -9,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2, 0, 6),
   },
   sectionWrapper: {
+    display: 'block',
     padding: theme.spacing(4, 0, 4),
   },
   courseCardItem: {
@@ -35,7 +43,7 @@ const Course = ({course}) => {
   const {tagSlugs, slug} = course.fields;
   return (
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
-      <Button component={Link} to="/courses">
+      <Button component={Link} to="/courses" role="link">
         Back to Courses
       </Button>
       <Box className={classes.sectionWrapper}>
@@ -44,23 +52,35 @@ const Course = ({course}) => {
         </Typography>
         <Typography variant="body1">{description}</Typography>
       </Box>
-      {lessons.map(({link, title, description}) => (
-        <Box key={title} className={classes.sectionWrapper}>
-          <Typography variant="h3" className={classes.courseCardItem}>
-            {title}
-          </Typography>
-          <Typography variant="body1">{description}</Typography>
-          <Button
-            variant="contained"
-            color="primary"
-            component={Link}
-            to={`${slug}${link}`}
-            className={classes.courseCardItem}
+      <List component="ol" aria-label="Available courses">
+        {lessons.map(({link, title, description}, value) => (
+          <ListItem
+            disableGutters
+            key={title}
+            className={classes.sectionWrapper}
           >
-            Learn {title}
-          </Button>
-        </Box>
-      ))}
+            <ListItemText
+              primary={
+                <Typography variant="h3" className={classes.courseCardItem}>
+                  {value + 1}
+                  {'. '}
+                  {title}
+                </Typography>
+              }
+              secondary={<Typography variant="body1">{description}</Typography>}
+            />
+            <Button
+              variant="contained"
+              color="primary"
+              component={Link}
+              to={`${slug}${link}`}
+              className={classes.courseCardItem}
+            >
+              Learn {title}
+            </Button>
+          </ListItem>
+        ))}
+      </List>
       {tags.length > 2 && (
         <Box className={classes.sectionWrapper}>
           <Typography variant="h4" className={classes.relatedThemesTitle}>

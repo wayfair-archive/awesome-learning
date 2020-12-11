@@ -1,6 +1,6 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import {Typography, Grid, Button, Box} from '@material-ui/core';
+import {Typography, Grid, Button, Box, List, ListItem} from '@material-ui/core';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
 import {Link} from 'gatsby';
 import ResponsiveVideo from '../shared/ResponsiveVideo';
@@ -16,8 +16,13 @@ const useStyles = makeStyles((theme) => ({
   paragraphContainer: {
     paddingBottom: theme.spacing(4),
   },
+  listItem: {
+    display: 'block',
+  },
   surveyButton: {
     textTransform: 'none',
+    verticalAlign: 'top',
+    lineHeight: 1.5,
     fontFamily: 'Varela, Arial, sans-serif',
   },
 }));
@@ -45,7 +50,7 @@ const Lesson = ({lesson, slug}) => {
 
   return (
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
-      <Button component={Link} to={`/courses/${course}/`}>
+      <Button component={Link} to={`/courses/${course}/`} role="link">
         Back to {courseName}
       </Button>
       <Box className={classes.sectionContainer}>
@@ -105,23 +110,34 @@ const Lesson = ({lesson, slug}) => {
             put you on the road to expert-level knowledge in this subject
             matter.
           </Typography>
-          {readingLinks.map((readingLink) => (
-            <Fragment key={readingLink.title}>
-              <Button
-                href={readingLink.link}
-                rel="noopener noreferrer"
-                target="_blank"
+          <List component="ul" aria-label="Pre-session reading materials">
+            {readingLinks.map((readingLink) => (
+              <ListItem
+                disableGutters
+                key={readingLink.title}
+                className={classes.listItem}
               >
-                {readingLink.title}
-              </Button>
-              <Typography
-                variant="body1"
-                className={classes.paragraphContainer}
-              >
-                &#8226; {readingLink.description}
-              </Typography>
-            </Fragment>
-          ))}
+                <Button
+                  href={readingLink.link}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  role="link"
+                >
+                  {readingLink.title}
+                </Button>
+                <Typography
+                  variant="body1"
+                  style={{
+                    display: 'list-item',
+                    listStyle: 'disc inside none',
+                  }}
+                  className={classes.paragraphContainer}
+                >
+                  {readingLink.description}
+                </Typography>
+              </ListItem>
+            ))}
+          </List>
         </Box>
       )}
 
@@ -180,6 +196,7 @@ const Lesson = ({lesson, slug}) => {
             href="https://docs.google.com/forms/d/e/1FAIpQLSeiB_M1YmwwwG9BNhGnd1Nn_BhnzOfHFUDrZGz1PAvm8A1NxA/viewform"
             rel="noopener noreferrer"
             target="_blank"
+            role="link"
             className={classes.surveyButton}
           >
             this session survey

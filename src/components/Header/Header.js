@@ -51,9 +51,14 @@ const LogoButton = withStyles((theme) => ({
   root: {
     display: 'flex',
     color: theme.palette.primary.contrastText,
+    paddingBottom: theme.spacing(1),
+    paddingTop: theme.spacing(1),
+    borderBottom: '2px solid transparent',
     textDecoration: 'none',
+    borderRadius: 0,
     '&:hover': {
       color: theme.palette.primary.contrastText,
+      borderBottom: `2px solid ${theme.palette.primary.contrastText}`,
     },
   },
 }))(Button);

@@ -24,7 +24,6 @@ const Carousel = ({items}) => (
     fadeOutAnimation
     mouseDragEnabled
     disableButtonsControls
-    disableDotsControls
     disableAutoPlayOnAction
     infinite
   >

@@ -15,6 +15,7 @@ const MenuContainer = ({menu}) => {
       <IconButton
         aria-controls="simple-menu"
         aria-haspopup="true"
+        aria-label="Dropdown Menu"
         onClick={handleClick}
       >
         <MenuIcon style={{fill: theme.palette.common.white}} fontSize="large" />
@@ -37,7 +38,7 @@ const MenuContainer = ({menu}) => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            Github
+            GitHub
           </a>
         </MenuItem>
       </Menu>
