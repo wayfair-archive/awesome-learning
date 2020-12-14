@@ -38,7 +38,7 @@ describe('Landing Component', () => {
     expect(queryByText('Learn front-end tech, together.')).toBeTruthy();
 
     const links = [...container.querySelectorAll('a')];
-    expect(someElementHasPropValue(links, 'href', '/courses')).toBe(true);
+    expect(someElementHasPropValue(links, 'to', '/courses')).toBe(true);
   });
 
   test('Renders a Popular Courses Carousel with Title', () => {

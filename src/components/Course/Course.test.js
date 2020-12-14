@@ -41,11 +41,11 @@ describe('Course', () => {
     const {queryByText} = render(<Course {...props} />);
     const {lessons} = props.course.frontmatter;
     const {slug} = props.course.fields;
-    lessons.forEach((l) => {
-      expect(queryByText(l.title)).toBeTruthy();
+    lessons.forEach((l, i) => {
+      expect(queryByText(`${i + 1}. ${l.title}`)).toBeTruthy();
       expect(queryByText(l.description)).toBeTruthy();
       expect(
-        queryByText(`Learn ${l.title}`).closest('a').getAttribute('href')
+        queryByText(`Learn ${l.title}`).closest('a').getAttribute('to')
       ).toBe(`${slug}${l.link}`);
     });
   });
@@ -57,7 +57,7 @@ describe('Course', () => {
     tags.forEach((t, i) => {
       const tagHtml = queryByText(t);
       expect(tagHtml).toBeTruthy();
-      expect(tagHtml.closest('a').getAttribute('href')).toBe(`${tagSlugs[i]}`);
+      expect(tagHtml.closest('a').getAttribute('to')).toBe(`${tagSlugs[i]}`);
     });
   });
 

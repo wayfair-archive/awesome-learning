@@ -146,7 +146,8 @@ const Landing = ({courseEdges}) => {
                     className={classes.getStartedItem}
                   >
                     <b>{item.title}</b>
-                    <p>{item.subtitle}</p>
+                    <br />
+                    {item.subtitle}
                   </Typography>
                 </Box>
               </Grid>

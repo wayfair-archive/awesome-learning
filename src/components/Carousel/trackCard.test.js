@@ -18,6 +18,6 @@ describe('Track Card', () => {
 
     expect(queryByText(PROPS.title)).toBeTruthy();
     expect(icon).toBeTruthy();
-    expect(link.getAttribute('href')).toBe(PROPS.path);
+    expect(link.getAttribute('to')).toBe(PROPS.path);
   });
 });

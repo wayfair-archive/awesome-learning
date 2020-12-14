@@ -14,7 +14,7 @@ describe('PureHeader', () => {
     const {queryByText, container} = render(<PureHeader data={expectedData} />);
     const link = container.querySelector('a');
     expect(queryByText(title)).toBeTruthy();
-    expect(link.getAttribute('href')).toBe('/');
+    expect(link.getAttribute('to')).toBe('/');
   });
 
   it('Renders two menu tabs', () => {
