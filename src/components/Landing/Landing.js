@@ -34,19 +34,21 @@ const useStyles = makeStyles((theme) => ({
   },
 
   // Section Content and Wrapper Styles
-  sectionTitle: {
-    paddingBottom: theme.spacing(6),
-  },
-  sectionContainer: {
-    padding: theme.spacing(0, 9, 13),
+  fullWidthContainer: {
+    paddingBottom: theme.spacing(13),
   },
   sectionContent: {
     margin: 'auto',
     maxWidth: theme.breakpoints.values.lg,
+    padding: theme.spacing(0, 5),
+  },
+  sectionTitle: {
+    paddingBottom: theme.spacing(6),
   },
 
   // Get Started Styles
   getStartedItem: {
+    textAlign: 'center',
     [theme.breakpoints.down('xs')]: {
       fontSize: '1.25rem',
     },
@@ -69,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
   // Popular Courses Styles
   popularCoursesSectionTitle: {
     textAlign: 'center',
-    padding: theme.spacing(8, 0, 4),
+    padding: theme.spacing(8, 0, 6),
   },
 }));
 
@@ -103,7 +105,7 @@ const Landing = ({courseEdges}) => {
         </Button>
       </Box>
 
-      <Box className={classes.sectionContainer}>
+      <Box className={classes.fullWidthContainer}>
         <Box className={classes.sectionContent}>
           <Typography
             variant="h2"
@@ -124,7 +126,7 @@ const Landing = ({courseEdges}) => {
         </Box>
       </Box>
 
-      <Box className={classes.sectionContainer}>
+      <Box className={classes.fullWidthContainer}>
         <Box className={classes.sectionContent}>
           <Typography
             variant="h2"
@@ -141,18 +143,10 @@ const Landing = ({courseEdges}) => {
                   <Typography
                     variant="body1"
                     color="primary"
-                    align="center"
                     className={classes.getStartedItem}
                   >
                     <b>{item.title}</b>
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    color="primary"
-                    align="center"
-                    className={classes.getStartedItem}
-                  >
-                    {item.subtitle}
+                    <p>{item.subtitle}</p>
                   </Typography>
                 </Box>
               </Grid>
@@ -162,8 +156,8 @@ const Landing = ({courseEdges}) => {
       </Box>
 
       <Box
-        className={classes.sectionContainer}
-        color={theme.palette.primary.contrastText}
+        className={classes.fullWidthContainer}
+        color={theme.palette.secondary.contrastText}
         bgcolor={theme.palette.secondary.main}
       >
         <Box className={classes.sectionContent}>
