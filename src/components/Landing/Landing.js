@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
 
   // Section Content and Wrapper Styles
   fullWidthContainer: {
-    paddingBottom: theme.spacing(13),
+    paddingBottom: theme.spacing(12),
   },
   sectionContent: {
     margin: 'auto',
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 5),
   },
   sectionTitle: {
-    paddingBottom: theme.spacing(6),
+    padding: theme.spacing(1, 0, 6),
   },
 
   // Get Started Styles
