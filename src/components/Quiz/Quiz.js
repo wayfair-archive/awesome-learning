@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   linkTitle: {
     textTransform: 'uppercase',
     textDecoration: 'underline',
-    '&:hover': {
+    '&:hover, &:focus': {
       color: theme.palette.secondary.dark,
       textDecoration: 'none',
     },

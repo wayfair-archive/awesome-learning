@@ -1,7 +1,14 @@
 import React from 'react';
-import {Box, Typography, useMediaQuery} from '@material-ui/core';
+import {
+  Box,
+  List,
+  ListItem,
+  Typography,
+  useMediaQuery,
+} from '@material-ui/core';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
 import ResponsiveVideo from '../shared/ResponsiveVideo';
+import {FAQS, GATHER_A_GROUP_GUIDELINES, LESSON_GUIDE} from './HowToConstants';
 
 const useStyles = makeStyles((theme) => ({
   contentSection: {
@@ -15,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   listContainer: {
     margin: 'auto',
-    width: '80%',
+    width: '84%',
   },
 }));
 
@@ -33,22 +40,18 @@ const HowTo = () => {
           Awesome Learning is best when run in a group setting. Your group can
           be co-located or remote. Here are some battle-tested ground rules.
         </Typography>
-        <Box m="auto" width="80%">
-          <Typography variant="body1" className={classes.paragraphContainer}>
-            1. Limit the group size to a maximum of 6. Anything more can limit
-            individual participation.
-          </Typography>
-          <Typography variant="body1" className={classes.paragraphContainer}>
-            2. Strive to find a group of roughly similar skill levels. This
-            isn't an exact science, but mixing highly experienced and
-            in-experienced folks together can sometimes lead to being too bored
-            or too challenged on a subject.
-          </Typography>
-          <Typography variant="body1" className={classes.paragraphContainer}>
-            3. Set a time commitment early, and get buy-in. Shoot for an hour a
-            week meeting with a consistent time and location.
-          </Typography>
-        </Box>
+        <List
+          component="ol"
+          disablePadding
+          aria-label="Guidelines for gathering a group"
+          className={classes.listContainer}
+        >
+          {GATHER_A_GROUP_GUIDELINES.map((GUIDELINE, i) => (
+            <ListItem key={i}>
+              <Typography variant="body1">{GUIDELINE}</Typography>
+            </ListItem>
+          ))}
+        </List>
       </Box>
 
       <Box className={classes.contentSection}>
@@ -62,19 +65,30 @@ const HowTo = () => {
           send out the link to the lesson to your group at least 24 hours in
           advance of when you will gather for the lesson exercises.
         </Typography>
-        <Box m="auto" width="80%">
-          <Typography variant="body1" className={classes.paragraphContainer}>
-            1. <b>Good:</b> Watching the video before the lesson begins.
-          </Typography>
-          <Typography variant="body1" className={classes.paragraphContainer}>
-            2. <b>Better:</b> Watching the video and reading the pre-read
-            materials before the lesson begins.
-          </Typography>
-          <Typography variant="body1" className={classes.paragraphContainer}>
-            3. <b>Best:</b> All of the above and taking the pre-read quiz to
-            test your understanding.
-          </Typography>
-        </Box>
+        <List
+          component="ol"
+          disablePadding
+          aria-label="Best practices to preparing for a lesson"
+          className={classes.listContainer}
+        >
+          <ListItem>
+            <Typography variant="body1">
+              1. <b>Good:</b> Watching the video before the lesson begins.
+            </Typography>
+          </ListItem>
+          <ListItem>
+            <Typography variant="body1">
+              2. <b>Better:</b> Watching the video and reading the pre-read
+              materials before the lesson begins.
+            </Typography>
+          </ListItem>
+          <ListItem>
+            <Typography variant="body1">
+              3. <b>Best:</b> All of the above and taking the pre-read quiz to
+              test your understanding.
+            </Typography>
+          </ListItem>
+        </List>
       </Box>
 
       <Box className={classes.contentSection}>
@@ -91,97 +105,53 @@ const HowTo = () => {
             title="Introduction to your exercises"
           />
         </Box>
-        <Box m="auto" width="80%">
-          <Typography variant="body1" className={classes.paragraphContainer}>
-            <b>Rough lesson guide</b>
-          </Typography>
-          <Typography variant="body1" className={classes.paragraphContainer}>
-            1. Go over any questions the group has based on the pre-work
-            materials.
-          </Typography>
-          <Typography variant="body1" className={classes.paragraphContainer}>
-            2. Open and fork the exercise sets.
-          </Typography>
-          <Typography variant="body1" className={classes.paragraphContainer}>
-            3. Read through all exercise descriptions and prompts out loud.
-          </Typography>
-          <Typography variant="body1" className={classes.paragraphContainer}>
-            4. Group program the exercises! Pass the keyboard for each exercise,
-            discuss problems and solutions, etc. Above all, communicate!
-          </Typography>
-          <Typography variant="body1" className={classes.paragraphContainer}>
-            5. Check the provided solutions if you get stuck, and don't be
-            afraid to get derailed with discussions and research.
-          </Typography>
-        </Box>
+        <Typography
+          variant="body1"
+          align="center"
+          className={classes.paragraphContainer}
+        >
+          <b>Rough lesson guide</b>
+        </Typography>
+        <List
+          component="ol"
+          disablePadding
+          aria-label="Lesson guide"
+          className={classes.listContainer}
+        >
+          {LESSON_GUIDE.map((STEP, i) => (
+            <ListItem key={i}>
+              <Typography variant="body1">{STEP}</Typography>
+            </ListItem>
+          ))}
+        </List>
       </Box>
 
       <Box className={classes.contentSection}>
         <Typography variant="h2" className={classes.sectionTitle}>
           <abbr title="Frequently Asked Questions">FAQs</abbr>
         </Typography>
-        <Typography variant="body1" className={classes.paragraphContainer}>
-          <b>Why should I Awesome Learn?</b>
-        </Typography>
-        <Typography variant="body1" className={classes.paragraphContainer}>
-          Everyone in this industry deals with imposter syndrome. Technologies
-          keep advancing while we feel like we're falling behind. Saying it out
-          loud is the first step, changing it is the hard step.
-        </Typography>
-        <Typography variant="body1" className={classes.paragraphContainer}>
-          <b>Who can Awesome Learn?</b>
-        </Typography>
-        <Typography variant="body1" className={classes.paragraphContainer}>
-          Anyone at any level is welcome to start a group or jump in solo. We
-          strongly believe learning can be done without an "expert" in the room.
-        </Typography>
-        <Typography variant="body1" className={classes.paragraphContainer}>
-          <b>How does Awesome Learning work?</b>
-        </Typography>
-        <Typography variant="body1" className={classes.paragraphContainer}>
-          Anyone can form a team. Once you gather a team, the team selects the
-          "course" they want to learn first. Each course has pre-built hour-long
-          lessons with learning materials and coding exercises included. We
-          provide completed solutions and learning annotations to make sure you
-          never get stuck.
-        </Typography>
-        <Typography variant="body1" className={classes.paragraphContainer}>
-          <b>What will this do for my team?</b>
-        </Typography>
-        <Typography variant="body1" className={classes.paragraphContainer}>
-          Awesome learning is a research-backed learning platform designed to
-          help small teams build lasting, foundational skills. The platform is a
-          series of videos, reading materials, and exercises in one hour
-          intervals divided into subject-matter "courses". Reading quizzes keep
-          learners engaged, surveys keep leaders up to date with how well team
-          members are learning. TDD exercises provide a tight feedback loop.
-        </Typography>
-        <Typography variant="body1" className={classes.paragraphContainer}>
-          <b>What is a Lesson?</b>
-        </Typography>
-        <Typography variant="body1" className={classes.paragraphContainer}>
-          An Awesome Learning lesson is a series of videos, pre-reads, and
-          exercises designed to teach you a specific subject matter within the
-          scope of the course.
-        </Typography>
-        <Typography variant="body1" className={classes.paragraphContainer}>
-          <b>What is a Course?</b>
-        </Typography>
-        <Typography variant="body1" className={classes.paragraphContainer}>
-          An Awesome Learning course is a collection of lessons grouped under an
-          umbrella theme. The specific goal of each lesson is to help you build
-          a better mental model of the broader topic.
-        </Typography>
-        <Typography variant="body1" className={classes.paragraphContainer}>
-          <b>How long is the time commitment for a single Course?</b>
-        </Typography>
-        <Typography variant="body1" className={classes.paragraphContainer}>
-          It varies. Some of our courses contain 2 lessons, others contain 5.
-          The recommended cadence is one lesson or per week. We don't reccommend
-          a slower cadence than once per week. Our experience shows folks lose
-          too much course context when more than a week passes in between
-          lessons.
-        </Typography>
+        <List
+          component="ul"
+          disablePadding
+          aria-label="Frequently asked questions"
+        >
+          {FAQS.map((FAQ, i) => (
+            <ListItem disableGutters key={i}>
+              <Typography
+                variant="body1"
+                className={classes.paragraphContainer}
+              >
+                <b>{FAQ.question}</b>
+              </Typography>
+              <Typography
+                variant="body1"
+                className={classes.paragraphContainer}
+              >
+                {FAQ.answer}
+              </Typography>
+            </ListItem>
+          ))}
+        </List>
       </Box>
     </Box>
   );

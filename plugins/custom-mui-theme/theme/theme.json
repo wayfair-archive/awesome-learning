@@ -84,7 +84,7 @@
         "lineHeight": 1,
         "color": "#69adc9",
         "disableRipple": true,
-        "&:hover": {
+        "&:hover, &:focus": {
           "textDecoration": "none",
           "backgroundColor": "initial"
         }
@@ -95,6 +95,16 @@
         "justifyContent": "space-between",
         "minWidth": "320px"
       }
+    },
+    "MuiListItem": {
+      "root": {
+        "display": "block"
+      }
+    }
+  },
+  "props": {
+    "MuiButton": {
+      "disableFocusRipple": true
     }
   },
   "spacing": 4,

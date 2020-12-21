@@ -23,7 +23,7 @@ const TrackCardBox = withStyles((theme) => ({
     height: '100%',
     backgroundColor: theme.palette.primary.main,
     transition: `background-color ${theme.transitions.duration.short}`,
-    '&:hover': {
+    '&:hover, &:focus': {
       backgroundColor: theme.palette.primary.dark,
     },
     [theme.breakpoints.up('md')]: {

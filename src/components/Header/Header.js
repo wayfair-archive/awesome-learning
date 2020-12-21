@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: theme.spacing(2),
   },
   content: {
-    padding: theme.spacing(0,2),
+    padding: theme.spacing(0, 2),
     [theme.breakpoints.up('md')]: {
       paddingLeft: '5vw',
       paddingRight: '5vw',
@@ -53,7 +53,7 @@ const LogoButton = withStyles((theme) => ({
     borderBottom: '2px solid transparent',
     textDecoration: 'none',
     borderRadius: 0,
-    '&:hover': {
+    '&:hover, &:focus': {
       color: theme.palette.primary.contrastText,
       borderBottom: `2px solid ${theme.palette.primary.contrastText}`,
     },
@@ -72,7 +72,7 @@ const HeaderButton = withStyles((theme) => ({
     textDecoration: 'none',
     borderRadius: 0,
     borderBottom: '2px solid transparent',
-    '&:hover': {
+    '&:hover, &:focus': {
       color: theme.palette.primary.contrastText,
       backgroundColor: 'initial',
       borderBottom: `2px solid ${theme.palette.primary.contrastText}`,

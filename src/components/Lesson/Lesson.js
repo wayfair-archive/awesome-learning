@@ -16,9 +16,6 @@ const useStyles = makeStyles((theme) => ({
   paragraphContainer: {
     paddingBottom: theme.spacing(4),
   },
-  listItem: {
-    display: 'block',
-  },
   surveyButton: {
     textTransform: 'none',
     verticalAlign: 'top',
@@ -116,11 +113,7 @@ const Lesson = ({lesson, slug}) => {
             aria-label="Pre-session reading materials"
           >
             {readingLinks.map((readingLink) => (
-              <ListItem
-                disableGutters
-                key={readingLink.title}
-                className={classes.listItem}
-              >
+              <ListItem disableGutters key={readingLink.title}>
                 <Button
                   href={readingLink.link}
                   rel="noopener noreferrer"

@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1, 0, 2),
     textDecoration: 'underline',
     textTransform: 'none',
-    '&:hover': {
+    '&:hover, &:focus': {
       textDecoration: 'none',
     },
   },
