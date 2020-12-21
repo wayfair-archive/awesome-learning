@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// Color to highlight the question if the question is unanswered, correct, or incorrect
 const defaultColor = (theme) => ({
   '--background-color': theme.palette.secondary.main,
 });
