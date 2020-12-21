@@ -11,6 +11,7 @@
     },
     "secondary": {
       "main": "#69adc9",
+      "dark": "49798c",
       "contrastText": "#fafbfb"
     },
     "info": {
@@ -71,8 +72,16 @@
       "root": {
         "textTransform": "none"
       },
+      "containedSecondary": {
+        "&:hover, &:focus": {
+          "backgroundColor": "#49798c"
+        }
+      },
       "containedPrimary": {
-        "padding": "6px 28px"
+        "padding": "6px 28px",
+        "&:hover, &:focus": {
+          "backgroundColor": "#1d1820"
+        }
       },
       "text": {
         "padding": 0,
@@ -83,7 +92,6 @@
         "textDecoration": "underline",
         "lineHeight": 1,
         "color": "#69adc9",
-        "disableRipple": true,
         "&:hover, &:focus": {
           "textDecoration": "none",
           "backgroundColor": "initial"
@@ -104,6 +112,7 @@
   },
   "props": {
     "MuiButton": {
+      "disableRipple": true,
       "disableFocusRipple": true
     }
   },

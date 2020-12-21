@@ -15,7 +15,7 @@ const MenuContainer = ({menu}) => {
       <IconButton
         aria-controls="simple-menu"
         aria-haspopup="true"
-        aria-label="Dropdown Menu"
+        aria-label="Navigation menu"
         onClick={handleClick}
       >
         <MenuIcon

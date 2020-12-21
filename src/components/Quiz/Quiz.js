@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'uppercase',
     textDecoration: 'underline',
     '&:hover, &:focus': {
-      color: theme.palette.secondary.dark,
       textDecoration: 'none',
     },
   },

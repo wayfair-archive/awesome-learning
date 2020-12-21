@@ -75,7 +75,7 @@ const Courses = ({edges, title}) => {
             </Typography>
             <Button
               variant="contained"
-              color="secondary"
+              color="primary"
               component={Link}
               to={edge.node.fields.slug}
               className={classes.goLearnCTA}
