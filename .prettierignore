@@ -1,0 +1,10 @@
+.cache
+.github
+content
+gatsby
+node_modules
+public
+static
+*.md
+*.lock
+font-preload-cache.json

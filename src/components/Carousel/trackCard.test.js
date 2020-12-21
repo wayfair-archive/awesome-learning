@@ -7,19 +7,17 @@ const PROPS = {
   title: 'Track Card Title',
   icon: getIcon('array'),
   subTitle: 'This is a track card',
-  path: '/trackcard'
+  path: '/trackcard',
 };
 
 describe('Track Card', () => {
-  it('Renders an icon, title, and subtitle that link to path', () => {
-    const {container, getByText} = render(<TrackCard {...PROPS} />);
-    const icon = container.querySelector('.TrackCard-icon');
+  it('Renders an icon, and title that link to path', () => {
+    const {queryByText, container} = render(<TrackCard {...PROPS} />);
+    const icon = container.querySelector('svg');
+    const link = container.querySelector('a');
 
+    expect(queryByText(PROPS.title)).toBeTruthy();
     expect(icon).toBeTruthy();
-    expect(container.querySelector('.TrackCard').getAttribute('to')).toBe(
-      PROPS.path
-    );
-    expect(getByText(PROPS.title)).toBeTruthy();
-    expect(getByText(PROPS.subTitle)).toBeTruthy();
+    expect(link.getAttribute('to')).toBe(PROPS.path);
   });
 });

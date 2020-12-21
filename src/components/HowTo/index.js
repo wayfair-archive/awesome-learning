@@ -1,1 +1,1 @@
-export { default } from "./HowTo";
+export {default} from './HowTo';

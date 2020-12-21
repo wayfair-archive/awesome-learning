@@ -1,227 +1,191 @@
 import React from 'react';
-import StyledLink from '../shared/StyledLink';
-import Block from '../shared/Block';
-import SectionTitle from '../shared/SectionTitle';
+import {Link} from 'gatsby';
+import {Typography, Box, Button, Grid} from '@material-ui/core';
+import {makeStyles, useTheme} from '@material-ui/core/styles';
 import Carousel from '../Carousel';
-import ContentSection from '../shared/ContentSection';
-import './Landing.scss';
+import {
+  GET_STARTED_LINK,
+  COURSE_DATA_MAPPING,
+  FOOTER_DATA,
+} from './LandingConstants';
 
-const COURSE_DATA_MAPPING = {
-  'Accessibility': {
-    icon: 'accessibility',
-    subTitle: 'Explore Accessibility fundamentals for the web!'
+const useStyles = makeStyles((theme) => ({
+  // Hero Styles
+  heroTitle: {
+    marginTop: theme.spacing(8),
   },
-  'Data Types': {
-    icon: 'data',
-    subTitle: 'Deep dive into types, equality, coercion, immutability and more.'
+  heroSubtitle: {
+    marginTop: theme.spacing(5),
   },
-  'Array Methods': {
-    icon: 'array',
-    subTitle: 'Learn functional array methods like filter, map, and reduce!'
+  heroCta: {
+    marginTop: theme.spacing(4),
   },
-  Promises: {
-    icon: 'async',
-    subTitle: 'Learn the Promise API inside and out.'
+  heroBackground: {
+    height: '250px',
+    clipPath: 'polygon(0 0, 100% 0, 100% 65%, 0 100%)',
+    [theme.breakpoints.up('md')]: {
+      height: '280px',
+      clipPath: 'polygon(0 0, 100% 0, 100% 56%, 0 100%)',
+    },
+    [theme.breakpoints.up('lg')]: {
+      height: '300px',
+      clipPath: 'polygon(0 0, 100% 0, 100% 42%, 0 100%)',
+    },
   },
-  Testing: {
-    icon: 'testing',
-    subTitle:
-      'Learn frontend testing with Jest, Enzyme, and React Testing Library.'
-  },
-  'React Hooks': {
-    icon: 'hook',
-    subTitle: 'Learn react hooks.'
-  },
-  'Functions and Scope': {
-    icon: 'function',
-    subTitle: 'Learn about function and scopes.',
-  },
-  'CSS Layouts': {
-    icon: 'info',
-    subTitle: 'Learn about CSS fundamentals on layouts.',
-  },
-  'SOLID Principles': {
-    icon: 'solid',
-    subTitle: 'Learn the SOLID Architecture Principles and how to apply them.',
-  },
-  'TypeScript Basics': {
-    icon: 'typescript',
-    subTitle: 'Learn about type-safe programming with TypeScript.',
-  }
-};
 
-const Landing = ({courseEdges}) => (
-  <div className="Landing">
-    <div className="Landing-heroWrapper">
-      <div className="Landing-titleWrapper">
-        <SectionTitle is="h2" fontSize="xl" mb="32px">
-          Learn JavaScript and Front-End Fundamentals.
-        </SectionTitle>
-        <Block mb="16px">
-          Awesome Learning is Frontend focused learning platform built around{' '}
-          <b>deliberate practice</b>.
-        </Block>
-        <Block>
-          Our courses are designed to be perfect for <b>group programming</b>.
-        </Block>
-      </div>
-    </div>
-    <div className="Landing-callOut">
-      <div className="Landing-courseWrapper">
-        <Block mb="20px" is="h3">
-          Our Courses:
-        </Block>
-        <Carousel
-          items={courseEdges.map(({node}) => {
-            const {id, frontmatter, fields} = node;
-            const {title} = frontmatter;
-            return {
-              id,
-              title,
-              icon: COURSE_DATA_MAPPING[title]
-                ? COURSE_DATA_MAPPING[title].icon
-                : 'array',
-              subTitle: COURSE_DATA_MAPPING[title]
-                ? COURSE_DATA_MAPPING[title].subTitle
-                : title,
-              path: fields.slug
-            };
-          })}
-        />
-      </div>
-    </div>
-    <ContentSection
-      className="Landing-description"
-      title="What's Deliberate Practice?"
-      isLight
-    >
-      <p>
-        Deliberate practice involves more than repetition; it requires
-        activities that are designed to improve performance, challenge the
-        learner, and provide feedback.
-      </p>
-      <StyledLink
-        variation="secondary"
-        path="https://pwp.gatech.edu/bmeac/2016/02/18/deliberate-practice-and-why-you-should-do-it/"
-        isExternal
+  // Section Content and Wrapper Styles
+  fullWidthContainer: {
+    paddingBottom: theme.spacing(12),
+  },
+  sectionContent: {
+    margin: 'auto',
+    maxWidth: theme.breakpoints.values.lg,
+    padding: theme.spacing(0, 5),
+  },
+  sectionTitle: {
+    padding: theme.spacing(1, 0, 6),
+  },
+
+  // Get Started Styles
+  getStartedItem: {
+    textAlign: 'center',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1.25rem',
+    },
+  },
+  getStartedGrid: {
+    width: '90%',
+    margin: 'auto',
+  },
+  getStartedIcon: {
+    color: theme.palette.primary.main,
+    marginBottom: theme.spacing(2),
+    height: '84px',
+    width: '84px',
+    [theme.breakpoints.up('sm')]: {
+      height: '55px',
+      width: '55px',
+    },
+  },
+
+  // Popular Courses Styles
+  popularCoursesSectionTitle: {
+    textAlign: 'center',
+    padding: theme.spacing(8, 0, 6),
+  },
+}));
+
+const Landing = ({courseEdges}) => {
+  const classes = useStyles();
+  const theme = useTheme();
+  return (
+    <>
+      <Box
+        display="flex"
+        alignItems="center"
+        flexDirection="column"
+        className={classes.heroBackground}
+        color={theme.palette.primary.contrastText}
+        bgcolor={theme.palette.primary.main}
       >
-        Learn More
-      </StyledLink>
-    </ContentSection>
+        <Typography variant="h1" className={classes.heroTitle}>
+          Awesome Learning
+        </Typography>
+        <Typography variant="body1" className={classes.heroSubtitle}>
+          Learn front-end tech, together.
+        </Typography>
+        <Button
+          variant="contained"
+          color="secondary"
+          component={Link}
+          className={classes.heroCta}
+          to={GET_STARTED_LINK}
+        >
+          Get started
+        </Button>
+      </Box>
 
-    <ContentSection
-      className="Landing-description"
-      title="How Do We Apply Deliberate Practice?"
-      isLight
-    >
-      <Block is="p" mb="16px">
-        Each course and lesson are designed to incrementally challenge the
-        learner while providing immediate feedback in the form of quizzes,
-        provided solutions, and guiding comments.
-      </Block>
+      <Box className={classes.fullWidthContainer}>
+        <Box className={classes.sectionContent}>
+          <Typography
+            variant="h2"
+            color="inherit"
+            className={classes.sectionTitle}
+          >
+            What is Awesome Learning?
+          </Typography>
+          <Typography variant="body1" color="inherit">
+            Awesome Learning is a front-end-web focused learning platform
+            created by current and former members of Wayfair Engineering. Small
+            groups of like-minded engineers gather together in a room or
+            virtually, typically once a week, and run through Awesome Learning
+            lessons. Learning materials and pre-read quizzes are done before
+            starting the lesson, so everyone is on the same page and held
+            accountable
+          </Typography>
+        </Box>
+      </Box>
 
-      <Block is="p" mb="16px">
-        <b>Each course</b> is comprised of multiple lessons that each build on
-        learnings from the previous lesson, always challenging the learner to
-        reach for new understanding.
-      </Block>
+      <Box className={classes.fullWidthContainer}>
+        <Box className={classes.sectionContent}>
+          <Typography
+            variant="h2"
+            color="inherit"
+            className={classes.sectionTitle}
+          >
+            How can I get started?
+          </Typography>
+          <Grid container spacing={3} className={classes.getStartedGrid}>
+            {FOOTER_DATA.map((item) => (
+              <Grid item xs={12} sm={3} key={item.title}>
+                <Box display="flex" alignItems="center" flexDirection="column">
+                  <item.icon className={classes.getStartedIcon} />
+                  <Typography
+                    variant="body1"
+                    color="primary"
+                    className={classes.getStartedItem}
+                  >
+                    <b>{item.title}</b>
+                    <br />
+                    {item.subtitle}
+                  </Typography>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </Box>
 
-      <p>
-        <b>Each lesson</b> features exercises designed to incrementally increase
-        in complexity to further challenge the user.
-      </p>
-    </ContentSection>
-
-    <ContentSection
-      className="Landing-description"
-      title="Group Focused"
-      isLight
-    >
-      <Block is="p" mb="16px">
-        We believe one of the major separators between "junior" and "senior"
-        developers is technical communication. That's why we strongly suggest
-        running these sessions with a small group, either in person or over a
-        chat client.
-      </Block>
-      <p>
-        Over the hundreds of sessions we've run, those who tackle these courses
-        as a group learn faster and become stronger technical communicators, all
-        while building key technical skills.
-      </p>
-    </ContentSection>
-
-    <ContentSection title="How it Works" isLight>
-      <ol className="Landing-list">
-        <li className="Landing-listItem">
-          <h3>Gather a Team</h3>
-          <p className="Landing-listItemText">
-            We recommend groups of no more than{' '}
-            <StyledLink
-              variation="secondary"
-              path="https://en.wikipedia.org/wiki/Ringelmann_effect"
-              isExternal
-            >
-              five or six people
-            </StyledLink>
-            . Try to build groups with relatively similar abilities across
-            members to keep everyone interested and engaged.
-          </p>
-        </li>
-        <li className="Landing-listItem">
-          <h3>Pick a Course</h3>
-          <p className="Landing-listItemText">
-            Start with one of our pre-built courses like array methods, testing,
-            etc. Later you can use the same learning method with other materials
-            and contribute your own course!
-          </p>
-        </li>
-        <li className="Landing-listItem">
-          <h3>Pick a Time</h3>
-          <p className="Landing-listItemText">
-            We recommend setting aside an hour to an hour and a half per
-            session, at a cadence of once per week until you complete your
-            course.
-          </p>
-        </li>
-        <li className="Landing-listItem">
-          <h3>Pick a Place</h3>
-          <p className="Landing-listItemText">
-            Ideally, each of you has a laptop in a quiet space. Otherwise, find
-            the best way to get your group together at the scheduled time
-            whether in person or remotely.
-          </p>
-        </li>
-      </ol>
-    </ContentSection>
-
-    <ContentSection
-      className="Landing-description"
-      title="Who is This For?"
-      isLight
-    >
-      <Block is="p" mb="16px">
-        This material is currently used by full time software engineers within
-        Wayfair. We believe beginners, experts, and everyone in between can
-        learn something here.
-      </Block>
-      <p>
-        In general, we find that a group of folks motivated to learn and improve
-        both their soft skills and Frontend knowledge will do well here. If
-        there are explicit pre-requisites for a course, they will be clearly
-        stated.
-      </p>
-    </ContentSection>
-    <ContentSection title="Ready to Get Started?" isLight>
-      <Block mb="16px">
-        <StyledLink variation="secondary" path="/courses">
-          See Our Courses
-        </StyledLink>
-      </Block>
-      <StyledLink variation="secondary" path="/howTo">
-        Read the Session How-To Guide
-      </StyledLink>
-    </ContentSection>
-  </div>
-);
+      <Box
+        className={classes.fullWidthContainer}
+        color={theme.palette.secondary.contrastText}
+        bgcolor={theme.palette.secondary.main}
+      >
+        <Box className={classes.sectionContent}>
+          <Typography
+            variant="h2"
+            color="inherit"
+            className={classes.popularCoursesSectionTitle}
+          >
+            Popular Courses
+          </Typography>
+          <Carousel
+            items={courseEdges.map(({node}) => {
+              const {frontmatter, fields} = node;
+              const {title} = frontmatter;
+              return {
+                title,
+                icon: COURSE_DATA_MAPPING[title]
+                  ? COURSE_DATA_MAPPING[title].icon
+                  : 'array',
+                path: fields.slug,
+              };
+            })}
+          />
+        </Box>
+      </Box>
+    </>
+  );
+};
 
 export default Landing;

@@ -10,20 +10,22 @@ describe('LessonButton', () => {
       site: {
         siteMetadata: {
           repoName: 'awesome-learning',
-          repoOwner: 'wayfair'
-        }
-      }
+          repoOwner: 'wayfair',
+        },
+      },
     },
-    defaultTab: 'tests'
+    defaultTab: 'tests',
   };
 
-  it('creates a link with the right codesandbox url', () => {
-    const {getByText} = render(
+  it('creates a button with the right copy and codesandbox url', () => {
+    const {queryByText} = render(
       <LastLessonProvider>
         <PureLessonButton {...props} />
       </LastLessonProvider>
     );
-    expect(getByText(/click here/i).href).toBe(
+
+    expect(queryByText('Click here to start your exercises!')).toBeTruthy();
+    expect(document.querySelector('a').getAttribute('href')).toBe(
       'https://codesandbox.io/s/github/wayfair/awesome-learning-exercises/tree/master/data-types/objects?fontsize=14&previewwindow=tests'
     );
   });

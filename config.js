@@ -7,15 +7,15 @@ module.exports = {
   copyright: '© Awesome Learning™ All rights reserved.',
   coursesPerPage: 10,
   googleAnalyticsId: 'UA-2081664-21',
-  twitter: "@wayfairtech",
+  twitter: '@wayfairtech',
   menu: [
     {
       label: 'Courses',
-      path: '/courses'
+      path: '/courses',
     },
     {
       label: 'How to Use',
-      path: '/howTo'
-    }
-  ]
+      path: '/howTo',
+    },
+  ],
 };

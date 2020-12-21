@@ -13,14 +13,14 @@ Awesome Learning is a Front-end focused learning platform created by current and
 3. Navigate into the local directory
 4. Install dependencies
 ```sh
-npm install
+yarn
 ```
 
 #### Starting Awesome Learning
 
 Navigate into your new site’s directory and start it up.
 ```sh
-npm run develop
+yarn develop
 ```
 
 #### Open the source code and start editing!
@@ -33,13 +33,13 @@ Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is
 
 While you are developing, we recommend watching the test suite. Open up another terminal in the site directory and run 
 ```
-npm run test-watch
+yarn test
 ```
 
 ### Running storybook locally
 
 ```
-npm run storybook
+yarn storybook
 ```
 
 Then open `http://localhost:6006` on your browser. For more information visit [React Storybook](https://github.com/storybooks/storybook) repo.
@@ -82,5 +82,5 @@ Groups experience higher levels of camaraderie, build expert mental models aroun
 
 
 ## Credits
-Credit to the original author of this fork - the Gastby Lumen Starter.
+Credit to the original author of this fork - the Gatsby Lumen Starter.
 https://github.com/alxshelepenok/gatsby-starter-lumen

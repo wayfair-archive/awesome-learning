@@ -2,7 +2,6 @@ const path = require("path");
 const _ = require("lodash");
 const createCategoriesPages = require("./pagination/create-categories-pages.js");
 const createTagsPages = require("./pagination/create-tags-pages.js");
-const createCoursesPages = require("./pagination/create-courses-pages.js");
 const siteConfig = require('../config.js');
 
 const createPages = async ({ graphql, actions }) => {
@@ -41,6 +40,12 @@ const createPages = async ({ graphql, actions }) => {
   createPage({
     path: "/categories",
     component: path.resolve("./src/templates/categories-list-template.js")
+  });
+
+  // Courses list
+  createPage({
+    path: "/courses",
+    component: path.resolve("./src/templates/course-list-template.js")
   });
 
   // Courses and pages from markdown
@@ -94,7 +99,6 @@ const createPages = async ({ graphql, actions }) => {
   // Feeds
   await createTagsPages(graphql, actions);
   await createCategoriesPages(graphql, actions);
-  await createCoursesPages(graphql, actions);
 };
 
 module.exports = createPages;

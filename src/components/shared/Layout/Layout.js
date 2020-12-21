@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import cx from 'classnames';
 import Header from '../../Header';
 import LastLessonProvider from '../../../providers/LastLessonProvider';
-import config from "../../../../config";
+import config from '../../../../config';
 import './Layout.scss';
 
 const Layout = ({children, title, description, isFullBleed, slug}) => {
@@ -31,9 +31,11 @@ const Layout = ({children, title, description, isFullBleed, slug}) => {
         <link rel="canonical" href={formattedUrl} />
       </Helmet>
       <Header />
-      <div className={cx('Layout', {
-        'Layout--fullBleed': isFullBleed
-      })}>
+      <div
+        className={cx('Layout', {
+          'Layout--fullBleed': isFullBleed,
+        })}
+      >
         <LastLessonProvider>{children}</LastLessonProvider>
       </div>
     </>

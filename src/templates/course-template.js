@@ -1,23 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import {graphql} from 'gatsby';
 import Layout from '../components/shared/Layout';
 import Course from '../components/Course';
 import Page from '../components/shared/Page';
 
-const CourseTemplate = ({ data }) => {
+const CourseTemplate = ({data}) => {
   const {
-    fields: {
-      slug: courseSlug
-    },
-    frontmatter: {
-      title: courseTitle,
-      description: courseDescription
-    },
+    fields: {slug: courseSlug},
+    frontmatter: {title: courseTitle, description: courseDescription},
   } = data.markdownRemark;
 
   return (
-    <Layout title={courseTitle} description={courseDescription} slug={courseSlug}>
+    <Layout
+      title={courseTitle}
+      description={courseDescription}
+      slug={courseSlug}
+    >
       <Page>
         <Course course={data.markdownRemark} />
       </Page>
@@ -30,15 +29,15 @@ CourseTemplate.propTypes = {
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.shape({
         title: PropTypes.string,
-        description: PropTypes.string
-      })
-    })
-  }).isRequired
+        description: PropTypes.string,
+      }),
+    }),
+  }).isRequired,
 };
 
 export const query = graphql`
   query CourseBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    markdownRemark(fields: {slug: {eq: $slug}}) {
       id
       html
       fields {

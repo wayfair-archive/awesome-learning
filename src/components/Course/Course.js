@@ -1,46 +1,105 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Tags from './Tags';
-import StyledLink from '../shared/StyledLink';
-import CourseCard from '../CourseCard';
-import ContentSection from '../shared/ContentSection';
-import './Course.scss';
+import {
+  Typography,
+  Box,
+  Button,
+  List,
+  ListItem,
+  ListItemText,
+} from '@material-ui/core';
+import {makeStyles, useTheme, withStyles} from '@material-ui/core/styles';
+import {Link} from 'gatsby';
 
-const Course = ({ course }) => {
-  const { tags, title, description, lessons } = course.frontmatter;
-  const { tagSlugs, slug } = course.fields;
+const useStyles = makeStyles((theme) => ({
+  sectionTitle: {
+    padding: theme.spacing(2, 0, 6),
+  },
+  sectionWrapper: {
+    display: 'block',
+    padding: theme.spacing(4, 0, 4),
+  },
+  courseCardItem: {
+    margin: theme.spacing(3, 0, 3),
+  },
+  relatedThemesTitle: {
+    marginBottom: theme.spacing(4),
+  },
+}));
+
+const Tag = withStyles((theme) => ({
+  root: {
+    display: 'inline-block',
+    textAlign: 'center',
+    margin: theme.spacing(0, 2, 2, 0),
+    padding: theme.spacing(2),
+  },
+}))(Button);
+
+const Course = ({course}) => {
+  const classes = useStyles();
+  const theme = useTheme();
+  const {tags, title, description, lessons} = course.frontmatter;
+  const {tagSlugs, slug} = course.fields;
   return (
-    <div className="Course">
-      <div className="Course-backLink">
-        <StyledLink variation={"tertiary"} path={"/courses"}>
-          Back to Courses
-        </StyledLink>
-      </div>
-      <ContentSection title={title}>
-        <p>{description}</p>
-      </ContentSection>
-      <ul>
-        {lessons.map(({ link, title, description }) => {
-          const composedLink = `${slug}${link}`;
-          return (
-            <CourseCard
-              key={title}
-              title={title}
-              link={composedLink}
-              description={description}
+    <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
+      <Button component={Link} to="/courses" role="link">
+        Back to Courses
+      </Button>
+      <Box className={classes.sectionWrapper}>
+        <Typography variant="h2" className={classes.sectionTitle}>
+          {title}
+        </Typography>
+        <Typography variant="body1">{description}</Typography>
+      </Box>
+      <List component="ol" disablePadding aria-label="Available courses">
+        {lessons.map(({link, title, description}, value) => (
+          <ListItem
+            disableGutters
+            key={title}
+            className={classes.sectionWrapper}
+          >
+            <ListItemText
+              primary={
+                <Typography variant="h3" className={classes.courseCardItem}>
+                  {value + 1}
+                  {'. '}
+                  {title}
+                </Typography>
+              }
+              secondary={<Typography variant="body1">{description}</Typography>}
             />
-          );
-        })}
-      </ul>
+            <Button
+              variant="contained"
+              color="primary"
+              component={Link}
+              to={`${slug}${link}`}
+              className={classes.courseCardItem}
+            >
+              Learn {title}
+            </Button>
+          </ListItem>
+        ))}
+      </List>
       {tags.length > 2 && (
-        <React.Fragment>
-          <div className="Course-footer" />
-          <ContentSection title="Related Themes">
-            <Tags tags={tags} tagSlugs={tagSlugs} />
-          </ContentSection>
-        </React.Fragment>
+        <Box className={classes.sectionWrapper} textAlign="center">
+          <Typography variant="h4" className={classes.relatedThemesTitle}>
+            Related Themes
+          </Typography>
+          {tagSlugs.map((slug, i) => (
+            <Tag
+              variant="outlined"
+              color="secondary"
+              key={`${tags[i]}slug`}
+              component={Link}
+              to={slug}
+            >
+              {tags[i]}
+            </Tag>
+          ))}
+        </Box>
       )}
-    </div>
+    </Box>
   );
 };
 
@@ -50,13 +109,13 @@ Course.propTypes = {
       tags: PropTypes.array,
       title: PropTypes.string,
       description: PropTypes.node,
-      lessons: PropTypes.arrayOf(PropTypes.object)
+      lessons: PropTypes.arrayOf(PropTypes.object),
     }).isRequired,
     fields: PropTypes.shape({
       tagSlugs: PropTypes.array,
-      slug: PropTypes.string
-    })
-  })
+      slug: PropTypes.string,
+    }),
+  }),
 };
 
 export default Course;
