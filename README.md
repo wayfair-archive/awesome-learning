@@ -20,7 +20,7 @@ yarn
 
 Navigate into your new site’s directory and start it up.
 ```sh
-gatsby develop
+yarn develop
 ```
 
 #### Open the source code and start editing!
@@ -39,7 +39,7 @@ yarn test
 ### Running storybook locally
 
 ```
-npm run storybook
+yarn storybook
 ```
 
 Then open `http://localhost:6006` on your browser. For more information visit [React Storybook](https://github.com/storybooks/storybook) repo.
