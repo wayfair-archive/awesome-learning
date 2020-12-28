@@ -7,6 +7,7 @@ defaultTab: tests
 tags:
 description: In this lesson you will be introduced to Flexbox layout module and media queries. The video and reading links below will instruct you on the CSS principles behind the concepts. But for the exercises, you will not be writing out custom CSS classes or properties to apply those principles. Instead, to show how these concepts are more often used in modern web development, you'll be using React layout components that have the functionality built-in via props. 
 timeToCompletion: ~1 hour
+
 videoLinks: 
  - https://www.youtube.com/embed/fYq5PXgSsbE
  - https://www.youtube.com/embed/2KL-z9A56SQ
@@ -53,10 +54,10 @@ readingLinks:
     description: A small infographic showing why responsive grid frameworks often use a 12-column system. It provides more flexibility than a base 8 or 10 grid, since it can be divisible by 1, 2, 3, 4, 6, and 12, allowing for 1/3, 1/2, and 1/4 width columns. 
     title: Understanding 12-Column Grids
   - link: https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
-    description: Mozilla article on media queries, covering the media types screen, print, and speech and the media features you can specify . It also details how combine multiple media queries.
+    description: Mozilla article on media queries, covering the media types of screen, print, and speech and the media features you can specify. It also details how to combine multiple media queries.
     title: Using media queries
   - link: https://www.uxpin.com/studio/blog/a-hands-on-guide-to-mobile-first-design/
-    description: Article on why when designing responsive layouts why the best approach is to start from mobile and work your way up to larger sizes.
+    description: Article on why, when designing responsive layouts, the best approach is to start from mobile and work your way up to larger sizes.
     title: A Hands-On Guide to Mobile-First Responsive Design
 
 ---
