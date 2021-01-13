@@ -22,7 +22,7 @@
   "author": "Awesome Learning™ <awesomelearning@wayfair.com>",
   "license": "BSD-2-Clause",
   "engines": {
-    "node": "^12"
+    "node": "^14"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
