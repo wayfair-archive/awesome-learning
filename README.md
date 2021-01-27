@@ -1,5 +1,4 @@
 # Awesome Learning
-[![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/awesome-learning)
 
 Awesome Learning is a Front-end focused learning platform created by current and former members of Wayfair Engineering.
 
