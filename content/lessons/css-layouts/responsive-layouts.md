@@ -47,7 +47,7 @@ preReadQuiz:
       correctChoices: 
       - 2
       explanation: Flex-between is not a valid value for any CSS property.
-      type: checkbox
+      type: radio
 
 readingLinks: 
   - link: https://i.imgur.com/XjIQPOK.jpg
