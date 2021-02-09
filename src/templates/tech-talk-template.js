@@ -3,20 +3,20 @@ import PropTypes from 'prop-types';
 import {graphql} from 'gatsby';
 import Layout from '../components/shared/Layout';
 import Page from '../components/shared/Page';
-// import TechTalk from '../components/TechTalk'
+import TechTalk, {techTalkPropType} from '../components/TechTalk';
 
 const TechTalkTemplate = ({data}) => {
   const {
-    title: lessonTitle,
+    title: techTalkTitle,
     description: courseDescription,
   } = data.markdownRemark.frontmatter;
 
   const {slug} = data.markdownRemark.fields;
 
   return (
-    <Layout description={courseDescription} slug={slug} title={lessonTitle}>
+    <Layout description={courseDescription} slug={slug} title={techTalkTitle}>
       <Page>
-        <h1>Hello</h1>
+        <TechTalk techTalk={data.markdownRemark} />
       </Page>
     </Layout>
   );
@@ -24,11 +24,10 @@ const TechTalkTemplate = ({data}) => {
 
 TechTalkTemplate.propTypes = {
   markdownRemark: PropTypes.shape({
-    frontmatter: PropTypes.shape({
-      description: PropTypes.string,
-    }),
+    frontmatter: techTalkPropType,
     fields: PropTypes.shape({
       slug: PropTypes.string,
+      tagSlugs: PropTypes.arrayOf(PropTypes.string),
     }),
   }),
 };
@@ -44,6 +43,16 @@ export const query = graphql`
       }
       frontmatter {
         description
+        embedLink
+        tags
+        title
+        track
+        speakers {
+          # email
+          name
+          title
+          # twitter
+        }
       }
     }
   }

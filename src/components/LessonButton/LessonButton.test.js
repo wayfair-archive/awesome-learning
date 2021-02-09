@@ -1,7 +1,6 @@
 import React from 'react';
 import {render} from '@testing-library/react';
 import {PureLessonButton} from './LessonButton';
-import LastLessonProvider from '../../providers/LastLessonProvider';
 
 describe('LessonButton', () => {
   const props = {
@@ -18,11 +17,7 @@ describe('LessonButton', () => {
   };
 
   it('creates a button with the right copy and codesandbox url', () => {
-    const {queryByText} = render(
-      <LastLessonProvider>
-        <PureLessonButton {...props} />
-      </LastLessonProvider>
-    );
+    const {queryByText} = render(<PureLessonButton {...props} />);
 
     expect(queryByText('Click here to start your exercises!')).toBeTruthy();
     expect(document.querySelector('a').getAttribute('href')).toBe(

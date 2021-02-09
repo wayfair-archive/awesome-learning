@@ -3,7 +3,6 @@ import {graphql, StaticQuery} from 'gatsby';
 import PropTypes from 'prop-types';
 import {Button, Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
-import {useLastLessonContext} from '../../providers/LastLessonProvider';
 import analyticsEventHandler from '../../utils/analyticsEventHandler';
 
 const handleEventClick = (path) => {
@@ -27,7 +26,6 @@ export const PrimitiveLessonButton = ({
   lessonData,
 }) => {
   const classes = useStyles();
-  const {setLastLessonVisited} = useLastLessonContext();
   return (
     <Button
       color="secondary"
@@ -36,10 +34,7 @@ export const PrimitiveLessonButton = ({
       href={path}
       rel="noopener noreferrer"
       target="_blank"
-      onClick={() => {
-        if (lessonData) setLastLessonVisited(lessonData);
-        onClick(path);
-      }}
+      onClick={onClick}
       className={classes.button}
     >
       <Typography variant="h3" color="inherit">

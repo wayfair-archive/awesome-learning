@@ -8,7 +8,6 @@ import StoryContainer from './StoryContainer';
 
 // Components to exclude from Storybook PropsTable
 import Icon from '../src/components/shared/Icon';
-import LastLessonProvider from '../src/providers/LastLessonProvider';
 import Page from '../src/components/shared/Page';
 
 addParameters({
@@ -48,7 +47,7 @@ addDecorator(
     header: false,
     maxPropStringLength: 200,
     maxPropsIntoLine: 1,
-    propTablesExclude: [Icon, LastLessonProvider, Page],
+    propTablesExclude: [Icon, Page],
   })
 );
 addDecorator(addReadme);
