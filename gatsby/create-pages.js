@@ -48,6 +48,12 @@ const createPages = async ({ graphql, actions }) => {
     component: path.resolve("./src/templates/course-list-template.js")
   });
 
+  // Tracks list
+  createPage({
+    path: "/tech-talks",
+    component: path.resolve("./src/templates/track-list-template.js")
+  });
+
   // Courses and pages from markdown
   const result = await graphql(`
     {
@@ -81,18 +87,33 @@ const createPages = async ({ graphql, actions }) => {
         component: path.resolve("./src/templates/course-template.js"),
         context: { slug: edge.node.fields.slug }
       });
-    } else if (_.get(edge, "node.frontmatter.template") === "lesson") {
+    } 
+    else if (_.get(edge, "node.frontmatter.template") === "track") {
+      createPage({
+        path: edge.node.fields.slug,
+        component: path.resolve("./src/templates/track-template.js"),
+        context: { slug: edge.node.fields.slug }
+      });
+    }
+    else if (_.get(edge, "node.frontmatter.template") === "techtalk") {
+      createPage({
+        path: edge.node.fields.slug,
+        component: path.resolve("./src/templates/tech-talk-template.js"),
+        context: { slug: edge.node.fields.slug }
+      });
+    }
+    else if (_.get(edge, "node.frontmatter.template") === "lesson") {
       createPage({
         path: edge.node.fields.slug,
         component: path.resolve("./src/templates/lesson-template.js"),
         context: { slug: edge.node.fields.slug }
       });
       // Create quiz pages for every lesson
-      createPage({
-        path: `${edge.node.fields.slug}/quiz`,
-        component: path.resolve("./src/templates/quiz-template.js"),
-        context: { slug: edge.node.fields.slug }
-      });
+      // createPage({
+      //   path: `${edge.node.fields.slug}/quiz`,
+      //   component: path.resolve("./src/templates/quiz-template.js"),
+      //   context: { slug: edge.node.fields.slug }
+      // });
     }
   });
 

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import cx from 'classnames';
 import Header from '../../Header';
-import LastLessonProvider from '../../../providers/LastLessonProvider';
 import config from '../../../../config';
 import './Layout.scss';
 
@@ -36,7 +35,7 @@ const Layout = ({children, title, description, isFullBleed, slug}) => {
           'Layout--fullBleed': isFullBleed,
         })}
       >
-        <LastLessonProvider>{children}</LastLessonProvider>
+        {children}
       </div>
     </>
   );
