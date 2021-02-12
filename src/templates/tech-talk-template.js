@@ -50,7 +50,6 @@ export const query = graphql`
         tags
         title
         speakers {
-          # email
           name
           title
           twitter

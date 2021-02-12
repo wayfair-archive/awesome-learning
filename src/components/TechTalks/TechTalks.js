@@ -67,11 +67,11 @@ const TechTalks = ({techTalks}) => {
               {techTalk.frontmatter.description}
             </Typography>
             <Button
-              variant="contained"
               color="primary"
               component={Link}
-              to={techTalk.fields.slug}
               className={classes.goLearnCTA}
+              to={techTalk.fields.slug}
+              variant="contained"
             >
               Go Watch
             </Button>
