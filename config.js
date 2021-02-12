@@ -14,8 +14,12 @@ module.exports = {
       path: '/courses',
     },
     {
+      label: 'Tech Talks',
+      path: '/tech-talks',
+    },
+    {
       label: 'How to Use',
-      path: '/howTo',
+      path: '/how-to',
     },
   ],
 };

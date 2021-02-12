@@ -1,7 +1,6 @@
 import React from 'react';
 import {render} from '@testing-library/react';
 import Lesson from './Lesson';
-import LastLessonProvider from '../../providers/LastLessonProvider';
 
 const baseLesson = {
   html: '',
@@ -71,36 +70,30 @@ const lessonWithSecondaryUrlAndQuiz = {
 describe('Lesson', () => {
   it('renders back to course button', () => {
     const {queryByText} = render(
-      <LastLessonProvider>
-        <Lesson
-          lesson={lessonExternalQuiz}
-          slug={lessonExternalQuiz.fields.slug}
-        />
-      </LastLessonProvider>
+      <Lesson
+        lesson={lessonExternalQuiz}
+        slug={lessonExternalQuiz.fields.slug}
+      />
     );
     expect(queryByText('Back to test course', {exact: false})).toBeTruthy();
   });
 
   it('renders course title', () => {
     const {queryByText} = render(
-      <LastLessonProvider>
-        <Lesson
-          lesson={lessonExternalQuiz}
-          slug={lessonExternalQuiz.fields.slug}
-        />
-      </LastLessonProvider>
+      <Lesson
+        lesson={lessonExternalQuiz}
+        slug={lessonExternalQuiz.fields.slug}
+      />
     );
     expect(queryByText(lessonExternalQuiz.frontmatter.title)).toBeTruthy();
   });
 
   it('renders time to completion and description', () => {
     const {queryByText} = render(
-      <LastLessonProvider>
-        <Lesson
-          lesson={lessonExternalQuiz}
-          slug={lessonExternalQuiz.fields.slug}
-        />
-      </LastLessonProvider>
+      <Lesson
+        lesson={lessonExternalQuiz}
+        slug={lessonExternalQuiz.fields.slug}
+      />
     );
     expect(queryByText('8 hrs')).toBeTruthy();
     expect(queryByText('This is a test lesson')).toBeTruthy();
@@ -109,12 +102,10 @@ describe('Lesson', () => {
 
   it('renders the video iframes', () => {
     const {queryByTestId} = render(
-      <LastLessonProvider>
-        <Lesson
-          lesson={lessonExternalQuiz}
-          slug={lessonExternalQuiz.fields.slug}
-        />
-      </LastLessonProvider>
+      <Lesson
+        lesson={lessonExternalQuiz}
+        slug={lessonExternalQuiz.fields.slug}
+      />
     );
     expect(
       queryByTestId(lessonExternalQuiz.frontmatter.videoLinks[0])
@@ -123,12 +114,10 @@ describe('Lesson', () => {
 
   it('renders the reading links', () => {
     const {queryByText} = render(
-      <LastLessonProvider>
-        <Lesson
-          lesson={lessonExternalQuiz}
-          slug={lessonExternalQuiz.fields.slug}
-        />
-      </LastLessonProvider>
+      <Lesson
+        lesson={lessonExternalQuiz}
+        slug={lessonExternalQuiz.fields.slug}
+      />
     );
     expect(
       queryByText(lessonExternalQuiz.frontmatter.readingLinks[0].title)
@@ -150,24 +139,20 @@ describe('Lesson', () => {
 
   it('renders a link to pre-quiz', () => {
     const {queryByText} = render(
-      <LastLessonProvider>
-        <Lesson
-          lesson={lessonExternalQuiz}
-          slug={lessonExternalQuiz.fields.slug}
-        />
-      </LastLessonProvider>
+      <Lesson
+        lesson={lessonExternalQuiz}
+        slug={lessonExternalQuiz.fields.slug}
+      />
     );
     expect(queryByText('Take the Quiz')).toBeTruthy();
   });
 
   it('renders a link to external lesson if it exists', () => {
     const {getByText, getByTestId} = render(
-      <LastLessonProvider>
-        <Lesson
-          lesson={lessonWithSecondaryUrlAndQuiz}
-          slug={lessonWithSecondaryUrlAndQuiz.fields.slug}
-        />
-      </LastLessonProvider>
+      <Lesson
+        lesson={lessonWithSecondaryUrlAndQuiz}
+        slug={lessonWithSecondaryUrlAndQuiz.fields.slug}
+      />
     );
     const element = getByTestId(
       lessonWithSecondaryUrlAndQuiz.frontmatter.secondaryExerciseUrl

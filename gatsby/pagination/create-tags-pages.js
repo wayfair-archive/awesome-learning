@@ -9,7 +9,7 @@ module.exports = async (graphql, actions) => {
   const result = await graphql(`
     {
       allMarkdownRemark(
-        filter: { frontmatter: { template: { eq: "course" }, draft: { ne: true } } }
+        filter: { frontmatter: { template: { in: ["course", "techtalk"] }, draft: { ne: true } } }
       ) {
         group(field: frontmatter___tags) {
           fieldValue

@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import PropTypes from 'prop-types';
-import {makeStyles, useTheme} from '@material-ui/core/styles';
 import {Box, Typography, Button} from '@material-ui/core';
-import {Pagination} from '@material-ui/lab';
+import {makeStyles, useTheme} from '@material-ui/core/styles';
 import {Link} from 'gatsby';
+import {Pagination} from '@material-ui/lab';
+import PropTypes from 'prop-types';
+import {techTalkPropType} from '../TechTalk';
 
 const ITEMS_PER_PAGE = 4;
 
@@ -29,11 +30,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Courses = ({edges, title}) => {
+const TechTalks = ({techTalks}) => {
   const classes = useStyles();
   const theme = useTheme();
   const [page, setPage] = useState(1);
-  const noOfPages = Math.ceil(edges.length / ITEMS_PER_PAGE);
+  const noOfPages = Math.ceil(techTalks.length / ITEMS_PER_PAGE);
   const handleChange = (event, value) => {
     setPage(value);
     window.scrollTo(0, 0);
@@ -42,37 +43,37 @@ const Courses = ({edges, title}) => {
   return (
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
       <Typography variant="h1" color="textPrimary">
-        {title}
+        Tech Talks
       </Typography>
-      {edges
+      {techTalks
         .slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE)
-        .map((edge) => (
+        .map((techTalk) => (
           <Box
             display="flex"
             flexDirection="column"
-            key={edge.node.frontmatter.title}
+            key={techTalk.frontmatter.title}
             className={classes.courseContainer}
           >
             <Typography
               variant="h2"
               component={Link}
               color="primary"
-              to={edge.node.fields.slug}
+              to={techTalk.fields.slug}
               className={classes.title}
             >
-              {edge.node.frontmatter.title}
+              {techTalk.frontmatter.title}
             </Typography>
             <Typography variant="body1">
-              {edge.node.frontmatter.description}
+              {techTalk.frontmatter.description}
             </Typography>
             <Button
-              variant="contained"
               color="primary"
               component={Link}
-              to={edge.node.fields.slug}
               className={classes.goLearnCTA}
+              to={techTalk.fields.slug}
+              variant="contained"
             >
-              Go Learn
+              Go Watch
             </Button>
           </Box>
         ))}
@@ -91,13 +92,8 @@ const Courses = ({edges, title}) => {
   );
 };
 
-Courses.propTypes = {
-  edges: PropTypes.arrayOf(PropTypes.object).isRequired,
-  title: PropTypes.string,
+TechTalks.propTypes = {
+  techTalks: PropTypes.arrayOf(techTalkPropType),
 };
 
-Courses.defaultProps = {
-  title: '',
-};
-
-export default Courses;
+export default TechTalks;
