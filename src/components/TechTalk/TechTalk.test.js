@@ -5,26 +5,25 @@ import TechTalk from './TechTalk';
 export const MOCK_TECH_TALKS = [
   {
     fields: {
-      tagSlugs: ['/tags/react', '/tags/accessibility'],
+      tagSlugs: ['/tags/react', '/tags/accessibility', '/tags/usability'],
     },
     frontmatter: {
       description: 'Test description',
       embedLink: 'https://www.youtube.com/embed/jvEFw0YpGgg',
       speakers: [
         {
-          email: 'test@mail.com',
           name: 'Test Speaker',
           title: 'Test Engineer',
           twitter: 'testtwitter2',
         },
       ],
-      tags: ['react', 'accessibility'],
+      tags: ['react', 'accessibility', 'usability'],
       title: 'Test title',
     },
   },
   {
     fields: {
-      tagSlugs: ['/tags/unit-testing', '/tags/performance'],
+      tagSlugs: ['/tags/unit-testing', '/tags/performance', '/tags/javascript'],
     },
     frontmatter: {
       description: 'Test description 2',
@@ -37,7 +36,7 @@ export const MOCK_TECH_TALKS = [
           twitter: 'testtwitter2',
         },
       ],
-      tags: ['unit-testing', 'performance'],
+      tags: ['unit-testing', 'performance', 'javascript'],
       title: 'Test title 2',
     },
   },
@@ -48,19 +47,27 @@ describe('Tech Talk', () => {
   it('shows important information about the tech talk', () => {
     const {getByText} = render(<TechTalk techTalk={firstTechTalk} />);
 
-    expect(getByText(firstTechTalk.frontmatter.title)).toBeInTheDocument();
+    expect(getByText(firstTechTalk.frontmatter.title)).toBeTruthy();
+    expect(getByText(firstTechTalk.frontmatter.description)).toBeTruthy();
+  });
+  it('shows speaker information about the tech talk', () => {
+    const {getByText, queryByText} = render(
+      <TechTalk techTalk={firstTechTalk} />
+    );
+
     firstTechTalk.frontmatter.speakers.forEach((speaker) => {
-      expect(getByText(speaker.email)).toBeInTheDocument();
-      expect(getByText(speaker.name)).toBeInTheDocument();
-      expect(getByText(speaker.title)).toBeInTheDocument();
-      expect(getByText('Twitter').closest('a')).toHaveAttribute(
-        'href',
+      expect(queryByText(new RegExp(speaker.name, 'i'))).toBeTruthy();
+      expect(queryByText(new RegExp(speaker.title, 'i'))).toBeTruthy();
+      expect(getByText('(Twitter)').closest('a').getAttribute('href')).toBe(
         `https://twitter.com/${speaker.twitter}`
       );
     });
+  });
+  it('shows tag information about the tech talk', () => {
+    const {getByText} = render(<TechTalk techTalk={firstTechTalk} />);
 
     firstTechTalk.frontmatter.tags.forEach((tag) => {
-      expect(getByText(tag)).toBeInTheDocument();
+      expect(getByText(tag)).toBeTruthy();
     });
   });
 });

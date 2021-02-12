@@ -7,10 +7,8 @@ describe('Tech Talks', () => {
   it('shows all tech talks passed through via props', () => {
     const {getByText} = render(<TechTalks techTalks={MOCK_TECH_TALKS} />);
     MOCK_TECH_TALKS.forEach((mockTechTalk) => {
-      expect(getByText(mockTechTalk.frontmatter.title)).toBeInTheDocument();
-      expect(
-        getByText(mockTechTalk.frontmatter.description)
-      ).toBeInTheDocument();
+      expect(getByText(mockTechTalk.frontmatter.title)).toBeTruthy();
+      expect(getByText(mockTechTalk.frontmatter.description)).toBeTruthy();
     });
   });
 });
