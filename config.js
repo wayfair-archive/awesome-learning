@@ -19,7 +19,7 @@ module.exports = {
     },
     {
       label: 'How to Use',
-      path: '/howTo',
+      path: '/how-to',
     },
   ],
 };

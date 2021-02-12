@@ -32,7 +32,7 @@ const createPages = async ({ graphql, actions }) => {
 
   // How to
   createPage({
-    path: "/howTo",
+    path: "/how-to",
     component: path.resolve("./src/templates/howTo-template.js")
   });
 

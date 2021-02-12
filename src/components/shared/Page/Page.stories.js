@@ -13,9 +13,6 @@ const stories = storiesOf('Shared.Page', module);
 
 stories
   .addDecorator(withKnobs)
-  .addDecorator((story) => {
-    story();
-  })
   .addParameters({
     readme: {
       // Show readme at the addons panel

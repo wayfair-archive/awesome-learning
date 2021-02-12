@@ -1,7 +1,14 @@
 import React, {Fragment} from 'react';
-import {Box, Grid, Typography} from '@material-ui/core';
+import {
+  Box,
+  Grid,
+  Link as MaterialLink,
+  List,
+  ListItem,
+  Typography,
+} from '@material-ui/core';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
-import {Link} from 'gatsby';
+import {Link as GatsbyLink} from 'gatsby';
 import PropTypes from 'prop-types';
 import ResponsiveVideo from '../shared/ResponsiveVideo';
 import Tag from '../shared/Tag';
@@ -54,11 +61,11 @@ const TechTalk = ({techTalk}) => {
         <Typography variant="h2" className={classes.sectionTitle}>
           Speakers
         </Typography>
-        <ul>
+        <List>
           {techTalk.frontmatter.speakers.map((speaker) => (
             <Typography
               className={classes.paragraphContainer}
-              component="li"
+              component={ListItem}
               key={speaker.name}
               variant="body1"
             >
@@ -67,18 +74,18 @@ const TechTalk = ({techTalk}) => {
               {speaker.twitter ? (
                 <Fragment>
                   {' '}
-                  <a
+                  <MaterialLink
                     href={`https://twitter.com/${speaker.twitter}`}
                     rel="noopener noreferrer"
                     target="_blank"
                   >
                     (Twitter)
-                  </a>
+                  </MaterialLink>
                 </Fragment>
               ) : null}
             </Typography>
           ))}
-        </ul>
+        </List>
       </Box>
 
       <Box className={classes.sectionContainer}>
@@ -102,7 +109,7 @@ const TechTalk = ({techTalk}) => {
               variant="outlined"
               color="secondary"
               key={`${techTalk.fields.tagSlugs[i]}slug`}
-              component={Link}
+              component={GatsbyLink}
               to={slug}
             >
               {techTalk.frontmatter.tags[i]}
