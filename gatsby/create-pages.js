@@ -51,7 +51,7 @@ const createPages = async ({ graphql, actions }) => {
   // Tracks list
   createPage({
     path: "/tech-talks",
-    component: path.resolve("./src/templates/track-list-template.js")
+    component: path.resolve("./src/templates/tech-talk-list-template.js")
   });
 
   // Courses and pages from markdown
@@ -81,7 +81,6 @@ const createPages = async ({ graphql, actions }) => {
       lesson: "./src/templates/lesson-template.js",
       page: "./src/templates/page-template.js",
       techtalk: "./src/templates/tech-talk-template.js",
-      track: "./src/templates/track-template.js"
     };
     
     // If the requested template matches a known template,

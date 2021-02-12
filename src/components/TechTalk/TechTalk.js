@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {Typography, Grid, Button, Box, List, ListItem} from '@material-ui/core';
+import {Box, Grid, Typography} from '@material-ui/core';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
 import {Link} from 'gatsby';
+import PropTypes from 'prop-types';
 import ResponsiveVideo from '../shared/ResponsiveVideo';
-import LessonButton, {PrimitiveLessonButton} from '../LessonButton';
+import Tag from '../shared/Tag';
 
 const useStyles = makeStyles((theme) => ({
   sectionTitle: {
@@ -32,17 +32,9 @@ const TechTalk = ({techTalk}) => {
   const descriptionParagraphs = techTalk.frontmatter.description.split(
     /\r?\n\n/
   );
-  const trackName = techTalk.frontmatter.track.split('-').join(' ');
 
   return (
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
-      <Button
-        component={Link}
-        to={`/tech-talks/${techTalk.frontmatter.track}/`}
-        role="link"
-      >
-        Back to {trackName}
-      </Button>
       <Box className={classes.sectionContainer}>
         <Typography variant="h1" className={classes.sectionTitle}>
           {techTalk.frontmatter.title}
@@ -68,6 +60,25 @@ const TechTalk = ({techTalk}) => {
           </Grid>
         </Grid>
       </Box>
+
+      {techTalk.frontmatter.tags.length > 2 && (
+        <Box className={classes.sectionWrapper} textAlign="center">
+          <Typography variant="h4" className={classes.relatedThemesTitle}>
+            Related Themes
+          </Typography>
+          {techTalk.fields.tagSlugs.map((slug, i) => (
+            <Tag
+              variant="outlined"
+              color="secondary"
+              key={`${techTalk.fields.tagSlugs[i]}slug`}
+              component={Link}
+              to={slug}
+            >
+              {techTalk.frontmatter.tags[i]}
+            </Tag>
+          ))}
+        </Box>
+      )}
     </Box>
   );
 };
@@ -88,8 +99,10 @@ export const techTalkPropType = PropTypes.shape({
 });
 
 TechTalk.propTypes = {
-  slug: PropTypes.string.isRequired,
   techTalk: PropTypes.shape({
+    fields: PropTypes.shape({
+      tagSlugs: PropTypes.arrayOf(PropTypes.string),
+    }),
     frontmatter: techTalkPropType,
   }).isRequired,
 };

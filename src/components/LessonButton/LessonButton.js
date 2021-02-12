@@ -23,7 +23,6 @@ export const PrimitiveLessonButton = ({
   path,
   onClick = handleEventClick,
   children,
-  lessonData,
 }) => {
   const classes = useStyles();
   return (

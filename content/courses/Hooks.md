@@ -9,6 +9,7 @@ tags:
   - "Debugging"
   - "Context"
   - "Closures"
+  - "React Hooks"
 description: React Hooks introduce new ways to use React's APIs and features, while writing less code to do so! But what's the big deal? Why should you care about Hooks? Do you need to refactor all your old code? And why do I see so many people sharing hooks online? This course will introduce engineers to React Hooks, the differences between writing Class Components and Hooked Components, and some common patterns in writing components with Hooks.
 lessons: 
   - link: "intro-to-react-hooks"

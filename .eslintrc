@@ -41,6 +41,7 @@
     ],
     "no-use-before-define": 2,
     "no-shadow": 0,
+    "react/prop-types": 1,
     "react/jsx-no-undef": 1,
     "react/jsx-uses-react": 1,
     "react/jsx-uses-vars": 1,

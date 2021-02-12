@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 import {graphql} from 'gatsby';
 import Layout from '../components/shared/Layout';
 import Page from '../components/shared/Page';
-import Tracks, {trackPropType} from '../components/Tracks';
+import TechTalks from '../components/TechTalks';
+import {techTalkPropType} from '../components/TechTalk';
 
 const TrackListTemplate = ({data, path}) => {
   const {nodes: tracks} = data.allMarkdownRemark;
 
   return (
-    <Layout title="Tech Talk Tracks" slug={path}>
+    <Layout title="Tech Talks" slug={path}>
       <Page>
-        <Tracks tracks={tracks} />
+        <TechTalks techTalks={tracks} />
       </Page>
     </Layout>
   );
@@ -20,7 +21,7 @@ const TrackListTemplate = ({data, path}) => {
 TrackListTemplate.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      nodes: PropTypes.arrayOf(trackPropType),
+      nodes: PropTypes.arrayOf(techTalkPropType),
     }),
   }).isRequired,
   path: PropTypes.string.isRequired,
@@ -29,7 +30,7 @@ TrackListTemplate.propTypes = {
 export const query = graphql`
   query TrackListQuery {
     allMarkdownRemark(
-      filter: {frontmatter: {template: {eq: "track"}, draft: {ne: true}}}
+      filter: {frontmatter: {template: {eq: "techtalk"}, draft: {ne: true}}}
     ) {
       nodes {
         fields {

@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import PropTypes from 'prop-types';
-import {makeStyles, useTheme} from '@material-ui/core/styles';
 import {Box, Typography, Button} from '@material-ui/core';
-import {Pagination} from '@material-ui/lab';
+import {makeStyles, useTheme} from '@material-ui/core/styles';
 import {Link} from 'gatsby';
+import {Pagination} from '@material-ui/lab';
+import PropTypes from 'prop-types';
+import {techTalkPropType} from '../TechTalk';
 
 const ITEMS_PER_PAGE = 4;
 
@@ -29,11 +30,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Tracks = ({tracks}) => {
+const TechTalks = ({techTalks}) => {
   const classes = useStyles();
   const theme = useTheme();
   const [page, setPage] = useState(1);
-  const noOfPages = Math.ceil(tracks.length / ITEMS_PER_PAGE);
+  const noOfPages = Math.ceil(techTalks.length / ITEMS_PER_PAGE);
   const handleChange = (event, value) => {
     setPage(value);
     window.scrollTo(0, 0);
@@ -42,37 +43,37 @@ const Tracks = ({tracks}) => {
   return (
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
       <Typography variant="h1" color="textPrimary">
-        Tech Talk Tracks
+        Tech Talks
       </Typography>
-      {tracks
+      {techTalks
         .slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE)
-        .map((track) => (
+        .map((techTalk) => (
           <Box
             display="flex"
             flexDirection="column"
-            key={track.frontmatter.title}
+            key={techTalk.frontmatter.title}
             className={classes.courseContainer}
           >
             <Typography
               variant="h2"
               component={Link}
               color="primary"
-              to={track.fields.slug}
+              to={techTalk.fields.slug}
               className={classes.title}
             >
-              {track.frontmatter.title}
+              {techTalk.frontmatter.title}
             </Typography>
             <Typography variant="body1">
-              {track.frontmatter.description}
+              {techTalk.frontmatter.description}
             </Typography>
             <Button
               variant="contained"
               color="primary"
               component={Link}
-              to={track.fields.slug}
+              to={techTalk.fields.slug}
               className={classes.goLearnCTA}
             >
-              Go Learn
+              Go Watch
             </Button>
           </Box>
         ))}
@@ -91,19 +92,8 @@ const Tracks = ({tracks}) => {
   );
 };
 
-export const trackPropType = PropTypes.shape({
-  fields: PropTypes.shape({
-    categorySlug: PropTypes.string,
-    slug: PropTypes.string,
-  }),
-  frontmatter: PropTypes.shape({
-    description: PropTypes.string,
-    title: PropTypes.string,
-  }),
-});
-
-Tracks.propTypes = {
-  tracks: PropTypes.arrayOf(trackPropType),
+TechTalks.propTypes = {
+  techTalks: PropTypes.arrayOf(techTalkPropType),
 };
 
-export default Tracks;
+export default TechTalks;

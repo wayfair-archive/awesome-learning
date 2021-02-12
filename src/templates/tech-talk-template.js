@@ -23,11 +23,13 @@ const TechTalkTemplate = ({data}) => {
 };
 
 TechTalkTemplate.propTypes = {
-  markdownRemark: PropTypes.shape({
-    frontmatter: techTalkPropType,
-    fields: PropTypes.shape({
-      slug: PropTypes.string,
-      tagSlugs: PropTypes.arrayOf(PropTypes.string),
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: techTalkPropType,
+      fields: PropTypes.shape({
+        slug: PropTypes.string,
+        tagSlugs: PropTypes.arrayOf(PropTypes.string),
+      }),
     }),
   }),
 };
@@ -43,10 +45,10 @@ export const query = graphql`
       }
       frontmatter {
         description
+        date
         embedLink
         tags
         title
-        track
         speakers {
           # email
           name
