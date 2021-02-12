@@ -39,7 +39,7 @@ const Course = ({course}) => {
         Back to Courses
       </Button>
       <Box className={classes.sectionWrapper}>
-        <Typography variant="h2" className={classes.sectionTitle}>
+        <Typography variant="h1" className={classes.sectionTitle}>
           {title}
         </Typography>
         <Typography variant="body1">{description}</Typography>
@@ -74,8 +74,8 @@ const Course = ({course}) => {
         ))}
       </List>
       {tags.length > 2 && (
-        <Box className={classes.sectionWrapper} textAlign="center">
-          <Typography variant="h4" className={classes.relatedThemesTitle}>
+        <Box className={classes.sectionWrapper} textAlign="left">
+          <Typography variant="h2" className={classes.relatedThemesTitle}>
             Related Themes
           </Typography>
           {tagSlugs.map((slug, i) => (

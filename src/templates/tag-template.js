@@ -33,6 +33,7 @@ export const query = graphql`
     allMarkdownRemark(
       limit: $coursesLimit
       skip: $coursesOffset
+      sort: {fields: frontmatter___title}
       filter: {
         frontmatter: {
           tags: {in: [$tag]}

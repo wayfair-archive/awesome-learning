@@ -14,20 +14,21 @@ import ResponsiveVideo from '../shared/ResponsiveVideo';
 import Tag from '../shared/Tag';
 
 const useStyles = makeStyles((theme) => ({
-  sectionTitle: {
-    padding: theme.spacing(3, 0, 6),
-  },
-  sectionContainer: {
-    paddingBottom: theme.spacing(8),
+  dateTitle: {
+    fontWeight: 'bold',
+    paddingBottom: theme.spacing(4),
   },
   paragraphContainer: {
     paddingBottom: theme.spacing(4),
   },
-  surveyButton: {
-    textTransform: 'none',
-    verticalAlign: 'top',
-    lineHeight: 1.5,
-    fontFamily: 'Varela, Arial, sans-serif',
+  relatedThemesTitle: {
+    paddingBottom: theme.spacing(4),
+  },
+  sectionContainer: {
+    paddingBottom: theme.spacing(4),
+  },
+  sectionTitle: {
+    padding: theme.spacing(3, 0, 6),
   },
 }));
 
@@ -46,6 +47,13 @@ const TechTalk = ({techTalk}) => {
         <Typography variant="h1" className={classes.sectionTitle}>
           {techTalk.frontmatter.title}
         </Typography>
+        <Typography
+          className={classes.dateTitle}
+          component="strong"
+          variant="body1"
+        >
+          Presented on {techTalk.frontmatter.date}
+        </Typography>
         {descriptionParagraphs.map((paragraph, key) => (
           <Typography
             variant="body1"
@@ -58,9 +66,21 @@ const TechTalk = ({techTalk}) => {
       </Box>
 
       <Box className={classes.sectionContainer}>
+        <Grid container>
+          <Grid item xs={12}>
+            <ResponsiveVideo
+              link={techTalk.frontmatter.embedLink}
+              title="Watch the Tech Talk"
+            />
+          </Grid>
+        </Grid>
+      </Box>
+
+      <Box className={classes.sectionContainer}>
         <Typography variant="h2" className={classes.sectionTitle}>
           Speakers
         </Typography>
+
         <List>
           {techTalk.frontmatter.speakers.map((speaker) => (
             <Typography
@@ -88,20 +108,9 @@ const TechTalk = ({techTalk}) => {
         </List>
       </Box>
 
-      <Box className={classes.sectionContainer}>
-        <Grid container>
-          <Grid item xs={12}>
-            <ResponsiveVideo
-              link={techTalk.frontmatter.embedLink}
-              title="Watch the Tech Talk"
-            />
-          </Grid>
-        </Grid>
-      </Box>
-
       {techTalk.frontmatter.tags.length > 2 && (
-        <Box className={classes.sectionWrapper} textAlign="center">
-          <Typography variant="h4" className={classes.relatedThemesTitle}>
+        <Box className={classes.sectionWrapper} textAlign="left">
+          <Typography className={classes.relatedThemesTitle} variant="h2">
             Related Themes
           </Typography>
           {techTalk.fields.tagSlugs.map((slug, i) => (
@@ -122,6 +131,7 @@ const TechTalk = ({techTalk}) => {
 };
 
 export const techTalkPropType = PropTypes.shape({
+  date: PropTypes.string,
   description: PropTypes.string,
   embedLink: PropTypes.string,
   speakers: PropTypes.arrayOf(

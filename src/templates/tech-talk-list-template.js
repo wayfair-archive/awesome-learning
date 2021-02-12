@@ -31,6 +31,7 @@ export const query = graphql`
   query TrackListQuery {
     allMarkdownRemark(
       filter: {frontmatter: {template: {eq: "techtalk"}, draft: {ne: true}}}
+      sort: {fields: frontmatter___title}
     ) {
       nodes {
         fields {
