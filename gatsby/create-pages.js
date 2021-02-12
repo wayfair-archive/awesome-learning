@@ -32,7 +32,7 @@ const createPages = async ({ graphql, actions }) => {
 
   // How to
   createPage({
-    path: "/howTo",
+    path: "/how-to",
     component: path.resolve("./src/templates/howTo-template.js")
   });
 
@@ -46,6 +46,12 @@ const createPages = async ({ graphql, actions }) => {
   createPage({
     path: "/courses",
     component: path.resolve("./src/templates/course-list-template.js")
+  });
+
+  // Tracks list
+  createPage({
+    path: "/tech-talks",
+    component: path.resolve("./src/templates/tech-talk-list-template.js")
   });
 
   // Courses and pages from markdown
@@ -69,30 +75,30 @@ const createPages = async ({ graphql, actions }) => {
   const { edges } = result.data.allMarkdownRemark;
 
   _.each(edges, (edge) => {
-    if (_.get(edge, "node.frontmatter.template") === "page") {
+    const templateName = _.get(edge, "node.frontmatter.template");
+    const templateNameToComponentLocationMap = {
+      course: "./src/templates/course-template.js",
+      lesson: "./src/templates/lesson-template.js",
+      page: "./src/templates/page-template.js",
+      techtalk: "./src/templates/tech-talk-template.js",
+    };
+    
+    // If the requested template matches a known template,
+    // create a page for it
+    if (templateNameToComponentLocationMap[templateName]) {
       createPage({
         path: edge.node.fields.slug,
-        component: path.resolve("./src/templates/page-template.js"),
+        component: path.resolve(templateNameToComponentLocationMap[templateName]),
         context: { slug: edge.node.fields.slug }
       });
-    } else if (_.get(edge, "node.frontmatter.template") === "course") {
-      createPage({
-        path: edge.node.fields.slug,
-        component: path.resolve("./src/templates/course-template.js"),
-        context: { slug: edge.node.fields.slug }
-      });
-    } else if (_.get(edge, "node.frontmatter.template") === "lesson") {
-      createPage({
-        path: edge.node.fields.slug,
-        component: path.resolve("./src/templates/lesson-template.js"),
-        context: { slug: edge.node.fields.slug }
-      });
-      // Create quiz pages for every lesson
-      createPage({
-        path: `${edge.node.fields.slug}/quiz`,
-        component: path.resolve("./src/templates/quiz-template.js"),
-        context: { slug: edge.node.fields.slug }
-      });
+      if (templateName === "lesson") {
+        // Create quiz pages for every lesson
+        createPage({
+          path: `${edge.node.fields.slug}/quiz`,
+          component: path.resolve("./src/templates/quiz-template.js"),
+          context: { slug: edge.node.fields.slug }
+        });
+      }
     }
   });
 

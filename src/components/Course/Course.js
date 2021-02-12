@@ -8,8 +8,9 @@ import {
   ListItem,
   ListItemText,
 } from '@material-ui/core';
-import {makeStyles, useTheme, withStyles} from '@material-ui/core/styles';
+import {makeStyles, useTheme} from '@material-ui/core/styles';
 import {Link} from 'gatsby';
+import Tag from '../shared/Tag';
 
 const useStyles = makeStyles((theme) => ({
   sectionTitle: {
@@ -26,15 +27,6 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(4),
   },
 }));
-
-const Tag = withStyles((theme) => ({
-  root: {
-    display: 'inline-block',
-    textAlign: 'center',
-    margin: theme.spacing(0, 2, 2, 0),
-    padding: theme.spacing(2),
-  },
-}))(Button);
 
 const Course = ({course}) => {
   const classes = useStyles();
