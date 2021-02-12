@@ -26,7 +26,7 @@ describe('LessonButton', () => {
 
     expect(queryByText('Click here to start your exercises!')).toBeTruthy();
     expect(document.querySelector('a').getAttribute('href')).toBe(
-      'https://codesandbox.io/s/github/wayfair/awesome-learning-exercises/tree/master/data-types/objects?fontsize=14&previewwindow=tests'
+      'https://codesandbox.io/s/github/wayfair/awesome-learning-exercises/tree/main/data-types/objects?fontsize=14&previewwindow=tests'
     );
   });
 });

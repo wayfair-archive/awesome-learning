@@ -3,7 +3,7 @@ name: Awesome Learning CI (Deploy)
 on:
   push:
     branches:
-    - master
+    - main
 
 jobs:
   deploy:
@@ -32,9 +32,9 @@ jobs:
       run: |
         yarn build
     - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@master	
+      uses: JamesIves/github-pages-deploy-action@main	
       env:
           ACCESS_TOKEN: ${{ secrets.GH_PAT }}
-          BASE_BRANCH: master
+          BASE_BRANCH: main
           BRANCH: gh-pages
           FOLDER: public

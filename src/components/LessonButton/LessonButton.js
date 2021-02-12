@@ -51,7 +51,7 @@ export const PrimitiveLessonButton = ({
 
 export const PureLessonButton = ({path, data, defaultTab, ...props}) => {
   const {repoOwner} = data.site.siteMetadata;
-  const fullPath = `https://codesandbox.io/s/github/${repoOwner}/awesome-learning-exercises/tree/master/${path}?fontsize=14&previewwindow=${defaultTab}`;
+  const fullPath = `https://codesandbox.io/s/github/${repoOwner}/awesome-learning-exercises/tree/main/${path}?fontsize=14&previewwindow=${defaultTab}`;
   return (
     <PrimitiveLessonButton
       path={fullPath}
