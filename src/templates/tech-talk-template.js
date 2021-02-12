@@ -53,7 +53,7 @@ export const query = graphql`
           # email
           name
           title
-          # twitter
+          twitter
         }
       }
     }

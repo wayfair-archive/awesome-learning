@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {Box, Grid, Typography} from '@material-ui/core';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
 import {Link} from 'gatsby';
@@ -48,6 +48,37 @@ const TechTalk = ({techTalk}) => {
             {paragraph}
           </Typography>
         ))}
+      </Box>
+
+      <Box className={classes.sectionContainer}>
+        <Typography variant="h2" className={classes.sectionTitle}>
+          Speakers
+        </Typography>
+        <ul>
+          {techTalk.frontmatter.speakers.map((speaker) => (
+            <Typography
+              className={classes.paragraphContainer}
+              component="li"
+              key={speaker.name}
+              variant="body1"
+            >
+              {speaker.name}
+              {speaker.title ? `, ${speaker.title}` : null}
+              {speaker.twitter ? (
+                <Fragment>
+                  {' '}
+                  <a
+                    href={`https://twitter.com/${speaker.twitter}`}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    (Twitter)
+                  </a>
+                </Fragment>
+              ) : null}
+            </Typography>
+          ))}
+        </ul>
       </Box>
 
       <Box className={classes.sectionContainer}>

@@ -8,7 +8,7 @@ description: |
   In this talk you'll learn about the "magic" behind how Hooks work and get to see a few examples of them in action. We'll cover the big four: useState, useEffect, useReducer, and useContext, plus how to write your very own custom hooks.
 
   You may never want to write a class again.
-embedLink: https://www.youtube.com/embed/pXb2jA43A6k
+embedLink: https://www.youtube.com/embed/ApIiM8pL-kI
 slug: /tech-talks/react-boston/guided-tour-of-react-hooks
 speakers:
   - name: Dave Ceddia
