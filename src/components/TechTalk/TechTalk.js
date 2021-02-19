@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react';
 import {
   Box,
+  Button,
   Grid,
   Link as MaterialLink,
   List,
@@ -43,6 +44,13 @@ const TechTalk = ({techTalk}) => {
 
   return (
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
+      <Button
+        component={GatsbyLink}
+        to={`/tech-talks/${techTalk.frontmatter.group}/`}
+        role="link"
+      >
+        Back to {techTalk.frontmatter.group.split('-').join(' ')}
+      </Button>
       <Box className={classes.sectionContainer}>
         <Typography variant="h1" className={classes.sectionTitle}>
           {techTalk.frontmatter.title}
@@ -134,6 +142,7 @@ export const techTalkPropType = PropTypes.shape({
   date: PropTypes.string,
   description: PropTypes.string,
   embedLink: PropTypes.string,
+  group: PropTypes.string,
   speakers: PropTypes.arrayOf(
     PropTypes.shape({
       email: PropTypes.string,

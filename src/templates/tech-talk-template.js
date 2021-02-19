@@ -47,6 +47,7 @@ export const query = graphql`
         description
         date
         embedLink
+        group
         tags
         title
         speakers {

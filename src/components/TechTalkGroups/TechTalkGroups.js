@@ -25,16 +25,16 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(5, 0, 14),
   },
   goLearnCTA: {
-    width: '140px',
+    width: '160px',
     marginTop: theme.spacing(4),
   },
 }));
 
-const TechTalks = ({techTalks}) => {
+const TechTalkGroups = ({techTalkGroups}) => {
   const classes = useStyles();
   const theme = useTheme();
   const [page, setPage] = useState(1);
-  const noOfPages = Math.ceil(techTalks.length / ITEMS_PER_PAGE);
+  const noOfPages = Math.ceil(techTalkGroups.length / ITEMS_PER_PAGE);
   const handleChange = (event, value) => {
     setPage(value);
     window.scrollTo(0, 0);
@@ -43,37 +43,37 @@ const TechTalks = ({techTalks}) => {
   return (
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
       <Typography variant="h1" color="textPrimary">
-        Tech Talks
+        Tech Talk Groups
       </Typography>
-      {techTalks
+      {techTalkGroups
         .slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE)
-        .map((techTalk) => (
+        .map((techTalkGroup) => (
           <Box
             display="flex"
             flexDirection="column"
-            key={techTalk.frontmatter.title}
+            key={techTalkGroup.frontmatter.title}
             className={classes.courseContainer}
           >
             <Typography
               variant="h2"
               component={Link}
               color="primary"
-              to={techTalk.fields.slug}
+              to={techTalkGroup.fields.slug}
               className={classes.title}
             >
-              {techTalk.frontmatter.title}
+              {techTalkGroup.frontmatter.title}
             </Typography>
             <Typography variant="body1">
-              {techTalk.frontmatter.description}
+              {techTalkGroup.frontmatter.description}
             </Typography>
             <Button
               color="primary"
               component={Link}
               className={classes.goLearnCTA}
-              to={techTalk.fields.slug}
+              to={techTalkGroup.fields.slug}
               variant="contained"
             >
-              Go Watch
+              Browse Talks
             </Button>
           </Box>
         ))}
@@ -92,8 +92,8 @@ const TechTalks = ({techTalks}) => {
   );
 };
 
-TechTalks.propTypes = {
-  techTalks: PropTypes.arrayOf(techTalkPropType),
+TechTalkGroups.propTypes = {
+  techTalkGroups: PropTypes.arrayOf(techTalkPropType),
 };
 
-export default TechTalks;
+export default TechTalkGroups;

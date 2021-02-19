@@ -1,6 +1,8 @@
 ---
 title: A Guided Tour of React Hooks
+draft: false
 template: techtalk
+group: react-boston-2019
 date: September 21, 2019
 description: |
   Hooks offer a simple, concise way to write stateful React components without classes.
@@ -9,7 +11,7 @@ description: |
 
   You may never want to write a class again.
 embedLink: https://www.youtube.com/embed/ApIiM8pL-kI
-slug: /tech-talks/react-boston/guided-tour-of-react-hooks
+slug: /tech-talks/react-boston-2019/guided-tour-of-react-hooks
 speakers:
   - name: Dave Ceddia
     title: Author of 'Pure React'
