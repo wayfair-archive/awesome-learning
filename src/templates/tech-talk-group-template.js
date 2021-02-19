@@ -28,9 +28,9 @@ const TechTalkGroupTemplate = ({data}) => {
 TechTalkGroupTemplate.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      nodes: PropTypes.arrayOf(techTalkPropType),
-    }),
-    markdownRemark: techTalkGroupPropType,
+      nodes: PropTypes.arrayOf(techTalkPropType).isRequired,
+    }).isRequired,
+    markdownRemark: techTalkGroupPropType.isRequired,
   }),
 };
 

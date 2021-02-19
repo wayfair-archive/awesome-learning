@@ -82,14 +82,15 @@ const TechTalkGroup = (props) => {
 };
 
 export const techTalkGroupPropType = PropTypes.shape({
-  description: PropTypes.string,
-  slug: PropTypes.string,
-  title: PropTypes.string,
+  description: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 });
 
 TechTalkGroup.propTypes = {
-  techTalks: PropTypes.arrayOf(techTalkPropType),
-  techTalkGroup: techTalkGroupPropType,
+  techTalks: PropTypes.arrayOf(techTalkPropType).isRequired,
+  techTalkGroup: techTalkGroupPropType.isRequired,
 };
 
 export default TechTalkGroup;
