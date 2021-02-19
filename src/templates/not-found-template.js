@@ -16,7 +16,7 @@ const NotFoundTemplate = () => (
           You just hit a route that doesn't exist.
         </Typography>
         <Box my={4} textAlign="center">
-          <Button variant="contained" color="secondary" href={'/'}>
+          <Button variant="contained" color="secondary" href={'/awesome-learning/'}>
             Go back home
           </Button>
         </Box>

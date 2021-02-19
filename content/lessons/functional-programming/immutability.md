@@ -3,7 +3,7 @@ title: Immutability
 template: lesson
 draft: false
 slug: /courses/Functional-Programming/immutability
-course: Functional Programming
+course: Functional-Programming
 tags:
   - "Usability"
   - "Maintainability"
