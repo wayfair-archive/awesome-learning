@@ -1,3 +1,1 @@
-export {techTalkPropType} from './TechTalk';
-
-export {default} from './TechTalk';
+export {default, techTalkPropType} from './TechTalk';
