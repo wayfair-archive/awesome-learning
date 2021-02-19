@@ -25,13 +25,13 @@ const TechTalkTemplate = ({data}) => {
 TechTalkTemplate.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: techTalkPropType,
+      frontmatter: techTalkPropType.isRequired,
       fields: PropTypes.shape({
-        slug: PropTypes.string,
-        tagSlugs: PropTypes.arrayOf(PropTypes.string),
-      }),
-    }),
-  }),
+        slug: PropTypes.string.isRequired,
+        tagSlugs: PropTypes.arrayOf(PropTypes.string).isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
 export const query = graphql`
@@ -47,6 +47,7 @@ export const query = graphql`
         description
         date
         embedLink
+        group
         tags
         title
         speakers {

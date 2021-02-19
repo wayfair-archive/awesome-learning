@@ -10,6 +10,7 @@ export const MOCK_TECH_TALKS = [
     frontmatter: {
       description: 'Test description',
       embedLink: 'https://www.youtube.com/embed/jvEFw0YpGgg',
+      group: 'react-boston-2019',
       speakers: [
         {
           name: 'Test Speaker',
@@ -26,7 +27,7 @@ export const MOCK_TECH_TALKS = [
       tagSlugs: ['/tags/unit-testing', '/tags/performance', '/tags/javascript'],
     },
     frontmatter: {
-      description: 'Test description 2',
+      description: 'A different description on a different thing',
       embedLink: 'https://www.youtube.com/embed/oi3j2S4Mx',
       speakers: [
         {
@@ -37,7 +38,7 @@ export const MOCK_TECH_TALKS = [
         },
       ],
       tags: ['unit-testing', 'performance', 'javascript'],
-      title: 'Test title 2',
+      title: 'A different talk on a different thing',
     },
   },
 ];

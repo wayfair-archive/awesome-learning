@@ -48,10 +48,10 @@ const createPages = async ({ graphql, actions }) => {
     component: path.resolve("./src/templates/course-list-template.js")
   });
 
-  // Tracks list
+  // Tech Talk Groups list
   createPage({
     path: "/tech-talks",
-    component: path.resolve("./src/templates/tech-talk-list-template.js")
+    component: path.resolve("./src/templates/tech-talk-group-list-template.js")
   });
 
   // Courses and pages from markdown
@@ -61,6 +61,7 @@ const createPages = async ({ graphql, actions }) => {
         edges {
           node {
             frontmatter {
+              id
               template
             }
             fields {
@@ -81,6 +82,7 @@ const createPages = async ({ graphql, actions }) => {
       lesson: "./src/templates/lesson-template.js",
       page: "./src/templates/page-template.js",
       techtalk: "./src/templates/tech-talk-template.js",
+      techtalkgroup: "./src/templates/tech-talk-group-template.js",
     };
     
     // If the requested template matches a known template,
@@ -89,7 +91,7 @@ const createPages = async ({ graphql, actions }) => {
       createPage({
         path: edge.node.fields.slug,
         component: path.resolve(templateNameToComponentLocationMap[templateName]),
-        context: { slug: edge.node.fields.slug }
+        context: { id: edge.node.frontmatter.id || undefined, slug: edge.node.fields.slug }
       });
       if (templateName === "lesson") {
         // Create quiz pages for every lesson
