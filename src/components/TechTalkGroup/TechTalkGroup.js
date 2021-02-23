@@ -45,37 +45,48 @@ const TechTalkGroup = (props) => {
         </Typography>
       </Box>
       <List component="ol" disablePadding aria-label="Available courses">
-        {props.techTalks.map(({frontmatter: techTalk}, index) => (
-          <ListItem
-            disableGutters
-            key={techTalk.title}
-            className={classes.sectionWrapper}
-          >
-            <ListItemText
-              primary={
-                <Fragment>
-                  <Typography variant="h3" className={classes.techTalkCardItem}>
-                    {index + 1}
-                    {'. '}
-                    {techTalk.title}
-                  </Typography>
-                </Fragment>
-              }
-              secondary={
-                <Typography variant="body1">{techTalk.description}</Typography>
-              }
-            />
-            <Button
-              variant="contained"
-              color="primary"
-              component={Link}
-              to={techTalk.slug}
-              className={classes.techTalkCardItem}
+        {props.techTalks.map(({frontmatter: techTalk}, index) => {
+          const truncatedDescription =
+            techTalk.description.length > 500
+              ? `${techTalk.description.substring(0, 500)}...`
+              : techTalk.description;
+          return (
+            <ListItem
+              disableGutters
+              key={techTalk.title}
+              className={classes.sectionWrapper}
             >
-              Watch "{techTalk.title}"
-            </Button>
-          </ListItem>
-        ))}
+              <ListItemText
+                primary={
+                  <Fragment>
+                    <Typography
+                      variant="h3"
+                      className={classes.techTalkCardItem}
+                    >
+                      {index + 1}
+                      {'. '}
+                      {techTalk.title}
+                    </Typography>
+                  </Fragment>
+                }
+                secondary={
+                  <Typography variant="body1">
+                    {truncatedDescription}
+                  </Typography>
+                }
+              />
+              <Button
+                variant="contained"
+                color="primary"
+                component={Link}
+                to={techTalk.slug}
+                className={classes.techTalkCardItem}
+              >
+                Watch "{techTalk.title}"
+              </Button>
+            </ListItem>
+          );
+        })}
       </List>
     </Box>
   );
