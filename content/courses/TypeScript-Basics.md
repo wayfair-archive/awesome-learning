@@ -13,5 +13,5 @@ description: "This is an introduction to TypeScript for developers who are famil
 lessons:
   - link: "typescript-types"
     title: TypeScript Types
-    description: The goal of this lesson is for you to understand why it’s important to pare down the amount of possible types a class can be represented by, and to exhaustively check all the types a variable can have so there are no holes for input into your code. Understanding how types can be constructed and leveraged in different situations will start to show how useful TypeScript can be. 
+    description: The goal of this lesson is for you to understand why it's important to pare down the amount of possible types a class can be represented by, and to exhaustively check all the types a variable can have so there are no holes for input into your code. Understanding how types can be constructed and leveraged in different situations will start to show how useful TypeScript can be. 
 ---

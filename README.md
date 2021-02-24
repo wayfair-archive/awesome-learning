@@ -17,7 +17,7 @@ yarn
 
 #### Starting Awesome Learning
 
-Navigate into your new site’s directory and start it up.
+Navigate into your new site's directory and start it up.
 ```sh
 yarn develop
 ```

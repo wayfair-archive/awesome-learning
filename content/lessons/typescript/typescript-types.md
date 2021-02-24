@@ -9,7 +9,7 @@ tags:
   - Pass by Reference
   - Pass by caller
   - JS Fundamentals
-description: "The goal of this lesson is for you to understand why it’s important to pare down the amount of possible types a class can be represented by, and to exhaustively check all the types a variable can have so there are no holes for input into your code. Understanding how types can be constructed and leveraged in different situations will start to show how useful TypeScript can be. "
+description: "The goal of this lesson is for you to understand why it's important to pare down the amount of possible types a class can be represented by, and to exhaustively check all the types a variable can have so there are no holes for input into your code. Understanding how types can be constructed and leveraged in different situations will start to show how useful TypeScript can be. "
 timeToCompletion: ~45 minutes
 videoLinks: 
   - https://www.youtube.com/embed/ahCwqrYpIuM
@@ -52,7 +52,7 @@ preReadQuiz:
       - value: any
       correctChoices: 
       - 3
-      description: What type would foo be defined as? ` let foo; foo = ‘bar’`
+      description: What type would foo be defined as? ` let foo; foo = ‘bar'`
       explanation: foo would be defined as any as the default value, unless specifically limited to a string by the developer.
       type: radio
     - choices:
