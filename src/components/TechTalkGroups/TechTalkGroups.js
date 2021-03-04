@@ -5,6 +5,7 @@ import {Link} from 'gatsby';
 import {Pagination} from '@material-ui/lab';
 import PropTypes from 'prop-types';
 import {techTalkPropType} from '../TechTalk';
+import SearchBar from './SearchBar';
 
 const useStyles = makeStyles((theme) => ({
   backToContainer: {
@@ -37,6 +38,7 @@ const TechTalkGroups = (props) => {
       <Typography variant="h1" color="textPrimary">
         Tech Talk Groups
       </Typography>
+      <SearchBar />
       {props.techTalkGroups.map((techTalkGroup) => (
         <Box
           display="flex"
