@@ -1,25 +1,46 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import { formatQuestionId, getChoiceIndex, getQuestionIndex } from './quizUtilities';
-import ContentSection from '../shared/ContentSection';
+import {Button, Typography, Box} from '@material-ui/core';
+import {makeStyles, useTheme} from '@material-ui/core/styles';
+import {Link} from 'gatsby';
+import {
+  formatQuestionId,
+  getChoiceIndex,
+  getQuestionIndex,
+} from './quizUtilities';
 import Question from './Question';
 import questionValidator from './Question/questionValidator';
-import StyledLink from '../shared/StyledLink';
-import './quiz.scss';
 
-const Quiz = ({ quiz, slug, title }) => {
+const useStyles = makeStyles((theme) => ({
+  sectionTitle: {
+    paddingTop: theme.spacing(3),
+  },
+  linkTitle: {
+    textTransform: 'uppercase',
+    textDecoration: 'underline',
+    '&:hover, &:focus': {
+      textDecoration: 'none',
+    },
+  },
+  paragraphContainer: {
+    paddingBottom: theme.spacing(4),
+  },
+}));
+
+const Quiz = ({quiz, slug, title}) => {
+  const classes = useStyles();
+  const theme = useTheme();
   const initialState = {
     shouldShowCorrectChoice: false,
-    questions: quiz.questions
+    questions: quiz.questions,
   };
   // Hooks to maintain state within this Quiz
-  const [
-    { shouldShowCorrectChoice, questions },
-    updateQuizState
-  ] = useState(initialState);
+  const [{shouldShowCorrectChoice, questions}, updateQuizState] = useState(
+    initialState
+  );
 
   // Handles changing of a question; update state based on which choice(s) the user has selected
-  const handleInputChange = ({ currentTarget: fieldset, target }) => {
+  const handleInputChange = ({currentTarget: fieldset, target}) => {
     // Get the current question and mark the appropriate choices as being selected by the user
     const questionIndex = getQuestionIndex(target);
     const currentQuestion = questions[questionIndex];
@@ -54,7 +75,7 @@ const Quiz = ({ quiz, slug, title }) => {
     // Update the state of the quiz
     updateQuizState({
       shouldShowCorrectChoice: false,
-      questions: updatedQuestions
+      questions: updatedQuestions,
     });
   };
 
@@ -66,55 +87,69 @@ const Quiz = ({ quiz, slug, title }) => {
     const validatedQuestions = questions.map(questionValidator);
     updateQuizState({
       shouldShowCorrectChoice: true,
-      questions: validatedQuestions
+      questions: validatedQuestions,
     });
   };
 
   return (
-    <div className="Quiz">
-      <div className="Quiz-homeButton">
-        <StyledLink variation="tertiary" path={slug}>
-          Back to lesson
-        </StyledLink>
-      </div>
-      <ContentSection subTitle="Pre-Read Quiz" title={title}>
-        {quiz.description && <p>{quiz.description}</p>}
+    <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
+      <Typography
+        variant="h4"
+        color="secondary"
+        component={Link}
+        to={slug}
+        className={classes.linkTitle}
+      >
+        Back to Lesson
+      </Typography>
+      <Typography variant="h1" className={classes.sectionTitle}>
+        {title} Pre-Read Quiz
+      </Typography>
+      <Box>
+        {quiz.description && (
+          <Typography variant="body1" className={classes.sectionTitle}>
+            {quiz.description}
+          </Typography>
+        )}
         {/* Iterate over all questions in this Quiz */}
-        {
-          questions.map((question, questionIndex) => {
-            const questionId = formatQuestionId(questionIndex);
-            const questionTitle = `Q${questionIndex + 1}: ${question.description}`;
-            return (
+        {questions.map((question, questionIndex) => {
+          const questionId = formatQuestionId(questionIndex);
+          const questionTitle = `Q${questionIndex + 1}: ${
+            question.description
+          }`;
+          return (
+            <Box my={4} key={questionId}>
               <Question
                 handleInputChange={handleInputChange}
-                key={questionId}
                 question={question}
                 questionId={questionId}
                 questionIndex={questionIndex}
                 shouldShowCorrectChoice={shouldShowCorrectChoice}
                 title={questionTitle}
               />
-            );
-          })
-        }
-        <button
-          className="Quiz-submitButton"
+            </Box>
+          );
+        })}
+        <Button
+          variant="contained"
+          color="primary"
+          size="large"
           onClick={handleQuizSubmit}
         >
           Submit Quiz
-        </button>
-      </ContentSection>
-    </div>
+        </Button>
+      </Box>
+    </Box>
   );
 };
 
 Quiz.propTypes = {
   quiz: PropTypes.shape({
     questions: PropTypes.array,
-    description: PropTypes.node
+    description: PropTypes.node,
   }).isRequired,
-  slug: PropTypes.string, 
-  title: PropTypes.string
+  slug: PropTypes.string,
+  title: PropTypes.string,
 };
 
 export default Quiz;

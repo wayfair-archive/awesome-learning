@@ -1,45 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-import { Row, Col } from 'react-grid-system';
+import {graphql} from 'gatsby';
 import Layout from '../components/shared/Layout';
 import Courses from '../components/Courses';
 import Page from '../components/shared/Page';
-import Pagination from '../components/Pagination';
-import { PAGE_CONTEXT_PROP_TYPE, SITE_METADATA_PROP_TYPE } from '../constants/propTypes';
+import {
+  PAGE_CONTEXT_PROP_TYPE,
+  SITE_METADATA_PROP_TYPE,
+} from '../constants/propTypes';
 
-const CategoryTemplate = ({ data, pageContext, path}) => {
-  const { siteTitle } = data.site.siteMetadata;
+const CategoryTemplate = ({data, pageContext, path}) => {
+  const {siteTitle} = data.site.siteMetadata;
+  const {category} = pageContext;
 
-  const {
-    category,
-    currentPage,
-    prevPagePath,
-    nextPagePath,
-    hasPrevPage,
-    hasNextPage
-  } = pageContext;
-
-  const { edges } = data.allMarkdownRemark;
-  const pageTitle = currentPage > 0
-    ? `${category} - Page ${currentPage} - ${siteTitle}`
-    : `${category} - ${siteTitle}`;
+  const {edges} = data.allMarkdownRemark;
+  const pageTitle = `${category} - ${siteTitle}`;
 
   return (
     <Layout title={pageTitle} slug={path}>
-      <Row>
-        <Col md={12}>
-          <Page title={category}>
-            <Courses edges={edges} />
-            <Pagination
-              prevPagePath={prevPagePath}
-              nextPagePath={nextPagePath}
-              hasPrevPage={hasPrevPage}
-              hasNextPage={hasNextPage}
-            />
-          </Page>
-        </Col>
-      </Row>
+      <Page>
+        <Courses edges={edges} title={category} />
+      </Page>
     </Layout>
   );
 };
@@ -47,12 +28,12 @@ const CategoryTemplate = ({ data, pageContext, path}) => {
 CategoryTemplate.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array.isRequired
+      edges: PropTypes.array.isRequired,
     }),
-    site: SITE_METADATA_PROP_TYPE
+    site: SITE_METADATA_PROP_TYPE,
   }).isRequired,
   pageContext: PAGE_CONTEXT_PROP_TYPE.isRequired,
-  path: PropTypes.string.isRequired
+  path: PropTypes.string.isRequired,
 };
 
 export const query = graphql`
@@ -69,9 +50,9 @@ export const query = graphql`
       skip: $coursesOffset
       filter: {
         frontmatter: {
-          category: { eq: $category }
-          template: { eq: "course" }
-          draft: { ne: true }
+          category: {eq: $category}
+          template: {eq: "course"}
+          draft: {ne: true}
         }
       }
     ) {

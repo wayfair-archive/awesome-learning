@@ -5,17 +5,21 @@ module.exports = {
   title: 'Awesome Learning',
   subtitle: 'Learning frontend, together.',
   copyright: '© Awesome Learning™ All rights reserved.',
-  coursesPerPage: 7,
+  coursesPerPage: 10,
   googleAnalyticsId: 'UA-2081664-21',
-  twitter: "@wayfairtech",
+  twitter: '@wayfairtech',
   menu: [
     {
       label: 'Courses',
-      path: '/courses'
+      path: '/courses',
+    },
+    {
+      label: 'Tech Talks',
+      path: '/tech-talks',
     },
     {
       label: 'How to Use',
-      path: '/howTo'
-    }
-  ]
+      path: '/how-to',
+    },
+  ],
 };

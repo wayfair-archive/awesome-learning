@@ -1,11 +1,121 @@
 {
   "palette": {
+    "common": {
+      "black": "#000",
+      "white": "#fff"
+    },
     "primary": {
-      "main": "#2b416a"
+      "main": "#2b416a",
+      "dark": "#1d1820",
+      "contrastText": "#fafbfb"
     },
     "secondary": {
-      "main": "#00a7ba"
+      "main": "#69adc9",
+      "dark": "49798c",
+      "contrastText": "#fafbfb"
+    },
+    "info": {
+      "main": "#6a6c7a"
+    },
+    "text": {
+      "primary": "#1d1820",
+      "secondary": "#69adc9"
+    },
+    "background": {
+      "default": "#fafbfb"
     }
   },
-  "themeName": "Awesome Learning"
+  "breakpoints": {
+    "values": {"xs": 320, "sm": 481, "md": 769, "lg": 1025, "xl": 1201}
+  },
+  "typography": {
+    "fontFamily": "Muli, Arial, sans-serif",
+    "fontWeightRegular": 400,
+    "fontWeightBold": 700,
+    "h1": {
+      "fontSize": "2rem",
+      "fontWeight": 700
+    },
+    "h2": {
+      "fontSize": "1.5rem",
+      "fontWeight": 700
+    },
+    "h3": {
+      "fontSize": "1.25rem",
+      "fontWeight": 700
+    },
+    "h4": {
+      "fontSize": "1rem",
+      "fontWeight": 700
+    },
+    "h5": {
+      "fontSize": ".75rem",
+      "fontWeight": 700
+    },
+    "h6": {
+      "fontSize": ".5rem",
+      "fontWeight": 700
+    },
+    "body1": {
+      "fontFamily": "Varela, Arial, sans-serif",
+      "fontSize": "1rem",
+      "fontWeight": 400
+    }
+  },
+  "transitions": {
+    "duration": {
+      "short": "0.25s"
+    }
+  },
+  "overrides": {
+    "MuiButton": {
+      "root": {
+        "textTransform": "none"
+      },
+      "containedSecondary": {
+        "&:hover, &:focus": {
+          "backgroundColor": "#49798c"
+        }
+      },
+      "containedPrimary": {
+        "padding": "6px 28px",
+        "&:hover, &:focus": {
+          "backgroundColor": "#1d1820"
+        }
+      },
+      "text": {
+        "padding": 0,
+        "fontFamily": "Muli, Arial, sans-serif",
+        "fontWeight": 700,
+        "fontSize": "1rem",
+        "textTransform": "uppercase",
+        "textDecoration": "underline",
+        "lineHeight": 1,
+        "color": "#69adc9",
+        "&:hover, &:focus": {
+          "textDecoration": "none",
+          "backgroundColor": "initial"
+        }
+      }
+    },
+    "MuiToolbar": {
+      "root": {
+        "justifyContent": "space-between",
+        "minWidth": "320px"
+      }
+    },
+    "MuiListItem": {
+      "root": {
+        "display": "block"
+      }
+    }
+  },
+  "props": {
+    "MuiButton": {
+      "disableRipple": true,
+      "disableFocusRipple": true
+    }
+  },
+  "spacing": 4,
+  "themeName": "Awesome Learning Public"
 }

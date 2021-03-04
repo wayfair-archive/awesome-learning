@@ -1,3 +1,4 @@
+/* @deprecated -- courses page fetches all courses at once  */
 const path = require('path');
 const siteConfig = require('../../config.js');
 

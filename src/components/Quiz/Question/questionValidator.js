@@ -1,5 +1,5 @@
 export default function questionValidator(question) {
-  const { choices, correctChoices } = question;
+  const {choices, correctChoices} = question;
   // Get the user-selected choice values
   const selectedChoices = choices.reduce((listOfChoices, choice) => {
     if (choice.isSelected) {
@@ -9,12 +9,15 @@ export default function questionValidator(question) {
   }, []);
 
   // Get the values of the correct choices
-  const correctChoiceValues = choices.reduce((listOfChoices, choice, choiceIndex) => {
-    if (correctChoices.includes(choiceIndex)) {
-      listOfChoices.push(choice.value);
-    }
-    return listOfChoices;
-  }, []);
+  const correctChoiceValues = choices.reduce(
+    (listOfChoices, choice, choiceIndex) => {
+      if (correctChoices.includes(choiceIndex)) {
+        listOfChoices.push(choice.value);
+      }
+      return listOfChoices;
+    },
+    []
+  );
 
   // If there is a discrepancy in the number of choices, versus the number of correct choices,
   // mark the question as incorrect and return early
@@ -25,6 +28,8 @@ export default function questionValidator(question) {
 
   // If the length is the same, compare each value to verify that every correct choice
   // is in the list of user-selected choices
-  question.isCorrect = correctChoiceValues.every(choice => selectedChoices.includes(choice));
+  question.isCorrect = correctChoiceValues.every((choice) =>
+    selectedChoices.includes(choice)
+  );
   return question;
 }

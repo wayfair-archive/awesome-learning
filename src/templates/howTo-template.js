@@ -4,9 +4,9 @@ import Layout from '../components/shared/Layout';
 import HowTo from '../components/HowTo';
 
 const HowToTemplate = ({path}) => (
-  <Layout 
-    title="How To Get Started" 
-    description="Learn how to use the Awesome Learning education platform!" 
+  <Layout
+    title="How To Get Started"
+    description="Learn how to use the Awesome Learning education platform!"
     isFullBleed
     slug={path}
   >
@@ -15,7 +15,7 @@ const HowToTemplate = ({path}) => (
 );
 
 HowToTemplate.propTypes = {
-  path: PropTypes.string.isRequired
+  path: PropTypes.string.isRequired,
 };
 
 export default HowToTemplate;
