@@ -38,7 +38,6 @@ const Courses = ({edges, title}) => {
     setPage(value);
     window.scrollTo(0, 0);
   };
-  console.log(edges);
 
   return (
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
