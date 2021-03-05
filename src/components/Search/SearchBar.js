@@ -1,5 +1,9 @@
 import React, {useState} from 'react';
+<<<<<<< HEAD
 import {useStaticQuery} from 'gatsby';
+=======
+import {useStaticQuery, Link} from 'gatsby';
+>>>>>>> upstream/main
 import Input from '@material-ui/core/Input';
 import { useFlexSearch } from 'react-use-flexsearch';
 import {Typography, Card, CardContent} from '@material-ui/core';
@@ -78,11 +82,9 @@ const SearchBar = () => {
             </Typography>
             <Typography
               variant="h2"
-              component='a'
+              component={Link}
               color="primary"
-              href={result.slug} 
-              target="_blank" 
-              rel="noopener noreferrer"
+              to={result.slug} 
               className={classes.classTitle}
             >
               {result.title}
