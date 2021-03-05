@@ -79,8 +79,8 @@ const SearchBar = () => {
             <Typography
               variant="h2"
               component={Link}
+              to={result.slug} 
               color="primary"
-              href={result.slug} 
               className={classes.classTitle}
             >
               {result.title}
