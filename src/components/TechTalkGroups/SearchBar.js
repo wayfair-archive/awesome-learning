@@ -16,10 +16,6 @@ const SearchBar = () => {
   const {index, store} = queryData.localSearchTechtalks;
   
   const results = useFlexSearch(query, index, store);
-  console.log(index);
-  console.log(store);
-  console.log(query);
-  console.log(results);
   return (
     <>
       <Input 
@@ -31,7 +27,7 @@ const SearchBar = () => {
       <ul>
         {results.map(result => (
           <li>
-            {result.title}
+            {result.template} - {result.title}
           </li>
         ))}
       </ul>

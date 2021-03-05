@@ -108,17 +108,13 @@ module.exports = {
         // required.
         query: `
           {
-            allMarkdownRemark {
+            allMarkdownRemark(filter: {frontmatter: {template: {in: ["techtalk", "lesson"]}}}) {
               nodes {
                 id
                 frontmatter {
-                  description
-                  group
-                  tags
                   title
-                  speakers {
-                    name
-                  }
+                  slug
+                  template
                 }
               }
             }
@@ -132,12 +128,12 @@ module.exports = {
         // List of keys to index. The values of the keys are taken from the
         // normalizer function below.
         // Default: all fields
-        index: ['title', 'tags', 'name', 'description', 'group', 'id'],
+        index: ['title', 'slug', 'id', 'template'],
 
         // List of keys to store and make available in your UI. The values of
         // the keys are taken from the normalizer function below.
         // Default: all fields
-        store: ['title', 'tags', 'name', 'description', 'group', 'id'],
+        store: ['title', 'slug', 'id', 'template'],
 
         // Function used to map the result from the GraphQL query. This should
         // return an array of items to index in the form of flat objects
@@ -146,10 +142,9 @@ module.exports = {
         normalizer: ({ data }) =>
           data.allMarkdownRemark.nodes.map(node => ({
             id: node.id,
-            description: node.frontmatter.description,
-            group: node.frontmatter.group,
-            tags: node.frontmatter.tags,
             title: node.frontmatter.title,
+            slug: node.frontmatter.slug,
+            template: node.frontmatter.template,
           })),
       },
     },
