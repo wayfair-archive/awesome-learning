@@ -1,9 +1,5 @@
 import React, {useState} from 'react';
-<<<<<<< HEAD
-import {useStaticQuery} from 'gatsby';
-=======
 import {useStaticQuery, Link} from 'gatsby';
->>>>>>> upstream/main
 import Input from '@material-ui/core/Input';
 import { useFlexSearch } from 'react-use-flexsearch';
 import {Typography, Card, CardContent} from '@material-ui/core';
