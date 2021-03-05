@@ -115,6 +115,7 @@ module.exports = {
                   title
                   slug
                   template
+                  description
                   speakers {
                     name
                   }
@@ -136,7 +137,7 @@ module.exports = {
         // List of keys to store and make available in your UI. The values of
         // the keys are taken from the normalizer function below.
         // Default: all fields
-        store: ['title', 'slug', 'id', 'template', 'speaker', 'name'],
+        store: ['title', 'slug', 'id', 'template', 'speaker', 'name', 'description'],
 
         // Function used to map the result from the GraphQL query. This should
         // return an array of items to index in the form of flat objects
@@ -149,6 +150,7 @@ module.exports = {
             slug: node.frontmatter.slug,
             template: node.frontmatter.template,
             name: node.frontmatter.speaker ? node.frontmatter.speaker.name : '',
+            description: node.frontmatter.description,
           })),
       },
     },

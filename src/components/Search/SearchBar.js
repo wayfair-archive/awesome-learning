@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(4),
   },
   classTitle: {
+    display: 'block',
     width: 'fit-content',
     margin: theme.spacing(1, 0, 2),
     textDecoration: 'underline',
@@ -68,7 +69,9 @@ const SearchBar = () => {
         className={classes.input}
       />
       {results.map(result => (
-        <Card className={classes.card}>
+        <Card 
+          className={classes.card} 
+        >
           <CardContent>
             <Typography variant="body1">
               {renderResultType(result.template)}
@@ -83,6 +86,9 @@ const SearchBar = () => {
               className={classes.classTitle}
             >
               {result.title}
+            </Typography>
+            <Typography variant="body1" noWrap>
+              {result.description}
             </Typography>
           </CardContent>
         </Card>
