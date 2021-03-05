@@ -12,6 +12,7 @@ import {
   useMediaQuery,
 } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import SearchIcon from '@material-ui/icons/Search';
 import {getIcon} from '../../utils';
 import Menu from './Menu';
 
@@ -110,6 +111,13 @@ export const PureHeader = ({data}) => {
                 {item.label}
               </HeaderButton>
             ))}
+            <HeaderButton
+              title="Search"
+              to='/search'
+              component={Link}
+            >
+              <SearchIcon />
+            </HeaderButton>
             <HeaderButton
               href="https://github.com/wayfair/awesome-learning"
               rel="noopener noreferrer"
