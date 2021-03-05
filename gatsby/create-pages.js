@@ -54,6 +54,12 @@ const createPages = async ({ graphql, actions }) => {
     component: path.resolve("./src/templates/tech-talk-group-list-template.js")
   });
 
+  // Search page
+  createPage({
+    path: "/search",
+    component: path.resolve("./src/templates/search-template.js")
+  });
+
   // Courses and pages from markdown
   const result = await graphql(`
     {
