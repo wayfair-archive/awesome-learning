@@ -50,6 +50,7 @@ export const query = graphql`
         group
         tags
         title
+        slides
         speakers {
           name
           title

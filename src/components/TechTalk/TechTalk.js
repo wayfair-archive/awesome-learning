@@ -116,6 +116,42 @@ const TechTalk = ({techTalk}) => {
         </List>
       </Box>
 
+      {techTalk.frontmatter.slides && (
+        <Box className={classes.sectionContainer}>
+          <Typography variant="h2" className={classes.sectionTitle}>
+            Resources
+          </Typography>
+          <List
+            component="ul"
+            disablePadding
+            aria-label="Resources"
+          >
+            <ListItem disableGutters key={techTalk.frontmatter.slides}>
+              <Typography
+                variant="body1"
+                style={{
+                  display: 'list-item',
+                  listStyle: 'disc inside none',
+                }}
+                className={classes.paragraphContainer}
+              >
+                <Button
+                  href={techTalk.frontmatter.slides}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  role="link"
+                  style={{
+                    textTransform: 'none',
+                  }}
+                >
+                  Slides
+                </Button>
+              </Typography>
+            </ListItem>
+          </List>
+        </Box>
+      )}
+
       {techTalk.frontmatter.tags.length > 2 && (
         <Box className={classes.sectionWrapper} textAlign="left">
           <Typography className={classes.relatedThemesTitle} variant="h2">
@@ -151,6 +187,7 @@ export const techTalkPropType = PropTypes.shape({
       twitter: PropTypes.string,
     })
   ),
+  slides: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string,
 });
