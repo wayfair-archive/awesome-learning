@@ -26,4 +26,5 @@ tags:
   - "ESLint"
   - "Design Systems"
   - "React Native"
+slides: https://raf.dev/react-boston/enforcing-design-systems-eslint.pdf
 ---

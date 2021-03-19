@@ -17,4 +17,5 @@ tags:
   - "React Boston"
   - "React Native"
   - "Management"
+slides: https://drive.google.com/drive/u/0/folders/1BzEmJsVprAK3TehW_EjZVDv9iXPU9Cmt
 ---

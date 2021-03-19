@@ -19,4 +19,5 @@ tags:
   - "React Boston"
   - "Performance"
   - "Animation"
+slides: https://github.com/joshwcomeau/talk-2019
 ---

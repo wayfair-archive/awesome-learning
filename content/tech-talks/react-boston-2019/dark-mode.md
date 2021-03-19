@@ -22,5 +22,4 @@ tags:
   - "Color design"
   - "Dark mode"
   - "UI design"
-slides: "DEMO_SLIDES_URL"
 ---

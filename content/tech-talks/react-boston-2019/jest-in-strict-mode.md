@@ -18,4 +18,5 @@ tags:
   - "Jest"
   - "JavaScript"
   - "Unit Testing"
+slides: https://react-boston-talk.ballercat.now.sh
 ---

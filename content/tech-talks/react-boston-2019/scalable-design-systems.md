@@ -30,4 +30,5 @@ tags:
   - "Design Systems"
   - "Architecture"
   - "UI Design"
+slides: https://docs.google.com/presentation/d/1FGy2l2nsexlCT_5pesEvTVVfvrxUqlh1T0BZ4eMPuWE/edit#slide=id.g600e8fdd63_0_107
 ---
