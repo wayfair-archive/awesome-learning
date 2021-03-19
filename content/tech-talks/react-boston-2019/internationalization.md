@@ -16,4 +16,5 @@ tags:
   - "React"
   - "React Boston"
   - "Internationalization"
+slides: https://docs.google.com/presentation/u/1/d/1tvQCSUQl3CLfp_QhbJb7ZoxCfdXS9zvvtgRY7vGZ440/edit?usp=sharing
 ---

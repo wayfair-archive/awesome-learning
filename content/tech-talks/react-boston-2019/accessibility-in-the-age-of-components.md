@@ -23,4 +23,5 @@ tags:
   - "React Boston"
   - "Accessibility"
   - "Design Systems"
+slides: https://slides.com/ayeshakmaz/scaling-a11y-react-boston
 ---

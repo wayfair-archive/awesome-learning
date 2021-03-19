@@ -19,4 +19,5 @@ tags:
   - "Higher order components"
   - "Redux"
   - "JavaScript"
+slides: https://blog.isquaredsoftware.com/2019/09/presentation-hooks-hocs-tradeoffs/
 ---

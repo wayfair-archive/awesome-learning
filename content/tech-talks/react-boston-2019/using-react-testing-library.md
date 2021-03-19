@@ -24,4 +24,5 @@ tags:
   - "React Testing Library"
   - "Unit testing"
   - "Jest"
+slides: https://testingreactboston.netlify.com/about-me
 ---

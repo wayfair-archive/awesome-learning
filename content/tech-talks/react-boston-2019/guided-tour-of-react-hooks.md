@@ -20,4 +20,5 @@ tags:
   - "React"
   - "React Boston"
   - "React Hooks"
+slides: https://daveceddia.com/boston/
 ---
