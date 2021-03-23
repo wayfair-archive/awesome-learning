@@ -108,11 +108,6 @@
       "root": {
         "display": "block"
       }
-    },
-    "MuiChip": {
-      "avatar": {
-        "color": "white"
-      }
     }
   },
   "props": {

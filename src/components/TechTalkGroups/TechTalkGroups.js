@@ -23,9 +23,6 @@ const useStyles = makeStyles((theme) => ({
   backToContainer: {
     marginBottom: theme.spacing(4),
   },
-  titleWrap: {
-    marginBottom: theme.spacing(2),
-  },
   title: {
     width: 'fit-content',
     margin: theme.spacing(1, 3, 0, 0),
@@ -48,8 +45,6 @@ const TechTalkGroups = (props) => {
   const classes = useStyles();
   const theme = useTheme();
 
-  console.log(theme);
-
   return (
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
       <Typography variant="h1" color="textPrimary">
@@ -65,7 +60,7 @@ const TechTalkGroups = (props) => {
           <Box
             display="flex"
             alignContent="center"
-            className={classes.titleWrap}
+            marginBottom={2}
           >
             <Typography
               variant="h2"
