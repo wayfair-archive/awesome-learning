@@ -108,6 +108,11 @@
       "root": {
         "display": "block"
       }
+    },
+    "MuiChip": {
+      "avatar": {
+        "color": "white"
+      }
     }
   },
   "props": {
@@ -117,5 +122,10 @@
     }
   },
   "spacing": 4,
-  "themeName": "Awesome Learning Public"
+  "themeName": "Awesome Learning Public",
+  "privateBadge": {
+    "avatarText": "AL",
+    "badgeText": "Exclusive",
+    "ariaLabel": "Exclusive to Awesome Learning"
+  }
 }
