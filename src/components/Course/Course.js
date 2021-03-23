@@ -8,8 +8,9 @@ import {
   ListItem,
   ListItemText,
 } from '@material-ui/core';
-import {makeStyles, useTheme, withStyles} from '@material-ui/core/styles';
+import {makeStyles, useTheme} from '@material-ui/core/styles';
 import {Link} from 'gatsby';
+import Tag from '../shared/Tag';
 
 const useStyles = makeStyles((theme) => ({
   sectionTitle: {
@@ -27,15 +28,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Tag = withStyles((theme) => ({
-  root: {
-    display: 'inline-block',
-    textAlign: 'center',
-    margin: theme.spacing(0, 2, 2, 0),
-    padding: theme.spacing(2),
-  },
-}))(Button);
-
 const Course = ({course}) => {
   const classes = useStyles();
   const theme = useTheme();
@@ -47,7 +39,7 @@ const Course = ({course}) => {
         Back to Courses
       </Button>
       <Box className={classes.sectionWrapper}>
-        <Typography variant="h2" className={classes.sectionTitle}>
+        <Typography variant="h1" className={classes.sectionTitle}>
           {title}
         </Typography>
         <Typography variant="body1">{description}</Typography>
@@ -82,8 +74,8 @@ const Course = ({course}) => {
         ))}
       </List>
       {tags.length > 2 && (
-        <Box className={classes.sectionWrapper} textAlign="center">
-          <Typography variant="h4" className={classes.relatedThemesTitle}>
+        <Box className={classes.sectionWrapper} textAlign="left">
+          <Typography variant="h2" className={classes.relatedThemesTitle}>
             Related Themes
           </Typography>
           {tagSlugs.map((slug, i) => (

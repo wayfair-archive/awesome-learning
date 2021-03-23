@@ -36,6 +36,9 @@ export const COURSE_DATA_MAPPING = {
   'TypeScript Basics': {
     icon: 'typescript',
   },
+  'Functional Programming': {
+    icon: 'function',
+  },
 };
 
 export const FOOTER_DATA = [

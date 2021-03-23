@@ -3,7 +3,6 @@ import {graphql, StaticQuery} from 'gatsby';
 import PropTypes from 'prop-types';
 import {Button, Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
-import {useLastLessonContext} from '../../providers/LastLessonProvider';
 import analyticsEventHandler from '../../utils/analyticsEventHandler';
 
 const handleEventClick = (path) => {
@@ -24,10 +23,8 @@ export const PrimitiveLessonButton = ({
   path,
   onClick = handleEventClick,
   children,
-  lessonData,
 }) => {
   const classes = useStyles();
-  const {setLastLessonVisited} = useLastLessonContext();
   return (
     <Button
       color="secondary"
@@ -36,10 +33,7 @@ export const PrimitiveLessonButton = ({
       href={path}
       rel="noopener noreferrer"
       target="_blank"
-      onClick={() => {
-        if (lessonData) setLastLessonVisited(lessonData);
-        onClick(path);
-      }}
+      onClick={onClick}
       className={classes.button}
     >
       <Typography variant="h3" color="inherit">
@@ -51,7 +45,7 @@ export const PrimitiveLessonButton = ({
 
 export const PureLessonButton = ({path, data, defaultTab, ...props}) => {
   const {repoOwner} = data.site.siteMetadata;
-  const fullPath = `https://codesandbox.io/s/github/${repoOwner}/awesome-learning-exercises/tree/master/${path}?fontsize=14&previewwindow=${defaultTab}`;
+  const fullPath = `https://codesandbox.io/s/github/${repoOwner}/awesome-learning-exercises/tree/main/${path}?fontsize=14&previewwindow=${defaultTab}`;
   return (
     <PrimitiveLessonButton
       path={fullPath}

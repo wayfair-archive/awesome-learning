@@ -38,19 +38,11 @@ const Courses = ({edges, title}) => {
     setPage(value);
     window.scrollTo(0, 0);
   };
-  const titleText = title ? `Courses: ${title}` : 'Courses';
 
   return (
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
-      {title && (
-        <Box className={classes.backToContainer}>
-          <Button component={Link} to="/courses">
-            Back to Courses
-          </Button>
-        </Box>
-      )}
       <Typography variant="h1" color="textPrimary">
-        {titleText}
+        {title}
       </Typography>
       {edges
         .slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE)

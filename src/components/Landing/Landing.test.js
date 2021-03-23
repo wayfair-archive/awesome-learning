@@ -1,7 +1,6 @@
 import React from 'react';
 import {render} from '@testing-library/react';
 import Landing from './Landing';
-import LastLessonProvider from '../../providers/LastLessonProvider';
 
 const PROPS = {
   courseEdges: [
@@ -29,11 +28,7 @@ function someElementHasPropValue(nodeList, attributeName, key) {
 
 describe('Landing Component', () => {
   test('Renders a hero', () => {
-    const {queryByText, container} = render(
-      <LastLessonProvider>
-        <Landing {...PROPS} />
-      </LastLessonProvider>
-    );
+    const {queryByText, container} = render(<Landing {...PROPS} />);
     expect(queryByText('Awesome Learning')).toBeTruthy();
     expect(queryByText('Learn front-end tech, together.')).toBeTruthy();
 
@@ -42,22 +37,14 @@ describe('Landing Component', () => {
   });
 
   test('Renders a Popular Courses Carousel with Title', () => {
-    const {container, queryByText} = render(
-      <LastLessonProvider>
-        <Landing {...PROPS} />
-      </LastLessonProvider>
-    );
+    const {container, queryByText} = render(<Landing {...PROPS} />);
 
     expect(queryByText('Popular Courses')).toBeTruthy();
     expect(container.querySelectorAll('.alice-carousel')).toHaveLength(1);
   });
 
   test('Renders What is Awesome Learning', () => {
-    const {queryByText} = render(
-      <LastLessonProvider>
-        <Landing {...PROPS} />
-      </LastLessonProvider>
-    );
+    const {queryByText} = render(<Landing {...PROPS} />);
 
     expect(queryByText('What is Awesome Learning?')).toBeTruthy();
     expect(
@@ -68,11 +55,7 @@ describe('Landing Component', () => {
   });
 
   test('Renders How Can I Get Started', () => {
-    const {queryByText} = render(
-      <LastLessonProvider>
-        <Landing {...PROPS} />
-      </LastLessonProvider>
-    );
+    const {queryByText} = render(<Landing {...PROPS} />);
 
     expect(queryByText('How can I get started?')).toBeTruthy();
     expect(queryByText('Make a team')).toBeTruthy();
