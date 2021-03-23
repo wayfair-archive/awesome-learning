@@ -186,6 +186,7 @@ export const techTalkPropType = PropTypes.shape({
   slides: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string,
+  isPrivateTalk: PropTypes.bool,
 });
 
 TechTalk.propTypes = {
@@ -194,7 +195,6 @@ TechTalk.propTypes = {
       tagSlugs: PropTypes.arrayOf(PropTypes.string),
     }),
     frontmatter: techTalkPropType,
-    isPrivateTalk: PropTypes.bool,
   }).isRequired,
 };
 

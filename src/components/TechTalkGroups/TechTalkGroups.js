@@ -71,7 +71,7 @@ const TechTalkGroups = (props) => {
             >
               {techTalkGroup.frontmatter.title}
             </Typography>
-            {techTalkGroup.isPrivateTalk && (
+            {techTalkGroup.frontmatter.isPrivateTalk && (
               <Tooltip
                 title={theme.privateBadge.ariaLabel}
                 aria-label={theme.privateBadge.ariaLabel}
