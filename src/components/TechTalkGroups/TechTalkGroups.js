@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Typography, Button} from '@material-ui/core';
+import {Box, Typography, Button, Avatar, Chip, Tooltip} from '@material-ui/core';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
 import {Link} from 'gatsby';
 import {Pagination} from '@material-ui/lab';
@@ -7,12 +7,19 @@ import PropTypes from 'prop-types';
 import {techTalkPropType} from '../TechTalk';
 
 const useStyles = makeStyles((theme) => ({
+  avatar: {
+    color: "#fff !important",
+    backgroundColor: "#934398"
+  },
   backToContainer: {
     marginBottom: theme.spacing(4),
   },
+  titleWrap: {
+    margin: theme.spacing(1, 0, 2)
+  },
   title: {
     width: 'fit-content',
-    margin: theme.spacing(1, 0, 2),
+    marginRight: theme.spacing(3),
     textDecoration: 'underline',
     textTransform: 'none',
     '&:hover, &:focus': {
@@ -32,6 +39,8 @@ const TechTalkGroups = (props) => {
   const classes = useStyles();
   const theme = useTheme();
 
+  console.log(theme);
+
   return (
     <Box m="auto" maxWidth={theme.breakpoints.values.lg}>
       <Typography variant="h1" color="textPrimary">
@@ -44,15 +53,25 @@ const TechTalkGroups = (props) => {
           key={techTalkGroup.frontmatter.id}
           className={classes.courseContainer}
         >
-          <Typography
-            variant="h2"
-            component={Link}
-            color="primary"
-            to={techTalkGroup.fields.slug}
-            className={classes.title}
-          >
-            {techTalkGroup.frontmatter.title}
-          </Typography>
+          <Box display="flex" alignContent="center" className={classes.titleWrap}>
+            <Typography
+              variant="h2"
+              component={Link}
+              color="primary"
+              to={techTalkGroup.fields.slug}
+              className={classes.title}
+            >
+              {techTalkGroup.frontmatter.title}
+            </Typography>
+            <Tooltip title="Available only for Wayfair™ Employees" aria-label="add">
+              <Chip
+                avatar={<Avatar className={classes.avatar}>WF</Avatar>}
+                label="Exclusive"
+                variant="outlined"
+
+              />
+            </Tooltip>
+          </Box>
           <Typography variant="body1">
             {techTalkGroup.frontmatter.description}
           </Typography>
