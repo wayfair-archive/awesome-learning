@@ -1,5 +1,12 @@
 import React from 'react';
-import {Box, Typography, Button} from '@material-ui/core';
+import {
+  Box,
+  Typography,
+  Button,
+  Avatar,
+  Chip,
+  Tooltip,
+} from '@material-ui/core';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
 import {Link} from 'gatsby';
 import {Pagination} from '@material-ui/lab';
@@ -7,12 +14,18 @@ import PropTypes from 'prop-types';
 import {techTalkPropType} from '../TechTalk';
 
 const useStyles = makeStyles((theme) => ({
+  avatar: {
+    backgroundColor: theme.palette.primary.main,
+  },
+  avatarText: {
+    color: theme.palette.primary.contrastText,
+  },
   backToContainer: {
     marginBottom: theme.spacing(4),
   },
   title: {
     width: 'fit-content',
-    margin: theme.spacing(1, 0, 2),
+    margin: theme.spacing(1, 3, 0, 0),
     textDecoration: 'underline',
     textTransform: 'none',
     '&:hover, &:focus': {
@@ -44,15 +57,39 @@ const TechTalkGroups = (props) => {
           key={techTalkGroup.frontmatter.id}
           className={classes.courseContainer}
         >
-          <Typography
-            variant="h2"
-            component={Link}
-            color="primary"
-            to={techTalkGroup.fields.slug}
-            className={classes.title}
+          <Box
+            display="flex"
+            alignContent="center"
+            marginBottom={2}
           >
-            {techTalkGroup.frontmatter.title}
-          </Typography>
+            <Typography
+              variant="h2"
+              component={Link}
+              color="primary"
+              to={techTalkGroup.fields.slug}
+              className={classes.title}
+            >
+              {techTalkGroup.frontmatter.title}
+            </Typography>
+            {techTalkGroup.frontmatter.isPrivateTalk && (
+              <Tooltip
+                title={theme.privateBadge.ariaLabel}
+                aria-label={theme.privateBadge.ariaLabel}
+              >
+                <Chip
+                  avatar={
+                    <Avatar className={classes.avatar}>
+                      <span className={classes.avatarText}>
+                        {theme.privateBadge.avatarText}
+                      </span>
+                    </Avatar>
+                  }
+                  label={theme.privateBadge.badgeText}
+                  variant="outlined"
+                />
+              </Tooltip>
+            )}
+          </Box>
           <Typography variant="body1">
             {techTalkGroup.frontmatter.description}
           </Typography>

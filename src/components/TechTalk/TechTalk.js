@@ -121,11 +121,7 @@ const TechTalk = ({techTalk}) => {
           <Typography variant="h2" className={classes.sectionTitle}>
             Resources
           </Typography>
-          <List
-            component="ul"
-            disablePadding
-            aria-label="Resources"
-          >
+          <List component="ul" disablePadding aria-label="Resources">
             <ListItem disableGutters key={techTalk.frontmatter.slides}>
               <Typography
                 variant="body1"
@@ -190,6 +186,7 @@ export const techTalkPropType = PropTypes.shape({
   slides: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string,
+  isPrivateTalk: PropTypes.bool,
 });
 
 TechTalk.propTypes = {
