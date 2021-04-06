@@ -15,4 +15,7 @@ lessons:
   - link: "content-and-semantics"
     title: Content and Semantics
     description: The first lesson of the Awesome Learning Accessibility course will teach students about how to make their code, and the contents of their pages, more accessibile and usable to assistive technology.
+  - link: "multimedia"
+    title: Multimedia
+    description: Our second lesson on Accessibility focuses on multimedia - images, GIFs, videos, icons, and more! Learn more about how to meaningfully present visual media and content to all citizens of the Internet.
 ---
