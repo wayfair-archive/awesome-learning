@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{VFHL:function(e,a,t){"use strict";t.r(a);var n=t("q1tI"),r=t.n(n),s=t("tsJN"),l=t("cPnb"),c=t("E00f");a.default=function(e){var a=e.data,t=e.path,n=a.allMarkdownRemark.edges;return r.a.createElement(s.a,{title:"Courses",slug:t},r.a.createElement(c.a,null,r.a.createElement(l.a,{edges:n})))}}}]);
+//# sourceMappingURL=component---src-templates-course-list-template-js-6bd5073c65cb876000e2.js.map

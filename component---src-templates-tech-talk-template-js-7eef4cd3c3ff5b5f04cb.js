@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[23],{YxLu:function(e,t,a){"use strict";a.r(t);var n=a("q1tI"),r=a.n(n),i=a("tsJN"),l=a("E00f"),o=a("UXvj");t.default=function(e){var t=e.data,a=t.markdownRemark.frontmatter,n=a.title,c=a.description,s=t.markdownRemark.fields.slug;return r.a.createElement(i.a,{description:c,slug:s,title:n},r.a.createElement(l.a,null,r.a.createElement(o.a,{techTalk:t.markdownRemark})))}}}]);
+//# sourceMappingURL=component---src-templates-tech-talk-template-js-7eef4cd3c3ff5b5f04cb.js.map
