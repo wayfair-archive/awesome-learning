@@ -14,4 +14,7 @@ lessons:
   - link: "immutability"
     title: Immutability
     description: The first lesson of the Awesome Learning Functional Programming course will teach students how to apply the concept of immutability (the idea that something cannot be modified after being instantiated) to your code and how to avoid common pitfalls in JavaScript.
+  - link: "pure-functions"
+    title: Pure Functions
+    description: The second lesson of the Awesome Learning Functional Programming course will teach students how to apply the concept of functional purity to your code and how to write and recognize pure functions.
 ---
