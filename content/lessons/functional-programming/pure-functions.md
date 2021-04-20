@@ -20,5 +20,4 @@ readingLinks:
     description: 5 minute read. General introduction to pure functions in JavaScript.
 timeToCompletion: ~1 hour
 preReadQuizLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeD57l2LvyDKM9Rhup0h0q6ltZbGJZi7lP56ETFAvBjugulZQ/viewform?usp=sf_link'
-secondaryExerciseUrl: 'https://codesandbox.io/s/github/wayfair/awesome-learning-exercises/tree/master/functional-programming/pure-functions'
 ---
