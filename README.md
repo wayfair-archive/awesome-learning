@@ -4,6 +4,9 @@ Awesome Learning is a Front-end focused learning platform created by current and
 
 [Check out the site](https://wayfair.github.io/awesome-learning/)
 
+## Project Status
+Awesome Learning has now been put into maintenance mode (as of 6/15/2021). Courses will be available to take, but non-critical fixes won't be made to this project.
+
 ## Quick Start
 
 #### Working With Our Repo
