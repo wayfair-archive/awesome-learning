@@ -17,4 +17,7 @@ lessons:
   - link: "pure-functions"
     title: Pure Functions
     description: The second lesson of the Awesome Learning Functional Programming course will teach students how to apply the concept of functional purity to your code and how to write and recognize pure functions.
+  - link: "higher-order-functions"
+    title: Higher Order Functions
+    description: The third lesson of the Awesome Learning Functional Programming course will teach students how to write and utilize higher order functions in your code to better compose reusable functions.
 ---
