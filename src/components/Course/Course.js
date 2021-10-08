@@ -11,6 +11,7 @@ import {
 import {makeStyles, useTheme} from '@material-ui/core/styles';
 import {Link} from 'gatsby';
 import Tag from '../shared/Tag';
+import ReactMarkdown from 'react-markdown';
 
 const useStyles = makeStyles((theme) => ({
   sectionTitle: {
@@ -59,7 +60,7 @@ const Course = ({course}) => {
                   {title}
                 </Typography>
               }
-              secondary={<Typography variant="body1">{description}</Typography>}
+              secondary={<Typography variant="body1"><ReactMarkdown>{description}</ReactMarkdown></Typography>}
             />
             <Button
               variant="contained"
