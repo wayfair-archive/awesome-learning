@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import {
   Typography,
@@ -59,7 +60,7 @@ const Course = ({course}) => {
                   {title}
                 </Typography>
               }
-              secondary={<Typography variant="body1">{description}</Typography>}
+              secondary={<Typography variant="body1"><ReactMarkdown>{description}</ReactMarkdown></Typography>}
             />
             <Button
               variant="contained"
