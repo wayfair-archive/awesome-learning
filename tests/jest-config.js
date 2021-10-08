@@ -12,5 +12,11 @@ module.exports = {
   transform: {
     '^.+\\.js?$': '<rootDir>/tests/jest-preprocess.js',
   },
+  transformIgnorePatterns: ['<rootDir>/node_modules/(?!(react-markdown'
+    + '|unified'
+    + '|mdast[-a-z]*'
+    + '|micromark[-a-z]*'
+    + '|remark-rehype'
+    + ')/)'],
   testMatch: ['**/__tests__/**/*.js', '**/?(*.)test.js'],
 };

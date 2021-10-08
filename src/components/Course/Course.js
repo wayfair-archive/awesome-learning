@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import {
   Typography,
@@ -12,6 +11,7 @@ import {
 import {makeStyles, useTheme} from '@material-ui/core/styles';
 import {Link} from 'gatsby';
 import Tag from '../shared/Tag';
+import ReactMarkdown from 'react-markdown';
 
 const useStyles = makeStyles((theme) => ({
   sectionTitle: {
